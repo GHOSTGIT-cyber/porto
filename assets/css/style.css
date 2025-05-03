@@ -5795,3 +5795,21 @@ section.ms-instagram-section {
   max-width: 100;
   border-radius: 15px;
 }
+.veille-card {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.veille-card:hover {
+  transform: scale(1.02);
+}
+.veille-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.veille-content {
+  padding: 15px;
+  background: #fff;
+}
