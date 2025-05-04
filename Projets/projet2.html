@@ -12,7 +12,7 @@ https://templatemo.com/tm-512-moonlight
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.html">
-
+        <link rel="icon" href="../assets/img/portfolio/favicon.ico" type="image/png">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/fontAwesome.css">
@@ -43,10 +43,17 @@ https://templatemo.com/tm-512-moonlight
                                         <div class="col-md-6">
                                             <div class="left-content">
                                                 <h2>Page de connexion mobile </h2>
-                                                <p>
-                                                    La carte OpenStreetMap pour l'application Android Studio de TrottiCycle permet aux utilisateurs de trouver des parkings virtuels à proximité de
-                                                    leur emplacement actuel. Les parkings virtuels sont des endroits où les utilisateurs peuvent se garer en toute sécurité et laisser leur voiture pendant
-                                                    une période déterminée, sans avoir besoin d'une place de parking physique. La carte affiche les emplacements des parkings virtuels à l'aide de marqueurs spécifiques</p>
+                                                <p>La page de connexion mobile a été développée en React Native pour garantir 
+                                                    une expérience utilisateur fluide et native sur iOS et Android. Elle intègre 
+                                                    un formulaire sécurisé permettant la saisie de l’email et du mot de passe, avec
+                                                     une gestion avancée des états (loading, erreurs, validation des champs).
+                                                      L’authentification s’appuie sur une API REST sécurisée, qui utilise des tokens 
+                                                      JWT pour la gestion des sessions utilisateur. Un système de « Se souvenir de 
+                                                      moi » est implémenté via AsyncStorage, permettant de stocker le token localement 
+                                                      et d’assurer une reconnexion automatique. L’interface utilise des composants personnalisés 
+                                                      et une gestion centralisée du thème (couleurs, polices) pour respecter la charte graphique 
+                                                      du projet. La navigation est assurée par React Navigation, garantissant une transition fluide
+                                                       vers le tableau de bord après connexion.</p>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
@@ -67,16 +74,16 @@ https://templatemo.com/tm-512-moonlight
                                         </div>
                                         <div class="col-md-6">
                                             <div class="right-content">
-                                                <h2>Vue calendrier</h2>
-                                                <p>La carte OpenStreetMap pour l'application Android Studio de Trotticycle permet aux utilisateurs de trouver des parkings
-                                                    virtuels à proximité de leur emplacement actuel. Les parkings virtuels sont des endroits où les utilisateurs peuvent se garer en toute sécurité et laisser
-                                                    leur voiture pendant une période déterminée, sans avoir besoin d'une place de parking physique. La carte affiche les emplacements des parkings virtuels à
-                                                    l'aide de marqueurs spécifiques, et les utilisateurs peuvent appuyer sur les marqueurs pour obtenir des informations détaillées sur chaque parking virtuel.
-                                                    Les informations peuvent inclure la disponibilité, les tarifs, les horaires d'ouverture et une description du parking.
-                                                    Les utilisateurs peuvent également cliquer sur un bouton "Y aller" pour être dirigés vers le parking virtuel sélectionné.
-                                                    La carte est conçue pour être facile à utiliser et intuitive,
-                                                    permettant aux utilisateurs de trouver rapidement un parking virtuel disponible à proximité de leur destination.</p>
-
+                                                <h2>calendrier des cours</h2>
+                                                <p>Le calendrier des cours est une vue interactive développée en React Native, 
+                                                    utilisant des librairies comme react-native-calendars pour un affichage ergonomique 
+                                                    des plannings. Chaque jour affiche dynamiquement les cours programmés, récupérés via 
+                                                    des appels à l’API backend (Symfony) en JSON. Les données sont structurées pour afficher 
+                                                    le nom du cours, l’horaire, et la salle, avec une différenciation visuelle entre les jours 
+                                                    sélectionnés et les autres. Les événements sont mis à jour en temps réel grâce à un système 
+                                                    de rafraîchissement (pull-to-refresh). L’architecture du code favorise la réutilisabilité des
+                                                     composants (carte de cours, liste des événements), et la gestion des états est centralisée 
+                                                     via le Context API pour assurer la cohérence des données sur l’ensemble de l’application.</p>
                                            </div>
                                         </div>
                                     </div>
@@ -87,14 +94,18 @@ https://templatemo.com/tm-512-moonlight
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="left-content">
-                                                <h2>Vue des prochains cours</h2>
-                                                <p>La carte OpenStreetMap pour l'application Android Studio de TrottiCycle permet aux
-                                                    utilisateurs de trouver des parkings virtuels à proximité de leur emplacement actuel, ainsi que les trajets associés à ces parkings.
-                                                    Les trajets sont des itinéraires suggérés pour les utilisateurs afin d'atteindre leur destination depuis le parking virtuel sélectionné.
-                                                    Les trajets peuvent inclure les directions à pied, en voiture ou en transport en commun, en fonction des options disponibles pour chaque parking virtuel.
-                                                    Les utilisateurs peuvent cliquer sur les marqueurs de parking virtuel pour obtenir des informations détaillées, y compris les trajets disponibles,
-                                                    les tarifs et les horaires d'ouverture. Les utilisateurs peuvent également appuyer sur un bouton "Y aller" pour être dirigés vers le parking virtuel
-                                                    sélectionné et commencer leur trajet. La carte est conçue pour aider les utilisateurs à trouver facilement un parking virtuel pratique et à planifier leur trajet vers leur destination.</p>
+                                                <h2>Vue du cours en cours et cours passés pour signer</h2>
+                                                <p>Cette section permet à l’apprenant de visualiser, pour chaque journée, 
+                                                    la liste des cours en cours et passés, avec la possibilité d’accéder directement 
+                                                    à la fiche d’émargement pour la signature. Les données sont récupérées en temps 
+                                                    réel depuis l’API, filtrées côté client pour distinguer les cours à venir, en cours 
+                                                    et terminés. Chaque carte de cours affiche le nom, la salle, l’horaire et propose un 
+                                                    bouton d’action pour signer ou justifier une absence. L’interface gère les états de 
+                                                    signature (signé, non signé, absence justifiée) et affiche des badges de statut. 
+                                                    L’intégration avec l’API permet également de mettre à jour le statut d’émargement 
+                                                    instantanément, avec gestion des erreurs réseau et feedback utilisateur. La navigation 
+                                                    entre les différentes vues (cours du jour, passés) est optimisée pour le mobile, avec un 
+                                                    design épuré et accessible.</p>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
@@ -110,6 +121,33 @@ https://templatemo.com/tm-512-moonlight
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="left-image">
+                                                <img src="image/android4.png" alt="second service">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="right-content">
+                                                <h2>Vue signature</h2>
+                                                <p>La vue signature est un composant clé de l’application mobile, 
+                                                    développé en React Native avec la librairie react-native-signature-canvas. 
+                                                    Elle permet à l’utilisateur de signer directement sur l’écran tactile dans un 
+                                                    cadre dédié, avec gestion de la pression et de la fluidité du trait. La signature 
+                                                    est convertie en image (base64) puis envoyée de façon sécurisée à l’API backend, 
+                                                    où elle est stockée et associée à la session de cours via l’entité SignatureSession. 
+                                                    Un bouton « Sauvegarder » permet de valider la signature, avec retour visuel sur la 
+                                                    réussite de l’opération. La vue gère également les cas d’erreur (signature vide, problème réseau) 
+                                                    et propose une expérience utilisateur intuitive, adaptée à tous types de smartphones. L’ensemble du 
+                                                    flux est sécurisé et conforme aux exigences de traçabilité de la présence.</p>
+
+                                           </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="five-section">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="left-image">
                                                 <img src="image/code.png" alt="second service">
                                             </div>
                                         </div>
@@ -117,9 +155,9 @@ https://templatemo.com/tm-512-moonlight
                                             <div class="right-content-creps">
                                                 <h2>Toutes les resources du projet : </h2>
                                             </div>
-                                            <div class="btn-acceuil"><a href="">CAHIER DES CHARGES</a></div>
+                                            <div class="btn-acceuil"><a href="https://atom-porpoise-e92.notion.site/Projets-d-margement-195cf6ffbb2180c38dedc08e83b4a523">CAHIER DES CHARGES</a></div>
                                             <div class="btn-acceuil"><a href="">CODE SOURCE PROJET</a></div>
-                                            <div class="btn-acceuil"><a href="">YOUTRACK DU PROJET </a></div>
+                                            <div class="btn-acceuil"><a href=""> PROJET </a></div>
                                             </div>
                                         </div>
                                     </div>
