@@ -43,12 +43,15 @@ https://templatemo.com/tm-512-moonlight
                                         <div class="col-md-6">
                                             <div class="left-content">
                                                 <h2>Page de connexion</h2>
-                                                <p>La page de connexion de Gmargement est l'endroit où les utilisateurs peuvent
-                                                    se connecter à leur compte. Elle contient deux champs de saisie pour l'adresse
-                                                    e-mail et le mot de passe de l'utilisateur, ainsi qu'un bouton pour soumettre
-                                                    le formulaire de connexion. Si l'utilisateur n'a pas encore de compte,
-                                                    il peut cliquer sur un lien pour accéder à la page d'inscription.
-                                                    Une fois connecté, l'utilisateur est redirigé vers la page d'accueil du site soit Adhérent ou Coach.</p>
+                                                <p>La page de connexion constitue la porte d’entrée sécurisée de l’application, 
+                                                    développée avec Symfony et PHP 8. Elle exploite le composant Security de Symfony 
+                                                    pour gérer l’authentification des utilisateurs via un formulaire personnalisé, 
+                                                    en s’appuyant sur l’authenticator UserAuthenticator. Ce dernier vérifie les identifiants, 
+                                                    gère les tokens CSRF pour la sécurité, et redirige dynamiquement l’utilisateur vers le tableau 
+                                                    de bord correspondant à son rôle (administrateur, formateur, apprenant) après une authentification 
+                                                    réussie. Les mots de passe sont hachés de manière sécurisée grâce à l’API PasswordHasher de Symfony, 
+                                                    garantissant la confidentialité des données utilisateurs. L’expérience utilisateur est optimisée par 
+                                                    des messages d’erreur clairs et une gestion efficace des sessions.</p>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
@@ -69,13 +72,15 @@ https://templatemo.com/tm-512-moonlight
                                         </div>
                                         <div class="col-md-6">
                                             <div class="right-content">
-                                                <h2>Accueil formateur</h2>
-                                                <p>La page d'accueil de Gmargement pour un formateur est l'endroit où il peut voir un aperçu des prochains cours
-                                                et des informations importantes de ses apprenants.
-                                                    Elle peut inclure des graphiques pour suivre les progrès des clients,
-                                                    des liens vers des programmes d'entraînement personnalisés et des informations sur les derniers événements et promotions.
-                                                    Les coaches peuvent également accéder à leur profil et modifier leurs informations personnelles.
-                                                    La page d'accueil est conçue pour offrir une vue d'ensemble rapide et facile à comprendre de l'ensemble des clients du coach.</p>
+                                                <h2>Tableau de bord formateur</h2>
+                                                <p>Le tableau de bord formateur est une interface centralisée conçue pour permettre 
+                                                    aux formateurs de gérer efficacement leurs sessions. Il affiche, sous forme de cartes 
+                                                    interactives, les sessions du jour et à venir, avec des informations détaillées : titre 
+                                                    du cours, horaire, salle, nombre d’apprenants, et statut de la session (à venir, en cours, 
+                                                    terminée). Chaque session propose un accès direct à la fiche de présence et au module de 
+                                                    signature. Le tableau de bord est alimenté par des requêtes Doctrine sur la base de données, 
+                                                    et le rendu est assuré via Twig, le moteur de templates de Symfony. L’interface est responsive 
+                                                    grâce à des feuilles de style CSS dédiées, garantissant une expérience fluide sur tous supports</p>
 
                                            </div>
                                         </div>
@@ -87,14 +92,15 @@ https://templatemo.com/tm-512-moonlight
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="left-content">
-                                                <h2>Accueil Adhérent</h2>
-                                                <p>La page d'accueil de Basicfat pour un adhérent est l'endroit
-                                                    où il peut accéder à toutes les fonctionnalités de son compte.
-                                                    Elle peut inclure un aperçu de l'état d'avancement des programmes d'entraînement,
-                                                    des liens vers des séances collectives. Les adhérents peuvent également accéder
-                                                    à leur profil pour créer une fiche santé. La page d'accueil est conçue pour offrir
-                                                    une vue d'ensemble rapide et facile à comprendre de l'ensemble
-                                                    des fonctionnalités disponibles pour les adhérents de Basicfat</p>
+                                                <h2>Tableau de bord administrateur</h2>
+                                                <p>Le tableau de bord administrateur est l’outil de pilotage global de la plateforme. 
+                                                    Il permet la gestion des utilisateurs (création, modification, suppression d’apprenants, 
+                                                    formateurs, administrateurs), des groupes, des sessions et des paramètres généraux. L’interface 
+                                                    propose des formulaires dynamiques pour la création de comptes, l’envoi d’emails d’activation, 
+                                                    et la gestion des groupes d’apprenants. Toutes les opérations sont sécurisées par des vérifications 
+                                                    de rôle et des protections CSRF. Le back-office s’appuie sur Doctrine pour accéder et manipuler 
+                                                    les entités User, Session et Groupe, et sur Twig pour le rendu des vues. Les notifications de succès
+                                                     ou d’erreur sont gérées via les flash messages de Symfony, rendant l’administration réactive et transparente</p>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
@@ -116,10 +122,14 @@ https://templatemo.com/tm-512-moonlight
                                         <div class="col-md-6">
                                             <div class="right-content-creps">
                                                 <h2>FICHE DE PRESENCE </h2>
-                                                <p>La page d'inscription de Basicfat est l'endroit où un coach peut ajouter un nouvel utilisateur (adhérent ou coach) à la plateforme.
-                                                    Cette page permet au coach de remplir un formulaire avec les informations de base de l'utilisateur, telles que son nom, son adresse e-mail
-                                                    et son mot de passe. Le coach peut également choisir le rôle de l'utilisateur, c'est-à-dire s'il s'agit d'un adhérent ou d'un autre coach. La page d'inscription est
-                                                    conçue pour être simple et rapide à remplir, en permettant aux coaches de créer de nouveaux comptes d'utilisateurs en quelques clics.</p>
+                                                <p>La fiche de présence est un module interactif permettant aux formateurs de gérer la 
+                                                    présence des apprenants pour chaque session. Elle affiche la liste des inscrits, 
+                                                    leur statut (présent, absent, absence justifiée, retard, départ anticipé), et propose 
+                                                    des actions rapides : signature manuelle, justification d’absence, ajout de commentaires. 
+                                                    Les présences sont enregistrées via des entités SignatureSession, liées à chaque session et 
+                                                    utilisateur. L’interface, développée en Twig et enrichie en JavaScript, permet la sélection
+                                                     multiple et l’envoi d’emails de demande de signature. La sécurité est assurée par des contrôles 
+                                                     d’accès stricts, garantissant que seul le formateur de la session peut modifier les présences.</p>
                                             </div>
                                             </div>
                                         </div>
@@ -131,13 +141,13 @@ https://templatemo.com/tm-512-moonlight
                                         <div class="col-md-6">
                                             <div class="left-content">
                                                 <h2>MODULE DE SIGNATURE </h2>
-                                                <p>La page des séances de sport de Basicfat permet aux adhérents de choisir entre une séance collective ou une séance libre.
-                                                    Les séances collectives sont des cours planifiés qui ont lieu à une heure et un lieu spécifiques, tandis que les séances libres permettent
-                                                    aux adhérents de faire leur propre entraînement quand ils le souhaitent. La page peut afficher les séances planifiées pour la journée ou
-                                                    la semaine, ainsi que les disponibilités pour les séances libres. Les adhérents peuvent choisir une séance qui correspond à leurs objectifs
-                                                    de remise en forme ou de musculation, et s'inscrire ou se désinscrire facilement à partir de la page. La page des séances de sport est
-                                                    conçue pour offrir aux adhérents une flexibilité maximale dans leur programme d'entraînement,
-                                                    tout en leur permettant de participer à des séances collectives motivantes s'ils le souhaitent.</p>
+                                                <p>Le module signature est une fonctionnalité clé qui digitalise la collecte des signatures de présence. 
+                                                    Il permet aux apprenants de signer électroniquement leur présence via un lien reçu par email ou directement 
+                                                    depuis leur espace personnel. Le module gère la traçabilité des signatures (horodatage, statut, justification), 
+                                                    et propose au formateur un suivi en temps réel du taux de signatures obtenues. Techniquement, il s’appuie sur 
+                                                    l’entité SignatureSession pour stocker chaque signature, et sur des services Symfony pour l’envoi automatisé 
+                                                    des emails de demande de signature. L’interface est conçue pour être intuitive, avec des retours visuels sur 
+                                                    l’état de chaque signature et des options pour la gestion des absences ou retards.</p>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
@@ -160,7 +170,7 @@ https://templatemo.com/tm-512-moonlight
                                             <div class="right-content-creps">
                                                 <h2>Toutes les resources du projet : </h2>
                                             </div>
-                                            <div class="btn-acceuil"><a href="" target="_blank">CAHIER DES CHARGES</a></div>
+                                            <div class="btn-acceuil"><a href="https://www.notion.so/Projets-d-margement-1e96a0ba4c8c8098b6d2c17cd5103f60" target="_blank">CAHIER DES CHARGES</a></div>
                                             <div class="btn-acceuil"><a href="" target="_blank">CODE SOURCE PROJET</a></div>
                                             <div class="btn-acceuil"><a href="" target="_blank">YOUTRACK DU PROJET</a></div>
                                         </div>
