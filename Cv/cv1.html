@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Bakari Abidina</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.2;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            overflow: hidden;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background: linear-gradient(135deg, #4a90e2, #5ba3f5);
+            color: white;
+            padding: 20px 18px;
+        }
+
+        .profile-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .name {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 3px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .age {
+            font-size: 12px;
+            opacity: 0.9;
+            margin-bottom: 8px;
+        }
+
+        .title {
+            background: rgba(255,255,255,0.25);
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .contact-info {
+            margin-bottom: 18px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 6px;
+            font-size: 10px;
+        }
+
+        .contact-item::before {
+            content: "📧";
+            margin-right: 8px;
+            width: 14px;
+        }
+
+        .contact-item.phone::before {
+            content: "📱";
+        }
+
+        .contact-item.address::before {
+            content: "📍";
+        }
+
+        .sidebar-section {
+            margin-bottom: 18px;
+        }
+
+        .sidebar-title {
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+            padding-bottom: 3px;
+            border-bottom: 1px solid rgba(255,255,255,0.4);
+        }
+
+        .skill-item {
+            background: rgba(255,255,255,0.15);
+            padding: 4px 8px;
+            margin-bottom: 5px;
+            border-radius: 12px;
+            font-size: 9px;
+            text-align: center;
+        }
+
+        .permit-item {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 3px 6px;
+            margin: 1px;
+            border-radius: 8px;
+            font-size: 9px;
+            font-weight: bold;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 20px 25px;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #4a90e2;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            padding-bottom: 4px;
+            border-bottom: 2px solid #4a90e2;
+        }
+
+        .objective {
+            font-size: 11px;
+            color: #555;
+            line-height: 1.4;
+            text-align: justify;
+        }
+
+        .experience-item {
+            margin-bottom: 12px;
+            padding-left: 15px;
+            border-left: 2px solid #4a90e2;
+            position: relative;
+        }
+
+        .experience-item::before {
+            content: "";
+            position: absolute;
+            left: -4px;
+            top: 3px;
+            width: 6px;
+            height: 6px;
+            background: #4a90e2;
+            border-radius: 50%;
+        }
+
+        .experience-date {
+            font-weight: bold;
+            color: #ff6b6b;
+            font-size: 9px;
+            text-transform: uppercase;
+        }
+
+        .experience-title {
+            font-weight: bold;
+            font-size: 11px;
+            color: #333;
+            margin: 1px 0;
+        }
+
+        .experience-company {
+            font-size: 10px;
+            color: #7f8c8d;
+            margin-bottom: 2px;
+        }
+
+        .experience-duration {
+            font-size: 8px;
+            background: #e8f4fd;
+            color: #4a90e2;
+            padding: 1px 5px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        .education-item {
+            margin-bottom: 8px;
+            padding: 8px;
+            background: #f0f8ff;
+            border-radius: 5px;
+            border-left: 3px solid #4a90e2;
+        }
+
+        .education-date {
+            font-weight: bold;
+            color: #ff6b6b;
+            font-size: 9px;
+        }
+
+        .education-title {
+            font-weight: bold;
+            color: #333;
+            margin: 2px 0;
+            font-size: 10px;
+        }
+
+        .competences-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .competence-category {
+            background: #f0f8ff;
+            padding: 8px;
+            border-radius: 5px;
+            border-left: 3px solid #4a90e2;
+        }
+
+        .competence-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 6px;
+            font-size: 10px;
+        }
+
+        .competence-list {
+            list-style: none;
+        }
+
+        .competence-list li {
+            font-size: 9px;
+            margin-bottom: 2px;
+            padding-left: 10px;
+            position: relative;
+        }
+
+        .competence-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #4a90e2;
+            font-weight: bold;
+        }
+
+        @media print {
+            .cv-container {
+                box-shadow: none;
+                margin: 0;
+                max-width: 210mm;
+                height: 297mm;
+            }
+            
+            body {
+                background: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <div class="sidebar">
+            <div class="profile-section">
+                <div class="name">Bakari Abidina</div>
+                <div class="age">36 ans</div>
+                <div class="title">Chauffeur PL - Agent Logistique</div>
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-item address">8 rue Tronchet<br>91120 Palaiseau</div>
+                <div class="contact-item phone">06.23.75.45.82</div>
+                <div class="contact-item">Bakari06@live.fr</div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">Permis</div>
+                <div class="permit-item">B</div>
+                <div class="permit-item">C</div>
+                <div class="permit-item">ADR</div>
+                <div class="permit-item">Côtier</div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">Compétences Clés</div>
+                <div class="skill-item">TMS & Progiciels Transport</div>
+                <div class="skill-item">Optimisation Itinéraires</div>
+                <div class="skill-item">KPI Logistiques</div>
+                <div class="skill-item">Gestion Stocks</div>
+                <div class="skill-item">Réglementation Transport</div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">Loisirs</div>
+                <div class="skill-item">Arbitre Football</div>
+                <div class="skill-item">Développement Web</div>
+                <div class="skill-item">Navigation</div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="section">
+                <div class="section-title">Objectifs</div>
+                <div class="objective">
+                    Professionnel expérimenté du transport et de la logistique avec 15 ans d'expérience dans la conduite poids lourd, les livraisons et la gestion événementielle. Je maîtrise les opérations logistiques : planification des tournées, optimisation des itinéraires et réduction des coûts. Je recherche un poste d'agent logistique pour mettre mes compétences terrain et techniques au service d'une entreprise dynamique.
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Expérience Professionnelle</div>
+                
+                <div class="experience-item">
+                    <div class="experience-date">Janvier 2020 - En cours</div>
+                    <div class="experience-title">Chauffeur Poids Lourd</div>
+                    <div class="experience-company">Pomona Wissous</div>
+                    <div class="experience-duration">5 ans</div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-date">Mai 2019</div>
+                    <div class="experience-title">Chauffeur Livreur</div>
+                    <div class="experience-company">Elis Carros</div>
+                    <div class="experience-duration">6 mois</div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-date">Août 2018</div>
+                    <div class="experience-title">Livreur de Presse</div>
+                    <div class="experience-company">Transazuréenne</div>
+                    <div class="experience-duration">6 mois</div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-date">Avril 2017</div>
+                    <div class="experience-title">Livreur Primeurs</div>
+                    <div class="experience-company">Primeurs Niçois</div>
+                    <div class="experience-duration">6 mois</div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-date">Décembre 2016</div>
+                    <div class="experience-title">Chauffeur VTC</div>
+                    <div class="experience-company">Indépendant</div>
+                    <div class="experience-duration">2 ans</div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-date">Juillet 2013</div>
+                    <div class="experience-title">Gestionnaire Salle de Spectacle</div>
+                    <div class="experience-company">Sezamo</div>
+                    <div class="experience-duration">8 mois</div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-date">Septembre 2009</div>
+                    <div class="experience-title">Gestionnaire des Stocks</div>
+                    <div class="experience-company">Laboratoires Xylobell</div>
+                    <div class="experience-duration">3 ans</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Compétences Techniques</div>
+                <div class="competences-grid">
+                    <div class="competence-category">
+                        <div class="competence-title">Gestion & Planification</div>
+                        <ul class="competence-list">
+                            <li>Planification tournées PL/VL</li>
+                            <li>Optimisation itinéraires</li>
+                            <li>Chiffrage tarifaire</li>
+                            <li>Suivi transport international</li>
+                        </ul>
+                    </div>
+                    <div class="competence-category">
+                        <div class="competence-title">Outils & Technologies</div>
+                        <ul class="competence-list">
+                            <li>Progiciels TMS</li>
+                            <li>Solutions EDI</li>
+                            <li>Analyse KPI logistiques</li>
+                            <li>Outils reporting</li>
+                        </ul>
+                    </div>
+                    <div class="competence-category">
+                        <div class="competence-title">Opérations Terrain</div>
+                        <ul class="competence-list">
+                            <li>Conduite PL & VL</li>
+                            <li>Livraisons multi-secteurs</li>
+                            <li>Contrôle opérations quai</li>
+                            <li>Gestion stocks & inventaires</li>
+                        </ul>
+                    </div>
+                    <div class="competence-category">
+                        <div class="competence-title">Relationnel</div>
+                        <ul class="competence-list">
+                            <li>Relation clientèle</li>
+                            <li>Gestion aléas transport</li>
+                            <li>Adaptabilité terrain</li>
+                            <li>Respect réglementation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Formation</div>
+                
+                <div class="education-item">
+                    <div class="education-date">Juin 2025</div>
+                    <div class="education-title">BTS SIO - Solutions Logicielles et Applications Métiers</div>
+                </div>
+
+                <div class="education-item">
+                    <div class="education-date">Juin 2016</div>
+                    <div class="education-title">BTS Transport et Prestations Logistiques - Niveau</div>
+                </div>
+
+                <div class="education-item">
+                    <div class="education-date">Juillet 2009</div>
+                    <div class="education-title">BAC Professionnel Logistique</div>
+                </div>
+
+                <div class="education-item">
+                    <div class="education-date">Juin 2007</div>
+                    <div class="education-title">BEP Logistique et Commercialisation</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
