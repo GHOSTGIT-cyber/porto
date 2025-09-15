@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Bakari Abidina</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.3;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background: linear-gradient(135deg, #87CEEB, #ADD8E6);
+            color: white;
+            padding: 20px 18px;
+        }
+
+        .profile-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .name {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 3px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .age {
+            font-size: 12px;
+            opacity: 0.9;
+            margin-bottom: 8px;
+        }
+
+        .title {
+            background: rgba(255,255,255,0.25);
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .contact-info {
+            margin-bottom: 18px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 6px;
+            font-size: 10px;
+        }
+
+        .contact-item::before {
+            content: "📧";
+            margin-right: 8px;
+            width: 14px;
+        }
+
+        .contact-item.phone::before {
+            content: "📱";
+        }
+
+        .contact-item.address::before {
+            content: "📍";
+        }
+
+        .sidebar-section {
+            margin-bottom: 18px;
+        }
+
+        .sidebar-title {
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+            padding-bottom: 3px;
+            border-bottom: 1px solid rgba(255,255,255,0.4);
+        }
+
+        .skill-item {
+            background: rgba(255,255,255,0.15);
+            padding: 4px 8px;
+            margin-bottom: 5px;
+            border-radius: 12px;
+            font-size: 9px;
+            text-align: center;
+        }
+
+        .permit-item {
+            display: inline-block;
+            background: #FF6B35;
+            color: white;
+            padding: 3px 6px;
+            margin: 1px;
+            border-radius: 8px;
+            font-size: 9px;
+            font-weight: bold;
+        }
+
+        .permit-highlight {
+            background: #32CD32 !important;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(50, 205, 50, 0.7); }
+            70% { box-shadow: 0 0 0 5px rgba(50, 205, 50, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(50, 205, 50, 0); }
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 20px 25px;
+        }
+
+        .section {
+            margin-bottom: 18px;
+        }
+
+        .section-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #4682B4;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+            padding-bottom: 4px;
+            border-bottom: 2px solid #4682B4;
+        }
+
+        .objective {
+            font-size: 11px;
+            color: #555;
+            line-height: 1.4;
+            text-align: justify;
+        }
+
+        .experience-item {
+            margin-bottom: 10px;
+            padding-left: 15px;
+            border-left: 2px solid #87CEEB;
+            position: relative;
+        }
+
+        .experience-item::before {
+            content: "";
+            position: absolute;
+            left: -4px;
+            top: 3px;
+            width: 6px;
+            height: 6px;
+            background: #87CEEB;
+            border-radius: 50%;
+        }
+
+        .experience-highlight {
+            border-left: 2px solid #FF6B35;
+        }
+
+        .experience-highlight::before {
+            background: #FF6B35;
+        }
+
+        .experience-date {
+            font-weight: bold;
+            color: #FF6B35;
+            font-size: 9px;
+            text-transform: uppercase;
+        }
+
+        .experience-title {
+            font-weight: bold;
+            font-size: 11px;
+            color: #333;
+            margin: 1px 0;
+        }
+
+        .experience-company {
+            font-size: 10px;
+            color: #7f8c8d;
+            margin-bottom: 2px;
+        }
+
+        .experience-duration {
+            font-size: 8px;
+            background: #F0F8FF;
+            color: #4682B4;
+            padding: 1px 5px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        .experience-description {
+            font-size: 9px;
+            color: #666;
+            margin-top: 3px;
+            font-style: italic;
+        }
+
+        .education-item {
+            margin-bottom: 8px;
+            padding: 8px;
+            background: #F0F8FF;
+            border-radius: 5px;
+            border-left: 3px solid #87CEEB;
+        }
+
+        .education-date {
+            font-weight: bold;
+            color: #FF6B35;
+            font-size: 9px;
+        }
+
+        .education-title {
+            font-weight: bold;
+            color: #333;
+            margin: 2px 0;
+            font-size: 10px;
+        }
+
+        .competences-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .competence-category {
+            background: #F0F8FF;
+            padding: 8px;
+            border-radius: 5px;
+            border-left: 3px solid #87CEEB;
+        }
+
+        .competence-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 6px;
+            font-size: 10px;
+        }
+
+        .competence-list {
+            list-style: none;
+        }
+
+        .competence-list li {
+            font-size: 9px;
+            margin-bottom: 2px;
+            padding-left: 10px;
+            position: relative;
+        }
+
+        .competence-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #87CEEB;
+            font-weight: bold;
+        }
+
+        .availability-box {
+            background: #32CD32;
+            color: white;
+            padding: 8px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 10px 0;
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+        @media print {
+            .cv-container {
+                box-shadow: none;
+                margin: 0;
+                max-width: 210mm;
+                height: 297mm;
+            }
+            
+            body {
+                background: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <div class="sidebar">
+            <div class="profile-section">
+                <div class="name">Bakari Abidina</div>
+                <div class="age">36 ans</div>
+                <div class="title">Chauffeur Livreur</div>
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-item address">8 rue Tronchet<br>91120 Palaiseau (proche 92)</div>
+                <div class="contact-item phone">06.23.75.45.82</div>
+                <div class="contact-item">Bakari06@live.fr</div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">Permis Valides</div>
+                <div class="permit-item permit-highlight">B ✓</div>
+                <div class="permit-item">C</div>
+                <div class="permit-item">FIMO</div>
+                <div class="permit-item">ADR</div>
+                <div class="permit-item">Côtier</div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">Atouts Livraison</div>
+                <div class="skill-item">15 ans Expérience</div>
+                <div class="skill-item">Véhicules Utilitaires</div>
+                <div class="skill-item">Respect Délais</div>
+                <div class="skill-item">Autonomie Totale</div>
+                <div class="skill-item">Fiabilité Prouvée</div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">Compétences Terrain</div>
+                <div class="skill-item">Chargement Sécurisé</div>
+                <div class="skill-item">Vérification Marchandises</div>
+                <div class="skill-item">Entretien Véhicules</div>
+                <div class="skill-item">Navigation GPS</div>
+                <div class="skill-item">Relation Clientèle</div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">Zone Géographique</div>
+                <div class="skill-item">Île-de-France</div>
+                <div class="skill-item">Hauts-de-Seine (92)</div>
+                <div class="skill-item">Val-de-Marne (94)</div>
+                <div class="skill-item">Essonne (91)</div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="section">
+                <div class="section-title">Profil Professionnel</div>
+                <div class="objective">
+                    Chauffeur Livreur expérimenté avec 15 ans dans le transport et la logistique. Actuellement chauffeur PL chez Pomona (5 ans), spécialisé dans la distribution de marchandises avec respect strict des délais. Parfaite maîtrise des véhicules utilitaires, des techniques de chargement sécurisé et de l'entretien de base. Autonome, fiable et rigoureux, je connais parfaitement la région parisienne et les Hauts-de-Seine. Disponible immédiatement pour un poste CDI.
+                </div>
+            </div>
+
+            <div class="availability-box">
+                ✓ PERMIS B EN PHYSIQUE • DISPONIBLE WEEK-ENDS & JOURS FÉRIÉS
+            </div>
+
+            <div class="section">
+                <div class="section-title">Expérience Professionnelle</div>
+                
+                <div class="experience-item experience-highlight">
+                    <div class="experience-date">Janvier 2020 - En cours</div>
+                    <div class="experience-title">Chauffeur Poids Lourd - Distribution</div>
+                    <div class="experience-company">Pomona Wissous (Distribution alimentaire)</div>
+                    <div class="experience-duration">5 ans</div>
+                    <div class="experience-description">Distribution quotidienne • Respect délais stricts • Chargement/déchargement • Entretien véhicules</div>
+                </div>
+
+                <div class="experience-item experience-highlight">
+                    <div class="experience-date">Mai 2019</div>
+                    <div class="experience-title">Chauffeur Livreur</div>
+                    <div class="experience-company">Elis Carros (Textiles professionnels)</div>
+                    <div class="experience-duration">6 mois</div>
+                    <div class="experience-description">Tournées livraison BtoB • Véhicules utilitaires • Relation clients professionnels</div>
+                </div>
+
+                <div class="experience-item experience-highlight">
+                    <div class="experience-date">Août 2018</div>
+                    <div class="experience-title">Livreur de Presse</div>
+                    <div class="experience-company">Transazuréenne</div>
+                    <div class="experience-duration">6 mois</div>
+                    <div class="experience-description">Livraisons matinales • Respect horaires stricts • Autonomie totale • Secteurs géographiques</div>
+                </div>
+
+                <div class="experience-item experience-highlight">
+                    <div class="experience-date">Avril 2017</div>
+                    <div class="experience-title">Livreur Primeurs</div>
+                    <div class="experience-company">Primeurs Niçois</div>
+                    <div class="experience-duration">6 mois</div>
+                    <div class="experience-description">Livraisons produits frais • Vérification qualité marchandises • Chargement délicat</div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-date">Décembre 2016</div>
+                    <div class="experience-title">Chauffeur VTC</div>
+                    <div class="experience-company">Indépendant</div>
+                    <div class="experience-duration">2 ans</div>
+                    <div class="experience-description">Autonomie complète • Navigation GPS expert • Relation clientèle • Secteur parisien</div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-date">Septembre 2009</div>
+                    <div class="experience-title">Gestionnaire des Stocks</div>
+                    <div class="experience-company">Laboratoires Xylobell</div>
+                    <div class="experience-duration">3 ans</div>
+                    <div class="experience-description">Logistique • Vérification marchandises • Rigueur administrative</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Compétences Spécifiques Livraison</div>
+                <div class="competences-grid">
+                    <div class="competence-category">
+                        <div class="competence-title">Conduite & Véhicules</div>
+                        <ul class="competence-list">
+                            <li>Permis B valide (carte physique)</li>
+                            <li>Véhicules utilitaires 6m³</li>
+                            <li>Conduite sécurisée</li>
+                            <li>Entretien de base (huile, pneus)</li>
+                        </ul>
+                    </div>
+                    <div class="competence-category">
+                        <div class="competence-title">Manutention & Sécurité</div>
+                        <ul class="competence-list">
+                            <li>Chargement/déchargement sécurisé</li>
+                            <li>Vérification intégrité marchandises</li>
+                            <li>Techniques manutention</li>
+                            <li>Respect consignes sécurité</li>
+                        </ul>
+                    </div>
+                    <div class="competence-category">
+                        <div class="competence-title">Organisation & Autonomie</div>
+                        <ul class="competence-list">
+                            <li>Respect délais impératifs</li>
+                            <li>Travail en autonomie totale</li>
+                            <li>Gestion tournées optimisées</li>
+                            <li>Adaptation planning</li>
+                        </ul>
+                    </div>
+                    <div class="competence-category">
+                        <div class="competence-title">Disponibilité & Fiabilité</div>
+                        <ul class="competence-list">
+                            <li>Week-ends et jours fériés OK</li>
+                            <li>Ponctualité irréprochable</li>
+                            <li>Fiabilité prouvée (15 ans)</li>
+                            <li>Adaptabilité horaires</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Formation</div>
+                
+                <div class="education-item">
+                    <div class="education-date">Juin 2025</div>
+                    <div class="education-title">BTS SIO - Solutions Logicielles et Applications Métiers</div>
+                </div>
+
+                <div class="education-item">
+                    <div class="education-date">Juin 2016</div>
+                    <div class="education-title">BTS Transport et Prestations Logistiques</div>
+                </div>
+
+                <div class="education-item">
+                    <div class="education-date">Juillet 2009</div>
+                    <div class="education-title">BAC Professionnel Logistique</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
