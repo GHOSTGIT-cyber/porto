@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Workshop Mobile - Backend Symfony</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.html">
+        <link rel="icon" href="../assets/img/portfolio/favicon.ico" type="image/png">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/fontAwesome.css">
+        <link rel="stylesheet" href="css/light-box.css">
+        <link rel="stylesheet" href="css/templatemo-main123.css">
+        <link rel="shortcut icon" href="../icone.html" type="image/x-icon">
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    </head>
+
+<body>
+
+        <div class="slides">
+          <div class="slide" id="4">
+              <h1>Workshop Mobile – Backend Symfony</h1>
+            <div class="content third-content">
+                <div class="container-fluid">
+                    <div class="col-md-12">
+                        <div class="row">
+
+                            <!-- Section 1 : Architecture backend -->
+                            <div class="first-section">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="left-content">
+                                                <h2>Architecture backend – API REST Symfony</h2>
+                                                <p>
+                                                    Dans le cadre du workshop mobile, j'ai eu la responsabilité de développer
+                                                    le back-end de l'application. L'API a été construite avec <strong>Symfony</strong>
+                                                    et expose des endpoints REST consommés par l'application mobile de l'équipe.
+                                                    L'architecture suit le pattern MVC : les contrôleurs gèrent les routes, les
+                                                    entités Doctrine modélisent la base de données, et les repositories centralisent
+                                                    les requêtes. Chaque ressource (adhérent, coach, séance) dispose de ses propres
+                                                    endpoints CRUD sécurisés, retournant des réponses JSON normalisées grâce au
+                                                    composant Serializer de Symfony.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="right-image">
+                                                <img src="image/coach.png" alt="Architecture backend">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Section 2 : Gestion des adhérents -->
+                            <div class="second-section">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="left-image">
+                                                <img src="image/adherent.png" alt="Gestion des adhérents">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="right-content">
+                                                <h2>Gestion des adhérents</h2>
+                                                <p>
+                                                    L'entité <strong>Adhérent</strong> est au cœur de l'application. Elle stocke
+                                                    les informations personnelles de chaque membre (nom, prénom, email, date de
+                                                    naissance). Le back-end expose des routes permettant de lister, créer, modifier
+                                                    et supprimer des adhérents. La validation des données est assurée par les
+                                                    contraintes Symfony (Assert), garantissant l'intégrité des informations avant
+                                                    toute persistance en base de données via Doctrine ORM. Un système de
+                                                    pagination est également intégré pour optimiser les performances lors de la
+                                                    récupération de grandes listes.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Section 3 : Gestion des séances -->
+                            <div class="third-section">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="left-content">
+                                                <h2>Gestion des séances</h2>
+                                                <p>
+                                                    L'entité <strong>Séance</strong> représente chaque cours ou entraînement planifié.
+                                                    Elle est liée aux entités Coach et Adhérent via des relations Doctrine
+                                                    (ManyToOne / ManyToMany). Les endpoints REST permettent à l'application mobile
+                                                    d'afficher le planning, de s'inscrire à une séance ou d'en consulter les détails
+                                                    (date, heure, lieu, nombre de places disponibles). La logique métier (vérification
+                                                    des places, gestion des conflits d'horaire) est encapsulée dans des services
+                                                    Symfony dédiés, séparant clairement la logique métier des contrôleurs.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="right-image">
+                                                <img src="image/seance.png" alt="Gestion des séances">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Section 4 : Inscription et authentification -->
+                            <div class="four-section">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="left-image">
+                                                <img src="image/inscription.png" alt="Inscription et authentification">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="right-content">
+                                                <h2>Inscription et authentification JWT</h2>
+                                                <p>
+                                                    L'inscription des utilisateurs est gérée côté back-end via un endpoint dédié
+                                                    qui enregistre le compte, hache le mot de passe avec <strong>bcrypt</strong>
+                                                    et retourne un token <strong>JWT</strong> (JSON Web Token) signé. Ce token est
+                                                    ensuite envoyé dans chaque requête de l'application mobile pour authentifier
+                                                    l'utilisateur. Le bundle <strong>LexikJWTAuthenticationBundle</strong> est
+                                                    utilisé pour générer et valider les tokens. Les routes sensibles sont protégées
+                                                    par des pare-feux Symfony configurés dans <code>security.yaml</code>,
+                                                    garantissant que seuls les utilisateurs authentifiés peuvent accéder aux
+                                                    ressources protégées.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Section 5 : Ressources -->
+                            <div class="five-section">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="left-image">
+                                                <img src="image/code.png" alt="Code source">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="right-content-creps">
+                                                <h2>Ressources du projet :</h2>
+                                            </div>
+                                            <div class="btn-acceuil"><a href="https://github.com/Ostronger" target="_blank">CODE SOURCE BACKEND</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+
+
+    <script src="../../ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+    <script src="js/vendor/bootstrap.min.js"></script>
+
+    <script src="js/datepicker.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('.scroll-link').on('click', function(event){
+            event.preventDefault();
+            var sectionID = $(this).attr("data-id");
+            scrollToID('#' + sectionID, 750);
+        });
+        $('.scroll-top').on('click', function(event) {
+            event.preventDefault();
+            $('html, body').animate({scrollTop:0}, 'slow');
+        });
+        $('#nav-toggle').on('click', function (event) {
+            event.preventDefault();
+            $('#main-nav').toggleClass("open");
+        });
+    });
+    function scrollToID(id, speed){
+        var offSet = 0;
+        var targetOffset = $(id).offset().top - offSet;
+        var mainNav = $('#main-nav');
+        $('html,body').animate({scrollTop:targetOffset}, speed);
+        if (mainNav.hasClass("open")) {
+            mainNav.css("height", "1px").removeClass("in").addClass("collapse");
+            mainNav.removeClass("open");
+        }
+    }
+    if (typeof console === "undefined") {
+        console = {
+            log: function() { }
+        };
+    }
+    </script>
+</body>
+
+</html>
