@@ -19,7 +19,7 @@
     .eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#3DD7F5;margin-bottom:14px}
     h1{font-size:clamp(30px,5vw,48px);font-weight:700;margin-bottom:14px}
     .lead{color:#8A90A3;font-size:17px;max-width:48ch;margin:0 auto 46px}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:720px;margin:0 auto}
     .opt{display:flex;flex-direction:column;text-decoration:none;color:inherit;background:#12141C;border:1px solid #222634;border-radius:18px;overflow:hidden;transition:.28s}
     .opt:hover{transform:translateY(-6px);border-color:#7C5CFC;box-shadow:0 28px 60px -30px rgba(124,92,252,.5)}
     .prev{height:140px;position:relative;display:grid;place-items:center;font-family:'Space Grotesk';font-weight:700;font-size:20px}
@@ -43,7 +43,7 @@
     <div class="logo">Ghost<span>.</span>Consulting</div>
     <div class="eyebrow">// 3 styles, 1 portfolio</div>
     <h1>Quelle version préférez-vous ?</h1>
-    <p class="lead">Le même contenu, trois directions visuelles. Cliquez pour explorer — vos retours m'aident à choisir.</p>
+    <p class="lead">Le même contenu, deux directions visuelles. Cliquez pour explorer — vos retours m'aident à choisir.</p>
 
     <div class="grid">
       <a class="opt" href="../clair/">
@@ -63,18 +63,9 @@
           <span class="go">Voir la version sombre →</span>
         </div>
       </a>
-
-      <a class="opt" href="../ancien/">
-        <div class="prev ancien"><span class="badge">C</span>★</div>
-        <div class="body">
-          <h3>Originale (mise à jour)</h3>
-          <p>Mon template animé d'origine, rebrandé et avec les projets à jour.</p>
-          <span class="go">Voir la version originale →</span>
-        </div>
-      </a>
     </div>
 
-    <div class="foot">© <span id="y"></span> Ghost Consulting — Développement web, mobile &amp; SEO</div>
+    <div class="foot">© <span id="y"></span> Ghost Consulting — Développement web, mobile, SEO &amp; GEO</div>
   </div>
   <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
