@@ -15,10 +15,10 @@ Le contact se fait via le **formulaire à étapes** (pas de coordonnées exposé
 |---|---|---|
 | `index.html` | bakabi.fr/ | **page principale = version claire** (copie de `clair/index.html`, avec bouton bascule) |
 | `clair/index.html` | bakabi.fr/clair/ | design clair / premium (identique à l'index racine) |
-| `sombre/index.html` | bakabi.fr/sombre/ | design sombre / tech |
-| `new/index.html` | bakabi.fr/new/ | page de choix (comparer les 2 styles) |
+| `bleu/index.html` | bakabi.fr/bleu/ | design bleu / tech (navy nuancé) |
+| `Projets/*.html` | bakabi.fr/Projets/… | fiches projet détaillées (style clair) |
 
-- `clair` et `sombre` partagent **la même structure HTML** ; seul le CSS (couleurs/typos) diffère.
+- `clair` et `bleu` partagent **la même structure HTML** ; seul le CSS (couleurs/typos) diffère.
   → **Toute modif de contenu doit être faite dans les DEUX.**
   → ⚠️ `index.html` (racine) est une **COPIE de `clair/index.html`** : après avoir modifié `clair`, refaire `cp clair/index.html index.html`.
 - La version « ancien » (template d'origine) a été **supprimée** (jugée trop datée). Les photos restent dans `assets/`.
@@ -27,7 +27,7 @@ Le contact se fait via le **formulaire à étapes** (pas de coordonnées exposé
 ## Ajouter / modifier / décomposer un projet
 Source de vérité du contenu projets : `~/Downloads/portfolio-case-studies.md` et `portfolio-inventory.md` (racine, non déployé).
 
-**Dans `clair/index.html` ET `sombre/index.html`**, section `id="projets"` :
+**Dans `clair/index.html` ET `bleu/index.html`**, section `id="projets"` :
 - Le projet phare **liftfoils.fr** est un bloc `.case` (étude de cas : contexte / `.case-list` / `.case-result` chiffré).
 - Les autres sont des cartes `.proj` dans `.proj-grid`. Pour **ajouter** une carte, copier un bloc `<article class="proj reveal">…</article>` et remplir :
   - vignette : `<div class="thumb tN">` (classes dégradé `t1`..`t9`) + `<b>XX</b>` (initiales) + `<span class="badge">…</span>`
@@ -40,7 +40,7 @@ Le CV n'est **pas** sur le site (le site n'expose aucune identité). Les version
 fichiers **locaux non commités** (orientés : full-stack / WordPress-SEO-GEO / freelance polyvalent).
 
 ## Formulaire de contact
-- `clair` et `sombre` ont un **formulaire à étapes** (`#briefForm`) qui envoie via **Web3Forms**.
+- `clair` et `bleu` ont un **formulaire à étapes** (`#briefForm`) qui envoie via **Web3Forms**.
 - ⚠️ Remplacer la valeur `VOTRE_CLE_WEB3FORMS` (champ `access_key` caché) par une vraie clé
   (gratuite sur web3forms.com — la clé est un UUID lié à un e-mail côté Web3Forms, **l'e-mail n'apparaît pas** dans la page).
 - Sans clé valide, le formulaire affiche le message de succès mais n'envoie rien.
