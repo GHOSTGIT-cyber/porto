@@ -52,6 +52,7 @@
       mask-image:radial-gradient(ellipse 75% 60% at 75% 5%,#000 25%,transparent 75%)}
     .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
     .hero-canvas{position:absolute;inset:0;z-index:0;pointer-events:none}
+    .orb-canvas{position:fixed;inset:0;z-index:-1;pointer-events:none}
     .hero .wrap{position:relative;z-index:1}
     .hero::before{opacity:.3}
     .hero .tag{display:inline-flex;gap:8px;align-items:center;background:var(--surface);border:1px solid var(--line);padding:8px 16px;border-radius:999px;font-size:12.5px;font-weight:500;color:var(--muted);margin-bottom:26px;font-family:'JetBrains Mono',monospace}
@@ -289,6 +290,7 @@
   </header>
 
   <!-- HERO -->
+  <div class="orb-canvas" id="orb3d"></div>
   <section class="hero" id="home">
     <div class="hero-canvas" id="hero3d"></div>
     <div class="wrap hero-grid">
@@ -753,9 +755,7 @@
     geo.setAttribute('position', new THREE.BufferAttribute(pos,3));
     var pts=new THREE.Points(geo, new THREE.PointsMaterial({color:0x1d4ed8, size:2.4, transparent:true, opacity:.8}));
     scene.add(pts);
-    // icosaèdre filaire (côté fenêtre de code)
-    var ico=new THREE.Mesh(new THREE.IcosahedronGeometry(130,1), new THREE.MeshBasicMaterial({color:0x38bdf8, wireframe:true, transparent:true, opacity:.35}));
-    ico.position.set(150,10,40); scene.add(ico);
+    // (la boule filaire est sur un canvas plein page, voir #orb3d ci-dessous)
     var mx=0,my=0;
     window.addEventListener('mousemove',function(e){ mx=e.clientX/window.innerWidth-0.5; my=e.clientY/window.innerHeight-0.5; });
     function resize(){ w=host.clientWidth; h=host.clientHeight; if(!w||!h) return; camera.aspect=w/h; camera.updateProjectionMatrix(); renderer.setSize(w,h); }
@@ -763,11 +763,35 @@
     (function loop(){
       requestAnimationFrame(loop);
       pts.rotation.y+=0.0008; pts.rotation.x+=0.0003;
-      ico.rotation.y+=0.005; ico.rotation.x+=0.0025;
       camera.position.x+=(mx*90-camera.position.x)*0.05;
       camera.position.y+=(-my*60-camera.position.y)*0.05;
       camera.lookAt(scene.position);
       renderer.render(scene,camera);
+    })();
+  })();
+
+  // Boule filaire qui descend le long de la page (canvas fixe plein écran, léger)
+  (function(){
+    if(!window.THREE) return;
+    var host=document.getElementById('orb3d'); if(!host) return;
+    var w=window.innerWidth,h=window.innerHeight;
+    var sc=new THREE.Scene();
+    var cam=new THREE.PerspectiveCamera(60,w/h,1,2000); cam.position.z=520;
+    var rn=new THREE.WebGLRenderer({alpha:true,antialias:true});
+    rn.setPixelRatio(Math.min(window.devicePixelRatio,2)); rn.setSize(w,h);
+    host.appendChild(rn.domElement);
+    var orb=new THREE.Mesh(new THREE.IcosahedronGeometry(150,1), new THREE.MeshBasicMaterial({color:0x1d4ed8,wireframe:true,transparent:true,opacity:.42}));
+    sc.add(orb);
+    function rs(){w=window.innerWidth;h=window.innerHeight;cam.aspect=w/h;cam.updateProjectionMatrix();rn.setSize(w,h);}
+    window.addEventListener('resize',rs);
+    (function loop(){
+      requestAnimationFrame(loop);
+      var max=document.body.scrollHeight-window.innerHeight;
+      var frac=max>0?Math.min(Math.max(window.scrollY/max,0),1):0;
+      orb.position.y=(0.5-frac)*640;   // descend quand on scrolle
+      orb.position.x=130;
+      orb.rotation.y+=0.005; orb.rotation.x+=0.0026;
+      rn.render(sc,cam);
     })();
   })();
   </script>
