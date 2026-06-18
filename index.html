@@ -3,6 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="../assets/img/portfolio/favicon.ico">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Ghost Consulting — Dev web, mobile, SEO &amp; GEO" />
+  <meta property="og:description" content="Studio freelance : applications web &amp; mobiles, sites WordPress, SEO &amp; GEO." />
+  <meta property="og:image" content="https://bakabi.fr/assets/img/bg/hero.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
   <title>Ghost Consulting — Développement web, mobile, SEO &amp; GEO</title>
   <meta name="description" content="Ghost Consulting — studio freelance de développement web & mobile, SEO & GEO. Applications sur-mesure (Next.js, Symfony, React Native), sites WordPress et SEO/GEO technique." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -122,15 +128,18 @@
     .proj .thumb{height:170px;display:grid;place-items:center;position:relative;color:#fff}
     .proj .thumb b{font-family:'Plus Jakarta Sans';font-size:34px;font-weight:800;opacity:.95;z-index:1}
     .proj .thumb .badge{position:absolute;top:14px;left:14px;font-size:11px;font-weight:700;background:rgba(255,255,255,.22);padding:5px 10px;border-radius:999px;backdrop-filter:blur(4px)}
-    .t1{background:linear-gradient(135deg,#1e3a8a,#0ea5e9)}
-    .t2{background:linear-gradient(135deg,#0f766e,#22c55e)}
-    .t3{background:linear-gradient(135deg,#7c3aed,#db2777)}
-    .t4{background:linear-gradient(135deg,#ea580c,#f59e0b)}
-    .t5{background:linear-gradient(135deg,#0891b2,#3b82f6)}
-    .t6{background:linear-gradient(135deg,#be123c,#fb7185)}
-    .t7{background:linear-gradient(135deg,#0e7490,#0ea5e9)}
-    .t8{background:linear-gradient(135deg,#6d28d9,#f59e0b)}
-    .t9{background:linear-gradient(135deg,#15803d,#facc15)}
+    .t1{background:#1e3a8a url(../assets/img/bg/hero2.jpg) center/cover}
+    .t2{background:#0f766e url(../assets/img/bg/hero3.jpg) center/cover}
+    .t3{background:#7c3aed url(../assets/img/bg/login.png) center/cover}
+    .t4{background:#ea580c url(../assets/img/bg/logo_ohe.png) center/cover}
+    .t5{background:#0891b2 url(../assets/img/bg/hero.jpg) center/cover}
+    .t6{background:#be123c url(../assets/img/bg/appli_mobile.png) center/cover}
+    .t7{background:#0e7490 url(../assets/img/bg/image.jpg) center/cover}
+    .proj .thumb b{display:none!important}
+    .proj .thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.42))}
+    .proj .thumb .badge{z-index:1}
+    .case-media::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.42)}
+    .case-media b,.case-media .case-tag{position:relative;z-index:1}
     .proj .body{padding:24px;flex:1;display:flex;flex-direction:column}
     .proj .chips{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:13px}
     .proj .chip{font-size:11px;font-weight:600;color:var(--accent);background:var(--accent-soft);padding:5px 11px;border-radius:999px}
@@ -442,7 +451,7 @@
         </article>
 
         <article class="proj reveal">
-          <div class="thumb t7"><span class="badge">10+ sites · multilingue</span><b>WP</b></div>
+          <div class="thumb t4"><span class="badge">10+ sites · multilingue</span><b>WP</b></div>
           <div class="body">
             <div class="chips"><span class="chip">WordPress</span><span class="chip">Multi-sites</span><span class="chip">FR / EN</span></div>
             <h3>Réseau de sites eFoil</h3>

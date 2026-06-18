@@ -3,6 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="../assets/img/portfolio/favicon.ico">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Ghost Consulting — Dev web, mobile, SEO &amp; GEO" />
+  <meta property="og:description" content="Studio freelance : applications web &amp; mobiles, sites WordPress, SEO &amp; GEO." />
+  <meta property="og:image" content="https://bakabi.fr/assets/img/bg/hero.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
   <title>Ghost Consulting — Développement web, mobile, SEO &amp; GEO</title>
   <meta name="description" content="Ghost Consulting — studio freelance de développement web & mobile, SEO & GEO. Applications sur-mesure (Next.js, Symfony, React Native), sites WordPress et SEO/GEO technique." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,8 +16,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#081325;--surface:#0E1D38;--surface-2:#16294A;--ink:#E7EEFB;--muted:#90A4C6;--line:#1E335C;
-      --accent:#3B82F6;--accent-2:#38BDF8;--glow:rgba(59,130,246,.4);--radius:16px;--maxw:1140px;
+      --bg:#0B0F16;--surface:#131925;--surface-2:#1B2230;--ink:#E8ECF3;--muted:#97A1B2;--line:#232C3B;
+      --accent:#3B82F6;--accent-2:#38BDF8;--glow:rgba(59,130,246,.22);--radius:16px;--maxw:1140px;
     }
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
@@ -49,8 +55,8 @@
     .hero p.lead{font-size:clamp(16px,1.5vw,18px);color:var(--muted);max-width:52ch;margin:24px 0 32px}
 
     /* CODE WINDOW (hero tech) */
-    .code-window{background:#071226;border:1px solid var(--line);border-radius:14px;box-shadow:0 30px 70px -30px #000,0 0 0 1px rgba(59,130,246,.1);overflow:hidden;font-family:'JetBrains Mono',monospace;font-size:13.5px;line-height:1.95}
-    .cw-bar{display:flex;align-items:center;gap:8px;padding:13px 16px;background:#0C1A33;border-bottom:1px solid var(--line)}
+    .code-window{background:#0B1119;border:1px solid var(--line);border-radius:14px;box-shadow:0 30px 70px -30px #000,0 0 0 1px rgba(59,130,246,.1);overflow:hidden;font-family:'JetBrains Mono',monospace;font-size:13.5px;line-height:1.95}
+    .cw-bar{display:flex;align-items:center;gap:8px;padding:13px 16px;background:#11161D;border-bottom:1px solid var(--line)}
     .cw-bar i{width:12px;height:12px;border-radius:50%;display:block}
     .cw-bar .r{background:#ff5f57}.cw-bar .y{background:#febc2e}.cw-bar .g{background:#28c840}
     .cw-bar em{margin-left:8px;color:var(--muted);font-size:12px;font-style:normal}
@@ -113,15 +119,18 @@
     .proj .thumb{height:160px;display:grid;place-items:center;position:relative}
     .proj .thumb b{font-family:'Space Grotesk';font-size:34px;font-weight:700;color:#fff;z-index:1;mix-blend-mode:overlay}
     .proj .thumb .badge{position:absolute;top:14px;left:14px;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;background:rgba(0,0,0,.35);color:#fff;padding:5px 10px;border-radius:8px;backdrop-filter:blur(4px)}
-    .t1{background:linear-gradient(135deg,#1e3a8a,#0ea5e9)}
-    .t2{background:linear-gradient(135deg,#0f766e,#22c55e)}
-    .t3{background:linear-gradient(135deg,#7c3aed,#db2777)}
-    .t4{background:linear-gradient(135deg,#ea580c,#f59e0b)}
-    .t5{background:linear-gradient(135deg,#0891b2,#3b82f6)}
-    .t6{background:linear-gradient(135deg,#be123c,#fb7185)}
-    .t7{background:linear-gradient(135deg,#0e7490,#0ea5e9)}
-    .t8{background:linear-gradient(135deg,#6d28d9,#f59e0b)}
-    .t9{background:linear-gradient(135deg,#15803d,#facc15)}
+    .t1{background:#1e3a8a url(../assets/img/bg/hero2.jpg) center/cover}
+    .t2{background:#0f766e url(../assets/img/bg/hero3.jpg) center/cover}
+    .t3{background:#7c3aed url(../assets/img/bg/login.png) center/cover}
+    .t4{background:#ea580c url(../assets/img/bg/logo_ohe.png) center/cover}
+    .t5{background:#0891b2 url(../assets/img/bg/hero.jpg) center/cover}
+    .t6{background:#be123c url(../assets/img/bg/appli_mobile.png) center/cover}
+    .t7{background:#0e7490 url(../assets/img/bg/image.jpg) center/cover}
+    .proj .thumb b{display:none!important}
+    .proj .thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.1),rgba(0,0,0,.45))}
+    .proj .thumb .badge{z-index:1}
+    .case-media::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.45)}
+    .case-media b,.case-media .case-tag{position:relative;z-index:1}
     .proj .body{padding:24px;flex:1;display:flex;flex-direction:column}
     .proj .chips{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:13px}
     .proj .chip{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;color:var(--accent-2);background:rgba(61,215,245,.08);border:1px solid rgba(61,215,245,.18);padding:4px 10px;border-radius:7px}
@@ -421,7 +430,7 @@
         </article>
 
         <article class="proj reveal">
-          <div class="thumb t7"><span class="badge">10+ sites · multilingue</span><b>WP</b></div>
+          <div class="thumb t4"><span class="badge">10+ sites · multilingue</span><b>WP</b></div>
           <div class="body">
             <div class="chips"><span class="chip">WordPress</span><span class="chip">Multi-sites</span><span class="chip">FR / EN</span></div>
             <h3>Réseau de sites eFoil</h3>
