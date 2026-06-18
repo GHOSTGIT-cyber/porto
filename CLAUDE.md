@@ -13,14 +13,14 @@ Le contact se fait via le **formulaire à étapes** (pas de coordonnées exposé
 ## Structure (URLs propres en sous-dossiers)
 | Fichier | URL | Rôle |
 |---|---|---|
-| `index.html` | bakabi.fr/ | **page principale = version claire** (copie de `clair/index.html`, avec bouton bascule) |
-| `clair/index.html` | bakabi.fr/clair/ | design clair / premium (identique à l'index racine) |
-| `bleu/index.html` | bakabi.fr/bleu/ | design bleu / tech (navy nuancé) |
+| `index.html` | bakabi.fr/ | **page principale = version BLEUE** (copie de `bleu/index.html`, avec bouton bascule) |
+| `bleu/index.html` | bakabi.fr/bleu/ | **version principale** : bleu clair, particules Three.js (hero) + boule, glass bleuté |
+| `clair/index.html` | bakabi.fr/clair/ | design clair / premium (crème + accent orange) |
 | `Projets/*.html` | bakabi.fr/Projets/… | fiches projet détaillées (style clair) |
 
 - `clair` et `bleu` partagent **la même structure HTML** ; seul le CSS (couleurs/typos) diffère.
   → **Toute modif de contenu doit être faite dans les DEUX.**
-  → ⚠️ `index.html` (racine) est une **COPIE de `clair/index.html`** : après avoir modifié `clair`, refaire `cp clair/index.html index.html`.
+  → ⚠️ `index.html` (racine) est une **COPIE de `bleu/index.html`** (version principale) : après avoir modifié `bleu`, refaire `cp bleu/index.html index.html`.
 - La version « ancien » (template d'origine) a été **supprimée** (jugée trop datée). Les photos restent dans `assets/`.
 - Liens internes en relatif `../` (ex : `../Projets/...`). Ne pas mettre de chemins absolus `/...`.
 

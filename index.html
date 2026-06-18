@@ -16,12 +16,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#F7F4EF;--surface:#FFFFFF;--ink:#141312;--muted:#6A655E;--line:#E6E0D7;
-      --accent:#FF4D2E;--accent-soft:#FFE9E3;--radius:18px;--shadow:0 18px 50px -24px rgba(20,19,18,.25);--maxw:1140px;
+      --bg:transparent;--surface:rgba(216,230,250,.72);--ink:#0E1F3D;--muted:#3C4F72;--line:rgba(17,42,92,.16);
+      --accent:#1D4ED8;--accent-2:#38BDF8;--accent-soft:rgba(37,99,235,.14);--radius:18px;--shadow:0 22px 55px -26px rgba(15,40,95,.4);--maxw:1140px;
     }
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
-    body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+    body{font-family:'Inter',system-ui,sans-serif;background:linear-gradient(160deg,#d6e6fb 0%,#9bbef0 48%,#7ea8e6 100%) fixed;color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
     h1,h2,h3,h4,.display{font-family:'Plus Jakarta Sans',sans-serif;line-height:1.08;letter-spacing:-.02em}
     a{color:inherit;text-decoration:none}
     .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
@@ -33,7 +33,7 @@
     .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
     .btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
 
-    header{position:sticky;top:0;z-index:50;background:rgba(247,244,239,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    header{position:sticky;top:0;z-index:50;background:rgba(215,230,251,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
     .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
     .logo{font-family:'Plus Jakarta Sans';font-weight:800;font-size:19px;letter-spacing:-.02em}
     .logo span{color:var(--accent)}
@@ -51,6 +51,9 @@
       -webkit-mask-image:radial-gradient(ellipse 75% 60% at 75% 5%,#000 25%,transparent 75%);
       mask-image:radial-gradient(ellipse 75% 60% at 75% 5%,#000 25%,transparent 75%)}
     .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+    .hero-canvas{position:absolute;inset:0;z-index:0;pointer-events:none}
+    .hero .wrap{position:relative;z-index:1}
+    .hero::before{opacity:.3}
     .hero .tag{display:inline-flex;gap:8px;align-items:center;background:var(--surface);border:1px solid var(--line);padding:8px 16px;border-radius:999px;font-size:12.5px;font-weight:500;color:var(--muted);margin-bottom:26px;font-family:'JetBrains Mono',monospace}
     .dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.18)}
     .hero h1{font-size:clamp(36px,4.4vw,58px);font-weight:800}
@@ -287,6 +290,7 @@
 
   <!-- HERO -->
   <section class="hero" id="home">
+    <div class="hero-canvas" id="hero3d"></div>
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <span class="tag reveal"><span class="dot"></span> ~/dispo · freelance · Île-de-France &amp; à distance</span>
@@ -683,7 +687,7 @@
     </div>
   </footer>
 
-  <a href="../bleu/" class="vswitch">🔵 Voir la version bleue</a>
+  <a href="../clair/" class="vswitch">☀️ Voir la version claire</a>
 
   <script>
     const burger=document.getElementById('burger'),menu=document.getElementById('menu');
@@ -726,6 +730,46 @@
       });
       show();
     })();
+  </script>
+
+  <!-- Petit effet Three.js dans le hero (derrière la fenêtre de code) -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+  <script>
+  (function(){
+    if(!window.THREE) return;
+    var host=document.getElementById('hero3d'); if(!host) return;
+    var w=host.clientWidth||window.innerWidth, h=host.clientHeight||600;
+    var scene=new THREE.Scene();
+    var camera=new THREE.PerspectiveCamera(60, w/h, 1, 2000);
+    camera.position.z=460;
+    var renderer=new THREE.WebGLRenderer({alpha:true, antialias:true});
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+    renderer.setSize(w,h);
+    host.appendChild(renderer.domElement);
+    // champ de particules bleues
+    var N=1000, pos=new Float32Array(N*3);
+    for(var i=0;i<N*3;i++){ pos[i]=(Math.random()-0.5)*850; }
+    var geo=new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.BufferAttribute(pos,3));
+    var pts=new THREE.Points(geo, new THREE.PointsMaterial({color:0x1d4ed8, size:2.4, transparent:true, opacity:.8}));
+    scene.add(pts);
+    // icosaèdre filaire (côté fenêtre de code)
+    var ico=new THREE.Mesh(new THREE.IcosahedronGeometry(130,1), new THREE.MeshBasicMaterial({color:0x38bdf8, wireframe:true, transparent:true, opacity:.35}));
+    ico.position.set(150,10,40); scene.add(ico);
+    var mx=0,my=0;
+    window.addEventListener('mousemove',function(e){ mx=e.clientX/window.innerWidth-0.5; my=e.clientY/window.innerHeight-0.5; });
+    function resize(){ w=host.clientWidth; h=host.clientHeight; if(!w||!h) return; camera.aspect=w/h; camera.updateProjectionMatrix(); renderer.setSize(w,h); }
+    window.addEventListener('resize',resize);
+    (function loop(){
+      requestAnimationFrame(loop);
+      pts.rotation.y+=0.0008; pts.rotation.x+=0.0003;
+      ico.rotation.y+=0.005; ico.rotation.x+=0.0025;
+      camera.position.x+=(mx*90-camera.position.x)*0.05;
+      camera.position.y+=(-my*60-camera.position.y)*0.05;
+      camera.lookAt(scene.position);
+      renderer.render(scene,camera);
+    })();
+  })();
   </script>
 </body>
 </html>
