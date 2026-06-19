@@ -1,0 +1,20 @@
+# Ghost Consulting
+
+> Développeur web & mobile freelance (Île-de-France + 100% à distance en France) : Next.js, Symfony, React Native ; reprise/réparation de WordPress ; SEO/GEO. +27% de clics organiques prouvé sur un projet (liftfoils).
+
+## Services
+- Reprise / réparation WordPress : https://bakabi.fr/reprise-wordpress.html
+- Applications web sur-mesure (Next.js, Symfony) : https://bakabi.fr/
+- Applications mobiles (React Native) : https://bakabi.fr/
+- SEO & GEO : https://bakabi.fr/
+
+## Réalisations
+- Liftfoils — refonte WordPress & SEO (+27%) : https://bakabi.fr/Projets/liftfoils.html
+- QualityYacht — plateforme Next.js (API ~1 500 yachts) : https://bakabi.fr/Projets/qualityacht.html
+- TrackShip — suivi maritime temps réel : https://bakabi.fr/Projets/trackship.html
+
+## Comparatif
+- Freelance ou agence : https://bakabi.fr/blog/freelance-ou-agence.html
+
+## Contact
+- Formulaire de devis : https://bakabi.fr/ (section Contact)

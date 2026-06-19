@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="../assets/img/portfolio/favicon.ico">
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Freelance ou agence web : comment choisir (2026) | Ghost Consulting" />
+  <meta property="og:description" content="Freelance ou agence pour votre site ? Comparatif honnête : coût, délais, réactivité, suivi. Les vrais critères pour choisir, par un développeur freelance qui livre en production." />
+  <meta property="og:image" content="https://bakabi.fr/assets/img/bg/hero.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>Freelance ou agence web : comment choisir (2026) | Ghost Consulting</title>
+  <meta name="description" content="Freelance ou agence pour votre site ? Comparatif honnête : coût, délais, réactivité, suivi. Les vrais critères pour choisir, par un développeur freelance qui livre en production." />
+  <link rel="canonical" href="https://bakabi.fr/blog/freelance-ou-agence.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:transparent;--surface:rgba(216,230,250,.72);--ink:#0E1F3D;--muted:#3C4F72;--line:rgba(17,42,92,.16);
+      --accent:#1D4ED8;--accent-2:#38BDF8;--accent-soft:rgba(37,99,235,.14);--radius:18px;--shadow:0 22px 55px -26px rgba(15,40,95,.4);--maxw:1140px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',system-ui,sans-serif;background:linear-gradient(160deg,#d6e6fb 0%,#9bbef0 48%,#7ea8e6 100%) fixed;color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+    h1,h2,h3,h4,.display{font-family:'Plus Jakarta Sans',sans-serif;line-height:1.08;letter-spacing:-.02em}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+    .eyebrow{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;display:inline-flex;align-items:center;gap:8px}
+    .eyebrow::before{content:"";width:26px;height:2px;background:var(--accent);display:inline-block}
+    .btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:15px;padding:14px 26px;border-radius:999px;transition:.25s ease;border:1.5px solid transparent;cursor:pointer}
+    .btn-primary{background:var(--ink);color:#fff}
+    .btn-primary:hover{background:var(--accent);transform:translateY(-2px)}
+    .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+    .btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
+
+    header{position:sticky;top:0;z-index:50;background:rgba(215,230,251,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+    .logo{font-family:'Plus Jakarta Sans';font-weight:800;font-size:19px;letter-spacing:-.02em}
+    .logo span{color:var(--accent)}
+    .nav-links{display:flex;gap:28px;align-items:center}
+    .nav-links a{font-size:15px;color:var(--muted);font-weight:500;transition:.2s}
+    .nav-links a:hover{color:var(--ink)}
+    .nav-cta{padding:10px 20px;border-radius:999px;background:var(--ink);color:#fff!important;font-weight:600}
+    .nav-cta:hover{background:var(--accent)}
+    .burger{display:none;background:none;border:none;font-size:26px;cursor:pointer}
+
+    .hero{padding:72px 0 64px;position:relative;overflow:hidden}
+    .hero::before{content:"";position:absolute;inset:0;z-index:-1;
+      background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+      background-size:46px 46px;opacity:.55;
+      -webkit-mask-image:radial-gradient(ellipse 75% 60% at 75% 5%,#000 25%,transparent 75%);
+      mask-image:radial-gradient(ellipse 75% 60% at 75% 5%,#000 25%,transparent 75%)}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+    .hero-canvas{position:absolute;inset:0;z-index:0;pointer-events:none}
+    .orb-canvas{position:fixed;inset:0;z-index:-1;pointer-events:none}
+    .hero .wrap{position:relative;z-index:1}
+    .hero::before{opacity:.3}
+    .hero .tag{display:inline-flex;gap:8px;align-items:center;background:var(--surface);border:1px solid var(--line);padding:8px 16px;border-radius:999px;font-size:12.5px;font-weight:500;color:var(--muted);margin-bottom:26px;font-family:'JetBrains Mono',monospace}
+    .dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.18)}
+    .hero h1{font-size:clamp(36px,4.4vw,58px);font-weight:800}
+    .hero h1 em{font-style:normal;color:var(--accent)}
+    .hero p.lead{font-size:clamp(16px,1.5vw,18px);color:var(--muted);max-width:52ch;margin:24px 0 32px}
+    .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+    .hero-meta{display:flex;gap:28px;margin-top:42px;flex-wrap:wrap}
+    .hero-meta div span{display:block;font-size:13px;color:var(--muted);letter-spacing:.04em}
+    .hero-meta div strong{font-family:'Plus Jakarta Sans';font-size:24px;font-weight:800}
+
+    /* CODE WINDOW (hero tech) */
+    .code-window{background:#0E1117;border:1px solid #20262F;border-radius:14px;box-shadow:0 34px 80px -34px rgba(20,19,18,.5);overflow:hidden;font-family:'JetBrains Mono',monospace;font-size:13.5px;line-height:1.95}
+    .cw-bar{display:flex;align-items:center;gap:8px;padding:13px 16px;background:#11161D;border-bottom:1px solid #20262F}
+    .cw-bar i{width:12px;height:12px;border-radius:50%;display:block}
+    .cw-bar .r{background:#ff5f57}.cw-bar .y{background:#febc2e}.cw-bar .g{background:#28c840}
+    .cw-bar em{margin-left:8px;color:#6b7280;font-size:12px;font-style:normal}
+    .cw-body{padding:20px 22px;color:#c9d1d9;white-space:pre;overflow-x:auto;margin:0}
+    .cw-body .k{color:#ff7b72}
+    .cw-body .v{color:#a5d6ff}
+    .cw-body .p{color:#7ee787}
+    .cw-body .n{color:#79c0ff}
+    .cw-body .c{color:#6b7280}
+    .cw-body .fn{color:#d2a8ff}
+    .caret{display:inline-block;width:8px;height:15px;background:var(--accent);vertical-align:-2px;animation:blink 1.1s steps(1) infinite}
+    @keyframes blink{50%{opacity:0}}
+
+    .stack{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0;background:var(--surface)}
+    .stack .wrap{display:flex;align-items:center;gap:34px;flex-wrap:wrap;justify-content:center}
+    .stack span{font-weight:600;color:var(--muted);font-size:15px;opacity:.85}
+    .stack .label{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--accent);font-weight:700}
+
+    section.block{padding:90px 0}
+    .head{max-width:660px;margin-bottom:54px}
+    .head h2{font-size:clamp(30px,4vw,46px);font-weight:800;margin-top:6px}
+    .head p{color:var(--muted);margin-top:16px;font-size:17px}
+
+    .why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:30px}
+    .card .ico{width:48px;height:48px;border-radius:12px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-size:22px;margin-bottom:18px}
+    .card h3{font-size:20px;font-weight:700;margin-bottom:8px}
+    .card p{color:var(--muted);font-size:15px}
+
+    .compare{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:30px}
+    .compare .col{border-radius:var(--radius);padding:30px;border:1px solid var(--line)}
+    .compare .me{background:var(--ink);color:#fff;border-color:var(--ink)}
+    .compare .me h4,.compare .other h4{font-size:18px;font-weight:700;margin-bottom:18px;font-family:'Plus Jakarta Sans'}
+    .compare .other{background:var(--surface)}
+    .compare ul{list-style:none;display:flex;flex-direction:column;gap:13px}
+    .compare li{display:flex;gap:12px;font-size:15px;align-items:flex-start}
+    .compare .me li{color:#EDE9E2}
+    .compare .other li{color:var(--muted)}
+    .tick{flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:700;margin-top:1px}
+    .tick.yes{background:var(--accent);color:#fff}
+    .tick.no{background:#EFE9E1;color:#B9B1A6}
+
+    /* CASE STUDY (featured) */
+    .case{display:grid;grid-template-columns:.8fr 1.2fr;background:var(--surface);border:1px solid var(--line);border-radius:22px;overflow:hidden;margin-bottom:28px;box-shadow:var(--shadow)}
+    .case-media{position:relative;min-height:300px;display:grid;place-items:center;color:#fff;padding:30px;text-align:center}
+    .case-media b{font-family:'Plus Jakarta Sans';font-size:30px;font-weight:800}
+    .case-tag{position:absolute;top:18px;left:18px;font-size:12px;font-weight:700;background:rgba(255,255,255,.22);padding:6px 12px;border-radius:999px;backdrop-filter:blur(4px)}
+    .case-body{padding:38px}
+    .case-body .chips{font-size:12px;font-weight:600;color:var(--accent);letter-spacing:.02em;margin-bottom:12px}
+    .case-body h3{font-size:25px;font-weight:800;margin-bottom:12px}
+    .case-ctx{color:var(--muted);font-size:15px;margin-bottom:16px}
+    .case-list{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:20px}
+    .case-list li{position:relative;padding-left:22px;font-size:14.5px;color:var(--ink)}
+    .case-list li::before{content:"→";position:absolute;left:0;color:var(--accent);font-weight:700}
+    .case-list code{font-family:'JetBrains Mono',monospace;font-size:13px;background:var(--bg);padding:1px 6px;border-radius:5px}
+    .case-list em{font-style:italic}
+    .case-result{background:var(--accent-soft);color:var(--ink);border-radius:12px;padding:14px 18px;font-size:15px;margin-bottom:18px;display:flex;align-items:center;gap:4px}
+    .case-result strong{font-family:'Plus Jakarta Sans';font-size:28px;font-weight:800;color:var(--accent);margin-right:8px}
+    .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .proj{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.3s;display:flex;flex-direction:column}
+    .proj:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+    .proj .thumb{height:170px;display:grid;place-items:center;position:relative;color:#fff}
+    .proj .thumb b{font-family:'Plus Jakarta Sans';font-size:34px;font-weight:800;opacity:.95;z-index:1}
+    .proj .thumb .badge{position:absolute;top:14px;left:14px;font-size:11px;font-weight:700;background:rgba(255,255,255,.22);padding:5px 10px;border-radius:999px;backdrop-filter:blur(4px)}
+    .t1{background:#1e3a8a url(../assets/img/bg/hero2.jpg) center/cover}
+    .t2{background:#0f766e url(../assets/img/bg/hero3.jpg) center/cover}
+    .t3{background:#7c3aed url(../assets/img/bg/login.png) center/cover}
+    .t4{background:#ea580c url(../assets/img/bg/logo_ohe.png) center/cover}
+    .t5{background:#0891b2 url(../assets/img/bg/hero.jpg) center/cover}
+    .t6{background:#be123c url(../assets/img/bg/appli_mobile.png) center/cover}
+    .t7{background:#0e7490 url(../assets/img/bg/image.jpg) center/cover}
+    .proj .thumb b{display:none!important}
+    .proj .thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.42))}
+    .proj .thumb .badge{z-index:1}
+    .case-media::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.42)}
+    .case-media b,.case-media .case-tag{position:relative;z-index:1}
+    .proj .body{padding:24px;flex:1;display:flex;flex-direction:column}
+    .proj .chips{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:13px}
+    .proj .chip{font-size:11px;font-weight:600;color:var(--accent);background:var(--accent-soft);padding:5px 11px;border-radius:999px}
+    .proj h3{font-size:19px;font-weight:700;margin-bottom:8px}
+    .proj p{color:var(--muted);font-size:14px;flex:1}
+    .proj a.link{margin-top:18px;font-weight:600;color:var(--ink);display:inline-flex;gap:8px;align-items:center;font-size:14px}
+    .proj a.link:hover{color:var(--accent);gap:12px}
+
+    .tl-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+    .tl h3{font-size:22px;font-weight:700;margin-bottom:26px}
+    .tl ul{list-style:none;position:relative;padding-left:26px}
+    .tl ul::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:2px;background:var(--line)}
+    .tl li{position:relative;padding-bottom:28px}
+    .tl li::before{content:"";position:absolute;left:-25px;top:5px;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--bg)}
+    .tl .when{font-size:13px;font-weight:600;color:var(--accent);letter-spacing:.03em}
+    .tl h4{font-size:17px;font-weight:700;margin:4px 0 4px}
+    .tl p{color:var(--muted);font-size:14px}
+
+    /* FORMULES */
+    .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:start}
+    .price{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:32px;display:flex;flex-direction:column;position:relative}
+    .price.featured{background:var(--ink);color:#fff;border-color:var(--ink);transform:scale(1.03)}
+    .price .pop{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:12px;font-weight:700;padding:6px 16px;border-radius:999px}
+    .price h3{font-size:21px;font-weight:700;margin-bottom:6px}
+    .price .sub{font-size:14px;color:var(--muted);margin-bottom:20px}
+    .price.featured .sub{color:#C9C3BA}
+    .price .amount{font-family:'Plus Jakarta Sans';font-size:38px;font-weight:800;margin-bottom:4px}
+    .price .amount small{font-size:15px;font-weight:600;color:var(--muted)}
+    .price.featured .amount small{color:#C9C3BA}
+    .price ul{list-style:none;margin:22px 0;display:flex;flex-direction:column;gap:12px;flex:1}
+    .price li{display:flex;gap:10px;font-size:14px;align-items:flex-start}
+    .price li::before{content:"✓";color:var(--accent);font-weight:800;flex:none}
+    .price .btn{justify-content:center;width:100%}
+    .price.featured .btn-primary{background:var(--accent)}
+    .price.featured .btn-primary:hover{background:#fff;color:var(--ink)}
+
+    /* WORDPRESS SPECIALTY */
+    .wp-band{background:var(--ink);color:#fff;border-radius:26px;padding:50px;display:grid;grid-template-columns:1.1fr .9fr;gap:46px;align-items:center}
+    .wp-band .eyebrow{color:#FFB6A6}
+    .wp-band h2{font-size:clamp(26px,3.4vw,38px);font-weight:800;margin:6px 0 16px}
+    .wp-band p{color:#C9C3BA;font-size:16px;margin-bottom:26px}
+    .wp-band .btn-primary{background:var(--accent)}
+    .wp-band .btn-primary:hover{background:#fff;color:var(--ink)}
+    .wp-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .wp-list li{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px 16px;font-size:14px;font-weight:500}
+
+    /* TESTIMONIALS */
+    .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .quote{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+    .quote .stars{color:var(--accent);font-size:15px;letter-spacing:2px;margin-bottom:14px}
+    .quote p{font-size:15px;color:var(--ink);margin-bottom:20px}
+    .quote .who{display:flex;align-items:center;gap:12px}
+    .quote .av{width:42px;height:42px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
+    .quote .who strong{display:block;font-size:14px}
+    .quote .who span{font-size:13px;color:var(--muted)}
+
+    /* CONTACT */
+    .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:50px;align-items:start}
+    .contact-info h2{font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px}
+    .contact-info p{color:var(--muted);margin-bottom:28px;font-size:17px}
+    .contact-info .line{display:flex;align-items:center;gap:14px;margin-bottom:16px;font-weight:500}
+    .contact-info .line .ic{width:42px;height:42px;border-radius:12px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-size:18px;flex:none}
+    form{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:32px}
+    .field{margin-bottom:18px}
+    .field label{display:block;font-size:13px;font-weight:600;margin-bottom:8px}
+    .field input,.field select,.field textarea{width:100%;padding:13px 16px;border:1px solid var(--line);border-radius:12px;font-family:inherit;font-size:15px;background:var(--bg);color:var(--ink);transition:.2s}
+    .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent);background:#fff}
+    .field textarea{resize:vertical;min-height:120px}
+    .row2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .form-note{font-size:12px;color:var(--muted);margin-top:14px;text-align:center}
+    /* STEPS + BRIEF FORM */
+    .steps{list-style:none;display:flex;flex-direction:column;gap:16px;margin-top:6px}
+    .steps li{display:flex;gap:14px;align-items:center}
+    .steps .num{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-weight:700;background:var(--accent);color:#fff;font-size:15px}
+    .steps strong{display:block;font-size:15px}
+    .steps li span:last-child{font-size:13px;color:var(--muted)}
+    .bf-bar{height:5px;background:var(--line);border-radius:999px;overflow:hidden;margin-bottom:8px}
+    .bf-progress{display:block;height:100%;width:33%;background:var(--accent);transition:width .3s}
+    .bf-stepcount{font-size:12px;color:var(--muted);margin-bottom:18px;font-weight:600}
+    .bf-label{display:block;font-size:13px;font-weight:600;margin:16px 0 10px}
+    .bf-step > .bf-label:first-child{margin-top:0}
+    .bf-options{display:flex;flex-wrap:wrap;gap:10px}
+    .bf-options label{cursor:pointer;margin:0}
+    .bf-options input{position:absolute;opacity:0;pointer-events:none}
+    .bf-options span{display:inline-block;padding:10px 15px;border:1.5px solid var(--line);border-radius:10px;font-size:14px;font-weight:500;transition:.2s;background:var(--bg)}
+    .bf-options input:checked + span{border-color:var(--accent);background:var(--accent);color:#fff}
+    .bf-options input:focus-visible + span{outline:2px solid var(--accent);outline-offset:2px}
+    .brief select,.brief textarea,.brief input[type=email],.brief input[type=text]{width:100%;padding:13px 16px;border:1px solid var(--line);border-radius:12px;font-family:inherit;font-size:15px;background:var(--bg);color:var(--ink)}
+    .brief textarea{resize:vertical;min-height:120px}
+    .brief select:focus,.brief textarea:focus,.brief input:focus{outline:none;border-color:var(--accent)}
+    .bf-nav{display:flex;gap:12px;margin-top:24px}
+    .bf-nav .btn{flex:1;justify-content:center}
+    .bf-done{margin-top:18px;padding:16px;border-radius:12px;background:var(--accent-soft,rgba(124,92,252,.14));color:var(--ink);font-weight:600;text-align:center}
+
+    .faq{max-width:760px;margin:0 auto}
+    .faq-item{border-bottom:1px solid var(--line)}
+    .faq-q{width:100%;background:none;border:none;text-align:left;padding:24px 0;font-family:'Plus Jakarta Sans';font-size:18px;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;gap:20px;color:var(--ink)}
+    .faq-q span{flex:none;color:var(--accent);transition:.3s;font-size:24px;line-height:1}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;color:var(--muted);font-size:15px}
+    .faq-item.open .faq-a{max-height:260px;padding-bottom:24px}
+    .faq-item.open .faq-q span{transform:rotate(45deg)}
+
+    footer{padding:50px 0 40px;border-top:1px solid var(--line);margin-top:90px}
+    .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+    .foot .social{display:flex;gap:14px}
+    .foot .social a{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:.25s;color:var(--muted)}
+    .foot .social a:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+    .foot small{color:var(--muted)}
+    .vswitch{position:fixed;left:18px;bottom:18px;z-index:80;background:var(--ink);color:#fff;padding:11px 17px;border-radius:999px;font-size:13px;font-weight:600;box-shadow:0 12px 32px -10px rgba(20,19,18,.45);transition:.2s;border:1px solid rgba(255,255,255,.12)}
+    .vswitch:hover{transform:translateY(-2px);background:var(--accent)}
+
+    .reveal{opacity:0;transform:translateY(28px) scale(.985);filter:blur(9px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1),filter .8s cubic-bezier(.2,.7,.2,1)}
+    .reveal.in{opacity:1;transform:none;filter:blur(0)}
+    /* Cartes premium : apparition depuis le flou + reflets de bord + balayage de lumière (survol + scroll) */
+    .card,.proj,.price,.quote,.case{position:relative;isolation:isolate;transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s ease,border-color .3s ease}
+    .card::after,.proj::after,.price::after,.quote::after,.case::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.4px;pointer-events:none;z-index:3;background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(255,255,255,0) 38%,rgba(255,255,255,0) 62%,rgba(255,255,255,.55));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:.6;transition:opacity .45s ease}
+    .card::before,.proj::before,.price::before,.quote::before,.case::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:2;background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.6) 47%,rgba(255,255,255,.95) 50%,rgba(255,255,255,.6) 53%,transparent 66%);background-size:250% 100%;background-position:150% 0;opacity:0}
+    .card.in::before,.proj.in::before,.price.in::before,.quote.in::before,.case.in::before{animation:cardSweep 1.15s cubic-bezier(.35,.1,.25,1) .1s 1}
+    .card:hover::before,.proj:hover::before,.price:hover::before,.quote:hover::before,.case:hover::before{animation:cardSweepHover 1s cubic-bezier(.35,.1,.25,1) 1}
+    @keyframes cardSweep{0%{background-position:150% 0;opacity:0}12%{opacity:1}100%{background-position:-150% 0;opacity:0}}
+    @keyframes cardSweepHover{0%{background-position:150% 0;opacity:0}12%{opacity:1}100%{background-position:-150% 0;opacity:0}}
+    .card:hover,.proj:hover,.price:hover,.quote:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+    .card:hover::after,.proj:hover::after,.price:hover::after,.quote:hover::after,.case:hover::after{opacity:1}
+
+    @media(max-width:860px){
+      .nav-links{position:fixed;inset:72px 0 auto 0;background:var(--surface);flex-direction:column;padding:24px;gap:18px;border-bottom:1px solid var(--line);transform:translateY(-130%);transition:.35s;height:auto}
+      .nav-links.open{transform:none}
+      .burger{display:block}
+      .hero-grid,.why-grid,.compare,.proj-grid,.tl-grid,.price-grid,.quotes,.contact-grid,.row2,.wp-band,.wp-list,.case{grid-template-columns:1fr}
+      .case-media{min-height:180px}
+      .price.featured{transform:none}
+      .wp-band{padding:34px}
+      .code-window{font-size:12.5px}
+      .hero-meta{gap:24px}
+    }
+
+    /* ARTICLE (blog) */
+    .article{max-width:820px;margin:0 auto}
+    .article .meta{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--muted);letter-spacing:.02em;margin-bottom:16px}
+    .article h1{font-size:clamp(30px,4.4vw,46px);font-weight:800;margin-bottom:20px}
+    .article .lead{font-size:18px;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:12px;padding:20px 24px;margin-bottom:14px}
+    .article h2{font-size:clamp(24px,3vw,32px);font-weight:800;margin:40px 0 14px}
+    .article p{color:var(--muted);font-size:16px;margin-bottom:14px}
+    .article p a{color:var(--accent);font-weight:600;text-decoration:underline}
+    .article table{width:100%;border-collapse:collapse;margin:22px 0;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;font-size:15px}
+    .article th,.article td{text-align:left;padding:14px 18px;border-bottom:1px solid var(--line)}
+    .article thead th{background:var(--ink);color:#fff;font-family:'Plus Jakarta Sans';font-weight:700}
+    .article tbody th{font-weight:700;color:var(--ink)}
+    .article td{color:var(--muted)}
+    .article tr:last-child th,.article tr:last-child td{border-bottom:none}
+    .article-cta{margin:36px 0 0;text-align:center}
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap nav">
+      <a class="logo" href="../index.html#home">Ghost<span>.</span>Consulting</a>
+      <nav class="nav-links" id="menu">
+        <a href="../index.html#why">Pourquoi moi</a>
+        <a href="../index.html#wordpress">WordPress</a>
+        <a href="../index.html#projets">Projets</a>
+        <a href="../index.html#formules">Formules</a>
+        <a href="../index.html#parcours">Parcours</a>
+        <a href="../index.html#faq">FAQ</a>
+        <a class="nav-cta" href="../index.html#contact">Me contacter</a>
+      </nav>
+      <button class="burger" id="burger" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- ARTICLE -->
+  <section class="block">
+    <div class="wrap">
+      <article class="article">
+        <p class="meta">Publié en juin 2026 · Dernière mise à jour : juin 2026</p>
+        <h1>Freelance ou agence pour développer son site ?</h1>
+        <p class="lead">Pour un budget maîtrisé et un interlocuteur unique, le freelance l'emporte ; pour de très gros projets multi-équipes, l'agence rassure. Voici les vrais critères — coût, délais, réactivité, suivi — pour choisir sans vous tromper, du point de vue d'un développeur freelance qui livre en production.</p>
+
+        <h2>Coût comparé</h2>
+        <p>Le coût dépend avant tout du périmètre du projet, mais la structure de prix diffère selon l'interlocuteur. Un freelance facture son temps de travail sans surcoût de structure : pas de chef de projet intermédiaire, pas de frais de plateau à répercuter. Le budget reste maîtrisé et transparent — vous savez exactement ce que vous payez et pour quel livrable.</p>
+        <p>Une agence mobilise plusieurs profils (chef de projet, designer, développeurs) et porte des coûts de structure plus importants ; son devis est généralement plus élevé, en contrepartie d'une organisation et de ressources mutualisées. À périmètre égal, le freelance reste donc souvent l'option la plus économique.</p>
+
+        <h2>Délais &amp; réactivité</h2>
+        <p>En freelance, la chaîne de décision est courte : vous parlez directement à la personne qui écrit le code. Une demande de modification ou une question technique trouve une réponse rapide, sans passer par plusieurs niveaux. La réactivité est élevée parce qu'il n'y a aucun intermédiaire.</p>
+        <p>En agence, la réactivité dépend de l'organisation interne et de la charge des équipes : elle peut être excellente, ou plus variable selon les priorités et les projets en parallèle. Sur les délais purs, tout dépend du cadrage initial et du planning convenu — des deux côtés, un planning clair dès le devis reste le meilleur repère.</p>
+
+        <h2>Qui fait quoi (l'interlocuteur)</h2>
+        <p>C'est souvent le critère décisif. Avec un freelance, vous avez un interlocuteur unique du brief jusqu'à la mise en production : la même personne cadre, développe, déploie et assure le suivi. Rien ne se perd entre les mains de plusieurs intervenants.</p>
+        <p>Avec une agence, un chef de projet fait le lien entre vous et les équipes techniques. C'est confortable sur de gros projets aux nombreux acteurs, mais cela ajoute une couche d'intermédiation entre votre besoin et la personne qui réalise réellement le travail.</p>
+
+        <h2>Quand choisir l'un ou l'autre</h2>
+        <p>Le freelance est adapté à la grande majorité des besoins : site vitrine, application web ou mobile sur-mesure, reprise de WordPress, intégration d'API, SEO et GEO (être trouvé sur Google et cité par les moteurs de réponse IA). Quand vous voulez un interlocuteur unique, un budget maîtrisé et une réactivité élevée, c'est le choix logique.</p>
+        <p>L'agence prend tout son sens sur de très gros projets multi-équipes, qui demandent plusieurs métiers mobilisés en parallèle sur une longue durée et une coordination lourde. Là où le périmètre dépasse ce qu'une personne peut porter, la structure d'une agence rassure et s'adapte mieux.</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Critère</th>
+              <th scope="col">Freelance (moi)</th>
+              <th scope="col">Agence</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Interlocuteur</th>
+              <td>Interlocuteur unique</td>
+              <td>Chef de projet</td>
+            </tr>
+            <tr>
+              <th scope="row">Budget type</th>
+              <td>Budget maîtrisé et transparent</td>
+              <td>Plus élevé</td>
+            </tr>
+            <tr>
+              <th scope="row">Réactivité</th>
+              <td>Réactivité élevée</td>
+              <td>Variable</td>
+            </tr>
+            <tr>
+              <th scope="row">Très gros projet multi-équipes</th>
+              <td>Limité</td>
+              <td>Adapté</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Mon approche (freelance qui livre en prod)</h2>
+        <p>Développeur freelance full-stack (Next.js, Symfony, React Native, Node, Firebase, SQL, Docker, WordPress / WooCommerce), basé en Île-de-France et travaillant à 100 % à distance partout en France, je couvre toute la chaîne : du cadrage au code, jusqu'à la mise en production. Vous gardez un interlocuteur unique du début à la fin.</p>
+        <p>Ma spécialité, c'est la <a href="../reprise-wordpress.html">reprise WordPress</a> : je reprends, débogue et modernise des sites cassés ou abandonnés. Je maintiens un réseau de 10+ sites eFoil multi-villes (Cannes, Monaco, Saint-Tropez, Paris, Arcachon, Le Touquet), bilingues FR/EN, avec WooCommerce et configurateurs sur-mesure.</p>
+        <p>Côté résultats concrets : sur le cas <a href="../Projets/liftfoils.html">liftfoils</a>, une refonte WordPress + SEO a généré +27 % de clics organiques (mesurés dans Google Search Console). Mes autres projets en production incluent QualityYacht (Next.js, API Ankor sur ~1 500 yachts), TrackShip (suivi fluvial temps réel, API EuRIS), eFast et une application d'émargement (Symfony + React Native). Au total, 20+ projets versionnés, et une certification MOOC ANSSI côté sécurité.</p>
+        <p>Vous hésitez encore ? Le devis est gratuit et arrive sous 24-48 h. On cadre votre besoin, et vous repartez avec une réponse claire — sans engagement.</p>
+
+        <div class="article-cta">
+          <a class="btn btn-primary" href="../index.html#contact">Discuter de votre projet →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap foot">
+      <div>
+        <div class="logo">Ghost<span>.</span>Consulting</div>
+        <small>© <span id="year"></span> Ghost Consulting — Développement web, mobile, SEO &amp; GEO</small>
+      </div>
+      <div class="social">
+        <a href="../index.html#contact" title="Démarrer un projet">✉</a>
+        <a href="https://github.com/GHOSTGIT-cyber" target="_blank" title="GitHub">GH</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const burger=document.getElementById('burger'),menu=document.getElementById('menu');
+    burger.addEventListener('click',()=>menu.classList.toggle('open'));
+    menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
+    document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>

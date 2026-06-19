@@ -9,8 +9,36 @@
   <meta property="og:description" content="Studio freelance : applications web &amp; mobiles, sites WordPress, SEO &amp; GEO." />
   <meta property="og:image" content="https://bakabi.fr/assets/img/bg/hero.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <title>Ghost Consulting — Développement web, mobile, SEO &amp; GEO</title>
-  <meta name="description" content="Ghost Consulting — studio freelance de développement web & mobile, SEO & GEO. Applications sur-mesure (Next.js, Symfony, React Native), sites WordPress et SEO/GEO technique." />
+  <title>Développeur web freelance — apps sur-mesure &amp; WordPress | Ghost Consulting</title>
+  <meta name="description" content="Développeur freelance en Île-de-France : applications web (Next.js, Symfony), mobiles (React Native), reprise de WordPress et SEO/GEO. Devis gratuit sous 24-48 h." />
+  <link rel="canonical" href="https://bakabi.fr/" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Ghost Consulting",
+    "url": "https://bakabi.fr/",
+    "image": "https://bakabi.fr/assets/img/bg/hero.jpg",
+    "description": "Développeur web et mobile freelance : sites sur-mesure, applications (Next.js, Symfony, React Native), reprise de WordPress et SEO/GEO.",
+    "areaServed": "Île-de-France et à distance (France)",
+    "knowsAbout": ["Développement web","WordPress","Next.js","Symfony","React Native","SEO","GEO","Intégration d'API"],
+    "sameAs": ["https://github.com/GHOSTGIT-cyber"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"Quels types de projets réalises-tu ?","acceptedAnswer":{"@type":"Answer","text":"Sites vitrines, applications web full-stack (Next.js, Symfony), applications mobiles React Native et systèmes temps réel avec intégration d'API. Du site simple au produit complet déployé en production."}},
+      {"@type":"Question","name":"Tu interviens sur un site WordPress existant ?","acceptedAnswer":{"@type":"Answer","text":"Oui, c'est une de mes spécialités. Je reprends, débogue et modernise des sites WordPress cassés ou abandonnés, je gère le multilingue, les boutiques WooCommerce et les développements sur-mesure (mega-menus, configurateurs). Je maintiens déjà un réseau de 10+ sites en production."}},
+      {"@type":"Question","name":"Quels sont tes délais ?","acceptedAnswer":{"@type":"Answer","text":"Comptez 1 à 2 semaines pour un site vitrine, et de quelques semaines à quelques mois pour une application sur-mesure selon le périmètre. Je m'engage sur un planning dès le devis."}},
+      {"@type":"Question","name":"Comment se passe la collaboration ?","acceptedAnswer":{"@type":"Answer","text":"On cadre le besoin ensemble, je propose un devis et un planning clairs, je développe avec un suivi régulier (Git), puis je déploie. Vous restez informé à chaque étape."}},
+      {"@type":"Question","name":"Assures-tu la mise en ligne et la maintenance ?","acceptedAnswer":{"@type":"Answer","text":"Oui : déploiement sur Vercel, Docker/Coolify ou hébergement classique, et maintenance/évolutions en option. Vos projets ne restent pas sur ma machine."}},
+      {"@type":"Question","name":"Travaillez-vous à distance ?","acceptedAnswer":{"@type":"Answer","text":"Oui, à 100 % à distance, avec des clients partout en France et au-delà. Tout se passe en ligne : brief, échanges, livraison et mise en production."}}
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -306,7 +334,7 @@
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <span class="tag reveal"><span class="dot"></span> ~/dispo · freelance · Île-de-France &amp; à distance</span>
-        <h1 class="reveal">Je conçois des applications web &amp; mobiles <em>qui tournent en production.</em></h1>
+        <h1 class="reveal">Développeur web &amp; mobile freelance — <em>livré en production</em></h1>
         <p class="lead reveal">Développeur full-stack, SEO &amp; GEO freelance, je transforme une idée en produit fini : sites sur-mesure, applications web (Next.js, Symfony), apps mobiles (React Native) et systèmes temps réel — du code propre et optimisé pour le référencement (SEO & GEO) jusqu'à la mise en ligne.</p>
         <div class="hero-cta reveal">
           <a class="btn btn-primary" href="#projets">Voir mes réalisations →</a>
@@ -392,7 +420,7 @@
         <div>
           <span class="eyebrow">Spécialité WordPress</span>
           <h2>Un WordPress cassé, lent ou abandonné ? Je le remets d'aplomb.</h2>
-          <p>Je reprends des sites legacy, je débogue, j'optimise et je modernise — sans tout casser. J'ai conçu et je maintiens un <strong style="color:#fff">réseau de 10+ sites eFoil</strong>, multi-villes et bilingues (Cannes, Monaco, Saint-Tropez, Paris, Arcachon, Le Touquet…), avec boutique e-commerce et configurateurs sur-mesure.</p>
+          <p>Je reprends des sites legacy, je débogue, j'optimise et je modernise — sans tout casser. J'ai conçu et je maintiens un <strong style="color:#fff">réseau de 10+ sites eFoil</strong>, multi-villes et bilingues (Cannes, Monaco, Saint-Tropez, Paris, Arcachon, Le Touquet…), avec boutique e-commerce et configurateurs sur-mesure. Découvrez mon offre de <a href="../reprise-wordpress.html" style="color:#fff;text-decoration:underline">reprise de site WordPress</a>.</p>
           <a class="btn btn-primary" href="#contact">Faire diagnostiquer mon site →</a>
         </div>
         <ul class="wp-list">
@@ -736,7 +764,7 @@
       form.addEventListener('submit',async function(ev){
         ev.preventDefault(); if(!valid()) return;
         send.disabled=true; send.textContent='Envoi…';
-        try{ await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(form)}); }catch(e){}
+        try{ await fetch('/api/contact',{method:'POST',body:new URLSearchParams(new FormData(form))}); }catch(e){}
         ['.bf-step','.bf-nav','.bf-bar','.bf-stepcount'].forEach(sel=>form.querySelectorAll(sel).forEach(el=>el.style.display='none'));
         done.hidden=false;
       });
