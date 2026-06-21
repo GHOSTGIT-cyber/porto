@@ -765,7 +765,21 @@
       form.addEventListener('submit',async function(ev){
         ev.preventDefault(); if(!valid()) return;
         send.disabled=true; send.textContent='Envoi…';
+        const f=ev.target;
+        // 1) Serveur -> e-mail (caché côté serveur)
         try{ await fetch('/api/contact',{method:'POST',body:new URLSearchParams(new FormData(form))}); }catch(e){}
+        // 2) Navigateur -> WhatsApp via CallMeBot (IP résidentielle du visiteur = pas de blocage 403)
+        try{
+          const txt='Nouvelle demande - Ghost Consulting'
+            +'\nType: '+((f.type&&f.type.value)||'-')
+            +'\nBudget: '+((f.budget&&f.budget.value)||'-')
+            +'\nDelai: '+((f.delai&&f.delai.value)||'-')
+            +'\nEmail: '+((f.email&&f.email.value)||'-')
+            +'\nSite: '+((f.site&&f.site.value)||'-')
+            +'\nMessage: '+((f.message&&f.message.value)||'-');
+          const waUrl='https://api.callmebot.com/whatsapp.php?phone=33623754582&text='+encodeURIComponent(txt)+'&apikey=8861776';
+          fetch(waUrl,{mode:'no-cors'}).catch(function(){});
+        }catch(e){}
         ['.bf-step','.bf-nav','.bf-bar','.bf-stepcount'].forEach(sel=>form.querySelectorAll(sel).forEach(el=>el.style.display='none'));
         done.hidden=false;
       });
