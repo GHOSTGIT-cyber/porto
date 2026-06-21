@@ -22,24 +22,8 @@ Email  : ${b.email || '-'}
 Site   : ${b.site || '-'}
 Message: ${b.message || '-'}`;
 
-  let wa = false, mail = false, tg = false, waDebug = 'non tenté';
-
-  // 1) Notification WhatsApp via CallMeBot (numéro + clé dans l'env, jamais dans la page)
-  try {
-    const phone = String(process.env.WA_PHONE || '').replace(/[^0-9]/g, ''); // enlève +, espaces, etc.
-    if (phone && process.env.WA_APIKEY) {
-      const url = `https://api.callmebot.com/whatsapp.php?phone=${phone}`
-        + `&text=${encodeURIComponent(msg)}&apikey=${encodeURIComponent(process.env.WA_APIKEY)}`;
-      const r = await fetch(url); // plain fetch, comme efca-dashboard (qui marche en node:20-slim)
-      const txt = await r.text();
-      wa = /queued|sent|will receive/i.test(txt);
-      waDebug = r.status + ' | ' + txt.replace(/<[^>]+>/g, ' ').replace(/\+?\d{6,}/g, '***').replace(/\s+/g, ' ').trim().slice(0, 150);
-      console.log('CallMeBot:', waDebug);
-    } else {
-      waDebug = 'env manquant -> WA_PHONE(' + (phone ? 'ok' : 'VIDE') + ') WA_APIKEY(' + (process.env.WA_APIKEY ? 'ok' : 'VIDE') + ')';
-      console.log('WhatsApp ignoré :', waDebug);
-    }
-  } catch (e) { waDebug = 'fetch error: ' + e.message; console.error('WhatsApp KO:', e.message); }
+  let mail = false, tg = false;
+  // NB : WhatsApp est envoyé CÔTÉ NAVIGATEUR (CallMeBot bloque l'IP serveur en 403). Voir index.html.
 
   // 2) E-mail via SMTP (optionnel - actif seulement si SMTP_HOST + MAIL_TO sont définis)
   try {
@@ -75,7 +59,7 @@ Message: ${b.message || '-'}`;
     }
   } catch (e) { console.error('Telegram KO:', e.message); }
 
-  res.json({ ok: true, wa, mail, tg, waDebug });
+  res.json({ ok: true, mail, tg });
 });
 
 // Sert le site statique (index.html à la racine, /clair/, /bleu/, /Projets/, assets...)
