@@ -22,7 +22,7 @@ Email  : ${b.email || '-'}
 Site   : ${b.site || '-'}
 Message: ${b.message || '-'}`;
 
-  let wa = false, mail = false;
+  let wa = false, mail = false, waDebug = 'non tenté';
 
   // 1) Notification WhatsApp via CallMeBot (numéro + clé dans l'env, jamais dans la page)
   try {
@@ -33,11 +33,13 @@ Message: ${b.message || '-'}`;
       const r = await fetch(url);
       const txt = await r.text();
       wa = /queued|sent|will receive/i.test(txt);
-      console.log('CallMeBot:', r.status, 'ok=' + wa, '|', txt.replace(/<[^>]+>/g, ' ').trim().slice(0, 160));
+      waDebug = r.status + ' | ' + txt.replace(/<[^>]+>/g, ' ').replace(/\+?\d{6,}/g, '***').replace(/\s+/g, ' ').trim().slice(0, 150);
+      console.log('CallMeBot:', waDebug);
     } else {
-      console.log('WhatsApp ignoré : WA_PHONE ou WA_APIKEY manquant dans les variables Coolify');
+      waDebug = 'env manquant -> WA_PHONE(' + (phone ? 'ok' : 'VIDE') + ') WA_APIKEY(' + (process.env.WA_APIKEY ? 'ok' : 'VIDE') + ')';
+      console.log('WhatsApp ignoré :', waDebug);
     }
-  } catch (e) { console.error('WhatsApp KO:', e.message); }
+  } catch (e) { waDebug = 'fetch error: ' + e.message; console.error('WhatsApp KO:', e.message); }
 
   // 2) E-mail via SMTP (optionnel - actif seulement si SMTP_HOST + MAIL_TO sont définis)
   try {
@@ -60,7 +62,7 @@ Message: ${b.message || '-'}`;
     }
   } catch (e) { console.error('Mail KO:', e.message); }
 
-  res.json({ ok: true, wa, mail });
+  res.json({ ok: true, wa, mail, waDebug });
 });
 
 // Sert le site statique (index.html à la racine, /clair/, /bleu/, /Projets/, assets...)
