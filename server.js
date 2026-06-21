@@ -22,7 +22,7 @@ Email  : ${b.email || '-'}
 Site   : ${b.site || '-'}
 Message: ${b.message || '-'}`;
 
-  let wa = false, mail = false, waDebug = 'non tenté';
+  let wa = false, mail = false, tg = false, waDebug = 'non tenté';
 
   // 1) Notification WhatsApp via CallMeBot (numéro + clé dans l'env, jamais dans la page)
   try {
@@ -62,7 +62,20 @@ Message: ${b.message || '-'}`;
     }
   } catch (e) { console.error('Mail KO:', e.message); }
 
-  res.json({ ok: true, wa, mail, waDebug });
+  // 3) Notification Telegram (fiable depuis un serveur, contrairement à CallMeBot)
+  try {
+    if (process.env.TG_TOKEN && process.env.TG_CHAT) {
+      const r = await fetch(`https://api.telegram.org/bot${process.env.TG_TOKEN}/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ chat_id: process.env.TG_CHAT, text: msg }),
+      });
+      tg = r.ok;
+      console.log('Telegram:', r.status, 'ok=' + tg);
+    }
+  } catch (e) { console.error('Telegram KO:', e.message); }
+
+  res.json({ ok: true, wa, mail, tg, waDebug });
 });
 
 // Sert le site statique (index.html à la racine, /clair/, /bleu/, /Projets/, assets...)
