@@ -48,7 +48,9 @@
       --accent:#1D4ED8;--accent-2:#38BDF8;--accent-soft:rgba(37,99,235,.14);--radius:18px;--shadow:0 22px 55px -26px rgba(15,40,95,.4);--maxw:1140px;
     }
     *{box-sizing:border-box;margin:0;padding:0}
+    [hidden]{display:none!important}
     html{scroll-behavior:smooth}
+    html,body{overflow-x:hidden}
     body{font-family:'Inter',system-ui,sans-serif;background:linear-gradient(160deg,#d6e6fb 0%,#9bbef0 48%,#7ea8e6 100%) fixed;color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
     h1,h2,h3,h4,.display{font-family:'Plus Jakarta Sans',sans-serif;line-height:1.08;letter-spacing:-.02em}
     a{color:inherit;text-decoration:none}
@@ -750,7 +752,7 @@
         count.textContent='Étape '+(i+1)+' / '+steps.length;
       }
       function valid(){
-        const cur=steps[i];
+        const cur=steps[i]; if(!cur) return true;
         const reqs=cur.querySelectorAll('[required]');
         for(const el of reqs){
           if(el.type==='radio'){ if(!cur.querySelector('input[name="'+el.name+'"]:checked')) return false; }
@@ -758,7 +760,7 @@
         }
         return true;
       }
-      next.addEventListener('click',()=>{ if(valid()){ i++; show(); } });
+      next.addEventListener('click',()=>{ if(valid() && i<steps.length-1){ i++; show(); } });
       prev.addEventListener('click',()=>{ i--; show(); });
       form.addEventListener('submit',async function(ev){
         ev.preventDefault(); if(!valid()) return;
