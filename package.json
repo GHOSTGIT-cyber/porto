@@ -1,0 +1,13 @@
+{
+  "name": "ghost-consulting-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfolio Ghost Consulting + endpoint formulaire (WhatsApp/e-mail)",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "nodemailer": "^6.9.14"
+  }
+}
