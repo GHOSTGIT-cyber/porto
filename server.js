@@ -30,10 +30,7 @@ Message: ${b.message || '-'}`;
     if (phone && process.env.WA_APIKEY) {
       const url = `https://api.callmebot.com/whatsapp.php?phone=${phone}`
         + `&text=${encodeURIComponent(msg)}&apikey=${encodeURIComponent(process.env.WA_APIKEY)}`;
-      const r = await fetch(url, { headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
-      }});
+      const r = await fetch(url); // plain fetch, comme efca-dashboard (qui marche en node:20-slim)
       const txt = await r.text();
       wa = /queued|sent|will receive/i.test(txt);
       waDebug = r.status + ' | ' + txt.replace(/<[^>]+>/g, ' ').replace(/\+?\d{6,}/g, '***').replace(/\s+/g, ' ').trim().slice(0, 150);
