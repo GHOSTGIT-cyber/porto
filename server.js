@@ -26,11 +26,16 @@ Message: ${b.message || '-'}`;
 
   // 1) Notification WhatsApp via CallMeBot (numéro + clé dans l'env, jamais dans la page)
   try {
-    if (process.env.WA_PHONE && process.env.WA_APIKEY) {
-      const url = `https://api.callmebot.com/whatsapp.php?phone=${encodeURIComponent(process.env.WA_PHONE)}`
+    const phone = String(process.env.WA_PHONE || '').replace(/[^0-9]/g, ''); // enlève +, espaces, etc.
+    if (phone && process.env.WA_APIKEY) {
+      const url = `https://api.callmebot.com/whatsapp.php?phone=${phone}`
         + `&text=${encodeURIComponent(msg)}&apikey=${encodeURIComponent(process.env.WA_APIKEY)}`;
       const r = await fetch(url);
-      wa = r.ok;
+      const txt = await r.text();
+      wa = /queued|sent|will receive/i.test(txt);
+      console.log('CallMeBot:', r.status, 'ok=' + wa, '|', txt.replace(/<[^>]+>/g, ' ').trim().slice(0, 160));
+    } else {
+      console.log('WhatsApp ignoré : WA_PHONE ou WA_APIKEY manquant dans les variables Coolify');
     }
   } catch (e) { console.error('WhatsApp KO:', e.message); }
 
