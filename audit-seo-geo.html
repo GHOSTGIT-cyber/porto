@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="assets/img/portfolio/favicon.ico">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Audit SEO &amp; GEO (Google + visibilité IA) | Ghost Consulting" />
+  <meta property="og:description" content="Audit SEO &amp; GEO freelance : votre référencement Google ET votre visibilité dans les réponses IA (ChatGPT, Perplexity, Gemini) passés au crible. Score, failles, plan d'action prêt-à-coller." />
+  <meta property="og:image" content="https://bakabi.fr/assets/img/bg/hero.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>Audit SEO &amp; GEO : Google + visibilité IA | Ghost Consulting</title>
+  <meta name="description" content="Audit SEO &amp; GEO par un freelance : je passe au crible votre référencement Google et votre visibilité dans les réponses des IA (ChatGPT, Perplexity, Gemini, Google AI Overviews). Diagnostic chiffré + plan d'action prêt-à-coller. Devis sous 24-48 h.">
+  <link rel="canonical" href="https://bakabi.fr/audit-seo-geo.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Audit SEO & GEO (référencement Google et visibilité dans les IA)",
+    "url": "https://bakabi.fr/audit-seo-geo.html",
+    "serviceType": "Audit SEO, audit GEO et visibilité dans les moteurs de réponse IA",
+    "areaServed": "Île-de-France et à distance (France)",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "Ghost Consulting",
+      "url": "https://bakabi.fr/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"C'est quoi le « GEO » (visibilité IA) ?","acceptedAnswer":{"@type":"Answer","text":"Le GEO (Generative Engine Optimization) mesure si votre marque est citée dans les réponses des IA conversationnelles : ChatGPT, Perplexity, Gemini, Google AI Overviews et Claude. De plus en plus de clients posent leur question à une IA avant d'ouvrir Google : si vous n'y apparaissez pas, vous êtes invisible. L'audit teste réellement ces moteurs et vous donne un score de visibilité IA sur 100."}},
+      {"@type":"Question","name":"En quoi c'est différent d'un audit SEO classique ?","acceptedAnswer":{"@type":"Answer","text":"Un audit SEO classique regarde Google : balises, vitesse, indexation, mots-clés. C'est inclus ici, mais j'ajoute le terrain que la plupart ignorent : votre citabilité par les IA (données structurées, capsules-réponses, autorité), avec un test réel des moteurs de réponse. Deux terrains, deux logiques, un seul diagnostic."}},
+      {"@type":"Question","name":"Qu'est-ce que je reçois concrètement à la fin ?","acceptedAnswer":{"@type":"Answer","text":"Deux documents clairs : une Note stratégique (le diagnostic — verdict, scores par dimension, failles avec preuves, angles morts, axes prioritaires) et un Plan d'implémentation (l'exécution — chantiers priorisés, extraits prêts à coller en HTML et données structurées, et une roadmap 7 / 30 / 90 jours). Lisibles sans être expert."}},
+      {"@type":"Question","name":"Vous garantissez la 1ʳᵉ position sur Google ?","acceptedAnswer":{"@type":"Answer","text":"Non, et méfiez-vous de qui le promet. Je garantis un diagnostic honnête, chiffré et sourcé, et un plan d'action priorisé par impact et effort. Chaque constat est marqué Confirmé, Déduit ou À vérifier — pas de chiffres inventés ni de promesses creuses."}},
+      {"@type":"Question","name":"Vous corrigez aussi, ou seulement l'audit ?","acceptedAnswer":{"@type":"Answer","text":"L'audit identifie et priorise ; le plan d'implémentation est prêt à exécuter, avec des extraits à coller. Si vous préférez que je m'occupe aussi de la mise en œuvre (technique, WordPress, contenus, données structurées), c'est possible en complément — on en parle au moment du devis."}},
+      {"@type":"Question","name":"Ça marche pour mon activité (local, e-commerce, marque perso) ?","acceptedAnswer":{"@type":"Answer","text":"Oui. L'audit s'adapte au type d'activité : commerce local, e-commerce, service B2B, B2C, média, ou marque personnelle / portfolio. Les priorités et les requêtes testées changent selon votre marché."}},
+      {"@type":"Question","name":"Quel est le délai ?","acceptedAnswer":{"@type":"Answer","text":"Comptez quelques jours pour un audit complet selon la taille du site et les données disponibles. Le périmètre et le planning sont fixés dès le devis, avec une réponse sous 24-48 h."}}
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:transparent;--surface:rgba(216,230,250,.72);--ink:#0E1F3D;--muted:#3C4F72;--line:rgba(17,42,92,.16);
+      --accent:#1D4ED8;--accent-2:#38BDF8;--accent-soft:rgba(37,99,235,.14);--radius:18px;--shadow:0 22px 55px -26px rgba(15,40,95,.4);--maxw:1140px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    [hidden]{display:none!important}
+    html{scroll-behavior:smooth}
+    html,body{overflow-x:hidden}
+    body{font-family:'Inter',system-ui,sans-serif;background:linear-gradient(160deg,#d6e6fb 0%,#9bbef0 48%,#7ea8e6 100%) fixed;color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+    h1,h2,h3,h4,.display{font-family:'Plus Jakarta Sans',sans-serif;line-height:1.08;letter-spacing:-.02em}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+    .eyebrow{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;display:inline-flex;align-items:center;gap:8px}
+    .eyebrow::before{content:"";width:26px;height:2px;background:var(--accent);display:inline-block}
+    .btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:15px;padding:14px 26px;border-radius:999px;transition:.25s ease;border:1.5px solid transparent;cursor:pointer}
+    .btn-primary{background:var(--ink);color:#fff}
+    .btn-primary:hover{background:var(--accent);transform:translateY(-2px)}
+    .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+    .btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
+
+    header{position:sticky;top:0;z-index:50;background:rgba(215,230,251,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+    .logo{font-family:'Plus Jakarta Sans';font-weight:800;font-size:19px;letter-spacing:-.02em}
+    .logo span{color:var(--accent)}
+    .nav-links{display:flex;gap:28px;align-items:center}
+    .nav-links a{font-size:15px;color:var(--muted);font-weight:500;transition:.2s}
+    .nav-links a:hover{color:var(--ink)}
+    .nav-cta{padding:10px 20px;border-radius:999px;background:var(--ink);color:#fff!important;font-weight:600}
+    .nav-cta:hover{background:var(--accent)}
+    .burger{display:none;background:none;border:none;font-size:26px;cursor:pointer}
+
+    .hero{padding:72px 0 64px;position:relative;overflow:hidden}
+    .hero::before{content:"";position:absolute;inset:0;z-index:-1;
+      background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+      background-size:46px 46px;opacity:.3;
+      -webkit-mask-image:radial-gradient(ellipse 75% 60% at 75% 5%,#000 25%,transparent 75%);
+      mask-image:radial-gradient(ellipse 75% 60% at 75% 5%,#000 25%,transparent 75%)}
+    .hero .wrap{position:relative;z-index:1}
+    .hero .tag{display:inline-flex;gap:8px;align-items:center;background:var(--surface);border:1px solid var(--line);padding:8px 16px;border-radius:999px;font-size:12.5px;font-weight:500;color:var(--muted);margin-bottom:26px;font-family:'JetBrains Mono',monospace}
+    .dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.18)}
+    .hero h1{font-size:clamp(34px,4.4vw,56px);font-weight:800;max-width:18ch}
+    .hero h1 em{font-style:normal;color:var(--accent)}
+    .hero p.lead{font-size:clamp(16px,1.5vw,18px);color:var(--muted);max-width:60ch;margin:24px 0 32px}
+    .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+    .hero-meta{display:flex;gap:34px;margin-top:42px;flex-wrap:wrap}
+    .hero-meta div span{display:block;font-size:13px;color:var(--muted);letter-spacing:.04em}
+    .hero-meta div strong{font-family:'Plus Jakarta Sans';font-size:24px;font-weight:800}
+
+    .stack{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0;background:var(--surface)}
+    .stack .wrap{display:flex;align-items:center;gap:34px;flex-wrap:wrap;justify-content:center}
+    .stack span{font-weight:600;color:var(--muted);font-size:15px;opacity:.85}
+    .stack .label{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--accent);font-weight:700}
+
+    section.block{padding:90px 0}
+    .head{max-width:680px;margin-bottom:54px}
+    .head.center{margin-left:auto;margin-right:auto;text-align:center}
+    .head.center .eyebrow{justify-content:center}
+    .head h2{font-size:clamp(30px,4vw,46px);font-weight:800;margin-top:6px}
+    .head p{color:var(--muted);margin-top:16px;font-size:17px}
+
+    .why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:30px}
+    .card .ico{width:48px;height:48px;border-radius:12px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-size:22px;margin-bottom:18px}
+    .card h3{font-size:20px;font-weight:700;margin-bottom:8px}
+    .card p{color:var(--muted);font-size:15px}
+
+    .compare{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:30px}
+    .compare .col{border-radius:var(--radius);padding:30px;border:1px solid var(--line)}
+    .compare .me{background:var(--ink);color:#fff;border-color:var(--ink)}
+    .compare .me h4,.compare .other h4{font-size:18px;font-weight:700;margin-bottom:18px;font-family:'Plus Jakarta Sans'}
+    .compare .other{background:var(--surface)}
+    .compare ul{list-style:none;display:flex;flex-direction:column;gap:13px}
+    .compare li{display:flex;gap:12px;font-size:15px;align-items:flex-start}
+    .compare .me li{color:#C9D3E6}
+    .compare .other li{color:var(--muted)}
+    .tick{flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:700;margin-top:1px}
+    .tick.yes{background:var(--accent);color:#fff}
+    .tick.no{background:#E2E8F2;color:#94A3B8}
+
+    /* DELIVRABLE (2 documents) */
+    .deliv{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .deliv .card{display:flex;flex-direction:column}
+    .deliv .doc-tag{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+    .deliv h3{font-size:22px;font-weight:800;margin-bottom:6px}
+    .deliv .doc-sub{color:var(--muted);font-size:14.5px;margin-bottom:18px}
+    .deliv ul{list-style:none;display:flex;flex-direction:column;gap:11px;margin-top:4px}
+    .deliv li{position:relative;padding-left:24px;font-size:14.5px;color:var(--ink)}
+    .deliv li::before{content:"→";position:absolute;left:0;color:var(--accent);font-weight:700}
+    .deliv code{font-family:'JetBrains Mono',monospace;font-size:12.5px;background:var(--accent-soft);padding:1px 6px;border-radius:5px;color:var(--ink)}
+
+    /* CASE-LIST (méthode) */
+    .case-list{list-style:none;display:flex;flex-direction:column;gap:9px}
+    .case-list li{position:relative;padding-left:22px;font-size:14.5px;color:var(--ink)}
+    .case-list li::before{content:"→";position:absolute;left:0;color:var(--accent);font-weight:700}
+
+    /* GEO BAND (dark) */
+    .geo-band{background:var(--ink);color:#fff;border-radius:26px;padding:50px;display:grid;grid-template-columns:1.1fr .9fr;gap:46px;align-items:center}
+    .geo-band .eyebrow{color:var(--accent-2)}
+    .geo-band h2{font-size:clamp(26px,3.4vw,38px);font-weight:800;margin:6px 0 16px}
+    .geo-band p{color:#C7D3EA;font-size:16px;margin-bottom:26px}
+    .geo-band .btn-primary{background:var(--accent)}
+    .geo-band .btn-primary:hover{background:#fff;color:var(--ink)}
+    .geo-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .geo-list li{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:14px 16px;font-size:14px;font-weight:500}
+
+    /* FORMULES */
+    .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:start}
+    .price{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:32px;display:flex;flex-direction:column;position:relative}
+    .price.featured{background:var(--ink);color:#fff;border-color:var(--ink);transform:scale(1.03)}
+    .price .pop{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:12px;font-weight:700;padding:6px 16px;border-radius:999px}
+    .price h3{font-size:21px;font-weight:700;margin-bottom:6px}
+    .price .sub{font-size:14px;color:var(--muted);margin-bottom:20px}
+    .price.featured .sub{color:#C9D3E6}
+    .price .amount{font-family:'Plus Jakarta Sans';font-size:38px;font-weight:800;margin-bottom:4px}
+    .price .amount small{font-size:15px;font-weight:600;color:var(--muted)}
+    .price.featured .amount small{color:#C9D3E6}
+    .price ul{list-style:none;margin:22px 0;display:flex;flex-direction:column;gap:12px;flex:1}
+    .price li{display:flex;gap:10px;font-size:14px;align-items:flex-start}
+    .price li::before{content:"✓";color:var(--accent);font-weight:800;flex:none}
+    .price.featured li::before{color:var(--accent-2)}
+    .price .btn{justify-content:center;width:100%}
+    .price.featured .btn-primary{background:var(--accent)}
+    .price.featured .btn-primary:hover{background:#fff;color:var(--ink)}
+
+    /* CTA final */
+    .cta-band{background:var(--surface);border:1px solid var(--line);border-radius:26px;padding:48px;text-align:center;box-shadow:var(--shadow)}
+    .cta-band h2{font-size:clamp(26px,3.4vw,38px);font-weight:800;margin-bottom:14px}
+    .cta-band p{color:var(--muted);font-size:17px;max-width:54ch;margin:0 auto 28px}
+
+    .faq{max-width:760px;margin:0 auto}
+    .faq-item{border-bottom:1px solid var(--line)}
+    .faq-q{width:100%;background:none;border:none;text-align:left;padding:24px 0;font-family:'Plus Jakarta Sans';font-size:18px;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;gap:20px;color:var(--ink)}
+    .faq-q span{flex:none;color:var(--accent);transition:.3s;font-size:24px;line-height:1}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;color:var(--muted);font-size:15px}
+    .faq-item.open .faq-a{max-height:320px;padding-bottom:24px}
+    .faq-item.open .faq-q span{transform:rotate(45deg)}
+
+    footer{padding:50px 0 40px;border-top:1px solid var(--line);margin-top:90px}
+    .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+    .foot .social{display:flex;gap:14px}
+    .foot .social a{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:.25s;color:var(--muted)}
+    .foot .social a:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+    .foot small{color:var(--muted)}
+
+    .reveal{opacity:0;transform:translateY(28px) scale(.985);filter:blur(9px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1),filter .8s cubic-bezier(.2,.7,.2,1)}
+    .reveal.in{opacity:1;transform:none;filter:blur(0)}
+    /* Cartes premium : apparition flou→net + reflet de bord doux + balayage de lumière AMBIANT (calme, ~1 passage toutes les 15 s, désynchronisé carte par carte — plus de rafale au scroll) */
+    .card,.price,.cta-band{position:relative;isolation:isolate;transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s ease,border-color .3s ease}
+    .card::after,.price::after,.cta-band::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.4px;pointer-events:none;z-index:3;background:linear-gradient(135deg,rgba(255,255,255,.8),rgba(255,255,255,0) 38%,rgba(255,255,255,0) 62%,rgba(255,255,255,.4));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:.42;transition:opacity .45s ease}
+    .card::before,.price::before,.cta-band::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:2;background:linear-gradient(115deg,transparent 38%,rgba(255,255,255,.22) 47%,rgba(255,255,255,.48) 50%,rgba(255,255,255,.22) 53%,transparent 62%);background-size:250% 100%;background-position:150% 0;opacity:0}
+    .card::before,.price::before,.cta-band::before{animation:cardShimmer 15s linear infinite}
+    .card:nth-child(2)::before,.price:nth-child(2)::before{animation-delay:3s}
+    .card:nth-child(3)::before,.price:nth-child(3)::before{animation-delay:6s}
+    .card:nth-child(4)::before{animation-delay:9s}
+    .card:nth-child(5)::before{animation-delay:12s}
+    .card:nth-child(6)::before{animation-delay:2s}
+    .card:nth-child(7)::before{animation-delay:5s}
+    .card:nth-child(8)::before{animation-delay:8s}
+    .card:nth-child(9)::before{animation-delay:11s}
+    .cta-band::before{animation-delay:7s}
+    .card:hover::before,.price:hover::before{animation:cardSweepHover .9s cubic-bezier(.35,.1,.25,1) 1}
+    @keyframes cardShimmer{0%{background-position:150% 0;opacity:0}2%{opacity:.6}8%{opacity:.6}9%{background-position:-150% 0;opacity:0}100%{background-position:-150% 0;opacity:0}}
+    @keyframes cardSweepHover{0%{background-position:150% 0;opacity:0}12%{opacity:.6}100%{background-position:-150% 0;opacity:0}}
+    .card:hover,.price:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+    .card:hover::after,.price:hover::after{opacity:1}
+    @media(prefers-reduced-motion:reduce){.card::before,.price::before,.cta-band::before{animation:none}}
+
+    @media(max-width:860px){
+      .nav-links{position:fixed;inset:72px 0 auto 0;background:var(--surface);flex-direction:column;padding:24px;gap:18px;border-bottom:1px solid var(--line);transform:translateY(-130%);transition:.35s;height:auto}
+      .nav-links.open{transform:none}
+      .burger{display:block}
+      .why-grid,.grid-3,.compare,.deliv,.price-grid,.geo-band,.geo-list{grid-template-columns:1fr}
+      .geo-band{padding:34px}
+      .cta-band{padding:34px}
+      .price.featured{transform:none}
+      .hero-meta{gap:24px}
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap nav">
+      <a class="logo" href="index.html#home">Ghost<span>.</span>Consulting</a>
+      <nav class="nav-links" id="menu">
+        <a href="#crible">Ce que j'audite</a>
+        <a href="#visibilite-ia">Visibilité IA</a>
+        <a href="#livrables">Livrables</a>
+        <a href="#methode">Méthode</a>
+        <a href="#formules">Formules</a>
+        <a href="#faq">FAQ</a>
+        <a class="nav-cta" href="index.html#contact">Demander mon audit</a>
+      </nav>
+      <button class="burger" id="burger" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="wrap">
+      <span class="tag"><span class="dot"></span> Audit SEO &amp; GEO · Google + moteurs de réponse IA</span>
+      <h1>Sachez exactement pourquoi Google — <em>et les IA</em> — ne vous citent pas.</h1>
+      <p class="lead">Votre site est en ligne mais n'amène ni trafic ni demandes ? Je passe au crible votre référencement Google <strong>et</strong> votre visibilité dans les réponses des IA (ChatGPT, Perplexity, Gemini, Google AI Overviews). Vous repartez avec un diagnostic chiffré et un plan d'action concret, prêt à exécuter — pas un PDF qui dort dans un tiroir.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="index.html#contact">Demander mon audit →</a>
+        <a class="btn btn-ghost" href="#livrables">Voir ce que contient l'audit</a>
+      </div>
+      <div class="hero-meta">
+        <div><strong>7</strong><span>dimensions auditées</span></div>
+        <div><strong>5</strong><span>moteurs IA testés</span></div>
+        <div><strong>2</strong><span>documents livrés</span></div>
+        <div><strong>7·30·90</strong><span>jours de roadmap</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STACK / moteurs couverts -->
+  <div class="stack">
+    <div class="wrap">
+      <span class="label">Couverts</span>
+      <span>Google</span><span>Google AI Overviews</span><span>ChatGPT</span><span>Perplexity</span><span>Gemini</span><span>Claude</span>
+    </div>
+  </div>
+
+  <!-- CONSTAT -->
+  <section class="block" id="constat">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">Le constat</span>
+        <h2>Le référencement a changé de terrain.</h2>
+        <p>Être bien classé sur Google ne suffit plus. Une partie de vos clients pose désormais sa question directement à une IA — et c'est elle qui décide qui est cité.</p>
+      </div>
+      <div class="why-grid">
+        <div class="card reveal"><div class="ico">🤖</div><h3>On ne cherche plus que sur Google</h3><p>De plus en plus de clients posent leur question à ChatGPT, Perplexity ou à l'AI Overview de Google. Si votre marque n'apparaît pas dans la réponse, vous êtes écarté avant même la page de résultats.</p></div>
+        <div class="card reveal"><div class="ico">📉</div><h3>Bien classé ≠ bien cité</h3><p>Vous pouvez être 3ᵉ sur Google et totalement absent des réponses IA qui captent désormais le clic. Deux terrains, deux logiques : il faut auditer les deux.</p></div>
+        <div class="card reveal"><div class="ico">🧩</div><h3>Un audit classique ne voit que la moitié</h3><p>Balises, vitesse, mots-clés : utile, mais ça ignore votre citabilité par les IA — données structurées, capsules-réponses, autorité de marque. C'est précisément là que ça se joue maintenant.</p></div>
+        <div class="card reveal"><div class="ico">🎯</div><h3>Sans diagnostic, on optimise à l'aveugle</h3><p>Refaire des contenus ou « mettre du SEO » sans savoir ce qui bloque réellement, c'est dépenser au hasard. Un audit dit où agir en premier — et où ne pas perdre de temps.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CE QUE J'AUDITE -->
+  <section class="block" id="crible" style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">Le périmètre</span>
+        <h2>Ce que l'audit passe au crible</h2>
+        <p>Sept dimensions analysées une à une, du positionnement business jusqu'aux données structurées. Chaque point reçoit un constat, un score et une action prioritaire.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card reveal"><div class="ico">🎯</div><h3>Stratégie &amp; positionnement</h3><p>Votre offre, votre cible, votre promesse et vos angles différenciants : est-ce clair, crédible et aligné avec ce que cherchent vos clients ?</p></div>
+        <div class="card reveal"><div class="ico">🏠</div><h3>Page d'accueil &amp; on-page</h3><p>H1, balise title, accroche, appels à l'action, preuves : votre page la plus vue convertit-elle, et envoie-t-elle les bons signaux à Google ?</p></div>
+        <div class="card reveal"><div class="ico">🔍</div><h3>Mots-clés &amp; intentions</h3><p>Les requêtes réelles de votre marché, par intention, et les pages qui vous manquent pour les capter.</p></div>
+        <div class="card reveal"><div class="ico">⚔️</div><h3>Concurrence</h3><p>Comparaison structurée face à vos concurrents : où ils vous dépassent, et les angles qu'ils n'occupent pas encore.</p></div>
+        <div class="card reveal"><div class="ico">✍️</div><h3>Contenu SEO &amp; GEO</h3><p>Les pages à créer, les FAQ et les « capsules-réponses » courtes et factuelles que les IA citent volontiers.</p></div>
+        <div class="card reveal"><div class="ico">⚙️</div><h3>SEO technique &amp; données structurées</h3><p>Indexation, sitemap, robots, balisage schema (JSON-LD) et performances : la base qui rend votre site lisible par Google comme par les IA.</p></div>
+        <div class="card reveal"><div class="ico">📍</div><h3>Autorité, marque &amp; SEO local</h3><p>Avis, fiche Google Business Profile, mentions, presse et signaux locaux : ce qui fait que l'on vous cite et que l'on vous fait confiance.</p></div>
+        <div class="card reveal"><div class="ico">🧠</div><h3>Visibilité IA</h3><p>Le test grandeur nature de votre présence dans les réponses IA — détaillé juste en dessous.</p></div>
+        <div class="card reveal" style="background:var(--accent-soft);border-color:transparent"><div class="ico">🗺️</div><h3>+ Roadmap priorisée</h3><p>Tout est ramené à un plan d'action 7 / 30 / 90 jours, chaque action notée par impact et par effort.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIBILITE IA (le différenciateur) -->
+  <section class="block" id="visibilite-ia">
+    <div class="wrap">
+      <div class="geo-band reveal">
+        <div>
+          <span class="eyebrow">Le cœur GEO</span>
+          <h2>Je teste réellement votre marque face aux moteurs de réponse IA.</h2>
+          <p>Je pose à votre place les questions que posent vos clients, et je relève qui est cité — vous ou vos concurrents — sur ChatGPT, Perplexity, Gemini, Google AI Overviews et Claude. Vous obtenez un <strong style="color:#fff">score de visibilité IA sur 100</strong>, votre part de voix face aux concurrents, la tonalité des citations, et la liste des sources à conquérir pour y entrer.</p>
+          <a class="btn btn-primary" href="index.html#contact">Mesurer ma visibilité IA →</a>
+        </div>
+        <ul class="geo-list">
+          <li>📊 Score de visibilité IA / 100</li>
+          <li>🥇 Part de voix vs concurrents</li>
+          <li>💬 Tonalité de vos citations</li>
+          <li>🌐 5 moteurs IA couverts</li>
+          <li>🔗 Sources à conquérir</li>
+          <li>🔁 Prompts à re-tester chaque mois</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVRABLES -->
+  <section class="block" id="livrables" style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">Vos livrables</span>
+        <h2>Deux documents clairs, pas un export d'outil illisible</h2>
+        <p>L'audit ne s'arrête pas à un constat. Vous repartez avec le <em>pourquoi</em> et le <em>comment</em>, lisibles même sans être expert.</p>
+      </div>
+      <div class="deliv">
+        <div class="card reveal">
+          <div class="doc-tag">Document 1 · le pourquoi</div>
+          <h3>La Note stratégique</h3>
+          <p class="doc-sub">Le diagnostic, pour comprendre et décider.</p>
+          <ul>
+            <li>Un verdict clair en première page (feu vert / orange / rouge)</li>
+            <li>Un score par dimension auditée</li>
+            <li>Les failles à corriger, avec les preuves à l'appui</li>
+            <li>Vos angles morts — ce que vous ne voyiez pas</li>
+            <li>Les axes structurants à prioriser</li>
+            <li>Un glossaire pour que chaque terme soit compris</li>
+          </ul>
+        </div>
+        <div class="card reveal">
+          <div class="doc-tag">Document 2 · le comment</div>
+          <h3>Le Plan d'implémentation</h3>
+          <p class="doc-sub">L'exécution, prête à copier-coller.</p>
+          <ul>
+            <li>Des chantiers concrets, classés par priorité</li>
+            <li>Des extraits prêts à coller : <code>HTML</code>, données structurées <code>JSON-LD</code>, <code>llms.txt</code></li>
+            <li>Des repères « où coller » selon votre CMS (WordPress, Webflow, Wix, Shopify)</li>
+            <li>Une roadmap 7 / 30 / 90 jours, action par action</li>
+            <li>Des Quick Wins activables dès la première semaine</li>
+            <li>Une page « par où commencer si vous êtes perdu »</li>
+          </ul>
+        </div>
+      </div>
+      <p style="margin-top:24px;color:var(--muted);font-size:14px">Un exemple anonyme du rendu (sur un cas fictif) est disponible sur demande.</p>
+    </div>
+  </section>
+
+  <!-- METHODE -->
+  <section class="block" id="methode">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">Méthode</span>
+        <h2>Comment se déroule l'audit</h2>
+        <p>Une démarche claire, étape par étape, de la première lecture de votre site jusqu'à la restitution.</p>
+      </div>
+      <ul class="case-list reveal" style="font-size:16px;gap:14px;max-width:820px">
+        <li><strong>1. Collecte &amp; cadrage</strong> — je lis votre site, votre marché et vos concurrents, et on cadre vos objectifs réels.</li>
+        <li><strong>2. Audit 360</strong> — j'analyse les sept dimensions : stratégie, on-page, mots-clés, concurrence, contenu, technique et autorité.</li>
+        <li><strong>3. Test de visibilité IA</strong> — je mesure votre présence réelle dans les réponses des IA et j'en tire un score sur 100.</li>
+        <li><strong>4. Priorisation</strong> — je transforme tout en Quick Wins et en roadmap 7 / 30 / 90 jours, notée par impact et effort.</li>
+        <li><strong>5. Restitution</strong> — je vous remets les deux documents et on en fait le tour ensemble, sans jargon.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- HONNETETE / COMPARE -->
+  <section class="block" id="honnete" style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">Ma règle</span>
+        <h2>Un audit qui dit la vérité.</h2>
+        <p>Fidèle au reste de mon travail : qui livre, pas qui promet. Voici ce qui distingue cet audit d'un rapport générique.</p>
+      </div>
+      <div class="compare">
+        <div class="col me reveal">
+          <h4>Mon audit SEO &amp; GEO</h4>
+          <ul>
+            <li><span class="tick yes">✓</span> Chiffres sourcés, jamais inventés</li>
+            <li><span class="tick yes">✓</span> Chaque constat marqué Confirmé / Déduit / À vérifier</li>
+            <li><span class="tick yes">✓</span> Test IA réel, pas une estimation au doigt mouillé</li>
+            <li><span class="tick yes">✓</span> Plan prêt à coller, pas du « il faudrait »</li>
+            <li><span class="tick yes">✓</span> Actions priorisées par impact et effort</li>
+            <li><span class="tick yes">✓</span> Aucune promesse de « 1ʳᵉ position garantie »</li>
+          </ul>
+        </div>
+        <div class="col other reveal">
+          <h4>Un audit générique</h4>
+          <ul>
+            <li><span class="tick no">✕</span> Export d'outil de 80 pages illisible</li>
+            <li><span class="tick no">✕</span> Scores opaques, sans méthode</li>
+            <li><span class="tick no">✕</span> « On optimise », sans action concrète</li>
+            <li><span class="tick no">✕</span> Recommandations copiées-collées d'un site à l'autre</li>
+            <li><span class="tick no">✕</span> Promesses de n°1 sur Google</li>
+            <li><span class="tick no">✕</span> Ignore totalement la visibilité IA</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULES -->
+  <section class="block" id="formules">
+    <div class="wrap">
+      <div class="head center reveal">
+        <span class="eyebrow">Formules</span>
+        <h2>Un audit pour chaque besoin.</h2>
+        <p>Tarifs indicatifs de départ — chaque audit fait l'objet d'un devis selon la taille du site et les données disponibles. Réponse sous 24-48 h.</p>
+      </div>
+      <div class="price-grid">
+        <div class="price reveal">
+          <h3>Audit Express</h3>
+          <p class="sub">Diagnostic flash, avant un projet ou pour prospecter.</p>
+          <div class="amount">290€ <small>/ à partir de</small></div>
+          <ul>
+            <li>Synthèse d'une page</li>
+            <li>Les failles bloquantes en priorité</li>
+            <li>3 Quick Wins immédiats</li>
+            <li>Score de visibilité IA estimé</li>
+            <li>Livré sous quelques jours</li>
+          </ul>
+          <a class="btn btn-ghost" href="index.html#contact">Discutons-en</a>
+        </div>
+        <div class="price featured reveal">
+          <span class="pop">Le plus complet</span>
+          <h3>Audit Complet SEO &amp; GEO</h3>
+          <p class="sub">Le diagnostic + le plan, de bout en bout.</p>
+          <div class="amount">890€ <small>/ à partir de</small></div>
+          <ul>
+            <li>Les 7 dimensions auditées</li>
+            <li>Test de visibilité IA réel (score / 100)</li>
+            <li>Note stratégique + Plan d'implémentation</li>
+            <li>Extraits prêts à coller (HTML, JSON-LD…)</li>
+            <li>Roadmap 7 / 30 / 90 jours</li>
+            <li>Restitution commentée</li>
+          </ul>
+          <a class="btn btn-primary" href="index.html#contact">Demander mon audit</a>
+        </div>
+        <div class="price reveal">
+          <h3>Audit + Suivi</h3>
+          <p class="sub">Pour piloter votre visibilité dans le temps.</p>
+          <div class="amount">sur devis</div>
+          <ul>
+            <li>Tout l'Audit Complet</li>
+            <li>Re-mesure à 30 / 60 / 90 jours</li>
+            <li>Suivi mensuel du score de visibilité IA</li>
+            <li>Comparatif avant / après chiffré</li>
+            <li>Idéal pour mesurer l'impact des actions</li>
+          </ul>
+          <a class="btn btn-ghost" href="index.html#contact">Discutons-en</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="block" id="faq">
+    <div class="wrap">
+      <div class="head center reveal" style="margin-bottom:54px">
+        <span class="eyebrow">FAQ</span>
+        <h2>Questions fréquentes</h2>
+      </div>
+      <div class="faq">
+        <div class="faq-item"><button class="faq-q">C'est quoi le « GEO » (visibilité IA) ?<span>+</span></button><div class="faq-a">Le GEO (Generative Engine Optimization) mesure si votre marque est citée dans les réponses des IA conversationnelles : ChatGPT, Perplexity, Gemini, Google AI Overviews et Claude. De plus en plus de clients posent leur question à une IA avant d'ouvrir Google : si vous n'y apparaissez pas, vous êtes invisible. L'audit teste réellement ces moteurs et vous donne un score de visibilité IA sur 100.</div></div>
+        <div class="faq-item"><button class="faq-q">En quoi c'est différent d'un audit SEO classique ?<span>+</span></button><div class="faq-a">Un audit SEO classique regarde Google : balises, vitesse, indexation, mots-clés. C'est inclus ici, mais j'ajoute le terrain que la plupart ignorent : votre citabilité par les IA (données structurées, capsules-réponses, autorité), avec un test réel des moteurs de réponse. Deux terrains, deux logiques, un seul diagnostic.</div></div>
+        <div class="faq-item"><button class="faq-q">Qu'est-ce que je reçois concrètement à la fin ?<span>+</span></button><div class="faq-a">Deux documents clairs : une Note stratégique (le diagnostic — verdict, scores par dimension, failles avec preuves, angles morts, axes prioritaires) et un Plan d'implémentation (l'exécution — chantiers priorisés, extraits prêts à coller en HTML et données structurées, et une roadmap 7 / 30 / 90 jours). Lisibles sans être expert.</div></div>
+        <div class="faq-item"><button class="faq-q">Vous garantissez la 1ʳᵉ position sur Google ?<span>+</span></button><div class="faq-a">Non, et méfiez-vous de qui le promet. Je garantis un diagnostic honnête, chiffré et sourcé, et un plan d'action priorisé par impact et effort. Chaque constat est marqué Confirmé, Déduit ou À vérifier — pas de chiffres inventés ni de promesses creuses.</div></div>
+        <div class="faq-item"><button class="faq-q">Vous corrigez aussi, ou seulement l'audit ?<span>+</span></button><div class="faq-a">L'audit identifie et priorise ; le plan d'implémentation est prêt à exécuter, avec des extraits à coller. Si vous préférez que je m'occupe aussi de la mise en œuvre (technique, WordPress, contenus, données structurées), c'est possible en complément — on en parle au moment du devis.</div></div>
+        <div class="faq-item"><button class="faq-q">Ça marche pour mon activité (local, e-commerce, marque perso) ?<span>+</span></button><div class="faq-a">Oui. L'audit s'adapte au type d'activité : commerce local, e-commerce, service B2B, B2C, média, ou marque personnelle / portfolio. Les priorités et les requêtes testées changent selon votre marché.</div></div>
+        <div class="faq-item"><button class="faq-q">Quel est le délai ?<span>+</span></button><div class="faq-a">Comptez quelques jours pour un audit complet selon la taille du site et les données disponibles. Le périmètre et le planning sont fixés dès le devis, avec une réponse sous 24-48 h.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="block" id="cta" style="padding-top:0">
+    <div class="wrap">
+      <div class="cta-band reveal">
+        <h2>Découvrez ce que Google et les IA disent de vous.</h2>
+        <p>Décrivez votre site en quelques clics. Je vous réponds sous 24-48 h avec un périmètre et un devis clairs — sans engagement.</p>
+        <a class="btn btn-primary" href="index.html#contact">Demander mon audit →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap foot">
+      <div>
+        <div class="logo">Ghost<span>.</span>Consulting</div>
+        <small>© <span id="year"></span> Ghost Consulting — Développement web, mobile, SEO &amp; GEO</small>
+      </div>
+      <div class="social">
+        <a href="index.html#contact" title="Demander un audit">✉</a>
+        <a href="https://github.com/GHOSTGIT-cyber" target="_blank" title="GitHub">GH</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const burger=document.getElementById('burger'),menu=document.getElementById('menu');
+    burger.addEventListener('click',()=>menu.classList.toggle('open'));
+    menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
+    document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>q.parentElement.classList.toggle('open')));
+    const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
+
+</body>
+</html>

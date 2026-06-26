@@ -4,6 +4,37 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
+// Derrière Cloudflare : fait confiance aux en-têtes X-Forwarded-* (proto, host, ip)
+app.set('trust proxy', true);
+
+// Redirections canoniques (SEO) + forçage HTTPS. Placé TRÈS TÔT, avant tout traitement.
+// Anti-boucle : l'apex en HTTPS ne déclenche AUCUNE redirection ici.
+app.use((req, res, next) => {
+  const host = (req.headers.host || '').toLowerCase();
+  const proto = req.headers['x-forwarded-proto'];
+
+  // Force HTTPS : seulement si Cloudflare indique explicitement 'http' (sinon on ne touche à rien)
+  if (proto === 'http') {
+    return res.redirect(301, 'https://' + host + req.url);
+  }
+  // Redirige www -> apex (SEO : une seule URL canonique). N'agit pas sur l'apex (pas de boucle).
+  if (host === 'www.bakabi.fr') {
+    return res.redirect(301, 'https://bakabi.fr' + req.url);
+  }
+  // Redirige /index.html -> / (SEO : pas de doublon). Conserve la query string éventuelle.
+  if (req.path === '/index.html') {
+    const qs = req.url.slice(req.path.length); // garde "?..." s'il existe
+    return res.redirect(301, '/' + qs);
+  }
+  next();
+});
+
+// En-tête de sécurité HSTS (force HTTPS côté navigateur pendant 1 an)
+app.use((req, res, next) => {
+  res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload');
+  next();
+});
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 

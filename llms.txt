@@ -5,16 +5,21 @@
 ## Services
 - Reprise / réparation WordPress : https://bakabi.fr/reprise-wordpress.html
 - Applications web sur-mesure (Next.js, Symfony) : https://bakabi.fr/
-- Applications mobiles (React Native) : https://bakabi.fr/
-- SEO & GEO : https://bakabi.fr/
+- Applications mobiles (React Native / Expo) : https://bakabi.fr/
+- Audit SEO & GEO (diagnostic référencement Google + test de visibilité dans les IA : ChatGPT, Perplexity, Gemini, Google AI Overviews ; score /100, failles, plan d'action priorisé) : https://bakabi.fr/audit-seo-geo.html
+- SEO & GEO (référencement Google + optimisation pour les IA) : https://bakabi.fr/audit-seo-geo.html
 
 ## Réalisations
-- Liftfoils — refonte WordPress & SEO (+27%) : https://bakabi.fr/Projets/liftfoils.html
-- QualityYacht — plateforme Next.js (API ~1 500 yachts) : https://bakabi.fr/Projets/qualityacht.html
-- TrackShip — suivi maritime temps réel : https://bakabi.fr/Projets/trackship.html
+- Liftfoils — refonte WordPress complète & SEO/GEO technique pour un distributeur français d'eFoils ; +27% de clics organiques tenus dans la durée : https://bakabi.fr/Projets/liftfoils.html
+- QualityYacht — plateforme Next.js de location de yachts branchée sur l'API Ankor (~1 500 yachts sans dupliquer la donnée, architecture Filtres + Exceptions) : https://bakabi.fr/Projets/qualityacht.html
+- TrackShip — surveillance fluviale temps réel sur la Seine : carte Leaflet, zones de proximité, alertes et rafraîchissement adaptatif (économie de l'API EuRIS) : https://bakabi.fr/Projets/trackship.html
+- eFast — landing page sur-mesure orientée conversion pour une activité de convoyage et transport de véhicules premium (identité dynamique, parcours client, qualification) : https://bakabi.fr/Projets/efast.html
+- Réseau de sites eFoil — conception et maintenance d'un réseau de 10+ sites WordPress multi-sites : déclinaisons par ville, versions bilingues FR/EN, charte commune et cohérence SEO/GEO : https://bakabi.fr/Projets/reseau-wordpress.html
+- eFoil Réservation — mini-SaaS Next.js de réservation : dashboard public, dévoilement des données personnelles par mot de passe (RGPD-friendly), e-mails de confirmation, déploiement Coolify/Docker : https://bakabi.fr/Projets/efoil-reservation.html
+- Émargement — plateforme full-stack de gestion de présences : back-office Symfony/Doctrine/Twig et application mobile compagnon React Native/Expo : https://bakabi.fr/Projets/emargement.html
 
-## Comparatif
-- Freelance ou agence : https://bakabi.fr/blog/freelance-ou-agence.html
+## Comparatif / Blog
+- Freelance ou agence : comparatif pour choisir : https://bakabi.fr/blog/freelance-ou-agence.html
 
 ## Contact
-- Formulaire de devis : https://bakabi.fr/ (section Contact)
+- Formulaire de devis (à étapes) sur la page d'accueil : https://bakabi.fr/

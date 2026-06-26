@@ -1,0 +1,25 @@
+# robots.txt — Ghost Consulting / bakabi.fr
+# Tous les robots, y compris ceux des IA, peuvent lire le site.
+
+# Signaux de contenu (Cloudflare Content-Signals) : usage IA AUTORISE.
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
+
+User-agent: *
+Allow: /
+
+# Robots d'IA explicitement autorisés (lever l'ancien blocage)
+User-agent: ClaudeBot
+Allow: /
+User-agent: GPTBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: CCBot
+Allow: /
+
+# Carte du site
+Sitemap: https://bakabi.fr/sitemap.xml
