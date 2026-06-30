@@ -131,10 +131,10 @@
     </div>
     <div class="pv-body">
       <div class="g-row">
-        <div class="g-fav">A</div>
+        <div class="g-fav">L</div>
         <div>
-          <div class="g-site">Atelier</div>
-          <div class="g-url" id="pvUrl">https://atelierseogeo.fr</div>
+          <div class="g-site">Labo</div>
+          <div class="g-url" id="pvUrl">https://laboseogeo.fr</div>
         </div>
       </div>
       <div class="g-title" id="pvTitle">Développement web &amp; mobile, SEO &amp; GEO sur-mesure</div>
@@ -150,9 +150,9 @@
     <h2><span class="num">1</span> L'adresse du site (le nom de domaine)</h2>
     <div class="hint">Lequel sonne le plus pro et facile à retenir ?</div>
     <div class="opts" data-group="domaine">
-      <label class="opt"><input type="radio" name="domaine" value="atelierseogeo.fr" data-url="https://atelierseogeo.fr" checked><span><span class="main mono">atelierseogeo.fr <span class="badge">mon préféré</span></span><span class="sub">« atelier » (fait main) + SEO &amp; GEO, mes spécialités</span></span></label>
-      <label class="opt"><input type="radio" name="domaine" value="atelierwebmobile.fr" data-url="https://atelierwebmobile.fr"><span><span class="main mono">atelierwebmobile.fr</span><span class="sub">met en avant le dev web &amp; mobile</span></span></label>
-      <label class="opt"><input type="radio" name="domaine" value="atelierdevweb.fr" data-url="https://atelierdevweb.fr"><span><span class="main mono">atelierdevweb.fr</span><span class="sub">plus court, axé développement</span></span></label>
+      <label class="opt"><input type="radio" name="domaine" value="laboseogeo.fr" data-url="https://laboseogeo.fr" checked><span><span class="main mono">laboseogeo.fr <span class="badge">mon préféré</span></span><span class="sub">« labo » (R&amp;D, tech de pointe) + SEO &amp; GEO, mes spécialités</span></span></label>
+      <label class="opt"><input type="radio" name="domaine" value="labowebmobile.fr" data-url="https://labowebmobile.fr"><span><span class="main mono">labowebmobile.fr</span><span class="sub">met en avant le dev web &amp; mobile</span></span></label>
+      <label class="opt"><input type="radio" name="domaine" value="labodevweb.fr" data-url="https://labodevweb.fr"><span><span class="main mono">labodevweb.fr</span><span class="sub">plus court, axé développement</span></span></label>
     </div>
   </div>
 
@@ -174,7 +174,7 @@
     <div class="opts" data-group="slogan">
       <label class="opt"><input type="radio" name="slogan" value="Cousu main : web, mobile, SEO & GEO façonnés sur-mesure." data-slogan="« Cousu main : web, mobile, SEO &amp; GEO façonnés <em>sur-mesure</em>. »" checked><span class="main">« Cousu main : web, mobile, SEO &amp; GEO façonnés sur-mesure. »</span></label>
       <label class="opt"><input type="radio" name="slogan" value="Web, mobile, SEO & GEO — cousu main, pas sorti d'un template." data-slogan="« Web, mobile, SEO &amp; GEO — <em>cousu main</em>, pas sorti d'un template. »"><span class="main">« Web, mobile, SEO &amp; GEO — cousu main, pas sorti d'un template. »</span></label>
-      <label class="opt"><input type="radio" name="slogan" value="L'atelier qui façonne votre web, mobile, SEO & GEO sur-mesure." data-slogan="« L'atelier qui façonne votre web, mobile, SEO &amp; GEO <em>sur-mesure</em>. »"><span class="main">« L'atelier qui façonne votre web, mobile, SEO &amp; GEO sur-mesure. »</span></label>
+      <label class="opt"><input type="radio" name="slogan" value="Le labo qui façonne votre web, mobile, SEO & GEO sur-mesure." data-slogan="« Le labo qui façonne votre web, mobile, SEO &amp; GEO <em>sur-mesure</em>. »"><span class="main">« Le labo qui façonne votre web, mobile, SEO &amp; GEO sur-mesure. »</span></label>
     </div>
   </div>
 
@@ -183,7 +183,7 @@
     <h2><span class="num">4</span> Ton ressenti global</h2>
     <div class="hint">Ça fait pro ? Un truc te gêne ? Une meilleure idée ? (libre)</div>
     <div class="opts">
-      <textarea id="comment" placeholder="Ex : Le slogan 1 est top, mais je préfère le domaine atelierwebmobile…"></textarea>
+      <textarea id="comment" placeholder="Ex : Le slogan 1 est top, mais je préfère le domaine labowebmobile…"></textarea>
     </div>
   </div>
 
@@ -218,7 +218,7 @@
   // live preview
   function refreshPreview(){
     var t=$('input[name=titre]:checked'); if(t) $('#pvTitle').innerHTML=t.getAttribute('data-title');
-    var d=$('input[name=domaine]:checked'); if(d){ $('#pvUrl').textContent=d.getAttribute('data-url'); $('.g-fav').textContent='A'; }
+    var d=$('input[name=domaine]:checked'); if(d){ $('#pvUrl').textContent=d.getAttribute('data-url'); $('.g-fav').textContent='L'; }
     var s=$('input[name=slogan]:checked'); if(s) $('#pvSlogan').innerHTML=s.getAttribute('data-slogan');
   }
   $$('input[type=radio]').forEach(function(i){
