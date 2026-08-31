@@ -4,6 +4,7 @@
 
 ## Services
 - Reprise / réparation WordPress : https://bakabi.fr/reprise-wordpress.html
+- Maintenance WordPress mensuelle (care plan : mises à jour testées, sauvegardes quotidiennes, surveillance 24/7, sécurité, Core Web Vitals ; 89 €/mois Essentiel, 179 €/mois Performance, 299 €/mois Agence, pack 5 sites 699 €/mois ; sans engagement, audit gratuit 15 min) : https://bakabi.fr/maintenance-wordpress.html
 - Applications web sur-mesure (Next.js, Symfony) : https://bakabi.fr/
 - Applications mobiles (React Native / Expo) : https://bakabi.fr/
 - Audit SEO & GEO (diagnostic référencement Google + test de visibilité dans les IA : ChatGPT, Perplexity, Gemini, Google AI Overviews ; score /100, failles, plan d'action priorisé) : https://bakabi.fr/audit-seo-geo.html
