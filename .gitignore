@@ -3,3 +3,6 @@ _local/
 
 # Instructions de maintenance locales (lues par Claude Code à la racine, jamais publiées)
 CLAUDE.md
+
+# Exports Search Console / analytics
+*.zip

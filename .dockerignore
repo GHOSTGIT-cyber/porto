@@ -2,3 +2,7 @@
 node_modules
 _local
 *.md
+
+# Exports de donnees (jamais dans l image)
+*.zip
+*.csv

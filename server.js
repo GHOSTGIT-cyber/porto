@@ -7,6 +7,12 @@ const app = express();
 // Derrière Cloudflare : fait confiance aux en-têtes X-Forwarded-* (proto, host, ip)
 app.set('trust proxy', true);
 
+// Anciennes URL du template d'origine -> fiches actuelles (301 permanent).
+const LEGACY_REDIRECTS = {
+  '/Projets/projet1.html': '/Projets/emargement.html',
+  '/Projets/projet2.html': '/Projets/emargement.html',
+};
+
 // Redirections canoniques (SEO) + forçage HTTPS. Placé TRÈS TÔT, avant tout traitement.
 // Anti-boucle : l'apex en HTTPS ne déclenche AUCUNE redirection ici.
 app.use((req, res, next) => {
@@ -25,6 +31,14 @@ app.use((req, res, next) => {
   if (req.path === '/index.html') {
     const qs = req.url.slice(req.path.length); // garde "?..." s'il existe
     return res.redirect(301, '/' + qs);
+  }
+  // Anciennes fiches projet du template d'origine, supprimées du dépôt.
+  // projet1 (web Symfony) et projet2 (mobile React Native) décrivent le même projet
+  // d'émargement : on redirige vers la fiche actuelle pour conserver leur historique.
+  // projet3 (Ohappy Events) n'a pas d'équivalent : on le laisse volontairement en 404
+  // plutôt que de rediriger vers une page sans rapport.
+  if (LEGACY_REDIRECTS[req.path]) {
+    return res.redirect(301, LEGACY_REDIRECTS[req.path]);
   }
   next();
 });
