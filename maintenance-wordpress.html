@@ -59,7 +59,7 @@
       {"@type":"Question","name":"Y a-t-il un engagement de durée ?","acceptedAnswer":{"@type":"Answer","text":"Non. La maintenance WordPress est mensuelle et sans engagement : elle s'arrête à la fin du mois en cours sur simple demande. Vous récupérez vos accès, vos sauvegardes et la documentation de ce qui a été fait."}},
       {"@type":"Question","name":"Pourquoi 399 € par mois quand d'autres proposent 30 € ?","acceptedAnswer":{"@type":"Answer","text":"Parce que ce n'est pas la même prestation. À 30 € par mois, un robot déclenche les mises à jour et personne ne regarde le résultat : le jour où une mise à jour casse une page ou qu'une faille est exploitée, il n'y a personne au bout du fil. Ici, chaque mise à jour est testée avant la production, un développeur relit ce qui s'est passé, les performances sont suivies dans la durée et vous avez un interlocuteur qui intervient en urgence. Le coût réel d'un site à l'arrêt — commandes perdues, référencement dégradé, remise en état — dépasse largement l'écart de prix."}},
       {"@type":"Question","name":"Tu interviens sur n'importe quel hébergeur ?","acceptedAnswer":{"@type":"Answer","text":"Oui : o2switch, OVH, IONOS, Hostinger, Infomaniak, Kinsta, WP Engine ou serveur dédié. J'ai besoin d'un accès administrateur WordPress et d'un accès SFTP ou au panel de l'hébergeur. Aucun changement d'hébergement n'est imposé."}},
-      {"@type":"Question","name":"Mon site est déjà en mauvais état, puis-je souscrire directement ?","acceptedAnswer":{"@type":"Answer","text":"Un site très en retard ou instable demande d'abord une remise à plat : c'est le nettoyage initial, facturé une fois entre 490 et 1 200 € selon l'état constaté lors de l'audit gratuit. L'abonnement mensuel prend le relais ensuite pour que le problème ne revienne pas."}},
+      {"@type":"Question","name":"Mon site est déjà en mauvais état, puis-je souscrire directement ?","acceptedAnswer":{"@type":"Answer","text":"C'est le cas de figure normal : un site parfaitement propre, cela n'existe presque jamais. La mise à niveau initiale est donc systématique, facturée une seule fois entre 490 et 1 200 € selon l'état constaté lors de l'audit gratuit. Elle fixe un état de départ documenté, sans lequel aucun engagement de délai d'intervention n'a de sens. L'abonnement mensuel prend le relais ensuite."}},
       {"@type":"Question","name":"Que se passe-t-il si une mise à jour casse le site ?","acceptedAnswer":{"@type":"Answer","text":"Une sauvegarde complète est prise avant chaque intervention et les mises à jour sont testées avant d'être appliquées en production. Si un problème survient malgré tout, la restauration et la correction sont comprises dans la formule, sans facturation supplémentaire."}},
       {"@type":"Question","name":"WooCommerce et les sites multilingues sont-ils couverts ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Je maintiens déjà un réseau de 10+ sites WordPress en production avec boutique WooCommerce, versions bilingues FR / EN et développements sur-mesure. Les boutiques passent en sauvegarde rapprochée à partir de la formule Performance."}},
       {"@type":"Question","name":"Comment est calculé le tarif sur-mesure ?","acceptedAnswer":{"@type":"Answer","text":"Il dépend du volume réel à maintenir : le nombre de pages et de modèles, le nombre de sites, la présence d'une boutique WooCommerce ou de versions multilingues, le trafic et le délai d'intervention attendu. Le devis est établi après l'audit gratuit et reste fixe une fois validé."}},
@@ -470,7 +470,7 @@
         </div>
         <a class="btn btn-primary" href="/#contact">Faire chiffrer mon parc →</a>
       </div>
-      <p class="note">Tarifs hors taxes et par site, hors coût d'hébergement et de licences d'extensions premium. Le premier mois peut être précédé d'un nettoyage initial si le site a été laissé sans maintenance (voir plus bas).</p>
+      <p class="note">Tarifs hors taxes et par site, hors coût d'hébergement et de licences d'extensions premium. Une mise à niveau initiale (490 à 1 200 €, une seule fois) précède le premier mois d'abonnement : voir plus bas.</p>
     </div>
   </section>
 
@@ -508,20 +508,39 @@
     </div>
   </section>
 
-  <!-- NETTOYAGE INITIAL -->
+  <!-- ENGAGEMENTS -->
+  <section class="block" id="engagements">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">Ce que vous signez</span>
+        <h2>Des engagements écrits, pas des promesses</h2>
+        <p>C'est la différence entre un abonnement de maintenance et un automate à 30 €. Tout ce qui suit figure noir sur blanc dans le contrat, quelle que soit la formule.</p>
+      </div>
+      <div class="why-grid">
+        <div class="card reveal"><div class="ico">📋</div><h3>Périmètre et exclusions écrits</h3><p>Ce qui est couvert et ce qui ne l'est pas est listé explicitement. Pas de zone grise découverte le jour de l'incident.</p></div>
+        <div class="card reveal"><div class="ico">🧪</div><h3>Mises à jour testées avant production</h3><p>Aucune mise à jour n'est appliquée directement sur le site en ligne. Sauvegarde préalable systématique, et vérification du rendu après coup.</p></div>
+        <div class="card reveal"><div class="ico">⏱️</div><h3>Délai d'intervention garanti</h3><p>Un délai chiffré selon la formule, pas un « on regarde dès que possible ». Sur la formule sur-mesure, il est contractualisé en SLA.</p></div>
+        <div class="card reveal"><div class="ico">🗄️</div><h3>Sauvegardes externalisées et testées</h3><p>Stockées ailleurs que sur l'hébergement du site, avec une durée de rétention annoncée et des restaurations vérifiées — pas une sauvegarde que personne n'a jamais rouverte.</p></div>
+        <div class="card reveal"><div class="ico">⏳</div><h3>Volume d'heures inclus et tarif de dépassement</h3><p>Le nombre d'heures d'évolutions comprises chaque mois est écrit, et le tarif au-delà est annoncé à l'avance. Aucune facture surprise.</p></div>
+        <div class="card reveal"><div class="ico">🔑</div><h3>Réversibilité complète</h3><p>Vous restez propriétaire du site, du domaine, de l'hébergement et des sauvegardes. À l'arrêt du contrat, tout vous est rendu documenté, sous 48 h.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISE A NIVEAU INITIALE -->
   <section class="block" id="nettoyage" style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
     <div class="wrap">
       <div class="head reveal">
-        <span class="eyebrow">Avant l'abonnement</span>
-        <h2>Le nettoyage initial : on part d'une base saine</h2>
-        <p>Un site laissé sans maintenance pendant des mois ne se stabilise pas avec un simple abonnement. On le remet d'abord d'aplomb, une fois.</p>
+        <span class="eyebrow">Étape obligatoire</span>
+        <h2>La mise à niveau initiale, avant tout abonnement</h2>
+        <p>Un site vraiment propre, je n'en vois presque jamais. Extensions abandonnées, mises à jour repoussées, sauvegardes qui n'ont jamais été testées : c'est la norme, pas l'exception. Je ne peux pas m'engager sur un délai d'intervention pour un site dont je ne maîtrise pas l'état de départ — donc la remise à niveau précède systématiquement le premier mois d'abonnement.</p>
       </div>
       <div class="case reveal">
-        <div class="case-media t5"><span class="case-tag">★ Prestation ponctuelle</span><b>Nettoyage initial</b></div>
+        <div class="case-media t5"><span class="case-tag">★ Préalable au contrat</span><b>Mise à niveau initiale</b></div>
         <div class="case-body">
-          <div class="chips">Forfait unique · 490 à 1 200 € selon l'état constaté</div>
-          <h3>Une remise à plat complète, puis la maintenance prend le relais</h3>
-          <p class="case-ctx">Le montant exact est fixé après l'audit gratuit, en fonction de ce que le site contient réellement. Vous connaissez le prix avant de valider.</p>
+          <div class="chips">Forfait unique · 490 à 1 200 € selon l'état constaté · une seule fois</div>
+          <h3>On fixe un « état zéro » documenté, puis la maintenance prend le relais</h3>
+          <p class="case-ctx">Le montant exact est fixé après l'audit gratuit, en fonction de ce que le site contient réellement — vous le connaissez avant de valider quoi que ce soit. C'est aussi ce qui protège les deux parties : l'état du site est constaté et daté au démarrage, donc on sait ce qui relève de l'existant et ce qui relève de mon suivi.</p>
           <ul class="case-list">
             <li>Rattrapage de toutes les mises à jour en retard, une par une, avec sauvegarde à chaque étape</li>
             <li>Suppression des extensions et thèmes inutilisés qui alourdissent et exposent le site</li>
@@ -529,12 +548,13 @@
             <li>Mise en place du cache, compression des images et correction des points bloquants de performance</li>
             <li>Sécurisation : comptes administrateurs, permissions de fichiers, en-têtes, sauvegardes externalisées</li>
             <li>Vérification de l'absence de code malveillant avant la mise sous surveillance</li>
+            <li>Rapport d'état zéro daté et remis : ce qui a été corrigé, ce qui reste, ce qui est exclu du contrat</li>
           </ul>
           <div class="case-result"><strong>Puis 399 ou 899 €/mois</strong> selon la formule, pour que le site reste dans cet état au lieu de se dégrader à nouveau.</div>
-          <a class="link" href="/#contact">Faire estimer mon nettoyage →</a>
+          <a class="link" href="/#contact">Faire estimer ma mise à niveau →</a>
         </div>
       </div>
-      <p class="note">Site déjà cassé, piraté ou totalement abandonné ? C'est une reprise complète plutôt qu'un nettoyage : voir la page <a href="/reprise-wordpress.html" style="color:var(--accent);text-decoration:underline">reprise et réparation de site WordPress</a>.</p>
+      <p class="note">Site déjà cassé, piraté ou totalement abandonné ? C'est une reprise complète plutôt qu'une mise à niveau : voir la page <a href="/reprise-wordpress.html" style="color:var(--accent);text-decoration:underline">reprise et réparation de site WordPress</a>.</p>
     </div>
   </section>
 
@@ -548,7 +568,7 @@
       </div>
       <ul class="case-list reveal" style="font-size:16px;gap:14px">
         <li><strong>1. Audit gratuit (15 min)</strong> — je regarde l'état réel du site et je vous envoie un rapport court : performance, sécurité, extensions inutiles, retards de mise à jour. Gratuit, sans engagement, même si vous ne donnez pas suite.</li>
-        <li><strong>2. Devis clair</strong> — la formule adaptée, et le nettoyage initial s'il est nécessaire, avec un montant fixe. Vous validez ou non.</li>
+        <li><strong>2. Devis clair</strong> — la formule adaptée et la mise à niveau initiale, chiffrées à montant fixe. Vous validez ou non.</li>
         <li><strong>3. Mise sous surveillance</strong> — sauvegardes externalisées, monitoring de disponibilité, sécurité et cache sont installés dans la première semaine.</li>
         <li><strong>4. Rythme mensuel</strong> — les interventions s'enchaînent sans que vous ayez à les demander, et vous recevez le rapport du mois. En cas de problème, vous avez un interlocuteur unique.</li>
       </ul>
@@ -620,7 +640,7 @@
         <div class="faq-item"><button class="faq-q">Y a-t-il un engagement de durée ?<span>+</span></button><div class="faq-a">Non. La maintenance est mensuelle et sans engagement : elle s'arrête à la fin du mois en cours sur simple demande. Vous récupérez vos accès, vos sauvegardes et la documentation de ce qui a été fait.</div></div>
         <div class="faq-item"><button class="faq-q">Pourquoi 399 € par mois quand d'autres proposent 30 € ?<span>+</span></button><div class="faq-a">Parce que ce n'est pas la même prestation. À 30 € par mois, un robot déclenche les mises à jour et personne ne regarde le résultat : le jour où une mise à jour casse une page ou qu'une faille est exploitée, il n'y a personne au bout du fil. Ici, chaque mise à jour est testée avant la production, un développeur relit ce qui s'est passé, les performances sont suivies dans la durée et vous avez un interlocuteur qui intervient en urgence. Le coût réel d'un site à l'arrêt — commandes perdues, référencement dégradé, remise en état — dépasse largement l'écart de prix.</div></div>
         <div class="faq-item"><button class="faq-q">Tu interviens sur n'importe quel hébergeur ?<span>+</span></button><div class="faq-a">Oui : o2switch, OVH, IONOS, Hostinger, Infomaniak, Kinsta, WP Engine ou serveur dédié. J'ai besoin d'un accès administrateur WordPress et d'un accès SFTP ou au panel de l'hébergeur. Aucun changement d'hébergement n'est imposé.</div></div>
-        <div class="faq-item"><button class="faq-q">Mon site est déjà en mauvais état, puis-je souscrire directement ?<span>+</span></button><div class="faq-a">Un site très en retard ou instable demande d'abord une remise à plat : c'est le nettoyage initial, facturé une fois entre 490 et 1 200 € selon l'état constaté lors de l'audit gratuit. L'abonnement mensuel prend le relais ensuite pour que le problème ne revienne pas. Si le site est cassé ou piraté, c'est une reprise complète : voir la page reprise et réparation WordPress.</div></div>
+        <div class="faq-item"><button class="faq-q">Mon site est déjà en mauvais état, puis-je souscrire directement ?<span>+</span></button><div class="faq-a">C'est même le cas de figure normal : un site parfaitement propre, je n'en vois presque jamais. C'est pour ça que la mise à niveau initiale est systématique, facturée une seule fois entre 490 et 1 200 € selon l'état constaté lors de l'audit gratuit. Elle fixe un état de départ documenté, sans lequel aucun engagement de délai n'a de sens. L'abonnement mensuel prend le relais ensuite. Si le site est cassé ou piraté, c'est une reprise complète : voir la page reprise et réparation WordPress.</div></div>
         <div class="faq-item"><button class="faq-q">Que se passe-t-il si une mise à jour casse le site ?<span>+</span></button><div class="faq-a">Une sauvegarde complète est prise avant chaque intervention et les mises à jour sont testées avant d'être appliquées en production. Si un problème survient malgré tout, la restauration et la correction sont comprises dans la formule, sans facturation supplémentaire.</div></div>
         <div class="faq-item"><button class="faq-q">WooCommerce et les sites multilingues sont-ils couverts ?<span>+</span></button><div class="faq-a">Oui. Je maintiens déjà un réseau de 10+ sites WordPress en production avec boutique WooCommerce, versions bilingues FR / EN et développements sur-mesure. Les boutiques passent en sauvegarde rapprochée à partir de la formule Performance.</div></div>
         <div class="faq-item"><button class="faq-q">Comment est calculé le tarif sur-mesure ?<span>+</span></button><div class="faq-a">Il dépend du volume réel à maintenir : le nombre de pages et de modèles, le nombre de sites, la présence d'une boutique WooCommerce ou de versions multilingues, le trafic et le délai d'intervention attendu. Le devis est établi après l'audit gratuit et reste fixe une fois validé.</div></div>
