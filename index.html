@@ -222,6 +222,10 @@
     .wp-band .btn-primary:hover{background:#fff;color:var(--ink)}
     .wp-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px}
     .wp-list li{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px 16px;font-size:14px;font-weight:500}
+    .wp-band .btn-row{display:flex;gap:12px;flex-wrap:wrap}
+    .wp-band .btn-ghost{border-color:rgba(255,255,255,.38);color:#fff}
+    .wp-band .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.09);transform:translateY(-2px)}
+    @media(max-width:1100px) and (min-width:861px){.nav-links{gap:18px}.nav-links a{font-size:14px}}
 
     /* TESTIMONIALS */
     .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
@@ -322,6 +326,7 @@
       <nav class="nav-links" id="menu">
         <a href="#why">Pourquoi moi</a>
         <a href="#wordpress">WordPress</a>
+        <a href="maintenance-wordpress.html">Maintenance</a>
         <a href="#projets">Projets</a>
         <a href="#formules">Formules</a>
         <a href="audit-seo-geo.html">Audit SEO</a>
@@ -426,7 +431,10 @@
           <span class="eyebrow">Spécialité WordPress</span>
           <h2>Un WordPress cassé, lent ou abandonné ? Je le remets d'aplomb.</h2>
           <p>Je reprends des sites legacy, je débogue, j'optimise et je modernise — sans tout casser. J'ai conçu et je maintiens un <strong style="color:#fff">réseau de 10+ sites eFoil</strong>, multi-villes et bilingues (Cannes, Monaco, Saint-Tropez, Paris, Arcachon, Le Touquet…), avec boutique e-commerce et configurateurs sur-mesure. Découvrez mon offre de <a href="/reprise-wordpress.html" style="color:#fff;text-decoration:underline">reprise de site WordPress</a> et ma <a href="/maintenance-wordpress.html" style="color:#fff;text-decoration:underline">maintenance WordPress mensuelle</a>.</p>
-          <a class="btn btn-primary" href="#contact">Faire diagnostiquer mon site →</a>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="#contact">Faire diagnostiquer mon site →</a>
+            <a class="btn btn-ghost" href="maintenance-wordpress.html">Maintenance mensuelle</a>
+          </div>
         </div>
         <ul class="wp-list">
           <li>🛠️ Reprise &amp; réparation de sites cassés</li>
@@ -435,6 +443,7 @@
           <li>🛒 Boutique WooCommerce complète</li>
           <li>🧩 Mega-menus &amp; configurateurs sur-mesure</li>
           <li>🔒 Sécurisation &amp; mises à jour</li>
+          <li>♾️ Maintenance mensuelle sans compteur d'heures</li>
         </ul>
       </div>
     </div>
