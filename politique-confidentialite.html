@@ -4,14 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="assets/img/portfolio/favicon.ico">
+  <!-- TEMPORAIRE : noindex tant que les champs restants ne sont pas renseignes.
+       Retirer cette ligne ET remettre la page au sitemap une fois la page complete. -->
+  <meta name="robots" content="noindex, nofollow">
   <title>Politique de confidentialité | Ghost Consulting</title>
   <meta name="description" content="Quelles données le formulaire de contact de bakabi.fr collecte, pourquoi, qui les reçoit, combien de temps elles sont conservées et comment exercer vos droits.">
   <link rel="canonical" href="https://bakabi.fr/politique-confidentialite.html">
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Politique de confidentialité | Ghost Consulting" />
-  <meta property="og:description" content="Quelles données le formulaire de contact de bakabi.fr collecte, pourquoi, qui les reçoit et comment exercer vos droits." />
-  <meta property="og:image" content="https://bakabi.fr/assets/img/bg/hero.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -41,15 +39,10 @@
     p+p{margin-top:12px}
     ul{margin:12px 0 0 20px}
     li{margin-bottom:7px}
-    dt{font-weight:600;color:var(--ink);font-size:14px;margin-top:14px}
-    dd{color:var(--muted);font-size:15px}
     table{width:100%;border-collapse:collapse;margin-top:14px;font-size:14px}
     th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
     th{color:var(--ink);font-weight:600;font-family:'Plus Jakarta Sans',sans-serif}
     .tbl-wrap{overflow-x:auto}
-    .todo{background:rgba(37,99,235,.10);border:1px dashed rgba(29,78,216,.45);border-radius:10px;padding:3px 9px;font-family:'Plus Jakarta Sans',monospace;font-size:13px;font-weight:600;color:#1231a8;display:inline-block}
-    .note{background:rgba(37,99,235,.08);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:16px 18px;margin:22px 0;font-size:14px}
-    .note strong{color:var(--ink)}
     footer{padding:50px 0 40px;border-top:1px solid var(--line);margin-top:80px}
     .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
     .foot small,.foot a.legal{color:var(--muted);font-size:13px}
@@ -73,15 +66,11 @@
       <h1>Politique de confidentialité</h1>
       <p class="lead">Cette page explique quelles données personnelles le site <strong>bakabi.fr</strong> collecte, pourquoi, qui les reçoit, combien de temps elles sont conservées et comment exercer vos droits. Elle est établie conformément au Règlement général sur la protection des données (RGPD).</p>
 
-      <div class="note">
-        <strong>Gabarit à compléter.</strong> Le contenu ci-dessous décrit le fonctionnement réellement observé du site au 1<sup>er</sup> septembre 2026.
-        Les champs <span class="todo">À COMPLÉTER</span> dépendent de votre statut et de votre configuration serveur.
-        <strong>Vérifiez en particulier la section « Destinataires »</strong> : elle doit refléter les services réellement activés chez vous. Supprimez ce bloc avant mise en ligne.
-      </div>
-
       <h2>Responsable du traitement</h2>
       <p>Le responsable du traitement est l'éditeur du site, identifié dans les <a href="/mentions-legales.html">mentions légales</a>.</p>
-      <p>Contact pour toute question relative aux données personnelles : <span class="todo">À COMPLÉTER — adresse e-mail de contact dédiée</span></p>
+      <p>Toute question relative aux données personnelles peut être adressée via le <a href="/#contact">formulaire de contact</a>.</p>
+      <!-- À COMPLÉTER : ajouter une adresse e-mail dédiée, par ex.
+           « Contact : privacy@votre-domaine.fr » — le RGPD demande un point de contact identifiable. -->
 
       <h2>Données collectées</h2>
       <p>Le site ne collecte de données personnelles que lorsque vous remplissez volontairement le formulaire de contact. Aucune inscription, aucun compte et aucun profilage ne sont mis en œuvre.</p>
@@ -111,40 +100,42 @@
       <p>Les données saisies dans le formulaire sont transmises au serveur du site, puis relayées vers les services de notification suivants :</p>
       <div class="tbl-wrap">
         <table>
-          <thead><tr><th>Destinataire</th><th>Rôle</th><th>Localisation</th></tr></thead>
+          <thead><tr><th>Destinataire</th><th>Rôle</th></tr></thead>
           <tbody>
             <tr>
               <td><strong>CallMeBot</strong> (api.callmebot.com)</td>
               <td>Notification WhatsApp. L'appel est effectué <strong>depuis votre navigateur</strong> : le contenu du formulaire transite donc directement de votre appareil vers ce service.</td>
-              <td><span class="todo">À COMPLÉTER — vérifier le pays d'hébergement du service</span></td>
-            </tr>
-            <tr>
-              <td><strong>Fournisseur d'e-mail (SMTP)</strong></td>
-              <td>Acheminement de la notification par e-mail, si ce canal est activé.</td>
-              <td><span class="todo">À COMPLÉTER — nom et pays du fournisseur SMTP, ou supprimer cette ligne si non activé</span></td>
-            </tr>
-            <tr>
-              <td><strong>Telegram</strong></td>
-              <td>Notification instantanée, si ce canal est activé côté serveur.</td>
-              <td><span class="todo">À COMPLÉTER — conserver seulement si le canal Telegram est réellement activé, sinon supprimer cette ligne</span></td>
             </tr>
             <tr>
               <td><strong>Hébergeur du serveur</strong></td>
               <td>Hébergement technique du site et traitement de la requête.</td>
-              <td><span class="todo">À COMPLÉTER — voir mentions légales</span></td>
             </tr>
             <tr>
               <td><strong>Cloudflare</strong></td>
               <td>Réseau de diffusion et protection ; achemine les requêtes vers le serveur d'origine.</td>
-              <td>Réseau mondial</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <p><span class="todo">À COMPLÉTER — si l'un de ces destinataires est situé hors Union européenne, indiquer ici le cadre du transfert (clauses contractuelles types, décision d'adéquation, etc.)</span></p>
+      <!-- ==========================================================================
+           À COMPLÉTER — Destinataires.
+           Ajouter les lignes ci-dessous UNIQUEMENT si le canal est réellement activé
+           dans les variables d'environnement Coolify (voir server.js) :
+
+           <tr><td><strong>Fournisseur d'e-mail (SMTP)</strong></td>
+               <td>Acheminement de la notification par e-mail. [nom et pays du fournisseur]</td></tr>
+           <tr><td><strong>Telegram</strong></td>
+               <td>Notification instantanée. [activé seulement si TG_TOKEN et TG_CHAT sont définis]</td></tr>
+
+           Préciser aussi le pays d'hébergement de CallMeBot et de l'hébergeur.
+           Si un destinataire est hors Union européenne, indiquer le cadre du transfert
+           (clauses contractuelles types, décision d'adéquation, etc.).
+           ========================================================================== -->
 
       <h2>Durée de conservation</h2>
-      <p>Les messages reçus sont conservés le temps nécessaire au traitement de votre demande, puis <span class="todo">À COMPLÉTER — durée retenue, par exemple 3 ans à compter du dernier contact</span>. Au-delà, ils sont supprimés.</p>
+      <p>Les messages reçus sont conservés le temps nécessaire au traitement de votre demande, puis supprimés.</p>
+      <!-- À COMPLÉTER : préciser une durée chiffrée, par ex.
+           « ... puis pendant 3 ans à compter du dernier contact, avant suppression. » -->
 
       <h2>Cookies et mesure d'audience</h2>
       <p><strong>Ce site ne dépose aucun cookie</strong> et n'utilise aucun outil de mesure d'audience ni traceur publicitaire. Aucune bannière de consentement n'est donc nécessaire.</p>
@@ -155,13 +146,13 @@
 
       <h2>Vos droits</h2>
       <p>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation du traitement, d'opposition et de portabilité de vos données.</p>
-      <p>Pour exercer ces droits, écrivez à <span class="todo">À COMPLÉTER — adresse e-mail de contact</span>. Une réponse vous sera apportée dans un délai d'un mois.</p>
+      <p>Pour exercer ces droits, contactez l'éditeur via le <a href="/#contact">formulaire de contact</a>. Une réponse vous sera apportée dans un délai d'un mois.</p>
       <p>Si vous estimez, après nous avoir contactés, que vos droits ne sont pas respectés, vous pouvez adresser une réclamation à la <a href="https://www.cnil.fr/fr/plaintes" target="_blank" rel="noopener">CNIL</a>.</p>
 
       <h2>Modifications</h2>
-      <p>Cette politique peut être mise à jour pour refléter une évolution du site ou de la réglementation. La date ci-dessous indique la version en vigueur.</p>
-
-      <p style="margin-top:34px;font-size:13px;color:var(--muted)">Dernière mise à jour : <span class="todo">À COMPLÉTER — date de mise en ligne</span></p>
+      <p>Cette politique peut être mise à jour pour refléter une évolution du site ou de la réglementation.</p>
+      <!-- À COMPLÉTER : ajouter la date de mise en ligne, par ex.
+           <p style="margin-top:34px;font-size:13px;color:var(--muted)">Dernière mise à jour : 1er septembre 2026</p> -->
     </article>
   </main>
 
