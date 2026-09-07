@@ -1,17 +1,19 @@
 # Ghost Consulting
 
-> Développeur web & mobile freelance (Île-de-France + 100% à distance en France) : Next.js, Symfony, React Native ; reprise/réparation de WordPress ; SEO/GEO. +27% de clics organiques prouvé sur un projet (liftfoils).
+> Développeur web & mobile freelance (100 % à distance, partout en France) : Next.js, Symfony, React Native ; reprise/réparation de WordPress ; SEO/GEO. Réalisations livrées en production, dont une refonte WordPress avec SEO/GEO technique.
 
 ## Services
 - Reprise / réparation WordPress : https://bakabi.fr/reprise-wordpress.html
 - Maintenance WordPress mensuelle (care plan haut de gamme : mises à jour testées avant production, sauvegardes quotidiennes externalisées, surveillance 24/7, sécurité et pare-feu, Core Web Vitals, rapport mensuel ; 299 €/mois Essentiel, 899 €/mois Performance, formule Sur-mesure sur devis selon le nombre de pages et de sites ; sans engagement et sans compteur d'heures — les petites demandes sont incluses, contrairement aux contrats qui vendent 6 a 24 heures de support par an ; mise a niveau initiale obligatoire 490 a 1 200 EUR ; audit gratuit 15 min) : https://bakabi.fr/maintenance-wordpress.html
 - Applications web sur-mesure (Next.js, Symfony) : https://bakabi.fr/
 - Applications mobiles (React Native / Expo) : https://bakabi.fr/
+- Infogérance de serveur VPS (mise en place : Docker, reverse proxy, HTTPS, sauvegardes externalisées ; infogérance continue : mises à jour testées, supervision, correctifs de sécurité ; migration depuis un hébergement mutualisé sans coupure ni perte de référencement ; sur devis après audit gratuit) : https://bakabi.fr/infogerance-vps.html
+- Automatisation de tâches métier avec n8n auto-hébergé (récupération et rangement de demandes, relances automatiques, génération de documents, liaison entre outils existants ; hébergé sur le serveur du client donc aucune donnée chez un tiers ; sur devis) : https://bakabi.fr/automatisation-n8n.html
 - Audit SEO & GEO (diagnostic référencement Google + test de visibilité dans les IA : ChatGPT, Perplexity, Gemini, Google AI Overviews ; score /100, failles, plan d'action priorisé) : https://bakabi.fr/audit-seo-geo.html
 - SEO & GEO (référencement Google + optimisation pour les IA) : https://bakabi.fr/audit-seo-geo.html
 
 ## Réalisations
-- Liftfoils — refonte WordPress complète & SEO/GEO technique pour un distributeur français d'eFoils ; +27% de clics organiques tenus dans la durée : https://bakabi.fr/Projets/liftfoils.html
+- Liftfoils — refonte WordPress complète & SEO/GEO technique pour un distributeur français d'eFoils ; trafic organique en hausse continue, tenu dans la durée : https://bakabi.fr/Projets/liftfoils.html
 - QualityYacht — plateforme Next.js de location de yachts branchée sur l'API Ankor (~1 500 yachts sans dupliquer la donnée, architecture Filtres + Exceptions) : https://bakabi.fr/Projets/qualityacht.html
 - TrackShip — surveillance fluviale temps réel sur la Seine : carte Leaflet, zones de proximité, alertes et rafraîchissement adaptatif (économie de l'API EuRIS) : https://bakabi.fr/Projets/trackship.html
 - eFast — landing page sur-mesure orientée conversion pour une activité de convoyage et transport de véhicules premium (identité dynamique, parcours client, qualification) : https://bakabi.fr/Projets/efast.html
