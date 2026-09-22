@@ -1,0 +1,11 @@
+# La norme vCard impose des fins de ligne CRLF. Sans cette regle, core.autocrlf
+# normalise le fichier en LF dans le depot, et un clone sous Linux (le build
+# Coolify) sert un .vcf en LF qu'iOS refuse silencieusement.
+*.vcf text eol=crlf
+
+# Les fichiers servis tels quels restent en LF quel que soit le poste.
+*.html text eol=lf
+*.js   text eol=lf
+*.json text eol=lf
+*.txt  text eol=lf
+*.xml  text eol=lf
