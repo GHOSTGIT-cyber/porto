@@ -4,10 +4,15 @@
   "private": true,
   "description": "Portfolio Ghost Consulting + endpoint formulaire (WhatsApp/e-mail)",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "qr": "node scripts/qr.js",
+    "sitemap": "node scripts/sitemap.js"
   },
   "dependencies": {
     "express": "^4.19.2",
     "nodemailer": "^6.9.14"
+  },
+  "devDependencies": {
+    "qrcode": "^1.5.4"
   }
 }

@@ -107,6 +107,31 @@ Message: ${b.message || '-'}`;
   res.json({ ok: true, mail, tg });
 });
 
+// Page de contact scannable par QR code : /c (URL volontairement courte = QR peu dense).
+// Routes explicites, déclarées AVANT express.static, pour deux raisons :
+//  1) sans ça, static répondrait à /c par un 301 vers /c/ (un aller-retour de plus) ;
+//  2) express 4 (mime 1.x) servirait le .vcf en "text/x-vcard" : iOS le téléchargerait
+//     au lieu d'ouvrir la fiche contact. Le type "text/vcard" doit être forcé.
+// La page porte l'identité réelle : noindex partout (balise + en-tête, y compris sur le
+// .vcf que Google indexerait sinon comme un fichier texte). Absente du sitemap.
+const CONTACT_DIR = path.join(__dirname, 'c');
+app.get(['/c', '/c/'], (req, res) => {
+  res.set({
+    'Cache-Control': 'public, max-age=300',
+    'X-Robots-Tag': 'noindex, nofollow',
+  });
+  res.sendFile(path.join(CONTACT_DIR, 'index.html'));
+});
+app.get('/c/bakari.vcf', (req, res) => {
+  res.set({
+    'Content-Type': 'text/vcard; charset=utf-8',
+    'Content-Disposition': 'inline; filename="bakari.vcf"',
+    'Cache-Control': 'public, max-age=300',
+    'X-Robots-Tag': 'noindex, nofollow',
+  });
+  res.sendFile(path.join(CONTACT_DIR, 'bakari.vcf'));
+});
+
 // Sert le site statique (index.html à la racine, /clair/, /bleu/, /Projets/, assets...)
 app.use(express.static(__dirname, { extensions: ['html'] }));
 

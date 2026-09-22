@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+N:{{NOM}};{{PRÉNOM}};;;
+FN:{{PRÉNOM NOM}}
+ORG:Ghost Consulting
+TITLE:Développeur web & mobile freelance
+TEL;TYPE=CELL,VOICE:{{+33XXXXXXXXX}}
+EMAIL;TYPE=INTERNET,PREF:{{email@exemple.fr}}
+URL:https://bakabi.fr/
+NOTE:Développement web, mobile, WordPress, SEO et automatisation. Devis via bakabi.fr.
+END:VCARD
