@@ -1,28 +1,32 @@
 # Ghost Consulting
 
-> Développeur web & mobile freelance (100 % à distance, partout en France) : Next.js, Symfony, React Native ; reprise/réparation de WordPress ; SEO/GEO. Réalisations livrées en production, dont une refonte WordPress avec SEO/GEO technique.
+> Développeur web et mobile freelance, 100 % à distance partout en France. Applications web (Next.js, Symfony) et mobiles (React Native), reprise, réparation et maintenance de sites WordPress, infogérance de serveurs VPS, automatisation de tâches métier et agents IA installés dans les outils existants, audit SEO et GEO. Réalisations livrées en production ; contact par formulaire de devis.
+
+Ghost Consulting est une structure indépendante d'une seule personne. Le travail se fait à distance, avec un suivi versionné (Git) et une mise en production sur l'infrastructure du client ou sur un serveur dédié administré via Docker et Coolify. Les tarifs affichés sont des points de départ ; un devis écrit précède tout démarrage. Réponse au devis sous 24 à 48 h.
+
+Principes communs à toutes les prestations : rien n'est publié ni envoyé sans validation humaine ; les accès et la documentation restent au client ; aucune dépendance imposée à un outil ou à un hébergeur.
 
 ## Services
-- Reprise / réparation WordPress : https://bakabi.fr/reprise-wordpress.html
-- Maintenance WordPress mensuelle (care plan haut de gamme : mises à jour testées avant production, sauvegardes quotidiennes externalisées, surveillance 24/7, sécurité et pare-feu, Core Web Vitals, rapport mensuel ; 299 €/mois Essentiel, 899 €/mois Performance, formule Sur-mesure sur devis selon le nombre de pages et de sites ; sans engagement et sans compteur d'heures — les petites demandes sont incluses, contrairement aux contrats qui vendent 6 a 24 heures de support par an ; mise a niveau initiale obligatoire 490 a 1 200 EUR ; audit gratuit 15 min) : https://bakabi.fr/maintenance-wordpress.html
-- Applications web sur-mesure (Next.js, Symfony) : https://bakabi.fr/
-- Applications mobiles (React Native / Expo) : https://bakabi.fr/
-- Infogérance de serveur VPS (mise en place : Docker, reverse proxy, HTTPS, sauvegardes externalisées ; infogérance continue : mises à jour testées, supervision, correctifs de sécurité ; migration depuis un hébergement mutualisé sans coupure ni perte de référencement ; sur devis après audit gratuit) : https://bakabi.fr/infogerance-vps.html
-- Automatisation de tâches métier avec n8n auto-hébergé (récupération et rangement de demandes, relances automatiques, génération de documents, liaison entre outils existants ; hébergé sur le serveur du client donc aucune donnée chez un tiers ; sur devis) : https://bakabi.fr/automatisation-n8n.html
-- Audit SEO & GEO (diagnostic référencement Google + test de visibilité dans les IA : ChatGPT, Perplexity, Gemini, Google AI Overviews ; score /100, failles, plan d'action priorisé) : https://bakabi.fr/audit-seo-geo.html
-- SEO & GEO (référencement Google + optimisation pour les IA) : https://bakabi.fr/audit-seo-geo.html
+
+- [Reprise et réparation de site WordPress](https://bakabi.fr/reprise-wordpress.html): diagnostic gratuit, réparation, sécurisation et remise en production d'un site WordPress cassé, lent ou abandonné, sans tout refaire. WooCommerce et multilingue FR/EN pris en charge. Plus de 10 sites WordPress maintenus en production.
+- [Maintenance WordPress mensuelle](https://bakabi.fr/maintenance-wordpress.html): mises à jour testées avant production, sauvegardes quotidiennes externalisées, surveillance 24/7, sécurité et pare-feu, Core Web Vitals, rapport mensuel. Sans engagement et sans compteur d'heures. Formule Essentiel à 299 €/mois, Performance à 899 €/mois, Sur-mesure sur devis selon le nombre de pages et de sites. Mise à niveau initiale de 490 à 1 200 € selon l'état du site. Audit gratuit de 15 min.
+- [Infogérance de serveur VPS](https://bakabi.fr/infogerance-vps.html): mise en place (Docker, reverse proxy, HTTPS, sauvegardes externalisées), infogérance continue (mises à jour testées, supervision, correctifs de sécurité, intervention selon le délai convenu) et migration depuis un hébergement mutualisé sans coupure ni perte de référencement. Intervention sur le serveur existant du client (OVH, Hetzner, Scaleway, IONOS, Infomaniak, DigitalOcean ou dédié). Sur devis après audit gratuit.
+- [Automatisation de tâches métier avec n8n](https://bakabi.fr/automatisation-n8n.html): récupération et rangement des demandes entrantes, relances automatiques, génération de documents, liaison entre outils existants. n8n auto-hébergé sur le serveur du client : aucune donnée chez un tiers, coût fixe quel que soit le volume. Sur devis.
+- [Agents IA pour petites entreprises](https://bakabi.fr/agents-ia.html): agents installés dans les outils existants (mails, WhatsApp Business via l'API officielle Meta, CRM, e-commerce) pour trier les demandes, préparer les réponses, relancer les devis et tenir le CRM à jour. Une personne valide chaque action sortante. Hébergement en Europe, clés d'API au nom du client. Trois offres : clé en main (installation, hébergement, maintenance), sur-mesure, audit. Démarrage par un appel de 20 min.
+- [Audit SEO et GEO](https://bakabi.fr/audit-seo-geo.html): diagnostic du référencement Google et test de visibilité dans les moteurs de réponse IA (ChatGPT, Perplexity, Gemini, Google AI Overviews). Score sur 100, failles identifiées, plan d'action priorisé.
+- [Développement web et mobile sur-mesure](https://bakabi.fr/): applications web full-stack (Next.js, Symfony), applications mobiles (React Native / Expo), intégration d'API tierces, déploiement en production. Formules à partir de 690 € pour un site vitrine et 1 900 € pour une application web ; projet complet sur devis.
 
 ## Réalisations
-- Liftfoils — refonte WordPress complète & SEO/GEO technique pour un distributeur français d'eFoils ; trafic organique en hausse continue, tenu dans la durée : https://bakabi.fr/Projets/liftfoils.html
-- QualityYacht — plateforme Next.js de location de yachts branchée sur l'API Ankor (~1 500 yachts sans dupliquer la donnée, architecture Filtres + Exceptions) : https://bakabi.fr/Projets/qualityacht.html
-- TrackShip — surveillance fluviale temps réel sur la Seine : carte Leaflet, zones de proximité, alertes et rafraîchissement adaptatif (économie de l'API EuRIS) : https://bakabi.fr/Projets/trackship.html
-- eFast — landing page sur-mesure orientée conversion pour une activité de convoyage et transport de véhicules premium (identité dynamique, parcours client, qualification) : https://bakabi.fr/Projets/efast.html
-- Réseau de sites eFoil — conception et maintenance d'un réseau de 10+ sites WordPress multi-sites : déclinaisons par ville, versions bilingues FR/EN, charte commune et cohérence SEO/GEO : https://bakabi.fr/Projets/reseau-wordpress.html
-- eFoil Réservation — mini-SaaS Next.js de réservation : dashboard public, dévoilement des données personnelles par mot de passe (RGPD-friendly), e-mails de confirmation, déploiement Coolify/Docker : https://bakabi.fr/Projets/efoil-reservation.html
-- Émargement — plateforme full-stack de gestion de présences : back-office Symfony/Doctrine/Twig et application mobile compagnon React Native/Expo : https://bakabi.fr/Projets/emargement.html
 
-## Comparatif / Blog
-- Freelance ou agence : comparatif pour choisir : https://bakabi.fr/blog/freelance-ou-agence.html
+- [Liftfoils — refonte WordPress et SEO/GEO](https://bakabi.fr/Projets/liftfoils.html): refonte complète du site d'un distributeur français d'eFoils, avec SEO/GEO technique. Trafic organique en hausse continue, tenu dans la durée.
+- [QualityYacht — plateforme de location de yachts](https://bakabi.fr/Projets/qualityacht.html): plateforme Next.js branchée sur l'API Ankor, environ 1 500 yachts exposés sans dupliquer la donnée, architecture Filtres + Exceptions.
+- [TrackShip — surveillance fluviale temps réel](https://bakabi.fr/Projets/trackship.html): carte Leaflet, zones de proximité, alertes, rafraîchissement adaptatif pour économiser l'API EuRIS.
+- [eFast — landing page de convoyage de véhicules](https://bakabi.fr/Projets/efast.html): page sur-mesure orientée conversion, identité dynamique, parcours client et qualification des demandes.
+- [Réseau de sites eFoil — WordPress multi-sites](https://bakabi.fr/Projets/reseau-wordpress.html): conception et maintenance de plus de 10 sites WordPress pour une marque eFoil, déclinaisons par ville, versions bilingues FR/EN, charte commune.
+- [eFoil Réservation — mini-SaaS](https://bakabi.fr/Projets/efoil-reservation.html): réservation en ligne avec tableau de bord partagé, données personnelles protégées par mot de passe, e-mails de confirmation, déploiement Docker/Coolify.
+- [Émargement — gestion de présences](https://bakabi.fr/Projets/emargement.html): back-office Symfony/Doctrine/Twig et application mobile compagnon React Native/Expo.
 
-## Contact
-- Formulaire de devis (à étapes) sur la page d'accueil : https://bakabi.fr/
+## Optional
+
+- [Freelance ou agence web : comment choisir](https://bakabi.fr/blog/freelance-ou-agence.html): comparatif coût, délais, réactivité et suivi, par un développeur freelance.
+- [Formulaire de contact](https://bakabi.fr/#contact): demande de devis en trois étapes sur la page d'accueil. Aucune coordonnée directe n'est publiée ; le formulaire est le seul canal.

@@ -2,45 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://bakabi.fr/</loc>
-    <priority>1.0</priority>
+    <lastmod>2026-09-05</lastmod>
   </url>
   <url>
-    <loc>https://bakabi.fr/reprise-wordpress.html</loc>
-  </url>
-  <url>
-    <loc>https://bakabi.fr/maintenance-wordpress.html</loc>
+    <loc>https://bakabi.fr/agents-ia.html</loc>
+    <lastmod>2026-09-17</lastmod>
   </url>
   <url>
     <loc>https://bakabi.fr/audit-seo-geo.html</loc>
-  </url>
-  <url>
-    <loc>https://bakabi.fr/blog/freelance-ou-agence.html</loc>
-  </url>
-  <url>
-    <loc>https://bakabi.fr/Projets/liftfoils.html</loc>
-  </url>
-  <url>
-    <loc>https://bakabi.fr/Projets/qualityacht.html</loc>
-  </url>
-  <url>
-    <loc>https://bakabi.fr/Projets/trackship.html</loc>
-  </url>
-  <url>
-    <loc>https://bakabi.fr/Projets/efast.html</loc>
-  </url>
-  <url>
-    <loc>https://bakabi.fr/Projets/reseau-wordpress.html</loc>
-  </url>
-  <url>
-    <loc>https://bakabi.fr/Projets/efoil-reservation.html</loc>
-  </url>
-  <url>
-    <loc>https://bakabi.fr/Projets/emargement.html</loc>
-  </url>
-  <url>
-    <loc>https://bakabi.fr/infogerance-vps.html</loc>
+    <lastmod>2026-09-05</lastmod>
   </url>
   <url>
     <loc>https://bakabi.fr/automatisation-n8n.html</loc>
+    <lastmod>2026-09-05</lastmod>
+  </url>
+  <url>
+    <loc>https://bakabi.fr/blog/freelance-ou-agence.html</loc>
+    <lastmod>2026-09-05</lastmod>
+  </url>
+  <url>
+    <loc>https://bakabi.fr/infogerance-vps.html</loc>
+    <lastmod>2026-09-05</lastmod>
+  </url>
+  <url>
+    <loc>https://bakabi.fr/maintenance-wordpress.html</loc>
+    <lastmod>2026-09-05</lastmod>
+  </url>
+  <url>
+    <loc>https://bakabi.fr/Projets/efast.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://bakabi.fr/Projets/efoil-reservation.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://bakabi.fr/Projets/emargement.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://bakabi.fr/Projets/liftfoils.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://bakabi.fr/Projets/qualityacht.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://bakabi.fr/Projets/reseau-wordpress.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://bakabi.fr/Projets/trackship.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://bakabi.fr/reprise-wordpress.html</loc>
+    <lastmod>2026-09-05</lastmod>
   </url>
 </urlset>
