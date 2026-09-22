@@ -194,6 +194,18 @@
     .tl h4{font-size:17px;font-weight:700;margin:4px 0 4px}
     .tl p{color:var(--muted);font-size:14px}
 
+
+    /* AGENTS IA — scene illustrative (visuel original, aucun media externe) */
+    .ai-scene{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:#fff;border-radius:16px;padding:20px;display:grid;gap:12px;box-shadow:0 22px 55px -26px rgba(0,0,0,.55)}
+    .ai-scene .bub{background:#DCF8C6;color:#0B1F0E;padding:11px 13px;border-radius:12px 12px 12px 2px;font-size:14.5px;line-height:1.45;max-width:32ch}
+    .ai-scene .bub small{display:block;opacity:.55;font-size:11px;margin-top:3px;text-align:right}
+    .ai-scene .arw{text-align:center;color:#5B6770;font-size:18px;line-height:1}
+    .ai-scene .card2{border:1px solid rgba(17,42,92,.16);border-radius:8px;overflow:hidden}
+    .ai-scene .row{display:grid;grid-template-columns:110px 1fr;gap:10px;padding:9px 13px;border-top:1px solid rgba(17,42,92,.16);align-items:center;font-size:14px;color:#0E1F3D}
+    .ai-scene .row:first-child{border-top:0}
+    .ai-scene .row b{font-weight:600;color:#3C4F72;font-size:12.5px}
+    .ai-scene .row.ok{background:#F2B705}
+    .ai-scene .row.ok b,.ai-scene .row.ok span{color:#0E1F3D;font-weight:700}
     /* FORMULES */
     .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:start}
     .price{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:32px;display:flex;flex-direction:column;position:relative}
@@ -423,6 +435,34 @@
     </div>
   </section>
 
+  <!-- AGENTS IA -->
+  <section class="block" id="agents">
+    <div class="wrap">
+      <div class="wp-band reveal">
+        <div>
+          <span class="eyebrow">Agents IA &amp; automatisation</span>
+          <h2>Vos demandes arrivent en vrac. Elles repartent rangées.</h2>
+          <p>Les mails SAV qui s'empilent, les mêmes questions sur WhatsApp vingt fois par jour, les devis que personne ne relance. J'installe des agents IA dans vos outils existants — mails, WhatsApp&nbsp;Business, CRM, boutique — pour trier, préparer et rédiger. <strong style="color:#fff">Vous gardez la validation sur chaque envoi&nbsp;:</strong> rien ne part sans vous.</p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="/agents-ia.html">Voir comment ça marche →</a>
+            <a class="btn btn-ghost" href="#contact">Parler de mes tâches répétitives</a>
+          </div>
+        </div>
+        <div class="ai-scene" aria-label="Illustration : une demande WhatsApp transformée en fiche prête à valider">
+          <div class="bub">bonjour vous faites des sorties pour 12 personnes samedi ? c'est combien<small>10:42</small></div>
+          <div class="arw" aria-hidden="true">↓</div>
+          <div class="card2">
+            <div class="row"><b>Type</b><span>Groupe</span></div>
+            <div class="row"><b>Date</b><span>Samedi</span></div>
+            <div class="row"><b>Personnes</b><span>12</span></div>
+            <div class="row"><b>Tarif</b><span>Calculé depuis votre grille</span></div>
+            <div class="row ok"><b>Réponse prête</b><span>À valider</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- WORDPRESS SPECIALTY -->
   <section class="block" id="wordpress">
     <div class="wrap">
@@ -542,31 +582,6 @@
           </div>
         </article>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- AGENTS IA -->
-  <section class="block" id="agents">
-    <div class="wrap">
-      <div class="wp-band reveal">
-        <div>
-          <span class="eyebrow">Agents IA &amp; automatisation</span>
-          <h2>Vos demandes arrivent en vrac. Elles repartent rangées.</h2>
-          <p>Les mails SAV qui s'empilent, les mêmes questions sur WhatsApp vingt fois par jour, les devis que personne ne relance. J'installe des agents IA dans vos outils existants — mails, WhatsApp&nbsp;Business, CRM, boutique — pour trier, préparer et rédiger. <strong style="color:#fff">Vous gardez la validation sur chaque envoi&nbsp;:</strong> rien ne part sans vous.</p>
-          <div class="btn-row">
-            <a class="btn btn-primary" href="/agents-ia.html">Voir comment ça marche →</a>
-            <a class="btn btn-ghost" href="#contact">Parler de mes tâches répétitives</a>
-          </div>
-        </div>
-        <ul class="wp-list">
-          <li>📥 Demandes triées et rangées à l'arrivée</li>
-          <li>✍️ Réponses préparées dans votre ton</li>
-          <li>⏰ Relances de devis qui partent seules</li>
-          <li>🗂️ CRM tenu à jour sans ressaisie</li>
-          <li>🇪🇺 Hébergement en Europe, clés à votre nom</li>
-          <li>✋ Validation humaine sur chaque action sortante</li>
-        </ul>
       </div>
     </div>
   </section>
