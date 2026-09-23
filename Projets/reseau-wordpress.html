@@ -40,13 +40,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#F7F4EF;--surface:#FFFFFF;--ink:#141312;--muted:#6A655E;--line:#E6E0D7;
-      --accent:#FF4D2E;--accent-soft:#FFE9E3;--radius:18px;
-      --shadow:0 18px 50px -24px rgba(20,19,18,.25);--maxw:1040px;
+      --bg:rgba(255,255,255,.55);--surface:rgba(216,230,250,.72);--ink:#0E1F3D;--muted:#2E3C57;--line:rgba(17,42,92,.16);
+      --accent:#1D4ED8;--accent-soft:rgba(37,99,235,.14);--radius:18px;
+      --shadow:0 22px 55px -26px rgba(15,40,95,.4);--maxw:1200px;
     }
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
-    body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+    body{font-family:'Inter',system-ui,sans-serif;background:linear-gradient(160deg,#d6e6fb 0%,#9bbef0 48%,#7ea8e6 100%) fixed;color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
     h1,h2,h3,h4{font-family:'Plus Jakarta Sans',sans-serif;line-height:1.1;letter-spacing:-.02em}
     a{color:inherit;text-decoration:none}
     .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
@@ -68,7 +68,7 @@
     .hero .sub{font-size:clamp(16px,1.6vw,19px);color:var(--muted);max-width:60ch;margin:22px 0 28px}
     .chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
     .chip{font-size:13px;font-weight:600;background:var(--surface);border:1px solid var(--line);padding:8px 15px;border-radius:999px;color:var(--ink)}
-    .badge{display:inline-flex;align-items:center;gap:14px;background:var(--accent-soft);border:1px solid #FFD3C7;border-radius:16px;padding:18px 26px}
+    .badge{display:inline-flex;align-items:center;gap:14px;background:var(--accent-soft);border:1px solid rgba(29,78,216,.25);border-radius:16px;padding:18px 26px}
     .badge strong{font-family:'Plus Jakarta Sans';font-size:38px;font-weight:800;color:var(--accent);line-height:1}
     .badge span{font-size:14.5px;color:var(--ink);font-weight:500;max-width:26ch}
     section.block{padding:46px 0}
@@ -97,20 +97,40 @@
     .btn-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
     .btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:15px;padding:14px 28px;border-radius:999px;transition:.25s ease;border:1.5px solid transparent}
     .btn-primary{background:var(--accent);color:#fff}
-    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 30px -10px rgba(255,77,46,.5)}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 30px -10px rgba(29,78,216,.45)}
     .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
     .btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
     .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
     .reveal.in{opacity:1;transform:none}
     @media(max-width:640px){.hero{padding:48px 0 34px}.badge{flex-direction:column;align-items:flex-start;gap:6px}.badge strong{font-size:32px}}
   </style>
+  <link rel="stylesheet" href="/assets/site/nav.css">
+  <script src="/assets/site/nav.js" defer></script>
 </head>
 <body>
-  <header>
-    <nav class="nav">
-      <a class="logo" href="/">Ghost<span>.</span>Consulting</a>
-      <a class="back" href="/">← Retour au portfolio</a>
-    </nav>
+  <header id="gh">
+    <div class="gh-in">
+      <a class="gh-logo" href="/">Ghost<span>.</span>Consulting</a>
+      <nav class="gh-links" id="ghMenu" aria-label="Menu principal">
+        <div class="gh-dd">
+          <button type="button" aria-expanded="false" aria-controls="ghPanel">Services <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="gh-panel" id="ghPanel">
+          <a class="gh-item" href="/#formules"><span class="gh-ic" aria-hidden="true">💻</span><span><strong>Sites &amp; applications</strong><small>Vitrine dès 390&nbsp;€, appli web dès 1&nbsp;500&nbsp;€</small></span></a>
+          <a class="gh-item" href="/#wordpress"><span class="gh-ic" aria-hidden="true">🧩</span><span><strong>WordPress &amp; WooCommerce</strong><small>Extensions sur mesure, boutiques, pages</small></span></a>
+          <a class="gh-item" href="/agents-ia.html"><span class="gh-ic" aria-hidden="true">🤖</span><span><strong>Agents IA</strong><small>Mails, WhatsApp, devis : triés et préparés</small></span></a>
+          <a class="gh-item" href="/automatisation-n8n.html"><span class="gh-ic" aria-hidden="true">⚙️</span><span><strong>Automatisation n8n</strong><small>Vos tâches répétitives, enchaînées seules</small></span></a>
+          <a class="gh-item" href="/reprise-wordpress.html"><span class="gh-ic" aria-hidden="true">🛠️</span><span><strong>Reprise WordPress</strong><small>Site cassé, lent ou abandonné</small></span></a>
+          <a class="gh-item" href="/maintenance-wordpress.html"><span class="gh-ic" aria-hidden="true">♾️</span><span><strong>Maintenance WordPress</strong><small>Mises à jour, sauvegardes, suivi mensuel</small></span></a>
+          <a class="gh-item" href="/audit-seo-geo.html"><span class="gh-ic" aria-hidden="true">🔎</span><span><strong>Audit SEO &amp; GEO</strong><small>Visible sur Google et dans les IA</small></span></a>
+          <a class="gh-item" href="/infogerance-vps.html"><span class="gh-ic" aria-hidden="true">🖥️</span><span><strong>Infogérance VPS</strong><small>Serveur installé, surveillé, migré</small></span></a>
+          </div>
+        </div>
+        <a href="/#why">Pourquoi moi</a>
+        <a href="/#projets">Réalisations</a>
+        <a class="gh-cta" href="/#contact">Me contacter</a>
+      </nav>
+      <button class="gh-burger" id="ghBurger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="ghMenu">☰</button>
+    </div>
   </header>
 
   <main>
@@ -183,7 +203,7 @@
     </section>
   </main>
 
-  <footer class="foot">
+  <section class="foot">
     <div class="wrap">
       <h3>Un réseau de sites à industrialiser&nbsp;?</h3>
       <p>Parlons charte commune, multilingue et cohérence SEO à l'échelle.</p>
@@ -192,9 +212,54 @@
         <a class="btn btn-ghost" href="https://liftfoils.fr/" target="_blank" rel="noopener">Voir un site du réseau ↗</a>
       </div>
     </div>
-    <div class="wrap" style="margin-top:28px;padding-top:18px;border-top:1px solid var(--line);display:flex;gap:14px;flex-wrap:wrap;justify-content:center">
-      <a href="/mentions-legales.html" style="font-size:13px;color:var(--muted);text-decoration:none">Mentions légales</a>
-      <a href="/politique-confidentialite.html" style="font-size:13px;color:var(--muted);text-decoration:none">Confidentialité</a>
+  </section>
+
+  <footer id="gf">
+    <div class="gf-in">
+      <div class="gf-brand">
+        <a class="gf-logo" href="/">Ghost<span>.</span>Consulting</a>
+        <p>Développement web &amp; mobile, WordPress, agents IA, SEO &amp; GEO. Partout en France, 100&nbsp;% à distance.</p>
+        <a class="gf-cta" href="/#contact">Démarrer un projet →</a>
+      </div>
+      <div>
+        <p class="gf-h">Services</p>
+        <ul>
+          <li><a href="/#formules">Sites &amp; applications</a></li>
+          <li><a href="/#wordpress">WordPress &amp; WooCommerce</a></li>
+          <li><a href="/agents-ia.html">Agents IA</a></li>
+          <li><a href="/automatisation-n8n.html">Automatisation n8n</a></li>
+          <li><a href="/reprise-wordpress.html">Reprise WordPress</a></li>
+          <li><a href="/maintenance-wordpress.html">Maintenance WordPress</a></li>
+          <li><a href="/audit-seo-geo.html">Audit SEO &amp; GEO</a></li>
+          <li><a href="/infogerance-vps.html">Infogérance VPS</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="gf-h">Réalisations</p>
+        <ul>
+          <li><a href="/Projets/liftfoils.html">Liftfoils — WordPress &amp; SEO</a></li>
+          <li><a href="/Projets/qualityacht.html">QualityYacht</a></li>
+          <li><a href="/Projets/trackship.html">TrackShip</a></li>
+          <li><a href="/Projets/efast.html">eFast</a></li>
+          <li><a href="/Projets/reseau-wordpress.html">Réseau de sites eFoil</a></li>
+          <li><a href="/Projets/efoil-reservation.html">eFoil — Réservation</a></li>
+          <li><a href="/Projets/emargement.html">Émargement</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="gf-h">Ressources</p>
+        <ul>
+          <li><a href="/#why">Pourquoi me choisir</a></li>
+          <li><a href="/#formules">Tarifs</a></li>
+          <li><a href="/#faq">Questions fréquentes</a></li>
+          <li><a href="/blog/freelance-ou-agence.html">Freelance ou agence&nbsp;?</a></li>
+          <li><a href="https://github.com/GHOSTGIT-cyber" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="gf-bottom">
+      <small>© <span data-year>2026</span> Ghost Consulting</small>
+      <span><a href="/mentions-legales.html">Mentions légales</a><a href="/politique-confidentialite.html">Confidentialité</a><a href="/#contact">Contact</a></span>
     </div>
   </footer>
 

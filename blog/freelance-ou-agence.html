@@ -44,7 +44,7 @@
   <style>
     :root{
       --bg:transparent;--surface:rgba(216,230,250,.72);--ink:#0E1F3D;--muted:#2E3C57;--line:rgba(17,42,92,.16);
-      --accent:#1D4ED8;--accent-2:#38BDF8;--accent-soft:rgba(37,99,235,.14);--radius:18px;--shadow:0 22px 55px -26px rgba(15,40,95,.4);--maxw:1140px;
+      --accent:#1D4ED8;--accent-2:#38BDF8;--accent-soft:rgba(37,99,235,.14);--radius:18px;--shadow:0 22px 55px -26px rgba(15,40,95,.4);--maxw:1320px;
     }
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
@@ -323,23 +323,33 @@
     .article tr:last-child th,.article tr:last-child td{border-bottom:none}
     .article-cta{margin:36px 0 0;text-align:center}
   </style>
+  <link rel="stylesheet" href="/assets/site/nav.css">
+  <script src="/assets/site/nav.js" defer></script>
 </head>
 <body>
 
-  <header>
-    <div class="wrap nav">
-      <a class="logo" href="/#home">Ghost<span>.</span>Consulting</a>
-      <nav class="nav-links" id="menu">
+  <header id="gh">
+    <div class="gh-in">
+      <a class="gh-logo" href="/">Ghost<span>.</span>Consulting</a>
+      <nav class="gh-links" id="ghMenu" aria-label="Menu principal">
+        <div class="gh-dd">
+          <button type="button" aria-expanded="false" aria-controls="ghPanel">Services <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="gh-panel" id="ghPanel">
+          <a class="gh-item" href="/#formules"><span class="gh-ic" aria-hidden="true">💻</span><span><strong>Sites &amp; applications</strong><small>Vitrine dès 390&nbsp;€, appli web dès 1&nbsp;500&nbsp;€</small></span></a>
+          <a class="gh-item" href="/#wordpress"><span class="gh-ic" aria-hidden="true">🧩</span><span><strong>WordPress &amp; WooCommerce</strong><small>Extensions sur mesure, boutiques, pages</small></span></a>
+          <a class="gh-item" href="/agents-ia.html"><span class="gh-ic" aria-hidden="true">🤖</span><span><strong>Agents IA</strong><small>Mails, WhatsApp, devis : triés et préparés</small></span></a>
+          <a class="gh-item" href="/automatisation-n8n.html"><span class="gh-ic" aria-hidden="true">⚙️</span><span><strong>Automatisation n8n</strong><small>Vos tâches répétitives, enchaînées seules</small></span></a>
+          <a class="gh-item" href="/reprise-wordpress.html"><span class="gh-ic" aria-hidden="true">🛠️</span><span><strong>Reprise WordPress</strong><small>Site cassé, lent ou abandonné</small></span></a>
+          <a class="gh-item" href="/maintenance-wordpress.html"><span class="gh-ic" aria-hidden="true">♾️</span><span><strong>Maintenance WordPress</strong><small>Mises à jour, sauvegardes, suivi mensuel</small></span></a>
+          <a class="gh-item" href="/audit-seo-geo.html"><span class="gh-ic" aria-hidden="true">🔎</span><span><strong>Audit SEO &amp; GEO</strong><small>Visible sur Google et dans les IA</small></span></a>
+          <a class="gh-item" href="/infogerance-vps.html"><span class="gh-ic" aria-hidden="true">🖥️</span><span><strong>Infogérance VPS</strong><small>Serveur installé, surveillé, migré</small></span></a>
+          </div>
+        </div>
         <a href="/#why">Pourquoi moi</a>
-        <a href="/#wordpress">WordPress</a>
-        <a href="/agents-ia.html">Agents IA</a>
-        <a href="/#projets">Projets</a>
-        <a href="/#formules">Formules</a>
-        <a href="/#parcours">Parcours</a>
-        <a href="/#faq">FAQ</a>
-        <a class="nav-cta" href="/#contact">Me contacter</a>
+        <a href="/#projets">Réalisations</a>
+        <a class="gh-cta" href="/#contact">Me contacter</a>
       </nav>
-      <button class="burger" id="burger" aria-label="Menu">☰</button>
+      <button class="gh-burger" id="ghBurger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="ghMenu">☰</button>
     </div>
   </header>
 
@@ -429,25 +439,56 @@
     </div>
   </section>
 
-  <footer>
-    <div class="wrap foot">
+  <footer id="gf">
+    <div class="gf-in">
+      <div class="gf-brand">
+        <a class="gf-logo" href="/">Ghost<span>.</span>Consulting</a>
+        <p>Développement web &amp; mobile, WordPress, agents IA, SEO &amp; GEO. Partout en France, 100&nbsp;% à distance.</p>
+        <a class="gf-cta" href="/#contact">Démarrer un projet →</a>
+      </div>
       <div>
-        <div class="logo">Ghost<span>.</span>Consulting</div>
-        
-        <div class="legal-links" style="margin-top:10px;display:flex;gap:14px;flex-wrap:wrap"><a href="/mentions-legales.html" style="font-size:13px;color:var(--muted);text-decoration:none">Mentions légales</a><a href="/politique-confidentialite.html" style="font-size:13px;color:var(--muted);text-decoration:none">Confidentialité</a></div>
+        <p class="gf-h">Services</p>
+        <ul>
+          <li><a href="/#formules">Sites &amp; applications</a></li>
+          <li><a href="/#wordpress">WordPress &amp; WooCommerce</a></li>
+          <li><a href="/agents-ia.html">Agents IA</a></li>
+          <li><a href="/automatisation-n8n.html">Automatisation n8n</a></li>
+          <li><a href="/reprise-wordpress.html">Reprise WordPress</a></li>
+          <li><a href="/maintenance-wordpress.html">Maintenance WordPress</a></li>
+          <li><a href="/audit-seo-geo.html">Audit SEO &amp; GEO</a></li>
+          <li><a href="/infogerance-vps.html">Infogérance VPS</a></li>
+        </ul>
       </div>
-      <div class="social">
-        <a href="/#contact" title="Démarrer un projet">✉</a>
-        <a href="https://github.com/GHOSTGIT-cyber" target="_blank" title="GitHub">GH</a>
+      <div>
+        <p class="gf-h">Réalisations</p>
+        <ul>
+          <li><a href="/Projets/liftfoils.html">Liftfoils — WordPress &amp; SEO</a></li>
+          <li><a href="/Projets/qualityacht.html">QualityYacht</a></li>
+          <li><a href="/Projets/trackship.html">TrackShip</a></li>
+          <li><a href="/Projets/efast.html">eFast</a></li>
+          <li><a href="/Projets/reseau-wordpress.html">Réseau de sites eFoil</a></li>
+          <li><a href="/Projets/efoil-reservation.html">eFoil — Réservation</a></li>
+          <li><a href="/Projets/emargement.html">Émargement</a></li>
+        </ul>
       </div>
+      <div>
+        <p class="gf-h">Ressources</p>
+        <ul>
+          <li><a href="/#why">Pourquoi me choisir</a></li>
+          <li><a href="/#formules">Tarifs</a></li>
+          <li><a href="/#faq">Questions fréquentes</a></li>
+          <li><a href="/blog/freelance-ou-agence.html">Freelance ou agence&nbsp;?</a></li>
+          <li><a href="https://github.com/GHOSTGIT-cyber" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="gf-bottom">
+      <small>© <span data-year>2026</span> Ghost Consulting</small>
+      <span><a href="/mentions-legales.html">Mentions légales</a><a href="/politique-confidentialite.html">Confidentialité</a><a href="/#contact">Contact</a></span>
     </div>
   </footer>
 
   <script>
-    const burger=document.getElementById('burger'),menu=document.getElementById('menu');
-    burger.addEventListener('click',()=>menu.classList.toggle('open'));
-    menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
-    document.getElementById('year').textContent=new Date().getFullYear();
   </script>
 </body>
 </html>

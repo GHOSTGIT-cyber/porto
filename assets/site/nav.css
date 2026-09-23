@@ -1,0 +1,69 @@
+/* En-tête, pied de page et barre de lecture communs à toutes les pages.
+   Sélecteurs préfixés par #gh / #gf : ils passent devant les styles propres à chaque page. */
+
+html{scroll-padding-top:84px}
+
+/* ---------- En-tête ---------- */
+#gh{position:sticky;top:0;z-index:60;background:rgba(215,230,251,.82);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid rgba(17,42,92,.16);transition:background .3s,box-shadow .3s}
+#gh.scrolled{background:rgba(224,236,252,.94);box-shadow:0 12px 30px -20px rgba(15,40,95,.55)}
+#gh .gh-in{max-width:1320px;margin:0 auto;padding:0 24px;height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+#gh .gh-logo{font:800 19px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:-.02em;color:#0E1F3D;text-decoration:none;margin:0}
+#gh .gh-logo span{color:#1D4ED8}
+#gh .gh-links{display:flex;align-items:center;gap:30px;height:auto;position:static;transform:none;background:none;padding:0;border:0}
+#gh .gh-links>a,#gh .gh-dd>button{font:500 15px/1 Inter,system-ui,sans-serif;color:#2E3C57;text-decoration:none;background:none;border:0;cursor:pointer;padding:10px 0;display:inline-flex;align-items:center;gap:6px;transition:color .2s}
+#gh .gh-links>a:hover,#gh .gh-dd>button:hover,#gh .gh-dd.open>button{color:#0E1F3D}
+#gh .gh-links>a[aria-current],#gh .gh-dd>button.cur{color:#0E1F3D;font-weight:600}
+#gh .gh-dd>button svg{width:12px;height:12px;transition:transform .25s}
+#gh .gh-dd.open>button svg{transform:rotate(180deg)}
+#gh .gh-links>a.gh-cta{background:#0E1F3D;color:#fff;padding:11px 20px;border-radius:999px;font-weight:600;transition:background .2s,transform .2s}
+#gh .gh-links>a.gh-cta:hover{background:#1D4ED8;transform:translateY(-1px)}
+#gh .gh-burger{display:none;background:none;border:0;font-size:26px;line-height:1;cursor:pointer;color:#0E1F3D;padding:6px}
+
+/* Menu déroulant « Services » */
+#gh .gh-dd{position:relative}
+#gh .gh-panel{position:absolute;top:calc(100% + 14px);left:50%;width:640px;transform:translate(-50%,8px);display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:12px;background:rgba(244,248,255,.98);border:1px solid rgba(17,42,92,.14);border-radius:18px;box-shadow:0 30px 60px -28px rgba(15,40,95,.55);opacity:0;visibility:hidden;transition:opacity .2s,transform .2s,visibility .2s}
+#gh .gh-panel::before{content:"";position:absolute;left:0;right:0;top:-16px;height:16px}
+#gh .gh-dd.open .gh-panel{opacity:1;visibility:visible;transform:translate(-50%,0)}
+@media(hover:hover) and (min-width:961px){#gh .gh-dd:hover .gh-panel{opacity:1;visibility:visible;transform:translate(-50%,0)}#gh .gh-dd:hover>button svg{transform:rotate(180deg)}}
+#gh .gh-item{display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:start;padding:12px;border-radius:12px;text-decoration:none;color:#0E1F3D;transition:background .2s}
+#gh .gh-item:hover,#gh .gh-item[aria-current]{background:rgba(29,78,216,.09)}
+#gh .gh-ic{width:40px;height:40px;border-radius:11px;background:rgba(37,99,235,.14);display:grid;place-items:center;font-size:19px}
+#gh .gh-item strong{display:block;font:700 14.5px/1.3 'Plus Jakarta Sans',sans-serif}
+#gh .gh-item small{display:block;font:400 13px/1.4 Inter,system-ui,sans-serif;color:#2E3C57;margin-top:2px}
+
+@media(max-width:1100px) and (min-width:961px){#gh .gh-links{gap:22px}}
+@media(max-width:960px){
+  #gh .gh-burger{display:block}
+  #gh .gh-links{position:fixed;top:72px;left:0;right:0;max-height:calc(100vh - 72px);overflow-y:auto;flex-direction:column;align-items:stretch;gap:4px;padding:16px 20px 24px;background:rgba(232,241,253,.98);border-bottom:1px solid rgba(17,42,92,.16);box-shadow:0 20px 40px -20px rgba(15,40,95,.4);transform:translateY(-120%);visibility:hidden;transition:transform .3s,visibility .3s}
+  #gh .gh-links.open{transform:none;visibility:visible}
+  #gh .gh-links>a,#gh .gh-dd>button{padding:12px 4px;font-size:16px;width:100%;justify-content:space-between}
+  #gh .gh-links>a.gh-cta{justify-content:center;margin-top:10px;padding:14px}
+  #gh .gh-panel{position:static;width:auto;transform:none;grid-template-columns:1fr;box-shadow:none;border:0;background:none;padding:0 0 6px;display:none;opacity:1;visibility:visible}
+  #gh .gh-panel::before{display:none}
+  #gh .gh-dd.open .gh-panel{display:grid;transform:none}
+}
+
+/* ---------- Barre de lecture ---------- */
+#ghProgress{position:fixed;top:0;left:0;right:0;height:3px;z-index:70;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,#1D4ED8,#38BDF8);pointer-events:none}
+
+/* ---------- Pied de page ---------- */
+#gf{margin-top:90px;padding:56px 0 30px;border-top:1px solid rgba(17,42,92,.16);background:rgba(216,230,250,.55);color:#0E1F3D;font-family:Inter,system-ui,sans-serif}
+.foot+#gf{margin-top:0}
+#gf .gf-in{max-width:1320px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+#gf .gf-logo{font:800 20px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:-.02em;color:#0E1F3D;text-decoration:none}
+#gf .gf-logo span{color:#1D4ED8}
+#gf .gf-brand p{color:#2E3C57;font-size:14.5px;line-height:1.6;margin:14px 0 20px;max-width:34ch}
+#gf .gf-cta{display:inline-flex;background:#0E1F3D;color:#fff;padding:11px 20px;border-radius:999px;font-weight:600;font-size:14.5px;text-decoration:none;transition:background .2s}
+#gf .gf-cta:hover{background:#1D4ED8}
+#gf .gf-h{font:700 13px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#1D4ED8;margin:4px 0 16px}
+#gf ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+#gf ul a{color:#2E3C57;font-size:14.5px;text-decoration:none;transition:color .2s}
+#gf ul a:hover{color:#0E1F3D;text-decoration:underline;text-underline-offset:3px}
+#gf .gf-bottom{max-width:1320px;margin:44px auto 0;padding:22px 24px 0;border-top:1px solid rgba(17,42,92,.14);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:#2E3C57}
+#gf .gf-bottom span{display:flex;gap:18px;flex-wrap:wrap}
+#gf .gf-bottom a{color:#2E3C57;text-decoration:none}
+#gf .gf-bottom a:hover{color:#0E1F3D;text-decoration:underline}
+@media(max-width:960px){#gf .gf-in{grid-template-columns:1fr 1fr}#gf .gf-brand{grid-column:1/-1}}
+@media(max-width:560px){#gf .gf-in{grid-template-columns:1fr}}
+
+@media(prefers-reduced-motion:reduce){#gh,#gh *,#gf *{transition:none!important}#ghProgress{display:none}}
