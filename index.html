@@ -300,15 +300,17 @@
     .proj a.link{margin-top:18px;font-weight:600;color:var(--ink);display:inline-flex;gap:8px;align-items:center;font-size:14px}
     .proj a.link:hover{color:var(--accent);gap:12px}
 
-    .tl-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px}
-    .tl h3{font-size:22px;font-weight:700;margin-bottom:26px}
-    .tl ul{list-style:none;position:relative;padding-left:26px}
-    .tl ul::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:2px;background:var(--line)}
-    .tl li{position:relative;padding-bottom:28px}
-    .tl li::before{content:"";position:absolute;left:-25px;top:5px;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--bg)}
-    .tl .when{font-size:13px;font-weight:600;color:var(--accent);letter-spacing:.03em}
-    .tl h4{font-size:17px;font-weight:700;margin:4px 0 4px}
-    .tl p{color:var(--muted);font-size:14px}
+    .method{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;position:relative;counter-reset:m}
+    .method::before{content:"";position:absolute;left:12%;right:12%;top:27px;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2));transform-origin:0 50%;transform:scaleX(0);transition:transform 1.4s cubic-bezier(.65,0,.35,1) .2s}
+    .method.in::before{transform:none}
+    .method .step{position:relative;text-align:center;padding:0 6px}
+    .method .num{width:56px;height:56px;margin:0 auto 18px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:#fff;font:800 20px 'Plus Jakarta Sans',sans-serif;box-shadow:0 0 0 7px rgba(215,230,251,.9);position:relative;z-index:1}
+    .method h3{font-size:18.5px;font-weight:700;margin-bottom:8px}
+    .method p{color:var(--muted);font-size:14.5px}
+    .method .step .ttl{display:inline-block;margin-top:12px;font-size:12px;font-weight:700;color:var(--accent);background:var(--accent-soft);padding:4px 11px;border-radius:999px}
+    @media(max-width:860px){.method{grid-template-columns:1fr 1fr;gap:34px 18px}.method::before{display:none}}
+    @media(max-width:520px){.method{grid-template-columns:1fr}}
+    @media (prefers-reduced-motion:reduce){.method::before{transition:none;transform:none}}
 
 
     /* AGENTS IA — scene illustrative (visuel original, aucun media externe) */
@@ -496,7 +498,7 @@
       .nav-links{position:fixed;inset:72px 0 auto 0;background:var(--surface);flex-direction:column;padding:24px;gap:18px;border-bottom:1px solid var(--line);transform:translateY(-130%);transition:.35s;height:auto}
       .nav-links.open{transform:none}
       .burger{display:block}
-      .hero-grid,.why-grid,.compare,.proj-grid,.tl-grid,.price-grid,.quotes,.contact-grid,.row2,.wp-band,.wp-list,.case,.also{grid-template-columns:1fr}
+      .hero-grid,.why-grid,.compare,.proj-grid,.price-grid,.quotes,.contact-grid,.row2,.wp-band,.wp-list,.case,.also{grid-template-columns:1fr}
       .case-media{min-height:180px}
       .price.featured{transform:none}
       .wp-band{padding:34px}
@@ -851,28 +853,19 @@
     </div>
   </section>
 
-  <!-- PARCOURS -->
-  <section class="block" id="parcours" style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <!-- METHODE -->
+  <section class="block" id="methode" style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
     <div class="wrap">
-      <div class="head reveal">
-        <span class="eyebrow">Parcours</span>
-        <h2>Une formation solide et de l'expérience terrain.</h2>
+      <div class="head reveal" style="text-align:center;margin:0 auto 60px">
+        <span class="eyebrow" style="justify-content:center">Comment je travaille</span>
+        <h2>Du premier message à la mise en ligne, <span class="hl">sans zone floue.</span></h2>
+        <p>Quatre étapes, les mêmes pour un site vitrine, une application ou un agent IA. Vous savez toujours où en est votre projet.</p>
       </div>
-      <div class="tl-grid">
-        <div class="tl reveal">
-          <h3>Formation</h3>
-          <ul>
-            <li><h4>BTS SIO — Solutions Logicielles &amp; Applications Métiers</h4><p>Développement web &amp; logiciel, certifié MOOC ANSSI (cybersécurité).</p></li>
-          </ul>
-        </div>
-        <div class="tl reveal">
-          <h3>Expérience</h3>
-          <ul>
-            <li><h4>Développement client — secteur eFoil / nautisme</h4><p>Sites &amp; applications réels : Qualityacht, eFoil Côte d'Azur, systèmes de réservation, TrackShip.</p></li>
-            <li><h4>EfoilFrance — sites WordPress en production</h4><p>La Roquette-sur-Siagne · refonte &amp; maintenance.</p></li>
-            <li><h4>Prestations Service Informatique</h4><p>Athis-Mons (91) · développement &amp; support.</p></li>
-          </ul>
-        </div>
+      <div class="method reveal">
+        <div class="step"><div class="num">1</div><h3>On cadre le besoin</h3><p>Vous décrivez votre projet dans le formulaire, puis on en parle par téléphone ou en visio. Objectif, contraintes, outils déjà en place.</p><span class="ttl">Échange gratuit</span></div>
+        <div class="step"><div class="num">2</div><h3>Devis écrit</h3><p>Périmètre, prix et planning noir sur blanc. Rien ne démarre sans votre accord.</p><span class="ttl">Sous 24-48 h</span></div>
+        <div class="step"><div class="num">3</div><h3>Développement suivi</h3><p>Des versions à tester au fil de l'eau, un historique Git complet. Vous voyez le projet avancer et vous corrigez le tir tôt.</p><span class="ttl">Points réguliers</span></div>
+        <div class="step"><div class="num">4</div><h3>Mise en ligne &amp; suivi</h3><p>Déploiement, vérifications, prise en main. Ensuite, maintenance et évolutions si vous le souhaitez.</p><span class="ttl">Maintenance en option</span></div>
       </div>
     </div>
   </section>
