@@ -54,86 +54,108 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
+    /* Étude de cas Liftfoils (même gabarit que la fiche réservation) : héros avec capture (navigateur + mobile), chiffres en cartes premium, avant → après, flux en 5 étapes */
     :root{
-      --bg:rgba(255,255,255,.55);--surface:rgba(216,230,250,.72);--ink:#0E1F3D;--muted:#2E3C57;--line:rgba(17,42,92,.16);
-      --accent:#1D4ED8;--accent-soft:rgba(37,99,235,.14);--radius:18px;
-      --shadow:0 22px 55px -26px rgba(15,40,95,.4);--maxw:1200px;
+      --surface:rgba(216,230,250,.72);--ink:#0E1F3D;--muted:#2E3C57;--line:rgba(17,42,92,.16);
+      --accent:#1D4ED8;--accent-deep:#13338E;--accent-2:#38BDF8;--accent-soft:rgba(37,99,235,.14);
+      --night:#0B1A33;--radius:18px;--shadow:0 22px 55px -26px rgba(15,40,95,.4);--maxw:1200px;
     }
     *{box-sizing:border-box;margin:0;padding:0}
+    [hidden]{display:none!important}
     html{scroll-behavior:smooth}
-    body{font-family:'Inter',system-ui,sans-serif;background:linear-gradient(160deg,#d6e6fb 0%,#9bbef0 48%,#7ea8e6 100%) fixed;color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
-    h1,h2,h3,h4{font-family:'Plus Jakarta Sans',sans-serif;line-height:1.1;letter-spacing:-.02em}
+    html,body{overflow-x:clip}
+    body{font-family:'Inter',system-ui,sans-serif;background:linear-gradient(160deg,#d6e6fb 0%,#9bbef0 48%,#7ea8e6 100%) fixed;color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+    h1,h2,h3{font-family:'Plus Jakarta Sans',sans-serif;line-height:1.08;letter-spacing:-.02em;text-wrap:balance}
     a{color:inherit;text-decoration:none}
     .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+    .eyebrow{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-deep);display:inline-flex;align-items:center;gap:8px}
+    .eyebrow::before{content:"";width:26px;height:2px;background:currentColor;display:inline-block}
+    .hl{background:linear-gradient(transparent 60%,rgba(56,189,248,.55) 60%,rgba(56,189,248,.55) 92%,transparent 92%);-webkit-box-decoration-break:clone;box-decoration-break:clone}
 
-    /* HEADER */
-    header{position:sticky;top:0;z-index:50;background:rgba(247,244,239,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-    .nav{display:flex;align-items:center;justify-content:space-between;height:70px;max-width:var(--maxw);margin:0 auto;padding:0 24px}
-    .logo{font-family:'Plus Jakarta Sans';font-weight:800;font-size:19px;letter-spacing:-.02em}
-    .logo span{color:var(--accent)}
-    .back{font-size:14.5px;color:var(--muted);font-weight:500;transition:.2s;display:inline-flex;align-items:center;gap:7px}
-    .back:hover{color:var(--ink)}
+    /* Héros */
+    .cs-hero{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.25fr);gap:clamp(28px,4vw,56px);align-items:center;padding:64px 0 56px}
+    .cs-txt{display:grid;gap:18px;justify-items:start}
+    .cs-txt h1{font-size:clamp(34px,5vw,58px);font-weight:800}
+    .cs-txt p{font-size:18px;color:var(--muted);max-width:44ch}
+    .status{font-size:12px;font-weight:700;line-height:1;padding:8px 12px;border-radius:999px;background:var(--night);color:#fff;display:inline-flex;gap:8px;align-items:center}
+    .status i{width:8px;height:8px;border-radius:50%;background:#34D399;box-shadow:0 0 0 4px rgba(52,211,153,.25)}
+    .stage{position:relative;padding-bottom:40px;padding-right:46px}
+    .browser{border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 40px 80px -30px rgba(11,26,51,.55),0 0 0 1px rgba(17,42,92,.1);transform:perspective(1600px) rotateY(-6deg) rotateX(2deg);transform-origin:left center}
+    .bar{display:flex;align-items:center;gap:7px;padding:10px 14px;background:#EEF3FB;border-bottom:1px solid var(--line)}
+    .bar i{width:10px;height:10px;border-radius:50%;background:#C9D5E8}
+    .bar span{margin-left:10px;font:500 12px 'JetBrains Mono',ui-monospace,monospace;color:var(--muted);background:#fff;border-radius:6px;padding:4px 10px;flex:1;max-width:280px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .browser img{display:block;width:100%;height:auto}
+    .phone{position:absolute;right:0;bottom:0;width:30%;max-width:210px;border-radius:30px;padding:8px;background:var(--night);box-shadow:0 30px 60px -20px rgba(11,26,51,.6)}
+    .phone img{display:block;width:100%;height:auto;border-radius:23px;aspect-ratio:390/600;object-fit:cover;object-position:top}
+    .tag-demo{position:absolute;left:14px;bottom:8px;font-size:12px;font-weight:600;color:var(--ink);background:rgba(255,255,255,.75);border:1px solid var(--line);border-radius:999px;padding:6px 11px;backdrop-filter:blur(6px)}
 
-    /* HERO */
-    .hero{padding:70px 0 50px;position:relative;overflow:hidden}
-    .hero::before{content:"";position:absolute;inset:0;z-index:-1;
-      background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
-      background-size:46px 46px;opacity:.5;
-      -webkit-mask-image:radial-gradient(ellipse 80% 70% at 30% 0%,#000 20%,transparent 72%);
-      mask-image:radial-gradient(ellipse 80% 70% at 30% 0%,#000 20%,transparent 72%)}
-    .eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;display:inline-flex;align-items:center;gap:9px}
-    .eyebrow::before{content:"";width:26px;height:2px;background:var(--accent);display:inline-block}
-    .hero h1{font-size:clamp(34px,5vw,56px);font-weight:800;max-width:18ch}
-    .hero .sub{font-size:clamp(16px,1.6vw,19px);color:var(--muted);max-width:60ch;margin:22px 0 28px}
-    .chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
-    .chip{font-size:13px;font-weight:600;background:var(--surface);border:1px solid var(--line);padding:8px 15px;border-radius:999px;color:var(--ink)}
-    .badge{display:inline-flex;align-items:center;gap:14px;background:var(--accent-soft);border:1px solid rgba(29,78,216,.25);border-radius:16px;padding:18px 26px}
-    .badge strong{font-family:'Plus Jakarta Sans';font-size:38px;font-weight:800;color:var(--accent);line-height:1}
-    .badge span{font-size:14.5px;color:var(--ink);font-weight:500;max-width:24ch}
+    /* Chiffres : cartes premium (flou → net, reflets de bord, balayage de lumière) */
+    .kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-bottom:72px}
+    .card{position:relative;isolation:isolate;overflow:hidden;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px 22px 20px;display:grid;gap:6px;transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s ease}
+    .card::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.4px;pointer-events:none;background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(255,255,255,0) 38%,rgba(255,255,255,0) 62%,rgba(255,255,255,.55));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+    .card::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:2;background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.6) 47%,rgba(255,255,255,.95) 50%,rgba(255,255,255,.6) 53%,transparent 66%);background-size:250% 100%;background-position:150% 0;opacity:0}
+    .card.in::before{animation:cardSweep 1.15s cubic-bezier(.35,.1,.25,1) .1s 1}
+    .card:hover::before{animation:cardSweepHover 1s cubic-bezier(.35,.1,.25,1) 1}
+    .card:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+    @keyframes cardSweep{0%{background-position:150% 0;opacity:0}12%{opacity:1}100%{background-position:-150% 0;opacity:0}}
+    @keyframes cardSweepHover{0%{background-position:150% 0;opacity:0}12%{opacity:1}100%{background-position:-150% 0;opacity:0}}
+    .kpi b{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(34px,4vw,46px);font-weight:800;line-height:1;color:var(--accent-deep);font-variant-numeric:tabular-nums}
+    .kpi span{font-size:14.5px;color:var(--muted)}
+    .kpi small{font:500 11.5px 'JetBrains Mono',ui-monospace,monospace;color:var(--muted)}
 
-    /* SECTIONS */
-    section.block{padding:46px 0}
-    .block + .block{border-top:1px solid var(--line)}
-    .kicker{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
-    h2.sec{font-size:clamp(26px,3.4vw,38px);font-weight:800;margin-bottom:22px}
-    p.lead{font-size:17px;color:var(--muted);max-width:68ch;margin-bottom:14px}
-    p.lead strong{color:var(--ink);font-weight:600}
+    /* Sections */
+    .sec{margin-bottom:72px;display:grid;gap:22px}
+    .sec h2{font-size:clamp(26px,3.4vw,40px);font-weight:800;max-width:22ch}
+    .swap{display:grid;gap:10px}
+    .row{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:14px;align-items:center}
+    .row .was{color:var(--muted);text-decoration:line-through;text-decoration-color:rgba(46,60,87,.45);font-size:15px;text-align:right}
+    .row .arrow{font-family:'Plus Jakarta Sans';font-weight:800;font-size:18px;color:var(--accent)}
+    .row .now{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 16px;font-weight:600;font-size:15px}
+    .flow{list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));position:relative}
+    .flow::before{content:"";position:absolute;left:10%;right:10%;top:23px;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+    .flow li{display:grid;align-content:start;justify-items:center;text-align:center;gap:10px;padding:0 8px;position:relative}
+    .flow .dot{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#fff;border:2px solid var(--accent);font-family:'Plus Jakarta Sans';font-weight:800;color:var(--accent-deep)}
+    .flow b{font-family:'Plus Jakarta Sans';font-size:15px}
+    .flow span{font-size:13.5px;color:var(--muted);max-width:24ch}
+    .ctx{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:18px 48px;align-items:start}
+    .ctx > div:first-child{display:grid;gap:22px}
+    .prose{display:grid;gap:14px;font-size:17px;color:var(--muted);max-width:62ch}
+    .choix{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .choix .card{padding:24px;gap:10px;align-content:start}
+    .choix h3{font-size:19px;font-weight:700}
+    .choix p{font-size:15px;color:var(--muted)}
+    .stack{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .stack .lbl{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-right:6px}
+    .chip{font-size:12px;font-weight:600;color:var(--accent-deep);background:var(--accent-soft);padding:6px 12px;border-radius:999px}
+    .cta{background:var(--night);color:#fff;border-radius:22px;padding:clamp(24px,4vw,40px);display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;margin-bottom:80px}
+    .cta h2{font-size:clamp(22px,3vw,32px);font-weight:800;max-width:24ch}
+    .btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:15px;padding:14px 26px;border-radius:999px;transition:.25s ease;border:1.5px solid transparent}
+    .btn-light{background:#fff;color:var(--ink)}
+    .btn-light:hover{background:var(--accent-2);transform:translateY(-2px)}
+    .btn-line{color:#fff;border-color:rgba(255,255,255,.35)}
+    .btn-line:hover{border-color:#fff;transform:translateY(-2px)}
+    .btns{display:flex;gap:10px;flex-wrap:wrap}
 
-    .ilist{list-style:none;display:flex;flex-direction:column;gap:16px;margin-top:8px}
-    .ilist li{position:relative;padding-left:30px;font-size:15.5px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px 16px 44px;box-shadow:var(--shadow)}
-    .ilist li::before{content:"→";position:absolute;left:18px;top:16px;color:var(--accent);font-weight:800;font-size:16px}
-    .ilist li b{font-weight:700;color:var(--ink)}
-    .ilist code{font-family:ui-monospace,'SFMono-Regular',Menlo,monospace;font-size:13px;background:var(--bg);border:1px solid var(--line);padding:1px 7px;border-radius:6px;color:var(--accent)}
+    /* Apparition flou → net (comme l'accueil) */
+    .reveal{opacity:0;transform:translateY(24px) scale(.985);filter:blur(8px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1),filter .8s cubic-bezier(.2,.7,.2,1)}
+    .reveal.in{opacity:1;transform:none;filter:blur(0)}
+    @media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;filter:none;transition:none}.card::before{display:none}}
 
-    .factgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-top:8px}
-    .fact{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px}
-    .fact b{display:block;font-family:'Plus Jakarta Sans';font-size:30px;font-weight:800;color:var(--ink);margin-bottom:4px}
-    .fact b.accent{color:var(--accent)}
-    .fact span{font-size:14px;color:var(--muted)}
-
-    .stackchips{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
-    .stackchips span{font-size:13.5px;font-weight:600;background:var(--ink);color:#fff;padding:9px 16px;border-radius:999px}
-
-    /* FOOTER CTA */
-    .foot{padding:60px 0 80px;text-align:center;border-top:1px solid var(--line);background:var(--surface)}
-    .foot h3{font-size:clamp(24px,3vw,32px);font-weight:800;margin-bottom:10px}
-    .foot p{color:var(--muted);margin-bottom:28px}
-    .btn-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:15px;padding:14px 28px;border-radius:999px;transition:.25s ease;border:1.5px solid transparent}
-    .btn-primary{background:var(--accent);color:#fff}
-    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 30px -10px rgba(29,78,216,.45)}
-    .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
-    .btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
-
-    /* reveal */
-    .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
-    .reveal.in{opacity:1;transform:none}
-
-    @media(max-width:640px){
-      .hero{padding:48px 0 34px}
-      .badge{flex-direction:column;align-items:flex-start;gap:6px}
-      .badge strong{font-size:32px}
+    @media (max-width:900px){
+      .cs-hero{grid-template-columns:1fr;padding-top:44px}
+      .browser{transform:none}
+      .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .ctx,.choix{grid-template-columns:1fr}
+      .flow{grid-template-columns:1fr;gap:14px}
+      .flow::before{left:23px;right:auto;top:10px;bottom:10px;width:2px;height:auto;background:linear-gradient(180deg,var(--accent),var(--accent-2))}
+      .flow li{grid-template-columns:48px 1fr;justify-items:start;text-align:left;align-items:center;column-gap:14px;row-gap:2px}
+      .flow .dot{grid-row:span 2}
+      .flow span{max-width:none}
+      .row{grid-template-columns:1fr;gap:4px}
+      .row .was{text-align:left}
+      .row .arrow{display:none}
     }
+    .note-kpi{font-size:13px;color:var(--muted);margin:-56px 0 72px;max-width:80ch}
   </style>
   <link rel="stylesheet" href="/assets/site/nav.css">
   <script src="/assets/site/nav.js" defer></script>
@@ -164,96 +186,88 @@
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="wrap">
-        <div class="eyebrow">WordPress · SEO/GEO</div>
-        <h1>Liftfoils — Refonte WordPress &amp; SEO/GEO</h1>
-        <p class="sub">Refonte complète et redressement référencement d'un distributeur français d'eFoils : un site rapide, propre techniquement et pensé pour être trouvé — par Google comme par les moteurs de recherche IA.</p>
-        <div class="chips">
-          <span class="chip">WordPress</span>
-          <span class="chip">PHP</span>
-          <span class="chip">WooCommerce</span>
-          <span class="chip">Yoast SEO</span>
-          <span class="chip">Cloudflare</span>
-          <span class="chip">SEO technique</span>
-          <span class="chip">GEO</span>
+  <main class="wrap">
+    <section class="cs-hero">
+      <div class="cs-txt">
+        <span class="eyebrow">Étude de cas · WordPress, SEO &amp; GEO</span>
+        <h1>Deux fois plus de visites depuis Google, <span class="hl">en trois mois.</span></h1>
+        <p>Liftfoils, distributeur français d'eFoils, avait un site pénalisé dans Google. J'ai refait le site, corrigé la technique, structuré le contenu et suivi l'effet semaine après semaine.</p>
+        <span class="status"><i></i>Suivi en continu · liftfoils.fr</span>
+      </div>
+      <div class="stage">
+        <div class="browser">
+          <div class="bar"><i></i><i></i><i></i><span>liftfoils.fr</span></div>
+          <img src="/assets/img/projets/liftfoils-accueil.jpg" width="1800" height="1125" alt="Page d'accueil de liftfoils.fr : EFOIL LIFTFOILS, le foil électrique premium">
         </div>
+        <div class="phone"><img src="/assets/img/projets/liftfoils-accueil-mobile.jpg" width="780" height="1688" loading="lazy" alt="La page d'accueil de liftfoils.fr sur mobile"></div>
       </div>
     </section>
 
-    <section class="block reveal">
-      <div class="wrap">
-        <div class="kicker">Le contexte</div>
-        <h2 class="sec">Un site pénalisé en référencement</h2>
-        <p class="lead">Liftfoils est un distributeur français d'eFoils. À mon arrivée, le site était lourdement handicapé sur le plan technique et SEO, ce qui plafonnait sa visibilité organique malgré un trafic potentiel réel sur des requêtes à forte intention d'achat.</p>
-        <ul class="ilist">
-          <li><b>8 balises &lt;h1&gt; sur la page d'accueil</b> : Google ne pouvait identifier aucune hiérarchie de contenu claire, diluant totalement le signal sémantique de la page.</li>
-          <li><b>Aucune meta description</b> : les extraits affichés en résultats de recherche étaient générés au hasard, sans message commercial ni mot-clé maîtrisé.</li>
-          <li><b>Aucune donnée structurée</b> : pas de schema.org, donc aucune éligibilité aux résultats enrichis et une compréhension réduite par les crawlers.</li>
-          <li><b>Temps de réponse serveur ~1 800 ms</b> : un TTFB qui pénalisait à la fois l'expérience utilisateur et le budget de crawl.</li>
-          <li><b>Ancienne page d'accueil toujours indexée</b> : elle cannibalisait la nouvelle home, les deux URLs se concurrençant sur les mêmes requêtes et diluant l'autorité.</li>
-        </ul>
+    <section class="kpis" aria-label="Résultats">
+      <div class="card kpi reveal"><b>×2</b><span>clics depuis Google par jour</span><small>62 → 122 · Search Console</small></div>
+      <div class="card kpi reveal"><b>×2</b><span>apparitions dans Google par jour</span><small>2 664 → 5 451</small></div>
+      <div class="card kpi reveal"><b>7,9</b><span>position moyenne, contre 8,5</span><small>plus haut dans les résultats</small></div>
+      <div class="card kpi reveal"><b>8 → 1</b><span>titre principal sur l'accueil</span><small>un seul H1, lisible par Google</small></div>
+    </section>
+    <p class="note-kpi reveal">Moyennes sur 28 jours : fin mai – mi-juin contre août 2026 (Google Search Console). L'été est la haute saison de l'eFoil : une partie de la hausse vient aussi de la saison.</p>
+
+    <section class="sec ctx reveal" aria-labelledby="h-ctx">
+      <div>
+        <span class="eyebrow">Le contexte</span>
+        <h2 id="h-ctx">Un site que Google lisait mal.</h2>
+      </div>
+      <div class="prose">
+        <p>Liftfoils vend des eFoils haut de gamme en France, sur des recherches où chaque visiteur compte : « eFoil », « foil électrique », « essai eFoil ». Pourtant, le site plafonnait dans Google.</p>
+        <p>En regardant sous le capot : huit titres principaux sur la page d'accueil, aucune description dans les résultats de recherche, aucune donnée structurée, un serveur lent à répondre, et l'ancienne page d'accueil toujours indexée, qui faisait concurrence à la nouvelle. Google voyait deux sites à moitié au lieu d'un seul, clair.</p>
       </div>
     </section>
 
-    <section class="block reveal">
-      <div class="wrap">
-        <div class="kicker">Mon intervention</div>
-        <h2 class="sec">Refonte complète &amp; SEO/GEO technique</h2>
-        <p class="lead">J'ai mené une refonte de fond sur thème <strong>Atelier</strong> couplé à <strong>WooCommerce</strong>, puis un travail SEO/GEO technique poste par poste, en m'appuyant sur un audit comparatif rigoureux face à la concurrence.</p>
-        <ul class="ilist">
-          <li><b>Audit SEO comparatif</b> face à deux concurrents directs (Fliteboard, pwrfoil) : analyse du balisage, de la performance, des <code>hreflang</code>, du schema, des sitemaps et du <code>robots.txt</code> pour cartographier l'écart et prioriser les chantiers.</li>
-          <li><b>Réduction des H1 de 8 à 1</b> via un <b>output buffer PHP</b> côté serveur (<code>ob_start()</code>) : le JS ne suffisait pas car Googlebot ne l'exécute pas de façon fiable. La réécriture du HTML se fait donc avant l'envoi de la page, garantissant un seul H1 vu par le crawler.</li>
-          <li><b>Redirection 301 de l'ancienne home</b> vers la nouvelle pour transférer et conserver l'autorité SEO accumulée, et stopper net la cannibalisation entre les deux URLs.</li>
-          <li><b>Données structurées FAQPage</b> en JSON-LD (7 questions) pour viser les résultats enrichis et nourrir la compréhension du contenu par les moteurs.</li>
-          <li><b>Correction des balises canoniques</b> pour consolider les signaux et éviter la dispersion d'autorité sur les variantes d'URL.</li>
-          <li><b>Restauration de la meta description</b> et optimisation des extraits sur les pages stratégiques.</li>
-          <li><b>Renseignement systématique des attributs ALT</b> des images : accessibilité et SEO image.</li>
-          <li><b>Templates de pages produit WooCommerce sur-mesure</b> alignés sur l'univers de marque et conçus pour la conversion.</li>
-          <li><b>Mega-menu</b> et <b>configurateur de foil sur-mesure</b> pour guider le visiteur dans le choix de son équipement.</li>
-          <li><b>Configuration DNS sur Cloudflare</b> et mise en place d'une <b>messagerie pro (OVH Email Pro)</b> pour une infrastructure propre et fiable.</li>
-          <li><b>Volet GEO (Generative Engine Optimization)</b> : structuration du contenu pour être cité par les moteurs de recherche IA, au-delà du SEO Google classique.</li>
-        </ul>
+    <section class="sec reveal" aria-labelledby="h-chg">
+      <span class="eyebrow">Ce qui a changé</span>
+      <h2 id="h-chg">Chaque défaut corrigé à la source.</h2>
+      <div class="swap">
+        <div class="row"><span class="was">8 titres H1 sur l'accueil</span><span class="arrow" aria-hidden="true">→</span><span class="now">Un seul H1, réécrit côté serveur</span></div>
+        <div class="row"><span class="was">Aucune description dans Google</span><span class="arrow" aria-hidden="true">→</span><span class="now">Descriptions rédigées sur les pages clés</span></div>
+        <div class="row"><span class="was">Aucune donnée structurée</span><span class="arrow" aria-hidden="true">→</span><span class="now">FAQ balisée en données structurées (7 questions)</span></div>
+        <div class="row"><span class="was">Ancienne accueil encore indexée</span><span class="arrow" aria-hidden="true">→</span><span class="now">Redirigée en 301, autorité regroupée</span></div>
+        <div class="row"><span class="was">Images sans texte alternatif</span><span class="arrow" aria-hidden="true">→</span><span class="now">ALT renseignés, accessibles et indexables</span></div>
       </div>
     </section>
 
-    <section class="block reveal">
-      <div class="wrap">
-        <div class="kicker">Les résultats</div>
-        <h2 class="sec">Une visibilité organique durablement relevée</h2>
-        <p class="lead">Les corrections techniques et sémantiques se sont traduites par un gain mesurable et stable dans le temps, suivi via Google Search Console.</p>
-        <div class="factgrid">
-          <div class="fact"><b>8 → 1</b><span>balise H1 sur la page d'accueil</span></div>
-          <div class="fact"><b>~1 800 ms</b><span>de TTFB attaqué à la racine</span></div>
-          <div class="fact"><b>7</b><span>questions structurées en FAQPage JSON-LD</span></div>
-        </div>
+    <section class="sec reveal" aria-labelledby="h-flow">
+      <span class="eyebrow">Comment j'ai travaillé</span>
+      <h2 id="h-flow">De l'audit au suivi chiffré.</h2>
+      <ol class="flow">
+        <li><span class="dot">1</span><b>Audit comparatif</b><span>Balisage, vitesse, langues, schémas et sitemaps passés au crible face à deux concurrents directs, Fliteboard et pwrfoil.</span></li>
+        <li><span class="dot">2</span><b>Point de départ</b><span>Clics, position et taux de clic relevés dans Search Console avant toute modification, pour mesurer l'effet réel.</span></li>
+        <li><span class="dot">3</span><b>Corrections techniques</b><span>Titres, canoniques, redirections et données structurées corrigés dans le code du thème, pas avec une extension de plus.</span></li>
+        <li><span class="dot">4</span><b>Refonte et vente</b><span>Nouveau site sur le thème Atelier : méga-menu, configurateur de foil sur mesure et fiches produit WooCommerce pensées pour la vente.</span></li>
+        <li><span class="dot">5</span><b>Suivi et GEO</b><span>Contenu structuré pour être cité par ChatGPT ou Perplexity, et effet suivi dans Search Console.</span></li>
+      </ol>
+    </section>
+
+    <section class="sec reveal" aria-labelledby="h-choix">
+      <span class="eyebrow">Les choix qui comptent</span>
+      <h2 id="h-choix">Des corrections qui tiennent dans le temps.</h2>
+      <div class="choix">
+        <article class="card"><h3>Corriger côté serveur</h3><p>Masquer les titres en trop en JavaScript ne suffisait pas : Google n'exécute pas toujours le JavaScript. La page est donc réécrite sur le serveur, avant l'envoi : Google voit un seul titre, à coup sûr.</p></article>
+        <article class="card"><h3>Mesurer avant d'agir</h3><p>Chaque chantier part d'un chiffre relevé dans Search Console et se juge sur le même chiffre quelques semaines plus tard. Pas d'impression, des courbes.</p></article>
+        <article class="card"><h3>Visible et vendeur</h3><p>Attirer plus de monde ne suffit pas : le configurateur et les fiches produit guident le visiteur jusqu'au bon modèle, puis jusqu'à l'essai ou l'achat.</p></article>
       </div>
     </section>
 
-    <section class="block reveal">
-      <div class="wrap">
-        <div class="kicker">Stack technique</div>
-        <h2 class="sec">Les outils mobilisés</h2>
-        <div class="stackchips">
-          <span>WordPress</span><span>PHP</span><span>WooCommerce</span><span>Yoast SEO</span>
-          <span>Cloudflare</span><span>OVH Email Pro</span><span>JSON-LD / schema.org</span>
-          <span>SEO technique</span><span>GEO</span>
-        </div>
+    <section class="sec reveal" style="gap:28px">
+      <div class="stack"><span class="lbl">Stack</span><span class="chip">WordPress</span><span class="chip">PHP</span><span class="chip">WooCommerce</span><span class="chip">Yoast SEO</span><span class="chip">JSON-LD · schema.org</span><span class="chip">Cloudflare</span><span class="chip">Search Console</span><span class="chip">GEO</span></div>
+    </section>
+
+    <section class="cta reveal">
+      <h2>Votre site aussi mérite d'être bien lu par Google.</h2>
+      <div class="btns">
+        <a class="btn btn-light" href="/#contact">Faire auditer mon site →</a>
+        <a class="btn btn-line" href="/audit-seo-geo.html">Voir l'audit SEO &amp; GEO</a>
       </div>
     </section>
   </main>
-
-  <section class="foot">
-    <div class="wrap">
-      <h3>Un projet WordPress ou SEO en tête&nbsp;?</h3>
-      <p>Discutons de la façon dont je peux faire décoller votre visibilité.</p>
-      <div class="btn-row">
-        <a class="btn btn-primary" href="/#contact">Discuter d'un projet</a>
-        <a class="btn btn-ghost" href="https://liftfoils.fr/" target="_blank" rel="noopener">Voir le site live ↗</a>
-      </div>
-    </div>
-  </section>
 
   <footer id="gf">
     <div class="gf-in">
