@@ -38,13 +38,19 @@
         {
           "@type": "Offer",
           "name": "Performance",
-          "description": "Tout l'Essentiel plus un environnement de préproduction, l'optimisation continue des Core Web Vitals, le durcissement avancé, le suivi WooCommerce et une réponse sous 4 h ouvrées. Petites demandes incluses sans compteur d'heures. 1 site.",
+          "description": "Tout l'Essentiel plus un environnement de préproduction, l'optimisation continue des Core Web Vitals, le nettoyage mensuel de la base, le suivi WooCommerce et une réponse sous 8 h ouvrées. Petites demandes incluses sans compteur d'heures. 1 site.",
+          "priceSpecification": {"@type":"UnitPriceSpecification","price":"599","priceCurrency":"EUR","unitCode":"MON","referenceQuantity":{"@type":"QuantitativeValue","value":1,"unitCode":"MON"}}
+        },
+        {
+          "@type": "Offer",
+          "name": "Priorité",
+          "description": "Tout Performance plus le durcissement avancé et la revue de sécurité, des sauvegardes rapprochées, une réponse sous 4 h ouvrées, les interventions urgentes prioritaires, l'alerte immédiate en cas d'indisponibilité et un rapport détaillé. Pour les boutiques et les sites où une panne coûte cher. 1 site.",
           "priceSpecification": {"@type":"UnitPriceSpecification","price":"899","priceCurrency":"EUR","unitCode":"MON","referenceQuantity":{"@type":"QuantitativeValue","value":1,"unitCode":"MON"}}
         },
         {
           "@type": "Offer",
           "name": "Sur-mesure",
-          "description": "Pour les gros sites et les parcs multi-sites : tout Performance, staging dédié, délai d'intervention contractualisé et astreinte définie ensemble. Tarif établi selon le nombre de pages, le nombre de sites et le trafic.",
+          "description": "Pour les gros sites et les parcs multi-sites : tout Priorité, staging dédié, délai d'intervention contractualisé en SLA et astreinte définie ensemble. Tarif établi selon le nombre de pages, le nombre de sites, le trafic et le délai attendu.",
           "availability": "https://schema.org/InStock"
         }
       ]
@@ -339,13 +345,13 @@
 
     /* TABLEAU COMPARATIF DES FORMULES */
     .tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);-webkit-overflow-scrolling:touch}
-    table.tbl{border-collapse:collapse;width:100%;min-width:680px;font-size:14.5px}
+    table.tbl{border-collapse:collapse;width:100%;min-width:880px;font-size:14.5px}
     table.tbl th,table.tbl td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
     table.tbl thead th{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:14px;white-space:nowrap}
     table.tbl thead th.hl{color:var(--accent)}
     table.tbl tbody th{font-weight:600;color:var(--ink)}
     table.tbl tbody tr:last-child td,table.tbl tbody tr:last-child th{border-bottom:none}
-    table.tbl td{color:var(--muted);text-align:center;width:170px}
+    table.tbl td{color:var(--muted);text-align:center;width:160px}
     table.tbl td.hl{color:var(--ink);font-weight:600}
     table.tbl .yes{color:var(--accent);font-weight:800}
     table.tbl .no{opacity:.45}
@@ -425,7 +431,7 @@
     <div class="wrap">
       <div class="head reveal" style="text-align:center;margin:0 auto 54px">
         <span class="eyebrow" style="justify-content:center">Formules</span>
-        <h2>Deux formules à prix fixe, une sur-mesure</h2>
+        <h2>Trois formules à prix fixe, une sur-mesure</h2>
         <p>Prix par site, sans engagement, résiliables à la fin du mois en cours. Ce sont des tarifs de développeur, pas d'automate : chaque mise à jour est testée avant la production et quelqu'un relit le résultat. Et il n'y a pas de compteur d'heures — vous m'écrivez quand vous en avez besoin. Tout commence par un audit gratuit de 15 minutes — je vous dis dans quel état est le site avant que vous ne payiez quoi que ce soit.</p>
       </div>
       <div class="price-grid">
@@ -447,38 +453,38 @@
         <div class="price featured reveal">
           <span class="pop">Le plus demandé</span>
           <h3>Performance</h3>
-          <p class="sub">Pour un site qui doit aussi être rapide, sûr et bien référencé.</p>
-          <div class="amount">899€ <small>/ mois · par site</small></div>
+          <p class="sub">Pour un site qui doit aussi être rapide et bien référencé.</p>
+          <div class="amount">599€ <small>/ mois · par site</small></div>
           <ul>
             <li>Tout ce que comprend l'Essentiel</li>
             <li>Environnement de préproduction (staging) pour tester sans risque</li>
             <li>Optimisation continue des Core Web Vitals : images, cache, extensions inutiles</li>
-            <li>Durcissement avancé et revue de sécurité régulière</li>
             <li>Nettoyage mensuel de la base de données</li>
-            <li>Suivi WooCommerce : sauvegardes rapprochées, tunnel de commande</li>
-            <li>Réponse sous 4 h ouvrées · interventions urgentes traitées en priorité</li>
+            <li>Suivi WooCommerce : tunnel de commande vérifié, sauvegardes avant intervention</li>
+            <li>Réponse sous 8 h ouvrées · petites demandes toujours sans compteur</li>
           </ul>
           <a class="btn btn-primary" href="/#contact">Demander l'audit gratuit</a>
         </div>
         <div class="price reveal">
-          <h3>Sur-mesure</h3>
-          <p class="sub">Gros sites, parcs multi-sites et engagements contractuels.</p>
-          <div class="amount">Sur devis</div>
+          <h3>Priorité</h3>
+          <p class="sub">Pour les boutiques et les sites où une panne coûte cher.</p>
+          <div class="amount">899€ <small>/ mois · par site</small></div>
           <ul>
             <li>Tout ce que comprend Performance</li>
-            <li>Tarif établi selon le nombre de pages, le nombre de sites et le trafic</li>
-            <li>Environnement de staging dédié et procédure de mise en production</li>
-            <li>Engagement de délai d'intervention (SLA) formalisé</li>
-            <li>Délai d'intervention contractualisé (SLA) et astreinte définie ensemble</li>
-            <li>Rapport consolidé et point de suivi régulier</li>
+            <li>Durcissement avancé et revue de sécurité régulière</li>
+            <li>Sauvegardes rapprochées, adaptées au rythme des commandes</li>
+            <li>Réponse sous 4 h ouvrées · interventions urgentes traitées en priorité</li>
+            <li>Alerte immédiate en cas d'indisponibilité, à toute heure</li>
+            <li>Rapport détaillé et point de suivi régulier avec vous</li>
           </ul>
-          <a class="btn btn-ghost" href="/#contact">Faire chiffrer mon site</a>
+          <a class="btn btn-ghost" href="/#contact">Demander l'audit gratuit</a>
         </div>
       </div>
       <div class="card reveal" style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap;justify-content:space-between">
         <div style="flex:1;min-width:280px">
-          <h3 style="font-size:19px;font-weight:700;margin-bottom:6px">Ce qui détermine le devis sur-mesure</h3>
-          <p style="color:var(--muted);font-size:15px">Le nombre de pages et de modèles à maintenir, le nombre de sites, la présence d'une boutique WooCommerce ou de versions multilingues, le trafic et le délai d'intervention attendu. Le chiffrage est fait après l'audit gratuit et reste fixe une fois validé.</p>
+          <span class="eyebrow" style="margin-bottom:10px">Quatrième formule</span>
+          <h3 style="font-size:19px;font-weight:700;margin-bottom:6px">Sur-mesure — sur devis</h3>
+          <p style="color:var(--muted);font-size:15px">Pour les gros sites, les parcs multi-sites et les besoins contractuels : tout ce que comprend Priorité, un staging dédié, un délai d'intervention contractualisé en SLA et une astreinte définie ensemble. Le tarif dépend du nombre de pages et de modèles à maintenir, du nombre de sites, de la présence d'une boutique WooCommerce ou de versions multilingues, du trafic et du délai attendu. Le chiffrage est fait après l'audit gratuit et reste fixe une fois validé.</p>
         </div>
         <a class="btn btn-primary" href="/#contact">Faire chiffrer mon parc →</a>
       </div>
@@ -497,26 +503,67 @@
       <div class="tbl-wrap reveal">
         <table class="tbl">
           <thead>
-            <tr><th>Prestation</th><th class="hl" style="text-align:center">Essentiel<br><small style="font-weight:600;color:var(--muted)">299 €/mois</small></th><th class="hl" style="text-align:center">Performance<br><small style="font-weight:600;color:var(--muted)">899 €/mois</small></th><th class="hl" style="text-align:center">Sur-mesure<br><small style="font-weight:600;color:var(--muted)">sur devis</small></th></tr>
+            <tr><th>Prestation</th><th class="hl" style="text-align:center">Essentiel<br><small style="font-weight:600;color:var(--muted)">299 €/mois</small></th><th class="hl" style="text-align:center">Performance<br><small style="font-weight:600;color:var(--muted)">599 €/mois</small></th><th class="hl" style="text-align:center">Priorité<br><small style="font-weight:600;color:var(--muted)">899 €/mois</small></th><th class="hl" style="text-align:center">Sur-mesure<br><small style="font-weight:600;color:var(--muted)">sur devis</small></th></tr>
           </thead>
           <tbody>
-            <tr><th>Mises à jour cœur, thème, extensions</th><td>Hebdomadaires</td><td class="hl">Hebdomadaires + urgences</td><td class="hl">Selon le délai convenu</td></tr>
-            <tr><th>Test avant application en production</th><td><span class="yes">✓</span></td><td><span class="yes">✓</span> sur staging</td><td><span class="yes">✓</span> sur staging dédié</td></tr>
-            <tr><th>Sauvegardes externalisées</th><td>Quotidiennes</td><td class="hl">Quotidiennes + avant intervention</td><td class="hl">Rapprochées (Woo / fort trafic)</td></tr>
-            <tr><th>Restauration en cas d'incident</th><td><span class="yes">✓</span></td><td><span class="yes">✓</span> prioritaire</td><td><span class="yes">✓</span> avec engagement de délai</td></tr>
-            <tr><th>Surveillance de disponibilité 24/7</th><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span> + alerte immédiate</td></tr>
-            <tr><th>Sécurité</th><td>Scan + pare-feu (WAF)</td><td class="hl">+ durcissement avancé</td><td class="hl">+ revue de sécurité périodique</td></tr>
-            <tr><th>Optimisation Core Web Vitals</th><td>Correctifs ponctuels</td><td class="hl">Suivi et optimisation continus</td><td class="hl">Plan de performance dédié</td></tr>
-            <tr><th>Nettoyage de la base de données</th><td>Trimestriel</td><td>Mensuel</td><td>Selon le volume</td></tr>
-            <tr><th>Environnement de staging</th><td class="no">—</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span> dédié</td></tr>
-            <tr><th>Suivi WooCommerce</th><td class="no">—</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
-            <tr><th>Rapport mensuel</th><td><span class="yes">✓</span></td><td><span class="yes">✓</span> détaillé</td><td class="hl">Consolidé + point de suivi</td></tr>
-            <tr><th>Petites demandes et retouches</th><td>Incluses, sans compteur</td><td class="hl">Incluses, traitées en priorité</td><td class="hl">Incluses + astreinte</td></tr>
-            <tr><th>Délai de réponse</th><td>Sous 24 h ouvrées</td><td class="hl">Sous 4 h ouvrées</td><td class="hl">Contractualisé (SLA)</td></tr>
+            <tr><th>Mises à jour cœur, thème, extensions</th><td>Hebdomadaires</td><td>Hebdomadaires</td><td class="hl">Hebdomadaires + urgences</td><td class="hl">Selon le délai convenu</td></tr>
+            <tr><th>Test avant application en production</th><td><span class="yes">✓</span></td><td><span class="yes">✓</span> sur staging</td><td><span class="yes">✓</span> sur staging</td><td><span class="yes">✓</span> sur staging dédié</td></tr>
+            <tr><th>Sauvegardes externalisées</th><td>Quotidiennes</td><td class="hl">Quotidiennes + avant intervention</td><td class="hl">Rapprochées (Woo / fort trafic)</td><td class="hl">Définies au devis</td></tr>
+            <tr><th>Restauration en cas d'incident</th><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span> prioritaire</td><td><span class="yes">✓</span> avec engagement de délai</td></tr>
+            <tr><th>Surveillance de disponibilité 24/7</th><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td class="hl"><span class="yes">✓</span> + alerte immédiate</td><td class="hl"><span class="yes">✓</span> + alerte immédiate</td></tr>
+            <tr><th>Sécurité</th><td>Scan + pare-feu (WAF)</td><td>Scan + pare-feu (WAF)</td><td class="hl">+ durcissement et revue</td><td class="hl">+ revue périodique</td></tr>
+            <tr><th>Optimisation Core Web Vitals</th><td>Correctifs ponctuels</td><td class="hl">Suivi et optimisation continus</td><td class="hl">Suivi continu</td><td class="hl">Plan de performance dédié</td></tr>
+            <tr><th>Nettoyage de la base de données</th><td>Trimestriel</td><td>Mensuel</td><td>Mensuel</td><td>Selon le volume</td></tr>
+            <tr><th>Environnement de staging</th><td class="no">—</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span> dédié</td></tr>
+            <tr><th>Suivi WooCommerce</th><td class="no">—</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+            <tr><th>Rapport mensuel</th><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td class="hl">Détaillé + point de suivi</td><td class="hl">Consolidé multi-sites</td></tr>
+            <tr><th>Petites demandes et retouches</th><td>Incluses, sans compteur</td><td>Incluses, sans compteur</td><td class="hl">Incluses, traitées en priorité</td><td class="hl">Incluses + astreinte</td></tr>
+            <tr><th>Délai de réponse</th><td>Sous 24 h ouvrées</td><td class="hl">Sous 8 h ouvrées</td><td class="hl">Sous 4 h ouvrées</td><td class="hl">Contractualisé (SLA)</td></tr>
           </tbody>
         </table>
       </div>
       <p class="note">Les évolutions non consommées ne sont pas reportées d'un mois sur l'autre. Au-delà du forfait inclus, les développements sont devisés séparément.</p>
+    </div>
+  </section>
+
+  <!-- PERIMETRE : CE QUI EST INCLUS, CE QUI EST DEVISE -->
+  <section class="block" id="perimetre">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">La frontière, noir sur blanc</span>
+        <h2>« Sans compteur », ça s'arrête où ?</h2>
+        <p>Une offre sans quota d'heures n'a de sens que si la limite est claire des deux côtés. La règle est simple : <strong style="color:var(--ink)">si votre demande ne crée pas de nouvelle fonctionnalité et se traite en une intervention courte, elle est incluse</strong>. Dès qu'il faut concevoir, développer ou refondre, c'est un devis à part — annoncé avant que je commence, jamais après.</p>
+      </div>
+      <div class="compare">
+        <div class="col me reveal">
+          <h4>Inclus dans l'abonnement, sans compteur</h4>
+          <ul>
+            <li><span class="tick yes">✓</span> Modifier un texte, un prix, une image, un horaire</li>
+            <li><span class="tick yes">✓</span> Publier un article ou une page déjà rédigée</li>
+            <li><span class="tick yes">✓</span> Ajouter une page à partir d'un modèle existant</li>
+            <li><span class="tick yes">✓</span> Remplacer un PDF, corriger un lien mort</li>
+            <li><span class="tick yes">✓</span> Réparer un affichage cassé après une mise à jour</li>
+            <li><span class="tick yes">✓</span> Créer ou débloquer un compte utilisateur</li>
+            <li><span class="tick yes">✓</span> Remettre en route un e-mail de formulaire qui ne part plus</li>
+            <li><span class="tick yes">✓</span> Restaurer le site après une fausse manœuvre</li>
+            <li><span class="tick yes">✓</span> Vous expliquer comment faire vous-même, si vous préférez</li>
+          </ul>
+        </div>
+        <div class="col other reveal">
+          <h4>Devisé à part, prix connu d'avance</h4>
+          <ul>
+            <li><span class="tick no">+</span> Une nouvelle fonctionnalité (réservation, configurateur, espace membre)</li>
+            <li><span class="tick no">+</span> La refonte d'une section, d'un gabarit ou de la charte graphique</li>
+            <li><span class="tick no">+</span> Un nouveau type de contenu avec ses champs et ses filtres</li>
+            <li><span class="tick no">+</span> L'intégration d'un service tiers : paiement, CRM, ERP, logistique</li>
+            <li><span class="tick no">+</span> Une migration, un changement d'hébergeur ou de nom de domaine</li>
+            <li><span class="tick no">+</span> Le développement d'une extension sur mesure</li>
+            <li><span class="tick no">+</span> L'ajout d'une version multilingue</li>
+            <li><span class="tick no">+</span> La rédaction de contenu ou la production de visuels</li>
+          </ul>
+        </div>
+      </div>
+      <p class="note">En cas de doute, c'est moi qui tranche avant d'agir, et toujours dans le sens le plus simple pour vous : si c'est limite, je le fais et je ne le facture pas. Ce qui est devisé l'est parce que ça demande une vraie conception, pas parce que ça prend dix minutes de plus.</p>
     </div>
   </section>
 
@@ -562,7 +609,7 @@
             <li>Vérification de l'absence de code malveillant avant la mise sous surveillance</li>
             <li>Rapport d'état zéro daté et remis : ce qui a été corrigé, ce qui reste, ce qui est exclu du contrat</li>
           </ul>
-          <div class="case-result"><strong>Puis 299 ou 899 €/mois</strong> selon la formule, pour que le site reste dans cet état au lieu de se dégrader à nouveau.</div>
+          <div class="case-result"><strong>Puis 299 à 899 €/mois</strong> selon la formule, pour que le site reste dans cet état au lieu de se dégrader à nouveau.</div>
           <a class="link" href="/#contact">Faire estimer ma mise à niveau →</a>
         </div>
       </div>
@@ -652,7 +699,7 @@
       <div class="faq">
         <div class="faq-item"><button class="faq-q">Y a-t-il un engagement de durée ?<span>+</span></button><div class="faq-a">Non. La maintenance est mensuelle et sans engagement : elle s'arrête à la fin du mois en cours sur simple demande. Vous récupérez vos accès, vos sauvegardes et la documentation de ce qui a été fait.</div></div>
         <div class="faq-item"><button class="faq-q">Pourquoi 299 € par mois quand d'autres proposent 30 € ?<span>+</span></button><div class="faq-a">Parce que ce n'est pas la même prestation. À 30 € par mois, un robot déclenche les mises à jour et personne ne regarde le résultat : le jour où une mise à jour casse une page ou qu'une faille est exploitée, il n'y a personne au bout du fil. Ici, chaque mise à jour est testée avant la production, un développeur relit ce qui s'est passé, les performances sont suivies dans la durée, et surtout vous avez quelqu'un de disponible — sans compteur d'heures à surveiller. Le coût réel d'un site à l'arrêt — commandes perdues, référencement dégradé, remise en état — dépasse largement l'écart de prix.</div></div>
-        <div class="faq-item"><button class="faq-q">Combien d'heures d'intervention sont incluses ?<span>+</span></button><div class="faq-a">Aucune, et c'est volontaire : il n'y a pas de compteur. La plupart des contrats du marché vous vendent 6 à 24 heures de support par an et décomptent chaque demande, ce qui vous pousse à hésiter avant de m'écrire. Ici, les petites demandes et retouches sont comprises dans l'abonnement, sans quota ni facture de dépassement. Ce que vous achetez, c'est ma disponibilité et un délai de réponse tenu. Seuls les vrais développements — une nouvelle fonctionnalité, une refonte de section — font l'objet d'un devis à part, et vous le savez avant que je commence.</div></div>
+        <div class="faq-item"><button class="faq-q">Combien d'heures d'intervention sont incluses ?<span>+</span></button><div class="faq-a">Aucune, et c'est volontaire : il n'y a pas de compteur. La plupart des contrats du marché vous vendent 6 à 24 heures de support par an et décomptent chaque demande, ce qui vous pousse à hésiter avant de m'écrire. Ici, les petites demandes et retouches sont comprises dans l'abonnement, sans quota ni facture de dépassement. Ce que vous achetez, c'est ma disponibilité et un délai de réponse tenu. Seuls les vrais développements — une nouvelle fonctionnalité, une refonte de section — font l'objet d'un devis à part, et vous le savez avant que je commence. Le détail de ce qui est inclus et de ce qui est devisé est listé dans <a href="#perimetre" style="color:var(--accent);text-decoration:underline">la section « Sans compteur, ça s'arrête où ? »</a>.</div></div>
         <div class="faq-item"><button class="faq-q">Tu interviens sur n'importe quel hébergeur ?<span>+</span></button><div class="faq-a">Oui : o2switch, OVH, IONOS, Hostinger, Infomaniak, Kinsta, WP Engine ou serveur dédié. J'ai besoin d'un accès administrateur WordPress et d'un accès SFTP ou au panel de l'hébergeur. Aucun changement d'hébergement n'est imposé.</div></div>
         <div class="faq-item"><button class="faq-q">Mon site est déjà en mauvais état, puis-je souscrire directement ?<span>+</span></button><div class="faq-a">C'est même le cas de figure normal : un site parfaitement propre, je n'en vois presque jamais. C'est pour ça que la mise à niveau initiale est systématique, facturée une seule fois entre 490 et 1 200 € selon l'état constaté lors de l'audit gratuit. Elle fixe un état de départ documenté, sans lequel aucun engagement de délai n'a de sens. L'abonnement mensuel prend le relais ensuite. Si le site est cassé ou piraté, c'est une reprise complète : voir la page reprise et réparation WordPress.</div></div>
         <div class="faq-item"><button class="faq-q">Que se passe-t-il si une mise à jour casse le site ?<span>+</span></button><div class="faq-a">Une sauvegarde complète est prise avant chaque intervention et les mises à jour sont testées avant d'être appliquées en production. Si un problème survient malgré tout, la restauration et la correction sont comprises dans la formule, sans facturation supplémentaire.</div></div>
