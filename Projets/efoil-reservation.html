@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>eFoil — Réservation (mini-SaaS) · Ghost Consulting</title>
-  <meta name="description" content="Mini-SaaS Next.js de réservation eFoil : dashboard public, données personnelles protégées par mot de passe (RGPD), e-mails de confirmation, déploiement Docker." />
+  <title>Dashboard de réservation automatisé · Ghost Consulting</title>
+  <meta name="description" content="Étude de cas : un tableau de bord qui reçoit les réservations d’un loueur d’eFoils, encaisse l’acompte en ligne et demande les avis. 125 réservations traitées." />
   <link rel="canonical" href="https://bakabi.fr/Projets/efoil-reservation.html" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="eFoil — Réservation (mini-SaaS) · Ghost Consulting" />
-  <meta property="og:description" content="Mini-SaaS Next.js de réservation eFoil : dashboard public, données personnelles protégées par mot de passe (RGPD), e-mails de confirmation, déploiement Docker." />
+  <meta property="og:title" content="Dashboard de réservation automatisé · Ghost Consulting" />
+  <meta property="og:description" content="Étude de cas : un tableau de bord qui reçoit les réservations d’un loueur d’eFoils, encaisse l’acompte en ligne et demande les avis. 125 réservations traitées." />
   <meta property="og:url" content="https://bakabi.fr/Projets/efoil-reservation.html" />
   <meta property="og:image" content="https://bakabi.fr/assets/img/bg/hero.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -32,7 +32,7 @@
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "eFoil — Réservation (mini-SaaS)",
+        "name": "Dashboard de réservation automatisé",
         "item": "https://bakabi.fr/Projets/efoil-reservation.html"
       }
     ]
@@ -42,9 +42,9 @@
   {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
-    "name": "eFoil — Réservation (mini-SaaS)",
-    "headline": "eFoil — Réservation (mini-SaaS)",
-    "description": "Mini-SaaS Next.js de réservation eFoil : dashboard public, données personnelles protégées par mot de passe (RGPD), e-mails de confirmation, déploiement Docker.",
+    "name": "Dashboard de réservation automatisé",
+    "headline": "Dashboard de réservation automatisé",
+    "description": "Étude de cas : un tableau de bord qui reçoit les réservations d’un loueur d’eFoils, encaisse l’acompte en ligne et demande les avis. 125 réservations traitées.",
     "url": "https://bakabi.fr/Projets/efoil-reservation.html",
     "creator": {"@id": "https://bakabi.fr/#organization"},
     "inLanguage": "fr"
@@ -54,68 +54,107 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
+    /* Étude de cas « dashboard de réservation » : héros avec capture (navigateur + mobile), chiffres en cartes premium, avant → après, flux en 5 étapes */
     :root{
-      --bg:rgba(255,255,255,.55);--surface:rgba(216,230,250,.72);--ink:#0E1F3D;--muted:#2E3C57;--line:rgba(17,42,92,.16);
-      --accent:#1D4ED8;--accent-soft:rgba(37,99,235,.14);--radius:18px;
-      --shadow:0 22px 55px -26px rgba(15,40,95,.4);--maxw:1200px;
+      --surface:rgba(216,230,250,.72);--ink:#0E1F3D;--muted:#2E3C57;--line:rgba(17,42,92,.16);
+      --accent:#1D4ED8;--accent-deep:#13338E;--accent-2:#38BDF8;--accent-soft:rgba(37,99,235,.14);
+      --night:#0B1A33;--radius:18px;--shadow:0 22px 55px -26px rgba(15,40,95,.4);--maxw:1200px;
     }
     *{box-sizing:border-box;margin:0;padding:0}
+    [hidden]{display:none!important}
     html{scroll-behavior:smooth}
-    body{font-family:'Inter',system-ui,sans-serif;background:linear-gradient(160deg,#d6e6fb 0%,#9bbef0 48%,#7ea8e6 100%) fixed;color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
-    h1,h2,h3,h4{font-family:'Plus Jakarta Sans',sans-serif;line-height:1.1;letter-spacing:-.02em}
+    html,body{overflow-x:clip}
+    body{font-family:'Inter',system-ui,sans-serif;background:linear-gradient(160deg,#d6e6fb 0%,#9bbef0 48%,#7ea8e6 100%) fixed;color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+    h1,h2,h3{font-family:'Plus Jakarta Sans',sans-serif;line-height:1.08;letter-spacing:-.02em;text-wrap:balance}
     a{color:inherit;text-decoration:none}
     .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-    header{position:sticky;top:0;z-index:50;background:rgba(247,244,239,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-    .nav{display:flex;align-items:center;justify-content:space-between;height:70px;max-width:var(--maxw);margin:0 auto;padding:0 24px}
-    .logo{font-family:'Plus Jakarta Sans';font-weight:800;font-size:19px;letter-spacing:-.02em}
-    .logo span{color:var(--accent)}
-    .back{font-size:14.5px;color:var(--muted);font-weight:500;transition:.2s;display:inline-flex;align-items:center;gap:7px}
-    .back:hover{color:var(--ink)}
-    .hero{padding:70px 0 50px;position:relative;overflow:hidden}
-    .hero::before{content:"";position:absolute;inset:0;z-index:-1;
-      background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
-      background-size:46px 46px;opacity:.5;
-      -webkit-mask-image:radial-gradient(ellipse 80% 70% at 30% 0%,#000 20%,transparent 72%);
-      mask-image:radial-gradient(ellipse 80% 70% at 30% 0%,#000 20%,transparent 72%)}
-    .eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;display:inline-flex;align-items:center;gap:9px}
-    .eyebrow::before{content:"";width:26px;height:2px;background:var(--accent);display:inline-block}
-    .hero h1{font-size:clamp(34px,5vw,56px);font-weight:800;max-width:18ch}
-    .hero .sub{font-size:clamp(16px,1.6vw,19px);color:var(--muted);max-width:60ch;margin:22px 0 28px}
-    .chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
-    .chip{font-size:13px;font-weight:600;background:var(--surface);border:1px solid var(--line);padding:8px 15px;border-radius:999px;color:var(--ink)}
-    .badge{display:inline-flex;align-items:center;gap:14px;background:var(--accent-soft);border:1px solid rgba(29,78,216,.25);border-radius:16px;padding:18px 26px}
-    .badge strong{font-family:'Plus Jakarta Sans';font-size:38px;font-weight:800;color:var(--accent);line-height:1}
-    .badge span{font-size:14.5px;color:var(--ink);font-weight:500;max-width:26ch}
-    section.block{padding:46px 0}
-    .block + .block{border-top:1px solid var(--line)}
-    .kicker{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
-    h2.sec{font-size:clamp(26px,3.4vw,38px);font-weight:800;margin-bottom:22px}
-    p.lead{font-size:17px;color:var(--muted);max-width:68ch;margin-bottom:14px}
-    p.lead strong{color:var(--ink);font-weight:600}
-    .ilist{list-style:none;display:flex;flex-direction:column;gap:16px;margin-top:8px}
-    .ilist li{position:relative;font-size:15.5px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px 16px 44px;box-shadow:var(--shadow)}
-    .ilist li::before{content:"→";position:absolute;left:18px;top:16px;color:var(--accent);font-weight:800;font-size:16px}
-    .ilist li b{font-weight:700;color:var(--ink)}
-    .ilist code{font-family:ui-monospace,'SFMono-Regular',Menlo,monospace;font-size:13px;background:var(--bg);border:1px solid var(--line);padding:1px 7px;border-radius:6px;color:var(--accent)}
-    .factgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-top:8px}
-    .fact{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px}
-    .fact b{display:block;font-family:'Plus Jakarta Sans';font-size:30px;font-weight:800;color:var(--ink);margin-bottom:4px}
-    .fact b.accent{color:var(--accent)}
-    .fact span{font-size:14px;color:var(--muted)}
-    .stackchips{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
-    .stackchips span{font-size:13.5px;font-weight:600;background:var(--ink);color:#fff;padding:9px 16px;border-radius:999px}
-    .foot{padding:60px 0 80px;text-align:center;border-top:1px solid var(--line);background:var(--surface)}
-    .foot h3{font-size:clamp(24px,3vw,32px);font-weight:800;margin-bottom:10px}
-    .foot p{color:var(--muted);margin-bottom:28px}
-    .btn-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:15px;padding:14px 28px;border-radius:999px;transition:.25s ease;border:1.5px solid transparent}
-    .btn-primary{background:var(--accent);color:#fff}
-    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 30px -10px rgba(29,78,216,.45)}
-    .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
-    .btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
-    .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
-    .reveal.in{opacity:1;transform:none}
-    @media(max-width:640px){.hero{padding:48px 0 34px}.badge{flex-direction:column;align-items:flex-start;gap:6px}.badge strong{font-size:32px}}
+    .eyebrow{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-deep);display:inline-flex;align-items:center;gap:8px}
+    .eyebrow::before{content:"";width:26px;height:2px;background:currentColor;display:inline-block}
+    .hl{background:linear-gradient(transparent 60%,rgba(56,189,248,.55) 60%,rgba(56,189,248,.55) 92%,transparent 92%);-webkit-box-decoration-break:clone;box-decoration-break:clone}
+
+    /* Héros */
+    .cs-hero{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.25fr);gap:clamp(28px,4vw,56px);align-items:center;padding:64px 0 56px}
+    .cs-txt{display:grid;gap:18px;justify-items:start}
+    .cs-txt h1{font-size:clamp(34px,5vw,58px);font-weight:800}
+    .cs-txt p{font-size:18px;color:var(--muted);max-width:44ch}
+    .status{font-size:12px;font-weight:700;line-height:1;padding:8px 12px;border-radius:999px;background:var(--night);color:#fff;display:inline-flex;gap:8px;align-items:center}
+    .status i{width:8px;height:8px;border-radius:50%;background:#34D399;box-shadow:0 0 0 4px rgba(52,211,153,.25)}
+    .stage{position:relative;padding-bottom:40px;padding-right:46px}
+    .browser{border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 40px 80px -30px rgba(11,26,51,.55),0 0 0 1px rgba(17,42,92,.1);transform:perspective(1600px) rotateY(-6deg) rotateX(2deg);transform-origin:left center}
+    .bar{display:flex;align-items:center;gap:7px;padding:10px 14px;background:#EEF3FB;border-bottom:1px solid var(--line)}
+    .bar i{width:10px;height:10px;border-radius:50%;background:#C9D5E8}
+    .bar span{margin-left:10px;font:500 12px 'JetBrains Mono',ui-monospace,monospace;color:var(--muted);background:#fff;border-radius:6px;padding:4px 10px;flex:1;max-width:280px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .browser img{display:block;width:100%;height:auto}
+    .phone{position:absolute;right:0;bottom:0;width:30%;max-width:210px;border-radius:30px;padding:8px;background:var(--night);box-shadow:0 30px 60px -20px rgba(11,26,51,.6)}
+    .phone img{display:block;width:100%;height:auto;border-radius:23px;aspect-ratio:390/600;object-fit:cover;object-position:top}
+    .tag-demo{position:absolute;left:14px;bottom:8px;font-size:12px;font-weight:600;color:var(--ink);background:rgba(255,255,255,.75);border:1px solid var(--line);border-radius:999px;padding:6px 11px;backdrop-filter:blur(6px)}
+
+    /* Chiffres : cartes premium (flou → net, reflets de bord, balayage de lumière) */
+    .kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-bottom:72px}
+    .card{position:relative;isolation:isolate;overflow:hidden;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px 22px 20px;display:grid;gap:6px;transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s ease}
+    .card::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.4px;pointer-events:none;background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(255,255,255,0) 38%,rgba(255,255,255,0) 62%,rgba(255,255,255,.55));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+    .card::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:2;background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.6) 47%,rgba(255,255,255,.95) 50%,rgba(255,255,255,.6) 53%,transparent 66%);background-size:250% 100%;background-position:150% 0;opacity:0}
+    .card.in::before{animation:cardSweep 1.15s cubic-bezier(.35,.1,.25,1) .1s 1}
+    .card:hover::before{animation:cardSweepHover 1s cubic-bezier(.35,.1,.25,1) 1}
+    .card:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+    @keyframes cardSweep{0%{background-position:150% 0;opacity:0}12%{opacity:1}100%{background-position:-150% 0;opacity:0}}
+    @keyframes cardSweepHover{0%{background-position:150% 0;opacity:0}12%{opacity:1}100%{background-position:-150% 0;opacity:0}}
+    .kpi b{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(34px,4vw,46px);font-weight:800;line-height:1;color:var(--accent-deep);font-variant-numeric:tabular-nums}
+    .kpi span{font-size:14.5px;color:var(--muted)}
+    .kpi small{font:500 11.5px 'JetBrains Mono',ui-monospace,monospace;color:var(--muted)}
+
+    /* Sections */
+    .sec{margin-bottom:72px;display:grid;gap:22px}
+    .sec h2{font-size:clamp(26px,3.4vw,40px);font-weight:800;max-width:22ch}
+    .swap{display:grid;gap:10px}
+    .row{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:14px;align-items:center}
+    .row .was{color:var(--muted);text-decoration:line-through;text-decoration-color:rgba(46,60,87,.45);font-size:15px;text-align:right}
+    .row .arrow{font-family:'Plus Jakarta Sans';font-weight:800;font-size:18px;color:var(--accent)}
+    .row .now{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 16px;font-weight:600;font-size:15px}
+    .flow{list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));position:relative}
+    .flow::before{content:"";position:absolute;left:10%;right:10%;top:23px;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+    .flow li{display:grid;align-content:start;justify-items:center;text-align:center;gap:10px;padding:0 8px;position:relative}
+    .flow .dot{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#fff;border:2px solid var(--accent);font-family:'Plus Jakarta Sans';font-weight:800;color:var(--accent-deep)}
+    .flow b{font-family:'Plus Jakarta Sans';font-size:15px}
+    .flow span{font-size:13.5px;color:var(--muted);max-width:24ch}
+    .ctx{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:18px 48px;align-items:start}
+    .ctx > div:first-child{display:grid;gap:22px}
+    .prose{display:grid;gap:14px;font-size:17px;color:var(--muted);max-width:62ch}
+    .choix{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .choix .card{padding:24px;gap:10px;align-content:start}
+    .choix h3{font-size:19px;font-weight:700}
+    .choix p{font-size:15px;color:var(--muted)}
+    .stack{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .stack .lbl{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-right:6px}
+    .chip{font-size:12px;font-weight:600;color:var(--accent-deep);background:var(--accent-soft);padding:6px 12px;border-radius:999px}
+    .cta{background:var(--night);color:#fff;border-radius:22px;padding:clamp(24px,4vw,40px);display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;margin-bottom:80px}
+    .cta h2{font-size:clamp(22px,3vw,32px);font-weight:800;max-width:24ch}
+    .btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:15px;padding:14px 26px;border-radius:999px;transition:.25s ease;border:1.5px solid transparent}
+    .btn-light{background:#fff;color:var(--ink)}
+    .btn-light:hover{background:var(--accent-2);transform:translateY(-2px)}
+    .btn-line{color:#fff;border-color:rgba(255,255,255,.35)}
+    .btn-line:hover{border-color:#fff;transform:translateY(-2px)}
+    .btns{display:flex;gap:10px;flex-wrap:wrap}
+
+    /* Apparition flou → net (comme l'accueil) */
+    .reveal{opacity:0;transform:translateY(24px) scale(.985);filter:blur(8px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1),filter .8s cubic-bezier(.2,.7,.2,1)}
+    .reveal.in{opacity:1;transform:none;filter:blur(0)}
+    @media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;filter:none;transition:none}.card::before{display:none}}
+
+    @media (max-width:900px){
+      .cs-hero{grid-template-columns:1fr;padding-top:44px}
+      .browser{transform:none}
+      .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .ctx,.choix{grid-template-columns:1fr}
+      .flow{grid-template-columns:1fr;gap:14px}
+      .flow::before{left:23px;right:auto;top:10px;bottom:10px;width:2px;height:auto;background:linear-gradient(180deg,var(--accent),var(--accent-2))}
+      .flow li{grid-template-columns:48px 1fr;justify-items:start;text-align:left;align-items:center;column-gap:14px;row-gap:2px}
+      .flow .dot{grid-row:span 2}
+      .flow span{max-width:none}
+      .row{grid-template-columns:1fr;gap:4px}
+      .row .was{text-align:left}
+      .row .arrow{display:none}
+    }
   </style>
   <link rel="stylesheet" href="/assets/site/nav.css">
   <script src="/assets/site/nav.js" defer></script>
@@ -146,83 +185,87 @@
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="wrap">
-        <div class="eyebrow">Mini-SaaS · RGPD</div>
-        <h1>eFoil — Réservation (mini-SaaS)</h1>
-        <p class="sub">Recevoir les réservations envoyées par le site eFoil, les présenter dans un tableau de bord, et protéger les données personnelles by design.</p>
-        <div class="chips">
-          <span class="chip">Next.js</span>
-          <span class="chip">React</span>
-          <span class="chip">Coolify</span>
-          <span class="chip">Docker</span>
-          <span class="chip">RGPD</span>
+  <main class="wrap">
+    <section class="cs-hero">
+      <div class="cs-txt">
+        <span class="eyebrow">Étude de cas · Automatisation</span>
+        <h1>Les réservations arrivent seules. <span class="hl">L'équipe valide.</span></h1>
+        <p>Un loueur d'eFoils sur la Côte d'Azur gérait tout au téléphone et sur papier. Un tableau de bord relié à ses sites fait le suivi à sa place.</p>
+        <span class="status"><i></i>En production depuis juin 2026</span>
+      </div>
+      <div class="stage">
+        <div class="browser">
+          <div class="bar"><i></i><i></i><i></i><span>tableau de bord des réservations</span></div>
+          <img src="/assets/img/projets/resa-dashboard-demo.jpg" width="1800" height="1125" alt="Tableau de bord des réservations : chiffres du jour, réservations en attente, confirmées et payées, sur deux sites (données fictives)">
         </div>
-        <div class="badge">
-          <strong>48 h</strong>
-          <span>délai de confirmation client, e-mail no-reply avec Reply-To</span>
-        </div>
+        <div class="phone"><img src="/assets/img/projets/resa-dashboard-demo-mobile.jpg" width="780" height="1688" loading="lazy" alt="Le même tableau de bord sur mobile (données fictives)"></div>
+        <span class="tag-demo">Données fictives · mode démo</span>
       </div>
     </section>
 
-    <section class="block reveal">
-      <div class="wrap">
-        <div class="kicker">Le contexte</div>
-        <h2 class="sec">Centraliser les réservations, protéger les données</h2>
-        <p class="lead">Le site eFoil génère des réservations qu'il fallait <strong>recevoir et présenter dans un tableau de bord</strong> exploitable. Contrainte centrale : <strong>protéger les données personnelles</strong> des clients, en évitant qu'un dashboard accessible n'expose nom, téléphone et e-mail à la première personne venue.</p>
+    <section class="kpis" aria-label="Résultats">
+      <div class="card kpi reveal"><b>125</b><span>réservations traitées</span><small>site principal · oct. 2026</small></div>
+      <div class="card kpi reveal"><b>217</b><span>participants accueillis</span><small>même période</small></div>
+      <div class="card kpi reveal"><b>2–5 h</b><span>gagnées par semaine</span><small>en saison · estimation</small></div>
+      <div class="card kpi reveal"><b>3</b><span>sites, un seul outil</span><small>2 équipes séparées</small></div>
+    </section>
+
+    <section class="sec ctx reveal" aria-labelledby="h-ctx">
+      <div>
+        <span class="eyebrow">Le contexte</span>
+        <h2 id="h-ctx">Une saison chargée, gérée au téléphone.</h2>
+      </div>
+      <div class="prose">
+        <p>Le loueur propose des initiations et des balades en eFoil sur plusieurs plages. Les clients appelaient, écrivaient sur WhatsApp ou remplissaient un formulaire qui arrivait par e-mail. Chaque demande était recopiée sur papier ou dans un tableur, puis il fallait rappeler pour confirmer le créneau et réclamer l'acompte.</p>
+        <p>Résultat en pleine saison : des messages qui se perdent, des créneaux bloqués par des clients qui ne paient pas, et aucun suivi après la sortie, donc aucun avis Google demandé. L'objectif était simple : que chaque réservation arrive au même endroit, se traite en un clic et déclenche toute seule la suite.</p>
       </div>
     </section>
 
-    <section class="block reveal">
-      <div class="wrap">
-        <div class="kicker">Mon intervention</div>
-        <h2 class="sec">Un mini-SaaS Next.js pensé RGPD-friendly</h2>
-        <ul class="ilist">
-          <li><b>Application Next.js</b> qui réceptionne les réservations via un endpoint <code>POST /api/reservations</code> appelé par le site eFoil.</li>
-          <li><b>Dashboard public minimaliste</b> : par défaut, il n'affiche que le <b>nombre de personnes</b> et les <b>créneaux</b> — aucune donnée nominative visible.</li>
-          <li><b>Dévoilement protégé par mot de passe</b> : nom, téléphone et e-mail ne sont révélés qu'après authentification. Une approche <b>RGPD-friendly</b> qui limite l'exposition des données personnelles au strict nécessaire.</li>
-          <li><b>E-mails transactionnels</b> : envoi client en <b>no-reply</b>, <b>confirmation sous 48 h</b>, et en-tête <b>Reply-To</b> configuré pour permettre une vraie réponse vers la bonne adresse.</li>
-          <li><b>Déploiement sur Coolify (Docker)</b> : conteneurisation et mise en production maîtrisée sur une infrastructure auto-hébergée.</li>
-        </ul>
+    <section class="sec reveal" aria-labelledby="h-chg">
+      <span class="eyebrow">Ce qui a changé</span>
+      <h2 id="h-chg">Moins d'allers-retours, plus de sorties en mer.</h2>
+      <div class="swap">
+        <div class="row"><span class="was">Demandes au téléphone et sur WhatsApp</span><span class="arrow" aria-hidden="true">→</span><span class="now">Réservation en ligne, rangée dans le dashboard</span></div>
+        <div class="row"><span class="was">Planning sur papier et tableur</span><span class="arrow" aria-hidden="true">→</span><span class="now">Un écran, filtré par site et par jour</span></div>
+        <div class="row"><span class="was">Acompte réclamé à part</span><span class="arrow" aria-hidden="true">→</span><span class="now">Payé en ligne, statut mis à jour seul</span></div>
+        <div class="row"><span class="was">Aucun avis demandé</span><span class="arrow" aria-hidden="true">→</span><span class="now">Remerciement et lien d'avis envoyés</span></div>
       </div>
     </section>
 
-    <section class="block reveal">
-      <div class="wrap">
-        <div class="kicker">Ce que ça apporte</div>
-        <h2 class="sec">Pratique pour l'équipe, sûr pour les clients</h2>
-        <div class="factgrid">
-          <div class="fact"><b class="accent">RGPD</b><span>données personnelles masquées par défaut</span></div>
-          <div class="fact"><b>1</b><span>endpoint API de réception (POST)</span></div>
-          <div class="fact"><b>48 h</b><span>de délai de confirmation client</span></div>
-          <div class="fact"><b>Docker</b><span>déploiement reproductible via Coolify</span></div>
-        </div>
+    <section class="sec reveal" aria-labelledby="h-flow">
+      <span class="eyebrow">Comment ça marche</span>
+      <h2 id="h-flow">Du formulaire à l'avis Google.</h2>
+      <ol class="flow">
+        <li><span class="dot">1</span><b>Réservation</b><span>Le client choisit sa date, son créneau, sa formule et le nombre de personnes sur le site, à toute heure. Un filtre écarte les robots.</span></li>
+        <li><span class="dot">2</span><b>Alerte</b><span>Le gérant reçoit un WhatsApp et un e-mail. Le client reçoit un accusé de réception aux couleurs du site.</span></li>
+        <li><span class="dot">3</span><b>Un clic</b><span>Confirmer, proposer un autre créneau avec un message type, ou annuler : le bon e-mail part tout seul.</span></li>
+        <li><span class="dot">4</span><b>Acompte</b><span>Le lien de paiement est dans l'e-mail de confirmation. Une fois réglé, la réservation passe en « Payé » et s'ajoute à l'agenda.</span></li>
+        <li><span class="dot">5</span><b>Avis</b><span>Après la sortie, le client reçoit un remerciement avec le lien pour laisser un avis Google.</span></li>
+      </ol>
+    </section>
+
+    <section class="sec reveal" aria-labelledby="h-choix">
+      <span class="eyebrow">Les choix qui comptent</span>
+      <h2 id="h-choix">Pensé pour l'équipe, sûr pour les clients.</h2>
+      <div class="choix">
+        <article class="card"><h3>Données masquées par défaut</h3><p>Sur l'écran partagé, on voit les créneaux et le nombre de personnes. Nom, téléphone et e-mail n'apparaissent qu'avec le mot de passe. Les données restent sur un serveur privé, pas dans un service tiers.</p></article>
+        <article class="card"><h3>Plusieurs sites, un seul outil</h3><p>Le même code gère trois sites de location. Chaque réservation est rattachée à son site, et chaque équipe ne voit que les siennes. Ouvrir une nouvelle plage se fait sans rien redévelopper.</p></article>
+        <article class="card"><h3>L'humain garde la main</h3><p>Rien ne part sans validation : c'est le gérant qui confirme, propose ou annule. L'outil s'occupe du reste, des e-mails au suivi des paiements, avec un vérificateur pour les acomptes à rapprocher.</p></article>
       </div>
     </section>
 
-    <section class="block reveal">
-      <div class="wrap">
-        <div class="kicker">Stack technique</div>
-        <h2 class="sec">Les outils mobilisés</h2>
-        <div class="stackchips">
-          <span>Next.js</span><span>React</span><span>API Routes</span>
-          <span>Coolify</span><span>Docker</span><span>RGPD by design</span>
-        </div>
+    <section class="sec reveal" style="gap:28px">
+      <div class="stack"><span class="lbl">Stack</span><span class="chip">Next.js</span><span class="chip">React</span><span class="chip">API SumUp</span><span class="chip">Google Agenda</span><span class="chip">WhatsApp</span><span class="chip">E-mails SMTP</span><span class="chip">Docker · Coolify</span><span class="chip">RGPD by design</span></div>
+    </section>
+
+    <section class="cta reveal">
+      <h2>Vos réservations aussi peuvent se gérer seules.</h2>
+      <div class="btns">
+        <a class="btn btn-light" href="/#contact">Parler de mon activité →</a>
+        <a class="btn btn-line" href="/agents-ia.html">Voir l'offre automatisation</a>
       </div>
     </section>
   </main>
-
-  <section class="foot">
-    <div class="wrap">
-      <h3>Un outil interne ou un mini-SaaS à bâtir&nbsp;?</h3>
-      <p>Parlons API, tableau de bord et conformité RGPD.</p>
-      <div class="btn-row">
-        <a class="btn btn-primary" href="/#contact">Discuter d'un projet</a>
-        <a class="btn btn-ghost" href="https://github.com/GHOSTGIT-cyber/resa" target="_blank" rel="noopener">Voir le code sur GitHub ↗</a>
-      </div>
-    </div>
-  </section>
 
   <footer id="gf">
     <div class="gf-in">
