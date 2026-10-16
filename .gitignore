@@ -6,3 +6,6 @@ CLAUDE.md
 
 # Exports Search Console / analytics
 *.zip
+
+# Dépendances npm (réinstallées par npm install)
+node_modules/
