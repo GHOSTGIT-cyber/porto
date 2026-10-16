@@ -25,6 +25,7 @@ Principes communs à toutes les prestations : rien n'est publié ni envoyé sans
 - [eFast — landing page de convoyage de véhicules](https://bakabi.fr/Projets/efast.html): page sur-mesure orientée conversion, identité dynamique, parcours client et qualification des demandes.
 - [Réseau de sites eFoil — WordPress multi-sites](https://bakabi.fr/Projets/reseau-wordpress.html): conception et maintenance de plus de 10 sites WordPress pour une marque eFoil, déclinaisons par ville, versions bilingues FR/EN, charte commune.
 - [eFoil Réservation — mini-SaaS](https://bakabi.fr/Projets/efoil-reservation.html): réservation en ligne avec tableau de bord partagé, données personnelles protégées par mot de passe, e-mails de confirmation, déploiement Docker/Coolify.
+- [Newsletter Lift Foils — dashboard sur mesure](https://bakabi.fr/Projets/newsletter.html): édition du texte dans l'aperçu sans risque pour la mise en page, envoi via l'API Resend sous plafond quotidien, désabonnement en un clic, gestion du consentement, déploiement Docker/Coolify.
 - [Émargement — gestion de présences](https://bakabi.fr/Projets/emargement.html): back-office Symfony/Doctrine/Twig et application mobile compagnon React Native/Expo.
 
 ## Optional
