@@ -140,6 +140,12 @@
     .shots figure{display:grid;gap:10px}
     .shots .browser{transform:none}
     .shots figcaption{font-size:14px;color:var(--muted)}
+    .mails{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+    .mails figure{display:grid;gap:10px;align-content:start}
+    .mails img{display:block;width:100%;height:auto;border-radius:14px;box-shadow:0 30px 60px -28px rgba(11,26,51,.55),0 0 0 1px rgba(17,42,92,.1);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+    .mails figure:hover img{transform:translateY(-6px)}
+    .mails figcaption{font-size:14px;color:var(--muted)}
+    .mails figcaption b{display:block;color:var(--ink);font-family:'Plus Jakarta Sans',sans-serif}
     .prose a{color:var(--accent-deep);text-decoration:underline}
 
     /* Apparition flou → net (comme l'accueil) */
@@ -152,6 +158,7 @@
       .browser{transform:none}
       .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
       .ctx,.choix,.shots{grid-template-columns:1fr}
+      .mails{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
       .flow{grid-template-columns:1fr;gap:14px}
       .flow::before{left:23px;right:auto;top:10px;bottom:10px;width:2px;height:auto;background:linear-gradient(180deg,var(--accent),var(--accent-2))}
       .flow li{grid-template-columns:48px 1fr;justify-items:start;text-align:left;align-items:center;column-gap:14px;row-gap:2px}
@@ -201,11 +208,11 @@
       </div>
       <div class="stage">
         <div class="browser">
-          <div class="bar"><i></i><i></i><i></i><span>dashboard newsletter</span></div>
-          <img src="/assets/img/projets/nl-dashboard-demo.jpg" width="1800" height="1125" alt="Dashboard newsletter : cinq gabarits prêts à l'emploi et la liste des newsletters, brouillons et envoyées (données fictives)">
+          <div class="bar"><i></i><i></i><i></i><span>éditeur de newsletter</span></div>
+          <img src="/assets/img/projets/nl-editeur-demo.jpg" width="1800" height="1125" alt="L'éditeur du dashboard : objet, texte d'aperçu et la newsletter Lift Foils affichée telle qu'elle partira, modifiable en cliquant sur le texte">
         </div>
-        <div class="phone"><img src="/assets/img/projets/nl-journal-demo-mobile.jpg" width="780" height="1688" loading="lazy" alt="Le journal d'envoi d'une newsletter sur mobile : livrés, envoyés, en attente, en échec (données fictives)"></div>
-        <span class="tag-demo">Données fictives · démo</span>
+        <div class="phone"><img src="/assets/img/projets/nl-mail-demo-mobile.jpg" width="780" height="1688" loading="lazy" alt="La newsletter entretien telle qu'elle s'affiche sur mobile"></div>
+        <span class="tag-demo">Éditeur réel · démo</span>
       </div>
     </section>
 
@@ -225,6 +232,18 @@
         <p>Après la <a href="/Projets/liftfoils.html">refonte de liftfoils.fr</a>, la boutique voulait parler à ses clients une fois par mois : nouveautés, guides techniques, dates d'essai. J'ai d'abord conçu cinq maquettes d'e-mail, construites pour s'afficher correctement dans Gmail comme dans Outlook.</p>
         <p>Restait le vrai problème. Un éditeur comme Mailchimp casse ce genre de mise en page dès qu'on y touche, et chaque envoi par mes soins aurait coûté une facture. Surtout, une newsletter mal envoyée peut griller la réputation du domaine… et faire tomber en spam les confirmations de commande de la boutique. Il fallait un outil où l'équipe change le texte, et où tout ce qui touche à la délivrabilité est réglé une fois pour toutes.</p>
       </div>
+    </section>
+
+    <section class="sec reveal" aria-labelledby="h-mails">
+      <span class="eyebrow">Les e-mails</span>
+      <h2 id="h-mails">Des newsletters aux couleurs de la boutique.</h2>
+      <div class="mails">
+        <figure><img src="/assets/img/projets/nl-mail-02.jpg" width="900" height="1500" loading="lazy" alt="Newsletter de lancement : un rider porte son eFoil devant une vague qui se brise"><figcaption><b>Lancement</b> le numéro 01</figcaption></figure>
+        <figure><img src="/assets/img/projets/nl-mail-01.jpg" width="900" height="1500" loading="lazy" alt="Guide de taille : trois planches LIFT5 posées sur un rocher face à la mer"><figcaption><b>Guide technique</b> choisir sa taille</figcaption></figure>
+        <figure><img src="/assets/img/projets/nl-mail-05.jpg" width="900" height="1500" loading="lazy" alt="Conseil entretien : montage du mât sur une planche eFoil Lift"><figcaption><b>Entretien</b> l'hivernage</figcaption></figure>
+        <figure><img src="/assets/img/projets/nl-mail-04.jpg" width="900" height="1500" loading="lazy" alt="Visite du catalogue : palmier et drapeau face à la mer turquoise"><figcaption><b>Catalogue</b> section par section</figcaption></figure>
+      </div>
+      <p class="prose">Les photos viennent de la médiathèque de liftfoils.fr : l'équipe les choisit depuis le dashboard, sans téléversement ni retouche.</p>
     </section>
 
     <section class="sec reveal" aria-labelledby="h-chg">
