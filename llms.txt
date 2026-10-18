@@ -19,14 +19,27 @@ Principes communs à toutes les prestations : rien n'est publié ni envoyé sans
 
 ## Réalisations
 
-- [Liftfoils — refonte WordPress et SEO/GEO](https://bakabi.fr/Projets/liftfoils.html): refonte complète du site d'un distributeur français d'eFoils, avec SEO/GEO technique. Trafic organique en hausse continue, tenu dans la durée.
-- [QualityYacht — plateforme de location de yachts](https://bakabi.fr/Projets/qualityacht.html): plateforme Next.js branchée sur l'API Ankor, environ 1 500 yachts exposés sans dupliquer la donnée, architecture Filtres + Exceptions.
-- [TrackShip — surveillance fluviale temps réel](https://bakabi.fr/Projets/trackship.html): carte Leaflet, zones de proximité, alertes, rafraîchissement adaptatif pour économiser l'API EuRIS.
-- [eFast — landing page de convoyage de véhicules](https://bakabi.fr/Projets/efast.html): page sur-mesure orientée conversion, identité dynamique, parcours client et qualification des demandes.
-- [Réseau de sites eFoil — WordPress multi-sites](https://bakabi.fr/Projets/reseau-wordpress.html): conception et maintenance de plus de 10 sites WordPress pour une marque eFoil, déclinaisons par ville, versions bilingues FR/EN, charte commune.
-- [eFoil Réservation — mini-SaaS](https://bakabi.fr/Projets/efoil-reservation.html): réservation en ligne avec tableau de bord partagé, données personnelles protégées par mot de passe, e-mails de confirmation, déploiement Docker/Coolify.
+- [Liftfoils — refonte WordPress et SEO/GEO](https://bakabi.fr/Projets/liftfoils.html): refonte d'un site d'eFoils (méga-menu, configurateur en 8 étapes, fiches produit WooCommerce) et SEO technique ; +25 % d'apparitions Google en août 2026 par rapport à août 2025, catalogue Google Shopping passé de 44 à 66 produits.
+- [Dashboard de réservation automatisé](https://bakabi.fr/Projets/efoil-reservation.html): réservations en ligne d'un loueur d'eFoils centralisées dans un tableau de bord, acompte payé en ligne, e-mails automatiques, données personnelles protégées ; 125 réservations traitées.
+- [Outils d'atelier Lift Foils — devis et SAV](https://bakabi.fr/Projets/atelier-liftfoils.html): générateur de devis avec état des lieux PDF et stock de pièces (Next.js, Prisma), suivi SAV qui transforme chaque mail en dossier avec extraction IA et validation humaine (Laravel, Filament) ; devis en 20 min au lieu de 3 h, 50 dossiers SAV suivis.
+- [Assistant IA sans invention](https://bakabi.fr/Projets/assistant-ia.html): assistant client bilingue qui lit le site du client, ne répond qu'avec 193 faits vérifiés et bloque tout chiffre sans source.
+- [Intégration Odoo — paiement SumUp et réservation](https://bakabi.fr/Projets/integration-odoo.html): passerelle de paiement SumUp pour Odoo Online sans module tiers, et site de réservation avec moteur de prix et back-office.
+- [Contrats de location signés en ligne](https://bakabi.fr/Projets/contrats-location.html): contrats générés depuis un dossier, lus et signés sur téléphone, verrouillés avec preuve horodatée (Laravel, Filament).
 - [Newsletter Lift Foils — dashboard sur mesure](https://bakabi.fr/Projets/newsletter.html): édition du texte dans l'aperçu sans risque pour la mise en page, envoi via l'API Resend sous plafond quotidien, désabonnement en un clic, gestion du consentement, déploiement Docker/Coolify.
-- [Émargement — gestion de présences](https://bakabi.fr/Projets/emargement.html): back-office Symfony/Doctrine/Twig et application mobile compagnon React Native/Expo.
+- [QualityYacht — plateforme de location de yachts](https://bakabi.fr/Projets/qualityacht.html): site Next.js branché sur l'API Ankor (environ 1 700 yachts), avec une admin de sélection, de classement et de correction des fiches qui n'écrase pas le flux du fournisseur.
+- [TrackShip — surveillance fluviale temps réel](https://bakabi.fr/Projets/trackship.html): suivi des navires sur la Seine via l'API EuRIS, zones 1/2/3 km, rafraîchissement 10 s → 2 s en zone rouge, appli Android et alerte par prise connectée.
+- [eFoil Côte d'Azur — refonte du site de location](https://bakabi.fr/Projets/efoilcotedazur.html): accueil reconstruit dans le WordPress existant, réservation et bon cadeau en ligne, un seul H1 au lieu de treize.
+- [eFoil Beauvallon — site vitrine](https://bakabi.fr/Projets/efoil-beauvallon.html): site d'une page pour un spot d'eFoil du golfe de Saint-Tropez, réservation à J+3 et deux participants minimum.
+- [eFoil Croix-Valmer — site local et SEO](https://bakabi.fr/Projets/efoil-croixvalmer.html): quatre pages, pages d'intention, 15 questions de FAQ balisées, llms.txt.
+- [Foil Électrique — refonte d'un revendeur multimarque](https://bakabi.fr/Projets/foilelectrique.html): contenu sorti d'un constructeur de pages, 28 pages générées par un script Python, règles d'écriture vérifiées au build.
+- [Réseau de sites eFoil — WordPress multi-sites](https://bakabi.fr/Projets/reseau-wordpress.html): conception et maintenance de plus de 10 sites WordPress pour une marque eFoil, déclinaisons par ville, versions bilingues FR/EN, charte commune.
+- [Site vitrine VTC électrique et de luxe](https://bakabi.fr/Projets/efast.html): site d'une société de VTC des Alpes-Maritimes : flotte, tarifs affichés et formulaire de réservation qualifiant.
+- [Émargement — signature de présence](https://bakabi.fr/Projets/emargement.html): application Symfony d'émargement pour un centre de formation, signature sur mobile, fiche de présence du formateur et API JWT.
+- [Générateur de sites d'affiliation](https://bakabi.fr/Projets/affiliation.html): fabrique de sites comparatifs (Eleventy) avec un garde-fou de 13 règles avant publication.
+- [Péniche événementielle — refonte](https://bakabi.fr/Projets/peniche-evenementielle.html): refonte statique du site d'une péniche événementielle à Paris : 22 pages, 36 redirections, contraste vérifié.
+- [Faire-part numériques animés](https://bakabi.fr/Projets/faire-part-numerique.html): plateforme de faire-part avec scènes 3D personnalisées par invité (Next.js, Three.js).
+- [Centre équestre — maquette de refonte](https://bakabi.fr/Projets/centre-equestre.html): maquette mobile d'abord pour un centre équestre familial en Essonne : 6 pages au lieu de 21.
+- [Veille OSINT sur données publiques](https://bakabi.fr/Projets/veille-osint.html): outil Python de collecte et de normalisation de déclarations financières publiques, chaque ligne reliée à sa source.
 
 ## Optional
 

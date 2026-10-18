@@ -291,6 +291,11 @@
     .proj .thumb b{display:none!important}
     .proj .thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.42))}
     .proj .thumb .badge{z-index:1}
+    .proj .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center}
+    .proj-more{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+    .proj-more span{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-right:6px}
+    .proj-more a{font-size:14px;font-weight:600;color:var(--ink);background:var(--accent-soft);padding:8px 14px;border-radius:999px;transition:.25s}
+    .proj-more a:hover{background:var(--accent);color:#fff}
     .case-media::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.42)}
     .case-media b,.case-media .case-tag{position:relative;z-index:1}
     .proj .body{padding:24px;flex:1;display:flex;flex-direction:column}
@@ -736,94 +741,183 @@
 
       <!-- PROJET PHARE : liftfoils.fr -->
       <div class="case reveal">
-        <div class="case-media t7"><span class="case-tag">★ Pièce maîtresse</span><b>liftfoils.fr</b></div>
+        <div class="case-media t7" style="background:#0e7490 url(/assets/img/projets/liftfoils-accueil.jpg) top center/cover"><span class="case-tag">★ Pièce maîtresse</span></div>
         <div class="case-body">
           <div class="chips">WordPress · PHP · WooCommerce · Yoast · Cloudflare · SEO & GEO</div>
           <h3>Refonte WordPress, SEO &amp; GEO</h3>
-          <p class="case-ctx">Distributeur français d'eFoils. Site pénalisé en référencement : 8 balises H1 en page d'accueil, meta description absente, aucune donnée structurée, ~1 800 ms de réponse, et une ancienne home toujours indexée qui cannibalisait la nouvelle.</p>
+          <p class="case-ctx">Distributeur français d'eFoils. Site pénalisé en référencement : 7 balises H1 en page d'accueil, meta description absente, aucune donnée structurée, et une partie du catalogue absente de Google Shopping.</p>
           <ul class="case-list">
             <li>Refonte complète (thème Atelier + WooCommerce) &amp; audit SEO & GEO comparatif face à Fliteboard et pwrfoil</li>
-            <li>H1 réduits de 8 → 1 via <em>output buffer</em> PHP (<code>ob_start</code>) — le JS ne suffisait pas, Googlebot ne l'exécutant pas de façon fiable</li>
-            <li>Redirection 301 de l'ancienne home, FAQPage JSON-LD (7 questions), canonicals, meta description &amp; ALT restaurés</li>
-            <li>Mega-menu + configurateur de foil sur-mesure, templates produit WooCommerce, DNS Cloudflare &amp; OVH Email Pro</li>
+            <li>H1 réduits de 7 → 1 via <em>output buffer</em> PHP (<code>ob_start</code>) — le JS ne suffisait pas, Googlebot ne l'exécutant pas de façon fiable</li>
+            <li>27 redirections 301, FAQPage JSON-LD (7 questions), canonicals, meta description &amp; ALT restaurés</li>
+            <li>Méga-menu + configurateur de foil en 8 étapes, templates produit WooCommerce, DNS Cloudflare &amp; OVH Email Pro</li>
           </ul>
-          <div class="case-result"><strong>Trafic organique en hausse</strong> progression continue, nette remontée du positionnement Google et taux de clic désormais en amélioration — le levier identifié qui commence à payer, dans une dynamique soutenue plutôt qu'un pic ponctuel (Google Search Console)</div>
-          <a class="link" href="/Projets/liftfoils.html">Voir la fiche détaillée →</a>
+          <div class="case-result"><strong>+25 % d'apparitions dans Google</strong> en août 2026 par rapport à août 2025, position moyenne 8,7 → 7,9, et tout le catalogue visible dans Google Shopping (44 → 66 produits) — Google Search Console</div>
+          <a class="link" href="/Projets/liftfoils.html">Voir l'avant / après →</a>
         </div>
       </div>
 
       <div class="proj-grid">
 
         <article class="proj reveal">
-          <div class="thumb t1"><span class="badge">API · ~1 500 yachts</span><b>QY</b></div>
+          <div class="thumb"><img src="/assets/img/projets/resa-dashboard-demo.jpg" alt="" loading="lazy"><span class="badge">En production</span></div>
           <div class="body">
-            <div class="chips"><span class="chip">Next.js</span><span class="chip">Vercel</span><span class="chip">Postgres</span><span class="chip">API Ankor</span></div>
-            <h3>QualityYacht</h3>
-            <p>Plateforme de charter de yachts haut de gamme. ~1 500 yachts via l'API Ankor avec une architecture « Filtres + Exceptions » : filtrage à la source + 10-20 overrides en base (prix, mises en avant) au lieu de répliquer 1 500 fiches. Admin de présélection + questionnaire client.</p>
-            <a class="link" href="/Projets/qualityacht.html">Voir le projet →</a>
+            <div class="chips"><span class="chip">Next.js</span><span class="chip">React</span><span class="chip">SumUp</span><span class="chip">Coolify</span></div>
+            <h3>Dashboard de réservation</h3>
+            <p>Les réservations d'un loueur d'eFoils arrivent seules, l'acompte se paie en ligne et l'équipe valide en un clic. 125 réservations traitées.</p>
+            <a class="link" href="/Projets/efoil-reservation.html">Voir l'étude de cas →</a>
           </div>
         </article>
 
         <article class="proj reveal">
-          <div class="thumb t2"><span class="badge">Temps réel · carte</span><b>TS</b></div>
+          <div class="thumb"><img src="/assets/img/projets/atelier-devis-liste.jpg" alt="" loading="lazy"><span class="badge">En production</span></div>
           <div class="body">
-            <div class="chips"><span class="chip">JavaScript</span><span class="chip">Leaflet</span><span class="chip">PHP</span><span class="chip">API EuRIS</span></div>
-            <h3>TrackShip</h3>
-            <p>Surveillance maritime temps réel sur la Seine. Carte Leaflet, zones de proximité 1/2/3 km avec alerte sonore et visuelle, rafraîchissement adaptatif (10 s → 2 s → 1 s) pour économiser le quota API, proxy PHP optimisé.</p>
-            <a class="link" href="/Projets/trackship.html">Voir le projet →</a>
+            <div class="chips"><span class="chip">Next.js</span><span class="chip">Laravel · Filament</span><span class="chip">PDF</span><span class="chip">IA</span></div>
+            <h3>Atelier Lift Foils : devis et SAV</h3>
+            <p>Devis avec état des lieux et photos en 20 minutes au lieu de 3 heures, et 50 dossiers SAV suivis du premier mail à la clôture.</p>
+            <a class="link" href="/Projets/atelier-liftfoils.html">Voir l'étude de cas →</a>
           </div>
         </article>
 
         <article class="proj reveal">
-          <div class="thumb t5"><span class="badge">Landing · conversion</span><b>EF</b></div>
+          <div class="thumb"><img src="/assets/img/projets/assistant-ia-chat.jpg" alt="" loading="lazy"><span class="badge">Démo validée par le client</span></div>
           <div class="body">
-            <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span></div>
-            <h3>eFast — Convoyage de véhicules</h3>
-            <p>Landing orientée conversion pour une activité de convoyage et transport de véhicules premium : 6 pôles de services, parcours client en 4 étapes, indicateurs de confiance et formulaire de qualification par type de véhicule.</p>
-            <a class="link" href="/Projets/efast.html">Voir le projet →</a>
+            <div class="chips"><span class="chip">Agent IA</span><span class="chip">Node.js</span><span class="chip">FR · EN</span></div>
+            <h3>Assistant IA sans invention</h3>
+            <p>Une société de balades en bateau répond à ses clients en français et en anglais, avec 193 faits extraits de son site et chaque chiffre contrôlé avant l'envoi.</p>
+            <a class="link" href="/Projets/assistant-ia.html">Voir l'étude de cas →</a>
           </div>
         </article>
 
         <article class="proj reveal">
-          <div class="thumb t4"><span class="badge">10+ sites · multilingue</span><b>WP</b></div>
+          <div class="thumb"><img src="/assets/img/projets/odoo-fiche-charter.jpg" alt="" loading="lazy"><span class="badge">Livré par étapes</span></div>
+          <div class="body">
+            <div class="chips"><span class="chip">Odoo 19</span><span class="chip">SumUp</span><span class="chip">FastAPI</span></div>
+            <h3>Paiement SumUp et réservation sur Odoo</h3>
+            <p>SumUp branché sur Odoo Online sans module tiers, et des croisières vendues avec un prix exact dès la date choisie.</p>
+            <a class="link" href="/Projets/integration-odoo.html">Voir l'étude de cas →</a>
+          </div>
+        </article>
+
+        <article class="proj reveal">
+          <div class="thumb"><img src="/assets/img/projets/contrats-lecture.jpg" alt="" loading="lazy"><span class="badge">Livré par étapes</span></div>
+          <div class="body">
+            <div class="chips"><span class="chip">Laravel</span><span class="chip">Signature en ligne</span><span class="chip">Filament</span></div>
+            <h3>Contrats de location signés en ligne</h3>
+            <p>Un lien remplace la paperasse : le client lit, accepte et signe sur son téléphone, et le contrat est verrouillé avec sa preuve de signature.</p>
+            <a class="link" href="/Projets/contrats-location.html">Voir l'étude de cas →</a>
+          </div>
+        </article>
+
+        <article class="proj reveal">
+          <div class="thumb"><img src="/assets/img/projets/nl-mail-02.jpg" alt="" loading="lazy"><span class="badge">Outil sur mesure</span></div>
+          <div class="body">
+            <div class="chips"><span class="chip">Node.js</span><span class="chip">SQLite</span><span class="chip">API Resend</span></div>
+            <h3>Newsletter — Lift Foils</h3>
+            <p>La cliente modifie le texte directement dans l'aperçu sans pouvoir casser la mise en page. Envoi étalé, désabonnement en un clic exigé par Gmail.</p>
+            <a class="link" href="/Projets/newsletter.html">Voir l'étude de cas →</a>
+          </div>
+        </article>
+
+        <article class="proj reveal">
+          <div class="thumb"><img src="/assets/img/projets/qualityacht-accueil.jpg" alt="" loading="lazy"><span class="badge">En ligne</span></div>
+          <div class="body">
+            <div class="chips"><span class="chip">Next.js</span><span class="chip">API Ankor</span><span class="chip">PostgreSQL</span></div>
+            <h3>QualityYacht : 1 700 yachts, une sélection maîtrisée</h3>
+            <p>Site de charter de luxe nourri par le catalogue Ankor. Le courtier publie, classe, corrige et fixe ses prix depuis une admin dédiée.</p>
+            <a class="link" href="/Projets/qualityacht.html">Voir l'étude de cas →</a>
+          </div>
+        </article>
+
+        <article class="proj reveal">
+          <div class="thumb"><img src="/assets/img/projets/trackship-carte.jpg" alt="" loading="lazy"><span class="badge">Temps réel</span></div>
+          <div class="body">
+            <div class="chips"><span class="chip">Leaflet</span><span class="chip">PHP</span><span class="chip">React Native</span><span class="chip">API EuRIS</span></div>
+            <h3>TrackShip — surveillance fluviale</h3>
+            <p>Le trafic de la Seine suivi en direct pour une école de foil : 3 zones d'alerte, rafraîchissement 10 s → 2 s en zone rouge, appli Android et prise connectée.</p>
+            <a class="link" href="/Projets/trackship.html">Voir l'étude de cas →</a>
+          </div>
+        </article>
+
+        <article class="proj reveal">
+          <div class="thumb"><img src="/assets/img/projets/efca-accueil.jpg" alt="" loading="lazy"><span class="badge">En ligne</span></div>
+          <div class="body">
+            <div class="chips"><span class="chip">WordPress</span><span class="chip">Réservation</span><span class="chip">SEO</span></div>
+            <h3>eFoil Côte d'Azur</h3>
+            <p>Accueil refait dans le WordPress existant, réservation et bon cadeau en ligne, un seul H1 au lieu de treize.</p>
+            <a class="link" href="/Projets/efoilcotedazur.html">Voir l'étude de cas →</a>
+          </div>
+        </article>
+
+        <article class="proj reveal">
+          <div class="thumb"><img src="/assets/img/projets/beauvallon-accueil.jpg" alt="" loading="lazy"><span class="badge">En ligne</span></div>
+          <div class="body">
+            <div class="chips"><span class="chip">Site vitrine</span><span class="chip">HTML/CSS</span><span class="chip">GSAP</span></div>
+            <h3>eFoil Beauvallon</h3>
+            <p>Une page pour un spot du golfe de Saint-Tropez : images aériennes, formules claires, réservation à J+3 et deux participants minimum.</p>
+            <a class="link" href="/Projets/efoil-beauvallon.html">Voir l'étude de cas →</a>
+          </div>
+        </article>
+
+        <article class="proj reveal">
+          <div class="thumb"><img src="/assets/img/projets/croixvalmer-accueil.jpg" alt="" loading="lazy"><span class="badge">En ligne</span></div>
+          <div class="body">
+            <div class="chips"><span class="chip">SEO local</span><span class="chip">GEO</span><span class="chip">FAQ balisée</span></div>
+            <h3>eFoil Croix-Valmer</h3>
+            <p>Quatre pages écrites pour les recherches des débutants : pages d'intention, 15 questions de FAQ balisées, llms.txt.</p>
+            <a class="link" href="/Projets/efoil-croixvalmer.html">Voir l'étude de cas →</a>
+          </div>
+        </article>
+
+        <article class="proj reveal">
+          <div class="thumb"><img src="/assets/img/projets/foilelectrique-accueil.jpg" alt="" loading="lazy"><span class="badge">Maquette présentée</span></div>
+          <div class="body">
+            <div class="chips"><span class="chip">Refonte</span><span class="chip">Python</span><span class="chip">Contenu</span></div>
+            <h3>Foil Électrique</h3>
+            <p>Un revendeur multimarque : le contenu sorti de 1 507 codes de constructeur, 28 pages générées, règles d'écriture vérifiées par script.</p>
+            <a class="link" href="/Projets/foilelectrique.html">Voir l'étude de cas →</a>
+          </div>
+        </article>
+
+        <article class="proj reveal">
+          <div class="thumb"><img src="/assets/img/projets/croixvalmer-spot.jpg" alt="" loading="lazy"><span class="badge">10+ sites · multilingue</span></div>
           <div class="body">
             <div class="chips"><span class="chip">WordPress</span><span class="chip">Multi-sites</span><span class="chip">FR / EN</span></div>
             <h3>Réseau de sites eFoil</h3>
-            <p>Conception et maintenance d'un réseau de 10+ sites WordPress pour une marque eFoil : déclinaisons par ville (Cannes, Monaco, Saint-Tropez, Paris, Arcachon…) et versions bilingues, avec une charte commune.</p>
+            <p>Conception et maintenance d'un réseau de 10+ sites WordPress pour une marque eFoil : déclinaisons par ville et versions bilingues, avec une charte commune.</p>
             <a class="link" href="/Projets/reseau-wordpress.html">Voir le projet →</a>
           </div>
         </article>
 
         <article class="proj reveal">
-          <div class="thumb t6"><span class="badge">Mini-SaaS · RGPD</span><b>RS</b></div>
+          <div class="thumb"><img src="/assets/img/projets/efast-accueil.jpg" alt="" loading="lazy"><span class="badge">En ligne</span></div>
           <div class="body">
-            <div class="chips"><span class="chip">Next.js</span><span class="chip">React</span><span class="chip">Coolify</span></div>
-            <h3>eFoil — Réservation</h3>
-            <p>Mini-SaaS de réservation : dashboard public (créneaux + nb de personnes), données personnelles protégées par mot de passe (RGPD), e-mails de confirmation automatiques.</p>
-            <a class="link" href="/Projets/efoil-reservation.html">Voir le projet →</a>
+            <div class="chips"><span class="chip">HTML/CSS</span><span class="chip">Bootstrap 5</span><span class="chip">PHP</span><span class="chip">SEO local</span></div>
+            <h3>Site vitrine VTC électrique &amp; luxe</h3>
+            <p>Pour un VTC haut de gamme des Alpes-Maritimes : 8 véhicules en photo, 3 formules tarifaires affichées et un formulaire qui qualifie chaque demande.</p>
+            <a class="link" href="/Projets/efast.html">Voir l'étude de cas →</a>
           </div>
         </article>
 
         <article class="proj reveal">
-          <div class="thumb t8"><span class="badge">Outil sur mesure · e-mail</span><b>NL</b></div>
+          <div class="thumb"><img src="/assets/img/projets/emargement-formateur-demo.jpg" alt="" loading="lazy"><span class="badge">Livré</span></div>
           <div class="body">
-            <div class="chips"><span class="chip">Node.js</span><span class="chip">SQLite</span><span class="chip">API Resend</span><span class="chip">Coolify</span></div>
-            <h3>Newsletter — Lift Foils</h3>
-            <p>Dashboard de newsletter : la cliente modifie le texte directement dans l'aperçu, sans pouvoir casser la mise en page. Envoi étalé sous plafond, désabonnement en un clic (exigé par Gmail), contacts désabonnés jamais réactivés.</p>
-            <a class="link" href="/Projets/newsletter.html">Voir le projet →</a>
+            <div class="chips"><span class="chip">Symfony</span><span class="chip">Doctrine</span><span class="chip">API JWT</span></div>
+            <h3>Émargement : la feuille papier devient une signature</h3>
+            <p>Pour un centre de formation : le formateur ouvre la séance, les apprenants signent au doigt, retards et absences justifiées sont suivis.</p>
+            <a class="link" href="/Projets/emargement.html">Voir l'étude de cas →</a>
           </div>
         </article>
 
-        <article class="proj reveal">
-          <div class="thumb t3"><span class="badge">Full-stack · école</span><b>ÉM</b></div>
-          <div class="body">
-            <div class="chips"><span class="chip">Symfony</span><span class="chip">Doctrine</span><span class="chip">React Native</span></div>
-            <h3>Émargement</h3>
-            <p>Application d'émargement et de gestion de sessions : back-office Symfony/Doctrine (126 commits) + application mobile compagnon en React Native.</p>
-            <a class="link" href="/Projets/emargement.html">Voir le projet →</a>
-          </div>
-        </article>
+      </div>
 
+      <div class="proj-more reveal">
+        <span>Autres projets</span>
+        <a href="/Projets/affiliation.html">Générateur de sites d'affiliation</a>
+        <a href="/Projets/peniche-evenementielle.html">Péniche événementielle</a>
+        <a href="/Projets/faire-part-numerique.html">Faire-part animés</a>
+        <a href="/Projets/centre-equestre.html">Centre équestre</a>
+        <a href="/Projets/veille-osint.html">Veille OSINT</a>
       </div>
     </div>
   </section>
@@ -1027,14 +1121,15 @@
       <div>
         <p class="gf-h">Réalisations</p>
         <ul>
-          <li><a href="/Projets/liftfoils.html">Liftfoils — WordPress &amp; SEO</a></li>
+          <li><a href="/Projets/liftfoils.html">Liftfoils — refonte &amp; SEO</a></li>
+          <li><a href="/Projets/efoil-reservation.html">Dashboard de réservation</a></li>
+          <li><a href="/Projets/atelier-liftfoils.html">Atelier — devis &amp; SAV</a></li>
+          <li><a href="/Projets/assistant-ia.html">Assistant IA</a></li>
+          <li><a href="/Projets/integration-odoo.html">Intégration Odoo</a></li>
+          <li><a href="/Projets/newsletter.html">Newsletter — Lift Foils</a></li>
           <li><a href="/Projets/qualityacht.html">QualityYacht</a></li>
           <li><a href="/Projets/trackship.html">TrackShip</a></li>
-          <li><a href="/Projets/efast.html">eFast</a></li>
-          <li><a href="/Projets/reseau-wordpress.html">Réseau de sites eFoil</a></li>
-          <li><a href="/Projets/efoil-reservation.html">eFoil — Réservation</a></li>
-          <li><a href="/Projets/newsletter.html">Newsletter — Lift Foils</a></li>
-          <li><a href="/Projets/emargement.html">Émargement</a></li>
+          <li><a href="/#projets">Toutes les réalisations →</a></li>
         </ul>
       </div>
       <div>
