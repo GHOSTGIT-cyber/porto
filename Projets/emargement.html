@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Émargement — Gestion de présence (full-stack) · Ghost Consulting</title>
-  <meta name="description" content="Plateforme full-stack de gestion d'émargement : back-office Symfony/Doctrine/Twig (126 commits) et application mobile compagnon React Native/Expo." />
+  <title>Application d'émargement Symfony · Ghost Consulting</title>
+  <meta name="description" content="Étude de cas : une application Symfony d'émargement pour un centre de formation. La feuille de présence papier devient une signature sur mobile." />
   <link rel="canonical" href="https://bakabi.fr/Projets/emargement.html" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Émargement — Gestion de présence (full-stack) · Ghost Consulting" />
-  <meta property="og:description" content="Plateforme full-stack de gestion d'émargement : back-office Symfony/Doctrine/Twig (126 commits) et application mobile compagnon React Native/Expo." />
+  <meta property="og:title" content="Application d'émargement Symfony · Ghost Consulting" />
+  <meta property="og:description" content="Étude de cas : une application Symfony d'émargement pour un centre de formation. La feuille de présence papier devient une signature sur mobile." />
   <meta property="og:url" content="https://bakabi.fr/Projets/emargement.html" />
   <meta property="og:image" content="https://bakabi.fr/assets/img/bg/hero.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -32,7 +32,7 @@
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "Émargement — Gestion de présence (full-stack)",
+        "name": "Application d'émargement Symfony",
         "item": "https://bakabi.fr/Projets/emargement.html"
       }
     ]
@@ -42,9 +42,9 @@
   {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
-    "name": "Émargement — Gestion de présence (full-stack)",
-    "headline": "Émargement — Gestion de présence (full-stack)",
-    "description": "Plateforme full-stack de gestion d'émargement : back-office Symfony/Doctrine/Twig (126 commits) et application mobile compagnon React Native/Expo.",
+    "name": "Application d'émargement Symfony",
+    "headline": "Application d'émargement Symfony",
+    "description": "Étude de cas : une application Symfony d'émargement pour un centre de formation. La feuille de présence papier devient une signature sur mobile.",
     "url": "https://bakabi.fr/Projets/emargement.html",
     "creator": {"@id": "https://bakabi.fr/#organization"},
     "inLanguage": "fr"
@@ -54,75 +54,120 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
+    /* Étude de cas « émargement » : même gabarit que la fiche newsletter */
     :root{
-      --bg:rgba(255,255,255,.55);--surface:rgba(216,230,250,.72);--ink:#0E1F3D;--muted:#2E3C57;--line:rgba(17,42,92,.16);
-      --accent:#1D4ED8;--accent-soft:rgba(37,99,235,.14);--radius:18px;
-      --shadow:0 22px 55px -26px rgba(15,40,95,.4);--maxw:1200px;
+      --surface:rgba(216,230,250,.72);--ink:#0E1F3D;--muted:#2E3C57;--line:rgba(17,42,92,.16);
+      --accent:#1D4ED8;--accent-deep:#13338E;--accent-2:#38BDF8;--accent-soft:rgba(37,99,235,.14);
+      --night:#0B1A33;--radius:18px;--shadow:0 22px 55px -26px rgba(15,40,95,.4);--maxw:1200px;
     }
     *{box-sizing:border-box;margin:0;padding:0}
+    [hidden]{display:none!important}
     html{scroll-behavior:smooth}
-    body{font-family:'Inter',system-ui,sans-serif;background:linear-gradient(160deg,#d6e6fb 0%,#9bbef0 48%,#7ea8e6 100%) fixed;color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
-    h1,h2,h3,h4{font-family:'Plus Jakarta Sans',sans-serif;line-height:1.1;letter-spacing:-.02em}
+    html,body{overflow-x:clip}
+    body{font-family:'Inter',system-ui,sans-serif;background:linear-gradient(160deg,#d6e6fb 0%,#9bbef0 48%,#7ea8e6 100%) fixed;color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+    h1,h2,h3{font-family:'Plus Jakarta Sans',sans-serif;line-height:1.08;letter-spacing:-.02em;text-wrap:balance}
     a{color:inherit;text-decoration:none}
     .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-    header{position:sticky;top:0;z-index:50;background:rgba(247,244,239,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-    .nav{display:flex;align-items:center;justify-content:space-between;height:70px;max-width:var(--maxw);margin:0 auto;padding:0 24px}
-    .logo{font-family:'Plus Jakarta Sans';font-weight:800;font-size:19px;letter-spacing:-.02em}
-    .logo span{color:var(--accent)}
-    .back{font-size:14.5px;color:var(--muted);font-weight:500;transition:.2s;display:inline-flex;align-items:center;gap:7px}
-    .back:hover{color:var(--ink)}
-    .hero{padding:70px 0 50px;position:relative;overflow:hidden}
-    .hero::before{content:"";position:absolute;inset:0;z-index:-1;
-      background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
-      background-size:46px 46px;opacity:.5;
-      -webkit-mask-image:radial-gradient(ellipse 80% 70% at 30% 0%,#000 20%,transparent 72%);
-      mask-image:radial-gradient(ellipse 80% 70% at 30% 0%,#000 20%,transparent 72%)}
-    .eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;display:inline-flex;align-items:center;gap:9px}
-    .eyebrow::before{content:"";width:26px;height:2px;background:var(--accent);display:inline-block}
-    .hero h1{font-size:clamp(34px,5vw,56px);font-weight:800;max-width:18ch}
-    .hero .sub{font-size:clamp(16px,1.6vw,19px);color:var(--muted);max-width:60ch;margin:22px 0 28px}
-    .chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
-    .chip{font-size:13px;font-weight:600;background:var(--surface);border:1px solid var(--line);padding:8px 15px;border-radius:999px;color:var(--ink)}
-    .badge{display:inline-flex;align-items:center;gap:14px;background:var(--accent-soft);border:1px solid rgba(29,78,216,.25);border-radius:16px;padding:18px 26px}
-    .badge strong{font-family:'Plus Jakarta Sans';font-size:38px;font-weight:800;color:var(--accent);line-height:1}
-    .badge span{font-size:14.5px;color:var(--ink);font-weight:500;max-width:26ch}
-    section.block{padding:46px 0}
-    .block + .block{border-top:1px solid var(--line)}
-    .kicker{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
-    h2.sec{font-size:clamp(26px,3.4vw,38px);font-weight:800;margin-bottom:22px}
-    p.lead{font-size:17px;color:var(--muted);max-width:68ch;margin-bottom:14px}
-    p.lead strong{color:var(--ink);font-weight:600}
-    .ilist{list-style:none;display:flex;flex-direction:column;gap:16px;margin-top:8px}
-    .ilist li{position:relative;font-size:15.5px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px 16px 44px;box-shadow:var(--shadow)}
-    .ilist li::before{content:"→";position:absolute;left:18px;top:16px;color:var(--accent);font-weight:800;font-size:16px}
-    .ilist li b{font-weight:700;color:var(--ink)}
-    .ilist code{font-family:ui-monospace,'SFMono-Regular',Menlo,monospace;font-size:13px;background:var(--bg);border:1px solid var(--line);padding:1px 7px;border-radius:6px;color:var(--accent)}
-    .twocol{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:8px}
-    .panel{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--shadow)}
-    .panel h3{font-size:18px;font-weight:800;margin-bottom:10px;display:flex;align-items:center;gap:10px}
-    .panel h3 .tag{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:var(--accent-soft);color:var(--accent);padding:4px 10px;border-radius:999px}
-    .panel ul{list-style:none;display:flex;flex-direction:column;gap:9px}
-    .panel li{position:relative;padding-left:18px;font-size:14.5px;color:var(--muted)}
-    .panel li::before{content:"•";position:absolute;left:0;color:var(--accent);font-weight:800}
-    .factgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-top:8px}
-    .fact{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px}
-    .fact b{display:block;font-family:'Plus Jakarta Sans';font-size:30px;font-weight:800;color:var(--ink);margin-bottom:4px}
-    .fact b.accent{color:var(--accent)}
-    .fact span{font-size:14px;color:var(--muted)}
-    .stackchips{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
-    .stackchips span{font-size:13.5px;font-weight:600;background:var(--ink);color:#fff;padding:9px 16px;border-radius:999px}
-    .foot{padding:60px 0 80px;text-align:center;border-top:1px solid var(--line);background:var(--surface)}
-    .foot h3{font-size:clamp(24px,3vw,32px);font-weight:800;margin-bottom:10px}
-    .foot p{color:var(--muted);margin-bottom:28px}
-    .btn-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:15px;padding:14px 28px;border-radius:999px;transition:.25s ease;border:1.5px solid transparent}
-    .btn-primary{background:var(--accent);color:#fff}
-    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 30px -10px rgba(29,78,216,.45)}
-    .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
-    .btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
-    .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
-    .reveal.in{opacity:1;transform:none}
-    @media(max-width:640px){.hero{padding:48px 0 34px}.badge{flex-direction:column;align-items:flex-start;gap:6px}.badge strong{font-size:32px}.twocol{grid-template-columns:1fr}}
+    .eyebrow{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-deep);display:inline-flex;align-items:center;gap:8px}
+    .eyebrow::before{content:"";width:26px;height:2px;background:currentColor;display:inline-block}
+    .hl{background:linear-gradient(transparent 60%,rgba(56,189,248,.55) 60%,rgba(56,189,248,.55) 92%,transparent 92%);-webkit-box-decoration-break:clone;box-decoration-break:clone}
+
+    /* Héros */
+    .cs-hero{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.25fr);gap:clamp(28px,4vw,56px);align-items:center;padding:64px 0 56px}
+    .cs-txt{display:grid;gap:18px;justify-items:start}
+    .cs-txt h1{font-size:clamp(34px,5vw,58px);font-weight:800}
+    .cs-txt p{font-size:18px;color:var(--muted);max-width:44ch}
+    .status{font-size:12px;font-weight:700;line-height:1;padding:8px 12px;border-radius:999px;background:var(--night);color:#fff;display:inline-flex;gap:8px;align-items:center}
+    .status i{width:8px;height:8px;border-radius:50%;background:#34D399;box-shadow:0 0 0 4px rgba(52,211,153,.25)}
+    .stage{position:relative;padding-bottom:40px;padding-right:46px}
+    .browser{border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 40px 80px -30px rgba(11,26,51,.55),0 0 0 1px rgba(17,42,92,.1);transform:perspective(1600px) rotateY(-6deg) rotateX(2deg);transform-origin:left center}
+    .bar{display:flex;align-items:center;gap:7px;padding:10px 14px;background:#EEF3FB;border-bottom:1px solid var(--line)}
+    .bar i{width:10px;height:10px;border-radius:50%;background:#C9D5E8}
+    .bar span{margin-left:10px;font:500 12px 'JetBrains Mono',ui-monospace,monospace;color:var(--muted);background:#fff;border-radius:6px;padding:4px 10px;flex:1;max-width:280px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .browser img{display:block;width:100%;height:auto}
+    .phone{position:absolute;right:0;bottom:0;width:30%;max-width:210px;border-radius:30px;padding:8px;background:var(--night);box-shadow:0 30px 60px -20px rgba(11,26,51,.6)}
+    .phone img{display:block;width:100%;height:auto;border-radius:23px;aspect-ratio:390/600;object-fit:cover;object-position:top}
+    .tag-demo{position:absolute;left:14px;bottom:8px;font-size:12px;font-weight:600;color:var(--ink);background:rgba(255,255,255,.75);border:1px solid var(--line);border-radius:999px;padding:6px 11px;backdrop-filter:blur(6px)}
+
+    /* Chiffres : cartes premium (flou → net, reflets de bord, balayage de lumière) */
+    .kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-bottom:72px}
+    .card{position:relative;isolation:isolate;overflow:hidden;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px 22px 20px;display:grid;gap:6px;transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s ease}
+    .card::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.4px;pointer-events:none;background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(255,255,255,0) 38%,rgba(255,255,255,0) 62%,rgba(255,255,255,.55));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+    .card::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:2;background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.6) 47%,rgba(255,255,255,.95) 50%,rgba(255,255,255,.6) 53%,transparent 66%);background-size:250% 100%;background-position:150% 0;opacity:0}
+    .card.in::before{animation:cardSweep 1.15s cubic-bezier(.35,.1,.25,1) .1s 1}
+    .card:hover::before{animation:cardSweepHover 1s cubic-bezier(.35,.1,.25,1) 1}
+    .card:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+    @keyframes cardSweep{0%{background-position:150% 0;opacity:0}12%{opacity:1}100%{background-position:-150% 0;opacity:0}}
+    @keyframes cardSweepHover{0%{background-position:150% 0;opacity:0}12%{opacity:1}100%{background-position:-150% 0;opacity:0}}
+    .kpi b{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(34px,4vw,46px);font-weight:800;line-height:1;color:var(--accent-deep);font-variant-numeric:tabular-nums}
+    .kpi span{font-size:14.5px;color:var(--muted)}
+    .kpi small{font:500 11.5px 'JetBrains Mono',ui-monospace,monospace;color:var(--muted)}
+
+    /* Sections */
+    .sec{margin-bottom:72px;display:grid;gap:22px}
+    .sec h2{font-size:clamp(26px,3.4vw,40px);font-weight:800;max-width:22ch}
+    .swap{display:grid;gap:10px}
+    .row{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:14px;align-items:center}
+    .row .was{color:var(--muted);text-decoration:line-through;text-decoration-color:rgba(46,60,87,.45);font-size:15px;text-align:right}
+    .row .arrow{font-family:'Plus Jakarta Sans';font-weight:800;font-size:18px;color:var(--accent)}
+    .row .now{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 16px;font-weight:600;font-size:15px}
+    .flow{list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));position:relative}
+    .flow::before{content:"";position:absolute;left:10%;right:10%;top:23px;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+    .flow li{display:grid;align-content:start;justify-items:center;text-align:center;gap:10px;padding:0 8px;position:relative}
+    .flow .dot{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#fff;border:2px solid var(--accent);font-family:'Plus Jakarta Sans';font-weight:800;color:var(--accent-deep)}
+    .flow b{font-family:'Plus Jakarta Sans';font-size:15px}
+    .flow span{font-size:13.5px;color:var(--muted);max-width:24ch}
+    .ctx{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:18px 48px;align-items:start}
+    .ctx > div:first-child{display:grid;gap:22px}
+    .prose{display:grid;gap:14px;font-size:17px;color:var(--muted);max-width:62ch}
+    .choix{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .choix .card{padding:24px;gap:10px;align-content:start}
+    .choix h3{font-size:19px;font-weight:700}
+    .choix p{font-size:15px;color:var(--muted)}
+    .stack{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .stack .lbl{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-right:6px}
+    .chip{font-size:12px;font-weight:600;color:var(--accent-deep);background:var(--accent-soft);padding:6px 12px;border-radius:999px}
+    .cta{background:var(--night);color:#fff;border-radius:22px;padding:clamp(24px,4vw,40px);display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;margin-bottom:80px}
+    .cta h2{font-size:clamp(22px,3vw,32px);font-weight:800;max-width:24ch}
+    .btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:15px;padding:14px 26px;border-radius:999px;transition:.25s ease;border:1.5px solid transparent}
+    .btn-light{background:#fff;color:var(--ink)}
+    .btn-light:hover{background:var(--accent-2);transform:translateY(-2px)}
+    .btn-line{color:#fff;border-color:rgba(255,255,255,.35)}
+    .btn-line:hover{border-color:#fff;transform:translateY(-2px)}
+    .btns{display:flex;gap:10px;flex-wrap:wrap}
+
+    .shots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+    .shots figure{display:grid;gap:10px}
+    .shots .browser{transform:none}
+    .shots figcaption{font-size:14px;color:var(--muted)}
+    .mails{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+    .mails figure{display:grid;gap:10px;align-content:start}
+    .mails img{display:block;width:100%;height:auto;border-radius:14px;box-shadow:0 30px 60px -28px rgba(11,26,51,.55),0 0 0 1px rgba(17,42,92,.1);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+    .mails figure:hover img{transform:translateY(-6px)}
+    .mails figcaption{font-size:14px;color:var(--muted)}
+    .mails figcaption b{display:block;color:var(--ink);font-family:'Plus Jakarta Sans',sans-serif}
+    .prose a{color:var(--accent-deep);text-decoration:underline}
+
+    /* Apparition flou → net (comme l'accueil) */
+    .reveal{opacity:0;transform:translateY(24px) scale(.985);filter:blur(8px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1),filter .8s cubic-bezier(.2,.7,.2,1)}
+    .reveal.in{opacity:1;transform:none;filter:blur(0)}
+    @media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;filter:none;transition:none}.card::before{display:none}}
+
+    @media (max-width:900px){
+      .cs-hero{grid-template-columns:1fr;padding-top:44px}
+      .browser{transform:none}
+      .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .ctx,.choix,.shots{grid-template-columns:1fr}
+      .mails{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+      .flow{grid-template-columns:1fr;gap:14px}
+      .flow::before{left:23px;right:auto;top:10px;bottom:10px;width:2px;height:auto;background:linear-gradient(180deg,var(--accent),var(--accent-2))}
+      .flow li{grid-template-columns:48px 1fr;justify-items:start;text-align:left;align-items:center;column-gap:14px;row-gap:2px}
+      .flow .dot{grid-row:span 2}
+      .flow span{max-width:none}
+      .row{grid-template-columns:1fr;gap:4px}
+      .row .was{text-align:left}
+      .row .arrow{display:none}
+    }
   </style>
   <link rel="stylesheet" href="/assets/site/nav.css">
   <script src="/assets/site/nav.js" defer></script>
@@ -153,103 +198,111 @@
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="wrap">
-        <div class="eyebrow">Full-stack · Mobile</div>
-        <h1>Émargement — Gestion de présence</h1>
-        <p class="sub">Gérer l'émargement et le suivi des sessions et présences, côté web et côté mobile — le projet full-stack le plus volumineux du parcours.</p>
-        <div class="chips">
-          <span class="chip">Symfony</span>
-          <span class="chip">Doctrine</span>
-          <span class="chip">Twig</span>
-          <span class="chip">React Native</span>
-          <span class="chip">Expo</span>
+  <main class="wrap">
+    <section class="cs-hero">
+      <div class="cs-txt">
+        <span class="eyebrow">Étude de cas · Application métier</span>
+        <h1>La feuille de présence papier, <span class="hl">remplacée par une signature à l'écran.</span></h1>
+        <p>Un centre de formation voulait dématérialiser l'émargement de ses cours : le formateur ouvre la séance, chaque apprenant signe depuis son téléphone, l'administration retrouve tout au même endroit.</p>
+        <span class="status"><i></i>Livré en juin 2025</span>
+      </div>
+      <div class="stage">
+        <div class="browser">
+          <div class="bar"><i></i><i></i><i></i><span>espace formateur</span></div>
+          <img src="/assets/img/projets/emargement-formateur-demo.jpg" width="1800" height="1125" alt="Espace formateur : les sessions du jour avec horaires, salle, nombre d'apprenants, statut terminé ou en cours et jauge des signatures (données fictives)">
         </div>
-        <div class="badge">
-          <strong>126</strong>
-          <span>commits sur le back-office Symfony — projet full-stack le plus volumineux</span>
-        </div>
+        <div class="phone"><img src="/assets/img/projets/emargement-signature-mobile.jpg" width="780" height="1688" loading="lazy" alt="Écran apprenant sur mobile : zone de signature au doigt avec les boutons Effacer et Valider"></div>
+        <span class="tag-demo">Application réelle · données fictives</span>
       </div>
     </section>
 
-    <section class="block reveal">
-      <div class="wrap">
-        <div class="kicker">Le contexte</div>
-        <h2 class="sec">Émarger et suivre les présences, web et mobile</h2>
-        <p class="lead">Le besoin : <strong>gérer l'émargement et le suivi de sessions et de présences</strong>, avec une partie <strong>web</strong> pour l'administration et une partie <strong>mobile</strong> pour l'usage terrain. Un projet complet, du modèle de données jusqu'à l'application embarquée.</p>
+    <section class="kpis" aria-label="En chiffres">
+      <div class="card kpi reveal"><b>3</b><span>espaces : admin, formateur, apprenant</span><small>un rôle, une interface</small></div>
+      <div class="card kpi reveal"><b>5</b><span>situations suivies par apprenant</span><small>présent, retard, absent, justifié, départ</small></div>
+      <div class="card kpi reveal"><b>7</b><span>entités Doctrine</span><small>sessions, groupes, salles, signatures…</small></div>
+      <div class="card kpi reveal"><b>6</b><span>contrôleurs d'API JSON</span><small>pour l'application mobile</small></div>
+    </section>
+
+    <section class="sec ctx reveal" aria-labelledby="h-ctx">
+      <div>
+        <span class="eyebrow">Le contexte</span>
+        <h2 id="h-ctx">Une feuille qui fait le tour de la salle.</h2>
+      </div>
+      <div class="prose">
+        <p>Dans un centre de formation, la présence conditionne le financement des parcours. Elle se prouvait par une feuille papier signée à chaque demi-journée, puis scannée et archivée. Les retards, les départs anticipés et les justificatifs d'absence se notaient en marge, quand on y pensait.</p>
+        <p>Le projet a été mené en équipe de trois développeurs. J'ai pris en charge l'espace formateur de bout en bout (planning, fiche de présence, signature au doigt, retards, départs anticipés, historique, notification par e-mail) ainsi que la connexion de l'API utilisée par l'application mobile React Native de l'équipe.</p>
       </div>
     </section>
 
-    <section class="block reveal">
-      <div class="wrap">
-        <div class="kicker">Mon intervention</div>
-        <h2 class="sec">Un back-office robuste et un compagnon mobile</h2>
-        <ul class="ilist">
-          <li><b>Back-office Symfony / Doctrine / Twig</b> (<b>126 commits</b>) : gestion des sessions, formulaires de saisie et de gestion, et envoi d'e-mails via le composant Mailer.</li>
-          <li><b>Modélisation Doctrine</b> des entités métier (sessions, présences) et rendu des vues côté serveur avec Twig.</li>
-          <li><b>Application mobile compagnon</b> en <b>React Native / Expo</b>, pour porter l'émargement sur le terrain.</li>
-          <li>Architecture <b>full-stack</b> assumée de bout en bout : c'est le <b>projet le plus volumineux du parcours</b>.</li>
-        </ul>
-        <div class="twocol" style="margin-top:24px">
-          <div class="panel">
-            <h3>Back-office <span class="tag">Web</span></h3>
-            <ul>
-              <li>Symfony, Doctrine, Twig</li>
-              <li>Gestion des sessions</li>
-              <li>Formulaires de saisie &amp; gestion</li>
-              <li>Mailer (notifications)</li>
-              <li>126 commits</li>
-            </ul>
-          </div>
-          <div class="panel">
-            <h3>App compagnon <span class="tag">Mobile</span></h3>
-            <ul>
-              <li>React Native</li>
-              <li>Expo</li>
-              <li>Émargement sur le terrain</li>
-              <li>Suivi des présences</li>
-            </ul>
-          </div>
-        </div>
+    <section class="sec reveal" aria-labelledby="h-chg">
+      <span class="eyebrow">Ce qui a changé</span>
+      <h2 id="h-chg">Une preuve de présence fiable, sans papier à ranger.</h2>
+      <div class="swap">
+        <div class="row"><span class="was">Une feuille papier qui circule pendant le cours</span><span class="arrow" aria-hidden="true">→</span><span class="now">Chaque apprenant signe sur son téléphone</span></div>
+        <div class="row"><span class="was">Retards et départs notés en marge</span><span class="arrow" aria-hidden="true">→</span><span class="now">Motif de retard, heure de départ et commentaire par apprenant</span></div>
+        <div class="row"><span class="was">Justificatifs d'absence reçus par mail, à rapprocher</span><span class="arrow" aria-hidden="true">→</span><span class="now">Justificatif déposé par l'apprenant dans son espace</span></div>
+        <div class="row"><span class="was">Feuilles à scanner et à classer</span><span class="arrow" aria-hidden="true">→</span><span class="now">Historique en ligne et export PDF par session</span></div>
       </div>
     </section>
 
-    <section class="block reveal">
-      <div class="wrap">
-        <div class="kicker">Ce que ça apporte</div>
-        <h2 class="sec">Un suivi de présence complet, du bureau au terrain</h2>
-        <div class="factgrid">
-          <div class="fact"><b class="accent">126</b><span>commits sur le back-office Symfony</span></div>
-          <div class="fact"><b>2</b><span>plateformes : web &amp; mobile</span></div>
-          <div class="fact"><b>Full-stack</b><span>du modèle de données à l'app embarquée</span></div>
-          <div class="fact"><b>#1</b><span>projet le plus volumineux du parcours</span></div>
-        </div>
+    <section class="sec reveal" aria-labelledby="h-flow">
+      <span class="eyebrow">Comment ça marche</span>
+      <h2 id="h-flow">Une séance, de la planification à l'archive.</h2>
+      <ol class="flow">
+        <li><span class="dot">1</span><b>Planification</b><span>L'administration crée formations, groupes, salles et sessions, et affecte un formateur.</span></li>
+        <li><span class="dot">2</span><b>Ouverture</b><span>Le formateur signe, active la session : les apprenants sont prévenus par e-mail.</span></li>
+        <li><span class="dot">3</span><b>Signature</b><span>Chaque apprenant signe au doigt, uniquement pendant le créneau du cours.</span></li>
+        <li><span class="dot">4</span><b>Suivi</b><span>Le formateur note les retards, les absences justifiées et les départs anticipés.</span></li>
+        <li><span class="dot">5</span><b>Archive</b><span>Historique des sessions et feuille d'émargement en PDF côté administration.</span></li>
+      </ol>
+    </section>
+
+    <section class="sec reveal" aria-labelledby="h-shots">
+      <span class="eyebrow">À l'écran</span>
+      <h2 id="h-shots">Trois espaces, chacun avec juste ce qu'il faut.</h2>
+      <div class="shots">
+        <figure>
+          <div class="browser"><div class="bar"><i></i><i></i><i></i><span>fiche de présence</span></div><img src="/assets/img/projets/emargement-fiche-demo.jpg" width="1800" height="1125" loading="lazy" alt="Fiche de présence d'une session : statut présent ou en retard, heure de signature, commentaire et motif de retard pour chaque apprenant (données fictives)"></div>
+          <figcaption>La fiche de présence du formateur : statut, heure de signature, commentaire et motif, apprenant par apprenant.</figcaption>
+        </figure>
+        <figure>
+          <div class="browser"><div class="bar"><i></i><i></i><i></i><span>administration</span></div><img src="/assets/img/projets/emargement-admin-demo.jpg" width="1800" height="1125" loading="lazy" alt="Tableau de bord de l'administration : feuilles démarrées du jour, nombre d'utilisateurs, d'apprenants, de formateurs et d'émargements, taux de présence (données fictives)"></div>
+          <figcaption>Le tableau de bord de l'administration, avec le taux de présence des apprenants.</figcaption>
+        </figure>
+        <figure>
+          <div class="browser"><div class="bar"><i></i><i></i><i></i><span>gestion des sessions</span></div><img src="/assets/img/projets/emargement-sessions-demo.jpg" width="1800" height="1125" loading="lazy" alt="Liste des sessions avec formateur, groupe, dates de début et de fin, filtres à venir et passées, recherche et pagination (données fictives)"></div>
+          <figcaption>Les sessions planifiées, filtrables et paginées.</figcaption>
+        </figure>
+        <figure>
+          <div class="phone" style="position:static;width:100%;max-width:250px;justify-self:center"><img src="/assets/img/projets/emargement-apprenant-mobile.jpg" width="780" height="1688" loading="lazy" alt="Espace apprenant sur mobile : le cours en cours avec le bouton Signer ma présence, et la liste des cours passés (données fictives)"></div>
+          <figcaption>Côté apprenant : le cours du moment, un bouton pour signer, l'historique en dessous.</figcaption>
+        </figure>
+      </div>
+      <p class="prose">Captures de l'application réelle, lancée en local sur une base de démonstration : formateur, apprenants et centre de formation sont fictifs.</p>
+    </section>
+
+    <section class="sec reveal" aria-labelledby="h-choix">
+      <span class="eyebrow">Les choix qui comptent</span>
+      <h2 id="h-choix">Une signature qui vaut quelque chose.</h2>
+      <div class="choix">
+        <article class="card"><h3>On ne signe que pendant le cours</h3><p>La page de signature refuse l'accès si la session n'est pas activée par le formateur ou si l'heure est hors du créneau. Une signature arrivée plus de 10 minutes après le début passe automatiquement en retard.</p></article>
+        <article class="card"><h3>Le formateur signe en premier</h3><p>La fiche de présence ne s'ouvre qu'après la signature du formateur. Chaque feuille porte donc la preuve de qui a animé la séance, en plus de celles des apprenants.</p></article>
+        <article class="card"><h3>Une API prête pour le mobile</h3><p>Planning, sessions, signatures, absences et profil sont exposés en JSON derrière une authentification par jeton JWT. L'application React Native s'y branche sans passer par les pages web.</p></article>
       </div>
     </section>
 
-    <section class="block reveal">
-      <div class="wrap">
-        <div class="kicker">Stack technique</div>
-        <h2 class="sec">Les outils mobilisés</h2>
-        <div class="stackchips">
-          <span>Symfony</span><span>Doctrine</span><span>Twig</span>
-          <span>Symfony Mailer</span><span>React Native</span><span>Expo</span>
-        </div>
+    <section class="sec reveal" style="gap:28px">
+      <div class="stack"><span class="lbl">Stack</span><span class="chip">PHP 8 · Symfony 6</span><span class="chip">Doctrine ORM</span><span class="chip">Twig</span><span class="chip">MySQL / MariaDB</span><span class="chip">JWT (LexikJWT)</span><span class="chip">Symfony Mailer</span><span class="chip">Dompdf</span><span class="chip">React Native · Expo</span></div>
+    </section>
+
+    <section class="cta reveal">
+      <h2>Un formulaire papier qui ralentit votre équipe&nbsp;?</h2>
+      <div class="btns">
+        <a class="btn btn-light" href="/#contact">Parler de mon projet →</a>
+        <a class="btn btn-line" href="/#formules">Voir les formules</a>
       </div>
     </section>
   </main>
-
-  <section class="foot">
-    <div class="wrap">
-      <h3>Un projet full-stack web &amp; mobile&nbsp;?</h3>
-      <p>Parlons back-office Symfony et application compagnon mobile.</p>
-      <div class="btn-row">
-        <a class="btn btn-primary" href="/#contact">Discuter d'un projet</a>
-        <a class="btn btn-ghost" href="https://github.com/Ostronger/emargement-symfony" target="_blank" rel="noopener">Voir le code sur GitHub ↗</a>
-      </div>
-    </div>
-  </section>
 
   <footer id="gf">
     <div class="gf-in">
@@ -274,14 +327,15 @@
       <div>
         <p class="gf-h">Réalisations</p>
         <ul>
-          <li><a href="/Projets/liftfoils.html">Liftfoils — WordPress &amp; SEO</a></li>
+          <li><a href="/Projets/liftfoils.html">Liftfoils — refonte &amp; SEO</a></li>
+          <li><a href="/Projets/efoil-reservation.html">Dashboard de réservation</a></li>
+          <li><a href="/Projets/atelier-liftfoils.html">Atelier — devis &amp; SAV</a></li>
+          <li><a href="/Projets/assistant-ia.html">Assistant IA</a></li>
+          <li><a href="/Projets/integration-odoo.html">Intégration Odoo</a></li>
+          <li><a href="/Projets/newsletter.html">Newsletter — Lift Foils</a></li>
           <li><a href="/Projets/qualityacht.html">QualityYacht</a></li>
           <li><a href="/Projets/trackship.html">TrackShip</a></li>
-          <li><a href="/Projets/efast.html">eFast</a></li>
-          <li><a href="/Projets/reseau-wordpress.html">Réseau de sites eFoil</a></li>
-          <li><a href="/Projets/efoil-reservation.html">eFoil — Réservation</a></li>
-          <li><a href="/Projets/newsletter.html">Newsletter — Lift Foils</a></li>
-          <li><a href="/Projets/emargement.html">Émargement</a></li>
+          <li><a href="/#projets">Toutes les réalisations →</a></li>
         </ul>
       </div>
       <div>

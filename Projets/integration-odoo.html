@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intégration Odoo et paiement SumUp · Ghost Consulting</title>
+  <meta name="description" content="Étude de cas : paiement SumUp branché sur Odoo Online sans module tiers, et réservation de croisières avec un prix exact dès la date choisie." />
+  <link rel="canonical" href="https://bakabi.fr/Projets/integration-odoo.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Intégration Odoo et paiement SumUp · Ghost Consulting" />
+  <meta property="og:description" content="Étude de cas : paiement SumUp branché sur Odoo Online sans module tiers, et réservation de croisières avec un prix exact dès la date choisie." />
+  <meta property="og:url" content="https://bakabi.fr/Projets/integration-odoo.html" />
+  <meta property="og:image" content="https://bakabi.fr/assets/img/bg/hero.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Accueil",
+        "item": "https://bakabi.fr/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Realisations",
+        "item": "https://bakabi.fr/#projets"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Intégration Odoo : paiement SumUp et réservation",
+        "item": "https://bakabi.fr/Projets/integration-odoo.html"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "Intégration Odoo : paiement SumUp et réservation",
+    "headline": "Intégration Odoo : paiement SumUp et réservation",
+    "description": "Étude de cas : paiement SumUp branché sur Odoo Online sans module tiers, et réservation de croisières avec un prix exact dès la date choisie.",
+    "url": "https://bakabi.fr/Projets/integration-odoo.html",
+    "creator": {
+      "@id": "https://bakabi.fr/#organization"
+    },
+    "inLanguage": "fr"
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* Étude de cas : même gabarit que les fiches réservation et newsletter */
+    :root{
+      --surface:rgba(216,230,250,.72);--ink:#0E1F3D;--muted:#2E3C57;--line:rgba(17,42,92,.16);
+      --accent:#1D4ED8;--accent-deep:#13338E;--accent-2:#38BDF8;--accent-soft:rgba(37,99,235,.14);
+      --night:#0B1A33;--radius:18px;--shadow:0 22px 55px -26px rgba(15,40,95,.4);--maxw:1200px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    [hidden]{display:none!important}
+    html{scroll-behavior:smooth}
+    html,body{overflow-x:clip}
+    body{font-family:'Inter',system-ui,sans-serif;background:linear-gradient(160deg,#d6e6fb 0%,#9bbef0 48%,#7ea8e6 100%) fixed;color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+    h1,h2,h3{font-family:'Plus Jakarta Sans',sans-serif;line-height:1.08;letter-spacing:-.02em;text-wrap:balance}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+    .eyebrow{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-deep);display:inline-flex;align-items:center;gap:8px}
+    .eyebrow::before{content:"";width:26px;height:2px;background:currentColor;display:inline-block}
+    .hl{background:linear-gradient(transparent 60%,rgba(56,189,248,.55) 60%,rgba(56,189,248,.55) 92%,transparent 92%);-webkit-box-decoration-break:clone;box-decoration-break:clone}
+
+    /* Héros */
+    .cs-hero{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.25fr);gap:clamp(28px,4vw,56px);align-items:center;padding:64px 0 56px}
+    .cs-txt{display:grid;gap:18px;justify-items:start}
+    .cs-txt h1{font-size:clamp(34px,5vw,58px);font-weight:800}
+    .cs-txt p{font-size:18px;color:var(--muted);max-width:44ch}
+    .status{font-size:12px;font-weight:700;line-height:1;padding:8px 12px;border-radius:999px;background:var(--night);color:#fff;display:inline-flex;gap:8px;align-items:center}
+    .status i{width:8px;height:8px;border-radius:50%;background:#34D399;box-shadow:0 0 0 4px rgba(52,211,153,.25)}
+    .stage{position:relative;padding-bottom:40px;padding-right:46px}
+    .browser{border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 40px 80px -30px rgba(11,26,51,.55),0 0 0 1px rgba(17,42,92,.1);transform:perspective(1600px) rotateY(-6deg) rotateX(2deg);transform-origin:left center}
+    .bar{display:flex;align-items:center;gap:7px;padding:10px 14px;background:#EEF3FB;border-bottom:1px solid var(--line)}
+    .bar i{width:10px;height:10px;border-radius:50%;background:#C9D5E8}
+    .bar span{margin-left:10px;font:500 12px 'JetBrains Mono',ui-monospace,monospace;color:var(--muted);background:#fff;border-radius:6px;padding:4px 10px;flex:1;max-width:280px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .browser img{display:block;width:100%;height:auto}
+    .phone{position:absolute;right:0;bottom:0;width:30%;max-width:210px;border-radius:30px;padding:8px;background:var(--night);box-shadow:0 30px 60px -20px rgba(11,26,51,.6)}
+    .phone img{display:block;width:100%;height:auto;border-radius:23px;aspect-ratio:390/600;object-fit:cover;object-position:top}
+    .tag-demo{position:absolute;left:14px;bottom:8px;font-size:12px;font-weight:600;color:var(--ink);background:rgba(255,255,255,.75);border:1px solid var(--line);border-radius:999px;padding:6px 11px;backdrop-filter:blur(6px)}
+
+    /* Chiffres : cartes premium (flou → net, reflets de bord, balayage de lumière) */
+    .kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-bottom:72px}
+    .card{position:relative;isolation:isolate;overflow:hidden;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px 22px 20px;display:grid;gap:6px;transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s ease}
+    .card::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.4px;pointer-events:none;background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(255,255,255,0) 38%,rgba(255,255,255,0) 62%,rgba(255,255,255,.55));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+    .card::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:2;background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.6) 47%,rgba(255,255,255,.95) 50%,rgba(255,255,255,.6) 53%,transparent 66%);background-size:250% 100%;background-position:150% 0;opacity:0}
+    .card.in::before{animation:cardSweep 1.15s cubic-bezier(.35,.1,.25,1) .1s 1}
+    .card:hover::before{animation:cardSweepHover 1s cubic-bezier(.35,.1,.25,1) 1}
+    .card:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+    @keyframes cardSweep{0%{background-position:150% 0;opacity:0}12%{opacity:1}100%{background-position:-150% 0;opacity:0}}
+    @keyframes cardSweepHover{0%{background-position:150% 0;opacity:0}12%{opacity:1}100%{background-position:-150% 0;opacity:0}}
+    .kpi b{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(34px,4vw,46px);font-weight:800;line-height:1;color:var(--accent-deep);font-variant-numeric:tabular-nums}
+    .kpi span{font-size:14.5px;color:var(--muted)}
+    .kpi small{font:500 11.5px 'JetBrains Mono',ui-monospace,monospace;color:var(--muted)}
+
+    /* Sections */
+    .sec{margin-bottom:72px;display:grid;gap:22px}
+    .sec h2{font-size:clamp(26px,3.4vw,40px);font-weight:800;max-width:22ch}
+    .swap{display:grid;gap:10px}
+    .row{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:14px;align-items:center}
+    .row .was{color:var(--muted);text-decoration:line-through;text-decoration-color:rgba(46,60,87,.45);font-size:15px;text-align:right}
+    .row .arrow{font-family:'Plus Jakarta Sans';font-weight:800;font-size:18px;color:var(--accent)}
+    .row .now{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 16px;font-weight:600;font-size:15px}
+    .flow{list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));position:relative}
+    .flow::before{content:"";position:absolute;left:10%;right:10%;top:23px;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+    .flow li{display:grid;align-content:start;justify-items:center;text-align:center;gap:10px;padding:0 8px;position:relative}
+    .flow .dot{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#fff;border:2px solid var(--accent);font-family:'Plus Jakarta Sans';font-weight:800;color:var(--accent-deep)}
+    .flow b{font-family:'Plus Jakarta Sans';font-size:15px}
+    .flow span{font-size:13.5px;color:var(--muted);max-width:24ch}
+    .ctx{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:18px 48px;align-items:start}
+    .ctx > div:first-child{display:grid;gap:22px}
+    .prose{display:grid;gap:14px;font-size:17px;color:var(--muted);max-width:62ch}
+    .choix{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .choix .card{padding:24px;gap:10px;align-content:start}
+    .choix h3{font-size:19px;font-weight:700}
+    .choix p{font-size:15px;color:var(--muted)}
+    .stack{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .stack .lbl{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-right:6px}
+    .chip{font-size:12px;font-weight:600;color:var(--accent-deep);background:var(--accent-soft);padding:6px 12px;border-radius:999px}
+    .cta{background:var(--night);color:#fff;border-radius:22px;padding:clamp(24px,4vw,40px);display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;margin-bottom:80px}
+    .cta h2{font-size:clamp(22px,3vw,32px);font-weight:800;max-width:24ch}
+    .btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:15px;padding:14px 26px;border-radius:999px;transition:.25s ease;border:1.5px solid transparent}
+    .btn-light{background:#fff;color:var(--ink)}
+    .btn-light:hover{background:var(--accent-2);transform:translateY(-2px)}
+    .btn-line{color:#fff;border-color:rgba(255,255,255,.35)}
+    .btn-line:hover{border-color:#fff;transform:translateY(-2px)}
+    .btns{display:flex;gap:10px;flex-wrap:wrap}
+
+    .shots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+    .shots figure{display:grid;gap:10px}
+    .shots .browser{transform:none}
+    .shots figcaption{font-size:14px;color:var(--muted)}
+    .mails{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+    .mails figure{display:grid;gap:10px;align-content:start}
+    .mails img{display:block;width:100%;height:auto;border-radius:14px;box-shadow:0 30px 60px -28px rgba(11,26,51,.55),0 0 0 1px rgba(17,42,92,.1);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+    .mails figure:hover img{transform:translateY(-6px)}
+    .mails figcaption{font-size:14px;color:var(--muted)}
+    .mails figcaption b{display:block;color:var(--ink);font-family:'Plus Jakarta Sans',sans-serif}
+    .prose a{color:var(--accent-deep);text-decoration:underline}
+    .mails.m3{grid-template-columns:repeat(3,minmax(0,1fr));max-width:880px}
+    @media (max-width:900px){.mails.m3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+    /* Apparition flou → net (comme l'accueil) */
+    .reveal{opacity:0;transform:translateY(24px) scale(.985);filter:blur(8px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1),filter .8s cubic-bezier(.2,.7,.2,1)}
+    .reveal.in{opacity:1;transform:none;filter:blur(0)}
+    @media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;filter:none;transition:none}.card::before{display:none}}
+
+    @media (max-width:900px){
+      .cs-hero{grid-template-columns:1fr;padding-top:44px}
+      .browser{transform:none}
+      .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .ctx,.choix,.shots{grid-template-columns:1fr}
+      .mails{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+      .flow{grid-template-columns:1fr;gap:14px}
+      .flow::before{left:23px;right:auto;top:10px;bottom:10px;width:2px;height:auto;background:linear-gradient(180deg,var(--accent),var(--accent-2))}
+      .flow li{grid-template-columns:48px 1fr;justify-items:start;text-align:left;align-items:center;column-gap:14px;row-gap:2px}
+      .flow .dot{grid-row:span 2}
+      .flow span{max-width:none}
+      .row{grid-template-columns:1fr;gap:4px}
+      .row .was{text-align:left}
+      .row .arrow{display:none}
+    }
+  </style>
+  <link rel="stylesheet" href="/assets/site/nav.css">
+  <script src="/assets/site/nav.js" defer></script>
+</head>
+<body>
+  <header id="gh">
+    <div class="gh-in">
+      <a class="gh-logo" href="/">Ghost<span>.</span>Consulting</a>
+      <nav class="gh-links" id="ghMenu" aria-label="Menu principal">
+        <div class="gh-dd">
+          <button type="button" aria-expanded="false" aria-controls="ghPanel">Services <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="gh-panel" id="ghPanel">
+          <a class="gh-item" href="/#formules"><span class="gh-ic" aria-hidden="true">💻</span><span><strong>Sites &amp; applications</strong><small>Vitrine dès 190&nbsp;€, appli web dès 1&nbsp;500&nbsp;€</small></span></a>
+          <a class="gh-item" href="/#wordpress"><span class="gh-ic" aria-hidden="true">🧩</span><span><strong>WordPress &amp; WooCommerce</strong><small>Extensions sur mesure, boutiques, pages</small></span></a>
+          <a class="gh-item" href="/agents-ia.html"><span class="gh-ic" aria-hidden="true">🤖</span><span><strong>Agents IA</strong><small>Mails, WhatsApp, devis : triés et préparés</small></span></a>
+          <a class="gh-item" href="/automatisation-n8n.html"><span class="gh-ic" aria-hidden="true">⚙️</span><span><strong>Automatisation n8n</strong><small>Vos tâches répétitives, enchaînées seules</small></span></a>
+          <a class="gh-item" href="/reprise-wordpress.html"><span class="gh-ic" aria-hidden="true">🛠️</span><span><strong>Reprise WordPress</strong><small>Site cassé, lent ou abandonné</small></span></a>
+          <a class="gh-item" href="/maintenance-wordpress.html"><span class="gh-ic" aria-hidden="true">♾️</span><span><strong>Maintenance WordPress</strong><small>Mises à jour, sauvegardes, suivi mensuel</small></span></a>
+          <a class="gh-item" href="/audit-seo-geo.html"><span class="gh-ic" aria-hidden="true">🔎</span><span><strong>Audit SEO &amp; GEO</strong><small>Visible sur Google et dans les IA</small></span></a>
+          <a class="gh-item" href="/infogerance-vps.html"><span class="gh-ic" aria-hidden="true">🖥️</span><span><strong>Infogérance VPS</strong><small>Serveur installé, surveillé, migré</small></span></a>
+          </div>
+        </div>
+        <a href="/#why">Pourquoi moi</a>
+        <a href="/#projets">Réalisations</a>
+        <a class="gh-cta" href="/#contact">Me contacter</a>
+      </nav>
+      <button class="gh-burger" id="ghBurger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="ghMenu">☰</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="cs-hero">
+      <div class="cs-txt">
+        <span class="eyebrow">Étude de cas · Intégration Odoo</span>
+        <h1>Paiement SumUp et réservation en ligne, <span class="hl">branchés sur Odoo.</span></h1>
+        <p>Deux entreprises sur Odoo Online, deux manques : encaisser avec SumUp, absent des moyens de paiement d'Odoo, et vendre des croisières privées avec un prix exact dès la date choisie.</p>
+        <span class="status"><i></i>Livré par étapes</span>
+      </div>
+      <div class="stage">
+        <div class="browser">
+          <div class="bar"><i></i><i></i><i></i><span>réservation en ligne · démo</span></div>
+          <img src="/assets/img/projets/odoo-reservation.jpg" width="1800" height="1125" alt="Le tunnel de réservation à l'étape du prix : croisière de 3 heures, supplément pour les passagers au-delà de dix, total et acompte de 50 % (données fictives)">
+        </div>
+        <div class="phone"><img src="/assets/img/projets/odoo-paiement-mobile.jpg" width="780" height="1688" loading="lazy" alt="Page de paiement d'une facture Odoo en mode test, sur mobile"></div>
+        <span class="tag-demo">Mode démo · données fictives</span>
+      </div>
+    </section>
+
+    <section class="kpis" aria-label="En chiffres">
+      <div class="card kpi reveal"><b>0</b><span>module tiers ajouté dans Odoo</span><small>le paiement passe par l'API officielle</small></div>
+      <div class="card kpi reveal"><b>1</b><span>seul endroit où un paiement s'écrit</span><small>bouton, retour client et notification</small></div>
+      <div class="card kpi reveal"><b>58</b><span>tests automatisés</span><small>passerelle de paiement, sans appel réseau</small></div>
+      <div class="card kpi reveal"><b>30/30</b><span>cases de la grille tarifaire</span><small>prix et marge reproduits sans écart</small></div>
+    </section>
+
+    <section class="sec ctx reveal" aria-labelledby="h-ctx">
+      <div>
+        <span class="eyebrow">Le contexte</span>
+        <h2 id="h-ctx">Odoo couvre presque tout. Le reste se branche autour.</h2>
+      </div>
+      <div class="prose">
+        <p>Un magasin de glisse à Paris encaisse avec SumUp. Sur Odoo Online, SumUp ne figure pas parmi les 22 fournisseurs de paiement proposés, et aucun module tiers ne peut l'ajouter : les paiements par carte ne pouvaient pas s'inscrire d'eux-mêmes sur les factures.</p>
+        <p>Un loueur de catamaran avec skipper, à Sydney, vend des croisières privées dont le prix dépend de la saison, du jour, de la durée et du nombre de passagers au-delà de dix. Il lui fallait un site qui affiche ce prix tout de suite, et un back-office pour valider chaque sortie avant d'encaisser l'acompte.</p>
+        <p>Deux missions, une même méthode : ne rien casser dans Odoo, livrer étape par étape, et tester chaque étape avant la suivante. C'est l'approche de mon offre <a href="/automatisation-n8n.html">automatisation</a>.</p>
+      </div>
+    </section>
+
+    <section class="sec reveal" aria-labelledby="h-chg">
+      <span class="eyebrow">Ce qui a changé</span>
+      <h2 id="h-chg">Le paiement arrive dans Odoo, le prix arrive au client.</h2>
+      <div class="swap">
+        <div class="row"><span class="was">SumUp introuvable dans Odoo Online</span><span class="arrow" aria-hidden="true">→</span><span class="now">Lien de paiement signé, carte saisie chez SumUp</span></div>
+        <div class="row"><span class="was">Règlement à reporter dans Odoo</span><span class="arrow" aria-hidden="true">→</span><span class="now">Facture marquée payée automatiquement, une seule fois</span></div>
+        <div class="row"><span class="was">Prix d'une croisière calculé à la main</span><span class="arrow" aria-hidden="true">→</span><span class="now">Prix exact affiché dès la date et le nombre de passagers</span></div>
+        <div class="row"><span class="was">Créneau confirmé par échange de messages</span><span class="arrow" aria-hidden="true">→</span><span class="now">Créneau bloqué, acompte autorisé, encaissé après double validation</span></div>
+      </div>
+    </section>
+
+    <section class="sec reveal" aria-labelledby="h-flow">
+      <span class="eyebrow">Comment ça marche</span>
+      <h2 id="h-flow">Le trajet d'un paiement, jusqu'à la facture.</h2>
+      <ol class="flow">
+        <li><span class="dot">1</span><b>Lien ou panier</b><span>Le client ouvre un lien signé pour sa facture, ou paie sa commande depuis la boutique Odoo.</span></li>
+        <li><span class="dot">2</span><b>Paiement</b><span>La carte se saisit sur la page hébergée par SumUp : aucune donnée bancaire ne passe par la passerelle.</span></li>
+        <li><span class="dot">3</span><b>Vérification</b><span>Le statut est relu chez SumUp, jamais pris tel quel dans la notification reçue.</span></li>
+        <li><span class="dot">4</span><b>Écriture</b><span>Commande confirmée, facture créée et comptabilisée, paiement enregistré par l'API d'Odoo.</span></li>
+        <li><span class="dot">5</span><b>Contrôle</b><span>L'état de la facture est relu. Un montant incohérent part en vérification manuelle, jamais en double encaissement.</span></li>
+      </ol>
+    </section>
+
+    <section class="sec reveal" aria-labelledby="h-shots">
+      <span class="eyebrow">À l'écran</span>
+      <h2 id="h-shots">Le back-office des réservations.</h2>
+      <div class="shots">
+        <figure>
+          <div class="browser"><div class="bar"><i></i><i></i><i></i><span>back-office · fiche croisière</span></div><img src="/assets/img/projets/odoo-fiche-charter.jpg" width="1800" height="1125" loading="lazy" alt="Fiche d'une croisière : client, date, quai, équipage, prix détaillé, acompte et solde, validations commerciale et skipper en attente (données fictives)"></div>
+          <figcaption>La fiche d'une croisière : prix détaillé, validations, état de l'acompte.</figcaption>
+        </figure>
+        <figure>
+          <div class="browser"><div class="bar"><i></i><i></i><i></i><span>back-office · moteur de prix</span></div><img src="/assets/img/projets/odoo-moteur-prix.jpg" width="1800" height="1125" loading="lazy" alt="Grille 4 heures par période et nombre de passagers, avec le prix client et la marge de chaque case (données fictives)"></div>
+          <figcaption>La grille du client, recalculée en direct avec la marge de chaque case.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="sec reveal" aria-labelledby="h-mails">
+      <span class="eyebrow">Sur mobile</span>
+      <h2 id="h-mails">Le paiement, côté client.</h2>
+      <div class="mails m3">
+        <figure><img src="/assets/img/projets/odoo-paiement-carte.jpg" width="780" height="1300" loading="lazy" alt="Page de saisie de la carte en mode test, montant à payer et champs inactifs"><figcaption><b>Carte</b> la page de paiement</figcaption></figure>
+        <figure><img src="/assets/img/projets/odoo-paiement-accepte.jpg" width="780" height="1300" loading="lazy" alt="Confirmation du paiement accepté avec sa référence"><figcaption><b>Accepté</b> le règlement est inscrit</figcaption></figure>
+        <figure><img src="/assets/img/projets/odoo-facture-reglee.jpg" width="780" height="1300" loading="lazy" alt="Le même lien rouvert affiche « Facture déjà réglée »"><figcaption><b>Réglée</b> le lien ne paie pas deux fois</figcaption></figure>
+      </div>
+      <p class="prose">Captures en mode test : aucune carte n'est débitée et Odoo est simulé. Sur la base de test du client, le parcours a été vérifié de bout en bout, commande, facture et paiement compris.</p>
+    </section>
+
+    <section class="sec reveal" aria-labelledby="h-choix">
+      <span class="eyebrow">Les choix qui comptent</span>
+      <h2 id="h-choix">Solide là où l'argent circule.</h2>
+      <div class="choix">
+        <article class="card"><h3>Rien d'installé dans Odoo</h3><p>Odoo Online refuse les modules tiers. La passerelle vit à côté et parle à Odoo par son API officielle. Le seul réglage côté Odoo est une vue qui remplace le choix du moyen de paiement par un bouton, désactivable en un clic.</p></article>
+        <article class="card"><h3>Un paiement compté une seule fois</h3><p>Le bouton, le retour du client et la notification de SumUp passent par le même traitement, protégé par un verrou. Vérifié sur la base de test : trois notifications identiques, un seul paiement dans Odoo.</p></article>
+        <article class="card"><h3>Un seul moteur de prix</h3><p>Le site et le back-office calculent avec le même code, qui sert de cahier des charges au module de réservation. Il reproduit les 30 cases de la grille du client, prix et marge, et se règle sans toucher au code.</p></article>
+      </div>
+    </section>
+
+    <section class="sec reveal" style="gap:28px">
+      <div class="stack"><span class="lbl">Stack</span><span class="chip">Odoo 19 · API JSON-2</span><span class="chip">SumUp Hosted Checkout</span><span class="chip">Python · FastAPI</span><span class="chip">SQLite</span><span class="chip">JavaScript sans framework</span><span class="chip">pytest</span><span class="chip">Docker · Coolify</span></div>
+    </section>
+
+    <section class="cta reveal">
+      <h2>Il manque une brique à votre Odoo ?</h2>
+      <div class="btns">
+        <a class="btn btn-light" href="/#contact">Parler de mon projet →</a>
+        <a class="btn btn-line" href="/automatisation-n8n.html">Voir l'offre automatisation</a>
+      </div>
+    </section>
+  </main>
+
+  <footer id="gf">
+    <div class="gf-in">
+      <div class="gf-brand">
+        <a class="gf-logo" href="/">Ghost<span>.</span>Consulting</a>
+        <p>Développement web &amp; mobile, WordPress, agents IA, SEO &amp; GEO. Partout en France, 100&nbsp;% à distance.</p>
+        <a class="gf-cta" href="/#contact">Démarrer un projet →</a>
+      </div>
+      <div>
+        <p class="gf-h">Services</p>
+        <ul>
+          <li><a href="/#formules">Sites &amp; applications</a></li>
+          <li><a href="/#wordpress">WordPress &amp; WooCommerce</a></li>
+          <li><a href="/agents-ia.html">Agents IA</a></li>
+          <li><a href="/automatisation-n8n.html">Automatisation n8n</a></li>
+          <li><a href="/reprise-wordpress.html">Reprise WordPress</a></li>
+          <li><a href="/maintenance-wordpress.html">Maintenance WordPress</a></li>
+          <li><a href="/audit-seo-geo.html">Audit SEO &amp; GEO</a></li>
+          <li><a href="/infogerance-vps.html">Infogérance VPS</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="gf-h">Réalisations</p>
+        <ul>
+          <li><a href="/Projets/liftfoils.html">Liftfoils — refonte &amp; SEO</a></li>
+          <li><a href="/Projets/efoil-reservation.html">Dashboard de réservation</a></li>
+          <li><a href="/Projets/atelier-liftfoils.html">Atelier — devis &amp; SAV</a></li>
+          <li><a href="/Projets/assistant-ia.html">Assistant IA</a></li>
+          <li><a href="/Projets/integration-odoo.html">Intégration Odoo</a></li>
+          <li><a href="/Projets/newsletter.html">Newsletter — Lift Foils</a></li>
+          <li><a href="/Projets/qualityacht.html">QualityYacht</a></li>
+          <li><a href="/Projets/trackship.html">TrackShip</a></li>
+          <li><a href="/#projets">Toutes les réalisations →</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="gf-h">Ressources</p>
+        <ul>
+          <li><a href="/#why">Pourquoi me choisir</a></li>
+          <li><a href="/#formules">Tarifs</a></li>
+          <li><a href="/#faq">Questions fréquentes</a></li>
+          <li><a href="/blog/freelance-ou-agence.html">Freelance ou agence&nbsp;?</a></li>
+          <li><a href="https://github.com/GHOSTGIT-cyber" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="gf-bottom">
+      <small>© <span data-year>2026</span> Ghost Consulting</small>
+      <span><a href="/mentions-legales.html">Mentions légales</a><a href="/politique-confidentialite.html">Confidentialité</a><a href="/#contact">Contact</a></span>
+    </div>
+  </footer>
+
+  <script>
+    const obs=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}})},{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+  </script>
+</body>
+</html>

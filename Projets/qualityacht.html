@@ -3,15 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>QualityYacht — Location de yachts (Next.js) · Ghost Consulting</title>
-  <meta name="description" content="Plateforme Next.js de location de yachts branchée sur l'API Ankor : ~1 500 yachts sans dupliquer la donnée, grâce à une architecture Filtres + Exceptions." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <title>QualityYacht, plateforme de charter de yachts · Ghost Consulting</title>
+  <meta name="description" content="Étude de cas QualityYacht : un site de charter nourri par 1 700 yachts de l'API Ankor, et une admin où le courtier choisit et corrige ses fiches." />
   <link rel="canonical" href="https://bakabi.fr/Projets/qualityacht.html" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="QualityYacht — Location de yachts (Next.js) · Ghost Consulting" />
-  <meta property="og:description" content="Plateforme Next.js de location de yachts branchée sur l'API Ankor : ~1 500 yachts sans dupliquer la donnée, grâce à une architecture Filtres + Exceptions." />
+  <meta property="og:title" content="QualityYacht, plateforme de charter de yachts · Ghost Consulting" />
+  <meta property="og:description" content="Étude de cas QualityYacht : un site de charter nourri par 1 700 yachts de l'API Ankor, et une admin où le courtier choisit et corrige ses fiches." />
   <meta property="og:url" content="https://bakabi.fr/Projets/qualityacht.html" />
   <meta property="og:image" content="https://bakabi.fr/assets/img/bg/hero.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -35,7 +32,7 @@
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "QualityYacht — Plateforme de location de yachts",
+        "name": "QualityYacht, plateforme de charter de yachts",
         "item": "https://bakabi.fr/Projets/qualityacht.html"
       }
     ]
@@ -45,77 +42,132 @@
   {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
-    "name": "QualityYacht — Plateforme de location de yachts",
-    "headline": "QualityYacht — Plateforme de location de yachts",
-    "description": "Plateforme Next.js de location de yachts branchée sur l'API Ankor : ~1 500 yachts sans dupliquer la donnée, grâce à une architecture Filtres + Exceptions.",
+    "name": "QualityYacht, plateforme de charter de yachts",
+    "headline": "QualityYacht, plateforme de charter de yachts",
+    "description": "Étude de cas QualityYacht : un site de charter nourri par 1 700 yachts de l'API Ankor, et une admin où le courtier choisit et corrige ses fiches.",
     "url": "https://bakabi.fr/Projets/qualityacht.html",
     "creator": {"@id": "https://bakabi.fr/#organization"},
     "inLanguage": "fr"
   }
   </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
+    /* Étude de cas « QualityYacht » : même gabarit que la fiche newsletter */
     :root{
-      --bg:rgba(255,255,255,.55);--surface:rgba(216,230,250,.72);--ink:#0E1F3D;--muted:#2E3C57;--line:rgba(17,42,92,.16);
-      --accent:#1D4ED8;--accent-soft:rgba(37,99,235,.14);--radius:18px;
-      --shadow:0 22px 55px -26px rgba(15,40,95,.4);--maxw:1200px;
+      --surface:rgba(216,230,250,.72);--ink:#0E1F3D;--muted:#2E3C57;--line:rgba(17,42,92,.16);
+      --accent:#1D4ED8;--accent-deep:#13338E;--accent-2:#38BDF8;--accent-soft:rgba(37,99,235,.14);
+      --night:#0B1A33;--radius:18px;--shadow:0 22px 55px -26px rgba(15,40,95,.4);--maxw:1200px;
     }
     *{box-sizing:border-box;margin:0;padding:0}
+    [hidden]{display:none!important}
     html{scroll-behavior:smooth}
-    body{font-family:'Inter',system-ui,sans-serif;background:linear-gradient(160deg,#d6e6fb 0%,#9bbef0 48%,#7ea8e6 100%) fixed;color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
-    h1,h2,h3,h4{font-family:'Plus Jakarta Sans',sans-serif;line-height:1.1;letter-spacing:-.02em}
+    html,body{overflow-x:clip}
+    body{font-family:'Inter',system-ui,sans-serif;background:linear-gradient(160deg,#d6e6fb 0%,#9bbef0 48%,#7ea8e6 100%) fixed;color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+    h1,h2,h3{font-family:'Plus Jakarta Sans',sans-serif;line-height:1.08;letter-spacing:-.02em;text-wrap:balance}
     a{color:inherit;text-decoration:none}
     .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-    header{position:sticky;top:0;z-index:50;background:rgba(247,244,239,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-    .nav{display:flex;align-items:center;justify-content:space-between;height:70px;max-width:var(--maxw);margin:0 auto;padding:0 24px}
-    .logo{font-family:'Plus Jakarta Sans';font-weight:800;font-size:19px;letter-spacing:-.02em}
-    .logo span{color:var(--accent)}
-    .back{font-size:14.5px;color:var(--muted);font-weight:500;transition:.2s;display:inline-flex;align-items:center;gap:7px}
-    .back:hover{color:var(--ink)}
-    .hero{padding:70px 0 50px;position:relative;overflow:hidden}
-    .hero::before{content:"";position:absolute;inset:0;z-index:-1;
-      background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
-      background-size:46px 46px;opacity:.5;
-      -webkit-mask-image:radial-gradient(ellipse 80% 70% at 30% 0%,#000 20%,transparent 72%);
-      mask-image:radial-gradient(ellipse 80% 70% at 30% 0%,#000 20%,transparent 72%)}
-    .eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;display:inline-flex;align-items:center;gap:9px}
-    .eyebrow::before{content:"";width:26px;height:2px;background:var(--accent);display:inline-block}
-    .hero h1{font-size:clamp(34px,5vw,56px);font-weight:800;max-width:18ch}
-    .hero .sub{font-size:clamp(16px,1.6vw,19px);color:var(--muted);max-width:60ch;margin:22px 0 28px}
-    .chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
-    .chip{font-size:13px;font-weight:600;background:var(--surface);border:1px solid var(--line);padding:8px 15px;border-radius:999px;color:var(--ink)}
-    .badge{display:inline-flex;align-items:center;gap:14px;background:var(--accent-soft);border:1px solid rgba(29,78,216,.25);border-radius:16px;padding:18px 26px}
-    .badge strong{font-family:'Plus Jakarta Sans';font-size:38px;font-weight:800;color:var(--accent);line-height:1}
-    .badge span{font-size:14.5px;color:var(--ink);font-weight:500;max-width:26ch}
-    section.block{padding:46px 0}
-    .block + .block{border-top:1px solid var(--line)}
-    .kicker{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
-    h2.sec{font-size:clamp(26px,3.4vw,38px);font-weight:800;margin-bottom:22px}
-    p.lead{font-size:17px;color:var(--muted);max-width:68ch;margin-bottom:14px}
-    p.lead strong{color:var(--ink);font-weight:600}
-    .ilist{list-style:none;display:flex;flex-direction:column;gap:16px;margin-top:8px}
-    .ilist li{position:relative;font-size:15.5px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px 16px 44px;box-shadow:var(--shadow)}
-    .ilist li::before{content:"→";position:absolute;left:18px;top:16px;color:var(--accent);font-weight:800;font-size:16px}
-    .ilist li b{font-weight:700;color:var(--ink)}
-    .ilist code{font-family:ui-monospace,'SFMono-Regular',Menlo,monospace;font-size:13px;background:var(--bg);border:1px solid var(--line);padding:1px 7px;border-radius:6px;color:var(--accent)}
-    .factgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-top:8px}
-    .fact{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px}
-    .fact b{display:block;font-family:'Plus Jakarta Sans';font-size:30px;font-weight:800;color:var(--ink);margin-bottom:4px}
-    .fact b.accent{color:var(--accent)}
-    .fact span{font-size:14px;color:var(--muted)}
-    .stackchips{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
-    .stackchips span{font-size:13.5px;font-weight:600;background:var(--ink);color:#fff;padding:9px 16px;border-radius:999px}
-    .foot{padding:60px 0 80px;text-align:center;border-top:1px solid var(--line);background:var(--surface)}
-    .foot h3{font-size:clamp(24px,3vw,32px);font-weight:800;margin-bottom:10px}
-    .foot p{color:var(--muted);margin-bottom:28px}
-    .btn-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:15px;padding:14px 28px;border-radius:999px;transition:.25s ease;border:1.5px solid transparent}
-    .btn-primary{background:var(--accent);color:#fff}
-    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 30px -10px rgba(29,78,216,.45)}
-    .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
-    .btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
-    .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
-    .reveal.in{opacity:1;transform:none}
-    @media(max-width:640px){.hero{padding:48px 0 34px}.badge{flex-direction:column;align-items:flex-start;gap:6px}.badge strong{font-size:32px}}
+    .eyebrow{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-deep);display:inline-flex;align-items:center;gap:8px}
+    .eyebrow::before{content:"";width:26px;height:2px;background:currentColor;display:inline-block}
+    .hl{background:linear-gradient(transparent 60%,rgba(56,189,248,.55) 60%,rgba(56,189,248,.55) 92%,transparent 92%);-webkit-box-decoration-break:clone;box-decoration-break:clone}
+
+    /* Héros */
+    .cs-hero{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.25fr);gap:clamp(28px,4vw,56px);align-items:center;padding:64px 0 56px}
+    .cs-txt{display:grid;gap:18px;justify-items:start}
+    .cs-txt h1{font-size:clamp(34px,5vw,58px);font-weight:800}
+    .cs-txt p{font-size:18px;color:var(--muted);max-width:44ch}
+    .status{font-size:12px;font-weight:700;line-height:1;padding:8px 12px;border-radius:999px;background:var(--night);color:#fff;display:inline-flex;gap:8px;align-items:center}
+    .status i{width:8px;height:8px;border-radius:50%;background:#34D399;box-shadow:0 0 0 4px rgba(52,211,153,.25)}
+    .stage{position:relative;padding-bottom:40px;padding-right:46px}
+    .browser{border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 40px 80px -30px rgba(11,26,51,.55),0 0 0 1px rgba(17,42,92,.1);transform:perspective(1600px) rotateY(-6deg) rotateX(2deg);transform-origin:left center}
+    .bar{display:flex;align-items:center;gap:7px;padding:10px 14px;background:#EEF3FB;border-bottom:1px solid var(--line)}
+    .bar i{width:10px;height:10px;border-radius:50%;background:#C9D5E8}
+    .bar span{margin-left:10px;font:500 12px 'JetBrains Mono',ui-monospace,monospace;color:var(--muted);background:#fff;border-radius:6px;padding:4px 10px;flex:1;max-width:280px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .browser img{display:block;width:100%;height:auto}
+    .phone{position:absolute;right:0;bottom:0;width:30%;max-width:210px;border-radius:30px;padding:8px;background:var(--night);box-shadow:0 30px 60px -20px rgba(11,26,51,.6)}
+    .phone img{display:block;width:100%;height:auto;border-radius:23px;aspect-ratio:390/600;object-fit:cover;object-position:top}
+    .tag-demo{position:absolute;left:14px;bottom:8px;font-size:12px;font-weight:600;color:var(--ink);background:rgba(255,255,255,.75);border:1px solid var(--line);border-radius:999px;padding:6px 11px;backdrop-filter:blur(6px)}
+
+    /* Chiffres : cartes premium (flou → net, reflets de bord, balayage de lumière) */
+    .kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-bottom:72px}
+    .card{position:relative;isolation:isolate;overflow:hidden;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px 22px 20px;display:grid;gap:6px;transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s ease}
+    .card::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.4px;pointer-events:none;background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(255,255,255,0) 38%,rgba(255,255,255,0) 62%,rgba(255,255,255,.55));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+    .card::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:2;background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.6) 47%,rgba(255,255,255,.95) 50%,rgba(255,255,255,.6) 53%,transparent 66%);background-size:250% 100%;background-position:150% 0;opacity:0}
+    .card.in::before{animation:cardSweep 1.15s cubic-bezier(.35,.1,.25,1) .1s 1}
+    .card:hover::before{animation:cardSweepHover 1s cubic-bezier(.35,.1,.25,1) 1}
+    .card:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+    @keyframes cardSweep{0%{background-position:150% 0;opacity:0}12%{opacity:1}100%{background-position:-150% 0;opacity:0}}
+    @keyframes cardSweepHover{0%{background-position:150% 0;opacity:0}12%{opacity:1}100%{background-position:-150% 0;opacity:0}}
+    .kpi b{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(34px,4vw,46px);font-weight:800;line-height:1;color:var(--accent-deep);font-variant-numeric:tabular-nums}
+    .kpi span{font-size:14.5px;color:var(--muted)}
+    .kpi small{font:500 11.5px 'JetBrains Mono',ui-monospace,monospace;color:var(--muted)}
+
+    /* Sections */
+    .sec{margin-bottom:72px;display:grid;gap:22px}
+    .sec h2{font-size:clamp(26px,3.4vw,40px);font-weight:800;max-width:22ch}
+    .swap{display:grid;gap:10px}
+    .row{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:14px;align-items:center}
+    .row .was{color:var(--muted);text-decoration:line-through;text-decoration-color:rgba(46,60,87,.45);font-size:15px;text-align:right}
+    .row .arrow{font-family:'Plus Jakarta Sans';font-weight:800;font-size:18px;color:var(--accent)}
+    .row .now{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 16px;font-weight:600;font-size:15px}
+    .flow{list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));position:relative}
+    .flow::before{content:"";position:absolute;left:10%;right:10%;top:23px;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+    .flow li{display:grid;align-content:start;justify-items:center;text-align:center;gap:10px;padding:0 8px;position:relative}
+    .flow .dot{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#fff;border:2px solid var(--accent);font-family:'Plus Jakarta Sans';font-weight:800;color:var(--accent-deep)}
+    .flow b{font-family:'Plus Jakarta Sans';font-size:15px}
+    .flow span{font-size:13.5px;color:var(--muted);max-width:24ch}
+    .ctx{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:18px 48px;align-items:start}
+    .ctx > div:first-child{display:grid;gap:22px}
+    .prose{display:grid;gap:14px;font-size:17px;color:var(--muted);max-width:62ch}
+    .choix{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .choix .card{padding:24px;gap:10px;align-content:start}
+    .choix h3{font-size:19px;font-weight:700}
+    .choix p{font-size:15px;color:var(--muted)}
+    .stack{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .stack .lbl{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-right:6px}
+    .chip{font-size:12px;font-weight:600;color:var(--accent-deep);background:var(--accent-soft);padding:6px 12px;border-radius:999px}
+    .cta{background:var(--night);color:#fff;border-radius:22px;padding:clamp(24px,4vw,40px);display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;margin-bottom:80px}
+    .cta h2{font-size:clamp(22px,3vw,32px);font-weight:800;max-width:24ch}
+    .btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:15px;padding:14px 26px;border-radius:999px;transition:.25s ease;border:1.5px solid transparent}
+    .btn-light{background:#fff;color:var(--ink)}
+    .btn-light:hover{background:var(--accent-2);transform:translateY(-2px)}
+    .btn-line{color:#fff;border-color:rgba(255,255,255,.35)}
+    .btn-line:hover{border-color:#fff;transform:translateY(-2px)}
+    .btns{display:flex;gap:10px;flex-wrap:wrap}
+
+    .shots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+    .shots figure{display:grid;gap:10px}
+    .shots .browser{transform:none}
+    .shots figcaption{font-size:14px;color:var(--muted)}
+    .mails{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+    .mails figure{display:grid;gap:10px;align-content:start}
+    .mails img{display:block;width:100%;height:auto;border-radius:14px;box-shadow:0 30px 60px -28px rgba(11,26,51,.55),0 0 0 1px rgba(17,42,92,.1);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+    .mails figure:hover img{transform:translateY(-6px)}
+    .mails figcaption{font-size:14px;color:var(--muted)}
+    .mails figcaption b{display:block;color:var(--ink);font-family:'Plus Jakarta Sans',sans-serif}
+    .prose a{color:var(--accent-deep);text-decoration:underline}
+
+    /* Apparition flou → net (comme l'accueil) */
+    .reveal{opacity:0;transform:translateY(24px) scale(.985);filter:blur(8px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1),filter .8s cubic-bezier(.2,.7,.2,1)}
+    .reveal.in{opacity:1;transform:none;filter:blur(0)}
+    @media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;filter:none;transition:none}.card::before{display:none}}
+
+    @media (max-width:900px){
+      .cs-hero{grid-template-columns:1fr;padding-top:44px}
+      .browser{transform:none}
+      .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .ctx,.choix,.shots{grid-template-columns:1fr}
+      .mails{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+      .flow{grid-template-columns:1fr;gap:14px}
+      .flow::before{left:23px;right:auto;top:10px;bottom:10px;width:2px;height:auto;background:linear-gradient(180deg,var(--accent),var(--accent-2))}
+      .flow li{grid-template-columns:48px 1fr;justify-items:start;text-align:left;align-items:center;column-gap:14px;row-gap:2px}
+      .flow .dot{grid-row:span 2}
+      .flow span{max-width:none}
+      .row{grid-template-columns:1fr;gap:4px}
+      .row .was{text-align:left}
+      .row .arrow{display:none}
+    }
   </style>
   <link rel="stylesheet" href="/assets/site/nav.css">
   <script src="/assets/site/nav.js" defer></script>
@@ -146,86 +198,126 @@
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="wrap">
-        <div class="eyebrow">Application web · API</div>
-        <h1>QualityYacht — Plateforme de location de yachts</h1>
-        <p class="sub">Brancher un catalogue d'environ 1 500 yachts sur une plateforme Next.js sans dupliquer la donnée — et laisser le client garder la main sur ses mises en avant et sa tarification.</p>
-        <div class="chips">
-          <span class="chip">Next.js</span>
-          <span class="chip">Vercel</span>
-          <span class="chip">Vercel Postgres</span>
-          <span class="chip">API REST tierce (Ankor)</span>
-          <span class="chip">UI/UX</span>
+  <main class="wrap">
+    <section class="cs-hero">
+      <div class="cs-txt">
+        <span class="eyebrow">Étude de cas · Plateforme de charter</span>
+        <h1>1 700 yachts en catalogue. <span class="hl">Le courtier ne publie que les siens.</span></h1>
+        <p>QualityYacht loue des yachts de luxe depuis la Suisse. Il voulait un site haut de gamme nourri par le catalogue mondial de son fournisseur, sans perdre la main sur ce qui s'affiche ni sur ses prix.</p>
+        <span class="status"><i></i>En ligne · qualityacht.ch</span>
+      </div>
+      <div class="stage">
+        <div class="browser">
+          <div class="bar"><i></i><i></i><i></i><span>qualityacht.ch</span></div>
+          <img src="/assets/img/projets/qualityacht-accueil.jpg" width="1800" height="1125" alt="Page d'accueil de qualityacht.ch : un yacht fend la mer, titre « The art of private yachting » et barre de recherche destination, invités, type">
         </div>
-        <div class="badge">
-          <strong>~1 500</strong>
-          <span>yachts exploités sans réplication, via 10 à 20 enregistrements d'override</span>
+        <div class="phone"><img src="/assets/img/projets/qualityacht-fiche-mobile.jpg" width="780" height="1688" loading="lazy" alt="Fiche d'un yacht sur mobile : photo, nom, prix à la semaine et bouton de réservation"></div>
+        <span class="tag-demo">Site en ligne</span>
+      </div>
+    </section>
+
+    <section class="kpis" aria-label="En chiffres">
+      <div class="card kpi reveal"><b>1 700</b><span>yachts dans le catalogue Ankor</span><small>interrogé en direct, environ</small></div>
+      <div class="card kpi reveal"><b>181</b><span>yachts Caraïbes importés en un lot</span><small>premier import régional</small></div>
+      <div class="card kpi reveal"><b>22</b><span>champs corrigeables par yacht</span><small>+ photos, équipements, jouets</small></div>
+      <div class="card kpi reveal"><b>9</b><span>sous-régions Caraïbes</span><small>pour répartir la flotte</small></div>
+    </section>
+
+    <section class="sec ctx reveal" aria-labelledby="h-ctx">
+      <div>
+        <span class="eyebrow">Le contexte</span>
+        <h2 id="h-ctx">Un catalogue mondial, un courtier qui veut choisir.</h2>
+      </div>
+      <div class="prose">
+        <p>Les fiches des yachts viennent d'Ankor, l'outil de gestion de flotte utilisé par les courtiers : photos, équipage, cabines, tarifs. Le flux est riche mais brut. Il est en anglais, parfois incomplet, et classé selon les régions du fournisseur, pas selon la façon dont QualityYacht vend ses croisières.</p>
+        <p>Deux impasses à éviter. Recopier tout le catalogue dans une base, c'est une copie périmée dès la semaine suivante. Afficher le flux tel quel, c'est renoncer à ses prix, à ses mises en avant et à ses thèmes : charter accessible, pet-friendly, en couple, last minute. J'ai développé la plateforme Next.js en binôme avec un second développeur, et conçu le principe qui tient le tout : le fournisseur reste la source, le courtier ne stocke que ses décisions.</p>
+      </div>
+    </section>
+
+    <section class="sec reveal" aria-labelledby="h-chg">
+      <span class="eyebrow">Ce qui a changé</span>
+      <h2 id="h-chg">Le flux du fournisseur, avec les choix du courtier par-dessus.</h2>
+      <div class="swap">
+        <div class="row"><span class="was">Le catalogue du fournisseur affiché tel quel</span><span class="arrow" aria-hidden="true">→</span><span class="now">Une sélection publiée bateau par bateau</span></div>
+        <div class="row"><span class="was">Les seuls tarifs du fournisseur</span><span class="arrow" aria-hidden="true">→</span><span class="now">Des tarifs par saison et par région saisis dans l'admin</span></div>
+        <div class="row"><span class="was">Une fiche fausse à faire corriger chez le fournisseur</span><span class="arrow" aria-hidden="true">→</span><span class="now">Le champ corrigé dans l'admin, signalé en orange</span></div>
+        <div class="row"><span class="was">Le classement géographique du fournisseur</span><span class="arrow" aria-hidden="true">→</span><span class="now">Régions, sous-régions et thèmes choisis par l'équipe</span></div>
+      </div>
+    </section>
+
+    <section class="sec reveal" aria-labelledby="h-flow">
+      <span class="eyebrow">Comment ça marche</span>
+      <h2 id="h-flow">Du catalogue Ankor à la fiche publiée.</h2>
+      <ol class="flow">
+        <li><span class="dot">1</span><b>Recherche</b><span>L'admin interroge le catalogue Ankor complet, filtré par région ou par type de bateau.</span></li>
+        <li><span class="dot">2</span><b>Import</b><span>« Ajouter à ma BDD » : le yacht entre en stock, invisible du public.</span></li>
+        <li><span class="dot">3</span><b>Classement</b><span>Région, sous-région et thèmes de charter, plusieurs à la fois si besoin.</span></li>
+        <li><span class="dot">4</span><b>Personnalisation</b><span>Titre, prix, tarifs de saison, et correction de n'importe quel champ de la fiche.</span></li>
+        <li><span class="dot">5</span><b>Publication</b><span>Un interrupteur « Publié ». Le site affiche la fiche Ankor avec les corrections par-dessus.</span></li>
+      </ol>
+    </section>
+
+    <section class="sec reveal" aria-labelledby="h-shots">
+      <span class="eyebrow">L'administration</span>
+      <h2 id="h-shots">Une admin pensée pour un commercial, pas pour un développeur.</h2>
+      <div class="shots">
+        <figure>
+          <div class="browser"><div class="bar"><i></i><i></i><i></i><span>admin · état de la base</span></div><img src="/assets/img/projets/qualityacht-admin-demo.jpg" width="1800" height="1125" loading="lazy" alt="Tableau de bord de l'admin : bateaux en base, publiés, en stock, mis en avant, et répartition par région, sous-région et thème (données fictives)"></div>
+          <figcaption>L'état de la base : publiés, en stock, mis en avant, et la répartition par région et par thème.</figcaption>
+        </figure>
+        <figure>
+          <div class="browser"><div class="bar"><i></i><i></i><i></i><span>admin · mes bateaux</span></div><img src="/assets/img/projets/qualityacht-admin-liste-demo.jpg" width="1800" height="1125" loading="lazy" alt="Liste des yachts en base avec interrupteur Publié ou En stock, étoile de mise en avant, édition et suppression (données fictives)"></div>
+          <figcaption>Publier, masquer ou mettre en avant un yacht : un clic par bateau.</figcaption>
+        </figure>
+        <figure>
+          <div class="browser"><div class="bar"><i></i><i></i><i></i><span>admin · édition d'un yacht</span></div><img src="/assets/img/projets/qualityacht-admin-edition-demo.jpg" width="1800" height="1125" loading="lazy" alt="Fenêtre d'édition d'un yacht : les champs repris d'Ankor sont modifiables, les deux champs modifiés sont signalés en orange (données fictives)"></div>
+          <figcaption>Les données Ankor sont préremplies. Ce qui est modifié passe en orange et remplace l'original sur le site.</figcaption>
+        </figure>
+        <figure>
+          <div class="browser"><div class="bar"><i></i><i></i><i></i><span>admin · recherche Ankor</span></div><img src="/assets/img/projets/qualityacht-admin-ankor-demo.jpg" width="1800" height="1125" loading="lazy" alt="Recherche dans le catalogue Ankor : les yachts déjà en base sont signalés, les autres ont un bouton Ajouter à ma BDD (données fictives)"></div>
+          <figcaption>La recherche dans le catalogue du fournisseur. Les yachts déjà importés sont signalés.</figcaption>
+        </figure>
+      </div>
+      <p class="prose">Captures de l'admin réelle, lancée en local avec des yachts fictifs : l'interface de production est protégée.</p>
+    </section>
+
+    <section class="sec reveal" aria-labelledby="h-site">
+      <span class="eyebrow">Côté visiteur</span>
+      <h2 id="h-site">Une fiche par yacht, nourrie par Ankor.</h2>
+      <div class="shots">
+        <figure>
+          <div class="browser"><div class="bar"><i></i><i></i><i></i><span>qualityacht.ch · fiche yacht</span></div><img src="/assets/img/projets/qualityacht-fiche.jpg" width="1800" height="1125" loading="lazy" alt="Fiche publique d'un yacht sur qualityacht.ch : grande photo, nom, prix à partir de, et caractéristiques constructeur, longueur, année, invités, cabines, équipage"></div>
+          <figcaption>Photo, prix à la semaine et caractéristiques, repris d'Ankor et corrigés si besoin.</figcaption>
+        </figure>
+        <div class="prose">
+          <p>Chaque fiche affiche ce qu'Ankor fournit : description, caractéristiques techniques, plan des cabines, équipements, jouets nautiques, annexes, tarifs et galerie. Une section vide côté fournisseur est simplement masquée, jamais affichée creuse.</p>
+          <p>Le visiteur ajoute des yachts à sa sélection d'un cœur, puis envoie une seule demande de devis pour plusieurs bateaux.</p>
         </div>
       </div>
     </section>
 
-    <section class="block reveal">
-      <div class="wrap">
-        <div class="kicker">Le contexte</div>
-        <h2 class="sec">Un catalogue géant à exposer sans alourdir le site</h2>
-        <p class="lead">QualityYacht devait proposer un catalogue d'environ <strong>1 500 yachts</strong> issus d'une API tierce (Ankor), sans alourdir le site ni dupliquer la donnée — qui change côté fournisseur. Le client devait par ailleurs conserver la maîtrise de ses mises en avant commerciales et de sa propre grille tarifaire, sans toucher au flux source.</p>
+    <section class="sec reveal" aria-labelledby="h-choix">
+      <span class="eyebrow">Les choix qui comptent</span>
+      <h2 id="h-choix">Toujours à jour, jamais écrasé.</h2>
+      <div class="choix">
+        <article class="card"><h3>Le fournisseur reste la source</h3><p>Une réimportation met à jour photos, tarifs et caractéristiques sans toucher aux choix de l'équipe : région, prix affiché, textes. Les corrections sont stockées à part et appliquées au moment de l'affichage.</p></article>
+        <article class="card"><h3>Un instantané léger, pas une copie</h3><p>La base garde un résumé d'environ 2 Ko par yacht pour les listes, et la fiche complète pour la page détail. Les réponses d'Ankor sont gardées en cache une heure au lieu d'être redemandées à chaque visite.</p></article>
+        <article class="card"><h3>Une admin sans secret qui circule</h3><p>Connexion par session signée dans un cookie inaccessible au JavaScript, valable 8 heures. Le mot de passe ne quitte jamais le serveur, et les anciens liens qui le portaient dans l'URL sont nettoyés automatiquement.</p></article>
       </div>
     </section>
 
-    <section class="block reveal">
-      <div class="wrap">
-        <div class="kicker">Le défi technique &amp; mon intervention</div>
-        <h2 class="sec">Architecture « Filtres + Exceptions »</h2>
-        <p class="lead">Plutôt que de répliquer 1 500 fiches en base — coûteux et vite obsolète — j'ai conçu une architecture qui interroge la source en direct et ne stocke localement que ce qui relève d'une décision commerciale du client.</p>
-        <ul class="ilist">
-          <li><b>Intégration de l'API Ankor</b> : recherche par zone géographique, et gestion propre des régions ne disposant pas d'inventaire (pas de page vide ni d'erreur côté visiteur).</li>
-          <li><b>Filtrage à la source</b> : la requête Ankor est calibrée pour ne remonter que ≈ <b>200 à 300 yachts pertinents</b> selon les critères, au lieu du catalogue complet.</li>
-          <li><b>Architecture « Filtres + Exceptions »</b> : on ne stocke en base (<b>Vercel Postgres</b>) que <b>10 à 20 enregistrements d'override</b> — prix personnalisés, yachts « à la une », masquage de certaines fiches — au lieu de répliquer les 1 500 fiches. La donnée reste maîtrisée par la source, le client ne pilote que ses exceptions.</li>
-          <li><b>Interface d'administration de présélection</b> : le client compose ses mises en avant, ajuste ses prix et masque des yachts sans intervention technique.</li>
-          <li><b>Questionnaire client interactif</b> en <b>9 sections</b>, avec <b>export JSON automatique</b> pour transmettre proprement le besoin et préparer le devis.</li>
-          <li><b>Pages de résultats filtrés</b> au design soigné, <b>direction artistique dark / luxe</b> cohérente avec le positionnement, et approche <b>mobile-first</b>.</li>
-        </ul>
-      </div>
+    <section class="sec reveal" style="gap:28px">
+      <div class="stack"><span class="lbl">Stack</span><span class="chip">Next.js 15</span><span class="chip">React 19</span><span class="chip">Tailwind CSS</span><span class="chip">Radix UI</span><span class="chip">API Ankor (OAuth JWT)</span><span class="chip">PostgreSQL Neon</span><span class="chip">Vercel</span><span class="chip">Nodemailer</span></div>
     </section>
 
-    <section class="block reveal">
-      <div class="wrap">
-        <div class="kicker">Ce que ça apporte</div>
-        <h2 class="sec">Léger, à jour, et pilotable par le client</h2>
-        <div class="factgrid">
-          <div class="fact"><b class="accent">10–20</b><span>enregistrements en base au lieu de 1 500</span></div>
-          <div class="fact"><b>~200–300</b><span>yachts pertinents filtrés à la source</span></div>
-          <div class="fact"><b>9</b><span>sections de questionnaire avec export JSON</span></div>
-          <div class="fact"><b>0</b><span>réplication de catalogue à maintenir</span></div>
-        </div>
-        <p class="lead" style="margin-top:22px">Résultat : une donnée toujours fraîche côté fournisseur, un site léger et rapide, et une autonomie totale du client sur ses mises en avant et ses prix.</p>
-      </div>
-    </section>
-
-    <section class="block reveal">
-      <div class="wrap">
-        <div class="kicker">Stack technique</div>
-        <h2 class="sec">Les outils mobilisés</h2>
-        <div class="stackchips">
-          <span>Next.js</span><span>Vercel</span><span>Vercel Postgres</span>
-          <span>API REST tierce (Ankor)</span><span>UI/UX</span><span>Mobile-first</span>
-        </div>
+    <section class="cta reveal">
+      <h2>Un catalogue fournisseur à vendre sous votre marque&nbsp;?</h2>
+      <div class="btns">
+        <a class="btn btn-light" href="/#contact">Parler de mon projet →</a>
+        <a class="btn btn-line" href="/#formules">Voir les formules</a>
       </div>
     </section>
   </main>
-
-  <section class="foot">
-    <div class="wrap">
-      <h3>Une plateforme à connecter à une API&nbsp;?</h3>
-      <p>Parlons architecture, performance et autonomie client.</p>
-      <div class="btn-row">
-        <a class="btn btn-primary" href="/#contact">Discuter d'un projet</a>
-        <a class="btn btn-ghost" href="https://github.com/IBRAHIM-rgf/Qualityacht" target="_blank" rel="noopener">Voir le code sur GitHub ↗</a>
-      </div>
-    </div>
-  </section>
 
   <footer id="gf">
     <div class="gf-in">
@@ -250,14 +342,15 @@
       <div>
         <p class="gf-h">Réalisations</p>
         <ul>
-          <li><a href="/Projets/liftfoils.html">Liftfoils — WordPress &amp; SEO</a></li>
+          <li><a href="/Projets/liftfoils.html">Liftfoils — refonte &amp; SEO</a></li>
+          <li><a href="/Projets/efoil-reservation.html">Dashboard de réservation</a></li>
+          <li><a href="/Projets/atelier-liftfoils.html">Atelier — devis &amp; SAV</a></li>
+          <li><a href="/Projets/assistant-ia.html">Assistant IA</a></li>
+          <li><a href="/Projets/integration-odoo.html">Intégration Odoo</a></li>
+          <li><a href="/Projets/newsletter.html">Newsletter — Lift Foils</a></li>
           <li><a href="/Projets/qualityacht.html">QualityYacht</a></li>
           <li><a href="/Projets/trackship.html">TrackShip</a></li>
-          <li><a href="/Projets/efast.html">eFast</a></li>
-          <li><a href="/Projets/reseau-wordpress.html">Réseau de sites eFoil</a></li>
-          <li><a href="/Projets/efoil-reservation.html">eFoil — Réservation</a></li>
-          <li><a href="/Projets/newsletter.html">Newsletter — Lift Foils</a></li>
-          <li><a href="/Projets/emargement.html">Émargement</a></li>
+          <li><a href="/#projets">Toutes les réalisations →</a></li>
         </ul>
       </div>
       <div>
