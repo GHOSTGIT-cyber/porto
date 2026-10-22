@@ -60,7 +60,7 @@ html{scroll-padding-top:84px}
 #gf ul a{color:#2E3C57;font-size:14.5px;text-decoration:none;transition:color .2s}
 #gf ul a:hover{color:#0E1F3D;text-decoration:underline;text-underline-offset:3px}
 #gf .gf-bottom{max-width:1320px;margin:44px auto 0;padding:22px 24px 0;border-top:1px solid rgba(17,42,92,.14);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:#2E3C57}
-#gf .gf-bottom span{display:flex;gap:18px;flex-wrap:wrap}
+#gf .gf-bottom>span{display:flex;gap:18px;flex-wrap:wrap}
 #gf .gf-bottom a{color:#2E3C57;text-decoration:none}
 #gf .gf-bottom a:hover{color:#0E1F3D;text-decoration:underline}
 @media(max-width:960px){#gf .gf-in{grid-template-columns:1fr 1fr}#gf .gf-brand{grid-column:1/-1}}

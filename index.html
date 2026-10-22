@@ -419,6 +419,10 @@
     .wp-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px}
     .wp-list li{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px 16px;font-size:14px;font-weight:500}
     .wp-band .btn-row{display:flex;gap:12px;flex-wrap:wrap}
+    .devis-shot{display:block;border-radius:18px;overflow:hidden;background:#fff;padding:8px;box-shadow:0 22px 55px -26px rgba(0,0,0,.55)}
+    .devis-shot img{display:block;width:100%;height:auto;border-radius:12px}
+    .devis-price{display:inline-block;margin-bottom:22px;font-size:14px;color:#C9C3BA}
+    .devis-price b{color:#fff;font-size:22px;margin-right:4px}
     .wp-band .btn-ghost{border-color:rgba(255,255,255,.38);color:#fff}
     .wp-band .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.09);transform:translateY(-2px)}
     @media(max-width:1100px) and (min-width:861px){.nav-links{gap:18px}.nav-links a{font-size:14px}}
@@ -528,6 +532,7 @@
           <a class="gh-item" href="/#formules"><span class="gh-ic" aria-hidden="true">💻</span><span><strong>Sites &amp; applications</strong><small>Vitrine dès 190&nbsp;€, appli web dès 1&nbsp;500&nbsp;€</small></span></a>
           <a class="gh-item" href="/#wordpress"><span class="gh-ic" aria-hidden="true">🧩</span><span><strong>WordPress &amp; WooCommerce</strong><small>Extensions sur mesure, boutiques, pages</small></span></a>
           <a class="gh-item" href="/agents-ia.html"><span class="gh-ic" aria-hidden="true">🤖</span><span><strong>Agents IA</strong><small>Mails, WhatsApp, devis : triés et préparés</small></span></a>
+          <a class="gh-item" href="/devis-interactif.html"><span class="gh-ic" aria-hidden="true">🧮</span><span><strong>Simulateur de devis</strong><small>Vos clients estiment leur prix en ligne</small></span></a>
           <a class="gh-item" href="/automatisation-n8n.html"><span class="gh-ic" aria-hidden="true">⚙️</span><span><strong>Automatisation n8n</strong><small>Vos tâches répétitives, enchaînées seules</small></span></a>
           <a class="gh-item" href="/reprise-wordpress.html"><span class="gh-ic" aria-hidden="true">🛠️</span><span><strong>Reprise WordPress</strong><small>Site cassé, lent ou abandonné</small></span></a>
           <a class="gh-item" href="/maintenance-wordpress.html"><span class="gh-ic" aria-hidden="true">♾️</span><span><strong>Maintenance WordPress</strong><small>Mises à jour, sauvegardes, suivi mensuel</small></span></a>
@@ -727,6 +732,29 @@
         <div class="step"><div class="num">2</div><h3>Devis écrit</h3><p>Périmètre, prix et planning noir sur blanc. Rien ne démarre sans votre accord.</p><span class="ttl">Sous 24-48 h</span></div>
         <div class="step"><div class="num">3</div><h3>Développement suivi</h3><p>Des versions à tester au fil de l'eau, un historique Git complet. Vous voyez le projet avancer et vous corrigez le tir tôt.</p><span class="ttl">Points réguliers</span></div>
         <div class="step"><div class="num">4</div><h3>Mise en ligne &amp; suivi</h3><p>Déploiement, vérifications, prise en main. Ensuite, maintenance et évolutions si vous le souhaitez.</p><span class="ttl">Maintenance en option</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIMULATEUR DE DEVIS -->
+  <section class="block" id="simulateur">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">Simulateur de devis</span>
+        <h2>Vos clients calculent leur prix <span class="hl">directement sur votre site.</span></h2>
+        <p>Votre grille tarifaire devient un simulateur interactif : le visiteur obtient une estimation en quelques clics, vous recevez une demande complète.</p>
+      </div>
+      <div class="wp-band reveal">
+        <div>
+          <h3>Moins de « c'est combien ? ». Plus de demandes prêtes à chiffrer.</h3>
+          <p>Surface, durée, nombre d'invités, options : le client règle lui-même son besoin et voit le prix bouger en direct. Vous recevez chaque paramètre par e-mail ou WhatsApp. <strong style="color:#fff">Calculé avec vos tarifs, intégré à votre site actuel</strong>, WordPress compris.</p>
+          <span class="devis-price"><b>1&nbsp;000&nbsp;€</b> à partir de, clé en main</span>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="/devis-interactif.html" data-magnetic>Tester la démo →</a>
+            <a class="btn btn-ghost" href="#contact">Envoyer ma grille tarifaire</a>
+          </div>
+        </div>
+        <a class="devis-shot" href="/devis-interactif.html" aria-label="Voir la démo du simulateur de devis"><img src="assets/img/devis/simulateur-devis.webp" width="1300" height="867" loading="lazy" decoding="async" alt="Simulateur de devis sur tablette et demande détaillée reçue par l'entreprise"></a>
       </div>
     </div>
   </section>
@@ -1112,6 +1140,7 @@
           <li><a href="/#formules">Sites &amp; applications</a></li>
           <li><a href="/#wordpress">WordPress &amp; WooCommerce</a></li>
           <li><a href="/agents-ia.html">Agents IA</a></li>
+          <li><a href="/devis-interactif.html">Simulateur de devis</a></li>
           <li><a href="/automatisation-n8n.html">Automatisation n8n</a></li>
           <li><a href="/reprise-wordpress.html">Reprise WordPress</a></li>
           <li><a href="/maintenance-wordpress.html">Maintenance WordPress</a></li>
