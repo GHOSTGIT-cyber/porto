@@ -142,7 +142,7 @@
         "name": "Assurez-vous la maintenance après la mise en ligne ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Oui : maintenance et évolutions en option, et pour WordPress une maintenance mensuelle à partir de 299 €/mois (mises à jour, sauvegardes, sécurité, petites modifications)."
+          "text": "Oui : maintenance et évolutions en option, et pour WordPress une maintenance mensuelle à partir de 99 €/mois (mises à jour, sauvegardes, sécurité, petites modifications)."
         }
       },
       {
@@ -242,6 +242,9 @@
     .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
     @media(max-width:1100px) and (min-width:861px){.why-grid{grid-template-columns:repeat(2,1fr)}}
     .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:30px}
+    .cat-price{font-weight:800;font-size:15px;color:var(--accent);margin:0 0 10px}
+    .card a.link{margin-top:14px;font-weight:700;font-size:14px;color:var(--ink);display:inline-flex;gap:8px;align-items:center}
+    .card a.link:hover{color:var(--accent);gap:12px}
     .card .ico{width:48px;height:48px;border-radius:12px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-size:22px;margin-bottom:18px}
     .card h3{font-size:20px;font-weight:700;margin-bottom:8px}
     .card p{color:var(--muted);font-size:15px}
@@ -530,12 +533,14 @@
           <button type="button" aria-expanded="false" aria-controls="ghPanel">Services <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           <div class="gh-panel" id="ghPanel">
           <a class="gh-item" href="/#formules"><span class="gh-ic" aria-hidden="true">💻</span><span><strong>Sites &amp; applications</strong><small>Vitrine dès 190&nbsp;€, appli web dès 1&nbsp;500&nbsp;€</small></span></a>
+          <a class="gh-item" href="/site-cle-en-main.html"><span class="gh-ic" aria-hidden="true">🚀</span><span><strong>Site clé en main</strong><small>190 € puis 29 €/mois, tout compris</small></span></a>
           <a class="gh-item" href="/#wordpress"><span class="gh-ic" aria-hidden="true">🧩</span><span><strong>WordPress &amp; WooCommerce</strong><small>Extensions sur mesure, boutiques, pages</small></span></a>
           <a class="gh-item" href="/agents-ia.html"><span class="gh-ic" aria-hidden="true">🤖</span><span><strong>Agents IA</strong><small>Mails, WhatsApp, devis : triés et préparés</small></span></a>
           <a class="gh-item" href="/devis-interactif.html"><span class="gh-ic" aria-hidden="true">🧮</span><span><strong>Simulateur de devis</strong><small>Vos clients estiment leur prix en ligne</small></span></a>
           <a class="gh-item" href="/automatisation-n8n.html"><span class="gh-ic" aria-hidden="true">⚙️</span><span><strong>Automatisation n8n</strong><small>Vos tâches répétitives, enchaînées seules</small></span></a>
           <a class="gh-item" href="/reprise-wordpress.html"><span class="gh-ic" aria-hidden="true">🛠️</span><span><strong>Reprise WordPress</strong><small>Site cassé, lent ou abandonné</small></span></a>
           <a class="gh-item" href="/maintenance-wordpress.html"><span class="gh-ic" aria-hidden="true">♾️</span><span><strong>Maintenance WordPress</strong><small>Mises à jour, sauvegardes, suivi mensuel</small></span></a>
+          <a class="gh-item" href="/seo-geo-wordpress.html"><span class="gh-ic" aria-hidden="true">📈</span><span><strong>Référencement WordPress</strong><small>SEO &amp; GEO exécutés, dès 390 €</small></span></a>
           <a class="gh-item" href="/audit-seo-geo.html"><span class="gh-ic" aria-hidden="true">🔎</span><span><strong>Audit SEO &amp; GEO</strong><small>Visible sur Google et dans les IA</small></span></a>
           <a class="gh-item" href="/infogerance-vps.html"><span class="gh-ic" aria-hidden="true">🖥️</span><span><strong>Infogérance VPS</strong><small>Serveur installé, surveillé, migré</small></span></a>
           </div>
@@ -686,39 +691,6 @@
     </div>
   </section>
 
-  <!-- WORDPRESS SPECIALTY -->
-  <section class="block" id="wordpress">
-    <div class="wrap">
-      <div class="head reveal">
-        <span class="eyebrow">WordPress &amp; WooCommerce</span>
-        <h2>WordPress, de la réparation <span class="hl">à l'extension sur mesure.</span></h2>
-        <p>Reprendre un site cassé, développer la fonctionnalité qu'aucun plugin ne propose, faire tourner une boutique au quotidien : c'est le même métier, et je le fais tous les jours.</p>
-      </div>
-      <div class="wp-band reveal">
-        <div>
-          <h3>Un WordPress cassé, lent ou abandonné&nbsp;? Je le remets d'aplomb, puis je le fais avancer.</h3>
-          <p>Je reprends des sites legacy, je débogue et je modernise sans tout casser. Quand aucun plugin ne fait le travail, je <strong style="color:#fff">développe l'extension sur mesure</strong>. Je gère des boutiques WooCommerce (produits, commandes, stocks) et je publie vos pages et articles. Pour aller vite sans risque, je travaille avec des <strong style="color:#fff">connecteurs MCP</strong> : l'IA prépare, je vérifie, rien ne part sans contrôle. J'ai conçu et je maintiens un <strong style="color:#fff">réseau de 10+ sites eFoil</strong>, multi-villes et bilingues. Voir la <a href="/reprise-wordpress.html" style="color:#fff;text-decoration:underline">reprise de site WordPress</a> et la <a href="/maintenance-wordpress.html" style="color:#fff;text-decoration:underline">maintenance mensuelle</a>.</p>
-          <div class="btn-row">
-            <a class="btn btn-primary" href="#contact">Faire diagnostiquer mon site →</a>
-            <a class="btn btn-ghost" href="maintenance-wordpress.html">Maintenance mensuelle</a>
-          </div>
-        </div>
-        <ul class="wp-list">
-          <li>🧩 Extensions (plugins) sur mesure</li>
-          <li>🛒 Gestion de boutiques WooCommerce</li>
-          <li>📝 Publication de pages &amp; d'articles</li>
-          <li>🤖 Pilotage via connecteurs MCP</li>
-          <li>🛠️ Reprise &amp; réparation de sites cassés</li>
-          <li>⚡ Optimisation des performances</li>
-          <li>🌍 Sites multilingues (FR / EN)</li>
-          <li>🎛️ Mega-menus &amp; configurateurs</li>
-          <li>🔒 Sécurisation &amp; mises à jour</li>
-          <li>♾️ Maintenance mensuelle</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
   <!-- METHODE -->
   <section class="block" id="methode">
     <div class="wrap">
@@ -748,13 +720,46 @@
         <div>
           <h3>Moins de « c'est combien ? ». Plus de demandes prêtes à chiffrer.</h3>
           <p>Surface, durée, nombre d'invités, options : le client règle lui-même son besoin et voit le prix bouger en direct. Vous recevez chaque paramètre par e-mail ou WhatsApp. <strong style="color:#fff">Calculé avec vos tarifs, intégré à votre site actuel</strong>, WordPress compris.</p>
-          <span class="devis-price"><b>1&nbsp;000&nbsp;€</b> à partir de, clé en main</span>
+          <span class="devis-price"><b>499&nbsp;€</b> à partir de, clé en main</span>
           <div class="btn-row">
             <a class="btn btn-primary" href="/devis-interactif.html" data-magnetic>Tester la démo →</a>
             <a class="btn btn-ghost" href="#contact">Envoyer ma grille tarifaire</a>
           </div>
         </div>
         <a class="devis-shot" href="/devis-interactif.html" aria-label="Voir la démo du simulateur de devis"><img src="assets/img/devis/simulateur-devis.webp" width="1300" height="867" loading="lazy" decoding="async" alt="Simulateur de devis sur tablette et demande détaillée reçue par l'entreprise"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORDPRESS SPECIALTY -->
+  <section class="block" id="wordpress">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">WordPress &amp; WooCommerce</span>
+        <h2>WordPress, de la réparation <span class="hl">à l'extension sur mesure.</span></h2>
+        <p>Reprendre un site cassé, développer la fonctionnalité qu'aucun plugin ne propose, faire tourner une boutique au quotidien : c'est le même métier, et je le fais tous les jours.</p>
+      </div>
+      <div class="wp-band reveal">
+        <div>
+          <h3>Un WordPress cassé, lent ou abandonné&nbsp;? Je le remets d'aplomb, puis je le fais avancer.</h3>
+          <p>Je reprends des sites legacy, je débogue et je modernise sans tout casser. Quand aucun plugin ne fait le travail, je <strong style="color:#fff">développe l'extension sur mesure</strong>. Je gère des boutiques WooCommerce (produits, commandes, stocks) et je publie vos pages et articles. Pour aller vite sans risque, je travaille avec des <strong style="color:#fff">connecteurs MCP</strong> : l'IA prépare, je vérifie, rien ne part sans contrôle. J'ai conçu et je maintiens un <strong style="color:#fff">réseau de 10+ sites eFoil</strong>, multi-villes et bilingues. Voir la <a href="/reprise-wordpress.html" style="color:#fff;text-decoration:underline">reprise de site WordPress</a> et la <a href="/maintenance-wordpress.html" style="color:#fff;text-decoration:underline">maintenance mensuelle</a>.</p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="#contact">Faire diagnostiquer mon site →</a>
+            <a class="btn btn-ghost" href="maintenance-wordpress.html">Maintenance mensuelle</a>
+          </div>
+        </div>
+        <ul class="wp-list">
+          <li>🧩 Extensions (plugins) sur mesure</li>
+          <li>🛒 Gestion de boutiques WooCommerce</li>
+          <li>📝 Publication de pages &amp; d'articles</li>
+          <li>🤖 Pilotage via connecteurs MCP</li>
+          <li>🛠️ Reprise &amp; réparation de sites cassés</li>
+          <li>⚡ Optimisation des performances</li>
+          <li>🌍 Sites multilingues (FR / EN)</li>
+          <li>🎛️ Mega-menus &amp; configurateurs</li>
+          <li>🔒 Sécurisation &amp; mises à jour</li>
+          <li>♾️ Maintenance mensuelle</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -957,7 +962,7 @@
       <div class="head reveal" style="text-align:center;margin:0 auto 54px">
         <span class="eyebrow" style="justify-content:center">Formules</span>
         <h2>Un <span class="hl">tarif clair</span> pour chaque besoin.</h2>
-        <p>Tarifs de départ. Chaque projet fait l'objet d'un devis personnalisé. Pour un site WordPress déjà en ligne, il y a aussi la <a href="maintenance-wordpress.html" style="color:var(--accent);text-decoration:underline">maintenance mensuelle</a>, à partir de 299 €/mois.</p>
+        <p>Tarifs de départ. Chaque projet fait l'objet d'un devis personnalisé. Pour un site WordPress déjà en ligne, il y a aussi la <a href="maintenance-wordpress.html" style="color:var(--accent);text-decoration:underline">maintenance mensuelle</a>, à partir de 99 €/mois, et le <a href="site-cle-en-main.html" style="color:var(--accent);text-decoration:underline">site clé en main</a> à 190 € puis 29 €/mois.</p>
       </div>
       <div class="price-grid">
         <div class="price reveal">
@@ -970,6 +975,7 @@
             <li>Formulaire de contact</li>
             <li>SEO & GEO de base + mise en ligne</li>
             <li>Livraison en 1 à 2 semaines</li>
+            <li>Site livré et à vous : hébergement, domaine et suivi restent à votre charge</li>
           </ul>
           <a class="btn btn-ghost" href="#contact">Discutons-en</a>
         </div>
@@ -1000,6 +1006,37 @@
           </ul>
           <a class="btn btn-ghost" href="#contact">Discutons-en</a>
         </div>
+      </div>
+
+      <!-- Passerelle vers la gamme en abonnement -->
+      <div class="card reveal" style="margin-top:28px;display:flex;gap:26px;align-items:center;flex-wrap:wrap;justify-content:space-between">
+        <div style="flex:1;min-width:290px">
+          <span class="eyebrow" style="margin-bottom:10px">Payer au mois</span>
+          <h3 style="font-size:20px;font-weight:700;margin:0 0 8px">Site clé en main : 190 € puis 29 €/mois</h3>
+          <p style="color:var(--muted);font-size:15px;margin:0">Si vous cherchez surtout à être en ligne vite et proprement, sans gros budget de départ : le site, le nom de domaine, l'hébergement, le référencement local et la maintenance dans un <strong style="color:var(--ink)">abonnement sans engagement</strong>. Le domaine est déposé à votre nom, et vous partez avec le site si vous arrêtez.</p>
+        </div>
+        <a class="btn btn-primary" href="site-cle-en-main.html">Voir la gamme clé en main →</a>
+      </div>
+
+      <!-- Tout le catalogue, avec son prix d'entrée -->
+      <div class="head reveal" style="text-align:center;margin:72px auto 36px">
+        <span class="eyebrow" style="justify-content:center">Toutes les prestations</span>
+        <h2>Le reste du <span class="hl">catalogue</span>.</h2>
+        <p>Chaque prestation a sa page, avec le détail de ce qui est inclus et ce qui ne l'est pas. Les montants ci-dessous sont des points d'entrée ; le devis écrit arrive sous 24-48 h.</p>
+      </div>
+      <div class="why-grid">
+        <div class="card reveal"><div class="ico">🚀</div><h3>Site clé en main</h3><p class="cat-price">190 € puis dès 29 €/mois</p><p>Le site, le nom de domaine, l'hébergement, le référencement local et la maintenance dans un abonnement sans engagement. Domaine déposé à votre nom.</p><a class="link" href="site-cle-en-main.html">Voir les formules →</a></div>
+        <div class="card reveal"><div class="ico">♾️</div><h3>Maintenance WordPress</h3><p class="cat-price">dès 99 €/mois</p><p>Mises à jour testées avant production, sauvegardes quotidiennes, surveillance 24/7, sécurité et rapport mensuel. Sans frais d'entrée.</p><a class="link" href="maintenance-wordpress.html">Voir les formules →</a></div>
+        <div class="card reveal"><div class="ico">🛠️</div><h3>Reprise WordPress</h3><p class="cat-price">sur devis · diagnostic gratuit</p><p>Site cassé, lent, piraté ou abandonné : je le remets d'aplomb sans tout refaire, puis je le fais avancer.</p><a class="link" href="reprise-wordpress.html">Faire diagnostiquer mon site →</a></div>
+        <div class="card reveal"><div class="ico">📈</div><h3>Référencement WordPress</h3><p class="cat-price">390 € · suivi sur devis</p><p>L'audit dit ce qui va mal ; ici je le corrige. Technique, données structurées, contenus, pages locales et présence dans les réponses des IA.</p><a class="link" href="seo-geo-wordpress.html">Voir la mise en œuvre →</a></div>
+        <div class="card reveal"><div class="ico">🔎</div><h3>Audit SEO &amp; GEO</h3><p class="cat-price">dès 59 €</p><p>Visible sur Google et cité par les IA. Audit flash livré en 48 h, ou audit complet avec plan d'implémentation et roadmap.</p><a class="link" href="audit-seo-geo.html">Voir les audits →</a></div>
+        <div class="card reveal"><div class="ico">🧮</div><h3>Simulateur de devis</h3><p class="cat-price">dès 499 €</p><p>Votre grille tarifaire transformée en simulateur sur votre site : le visiteur estime, vous recevez une demande déjà chiffrée.</p><a class="link" href="devis-interactif.html">Essayer la démo →</a></div>
+        <div class="card reveal"><div class="ico">📥</div><h3>Outils métier</h3><p class="cat-price">79 €/mois par outil</p><p>Suivi des demandes, devis et factures, prise de rendez-vous, suivi des appels : développés sur mesure, mise en place comprise.</p><a class="link" href="site-cle-en-main.html#outils">Voir les outils →</a></div>
+        <div class="card reveal"><div class="ico">🤖</div><h3>Agents IA</h3><p class="cat-price">sur demande</p><p>Mails, WhatsApp et devis triés, résumés et préparés dans vos outils existants. Une personne valide chaque action sortante.</p><a class="link" href="agents-ia.html">Voir les offres →</a></div>
+        <div class="card reveal"><div class="ico">⚙️</div><h3>Automatisation n8n</h3><p class="cat-price">sur devis</p><p>Vos tâches répétitives enchaînées seules, sur un n8n auto-hébergé : aucune donnée chez un tiers, coût fixe quel que soit le volume.</p><a class="link" href="automatisation-n8n.html">Voir les automatisations →</a></div>
+        <div class="card reveal"><div class="ico">🧩</div><h3>Extension WordPress</h3><p class="cat-price">sur devis</p><p>Quand aucun plugin existant ne fait le travail, je développe l'extension sur mesure : votre besoin exact, maintenue et reprenable par un autre développeur.</p><a class="link" href="#contact">Décrire mon besoin →</a></div>
+        <div class="card reveal"><div class="ico">🛒</div><h3>Boutique WooCommerce</h3><p class="cat-price">sur devis</p><p>Produits, stocks, commandes, tunnel de paiement : conception, reprise ou gestion au quotidien d'une boutique WordPress.</p><a class="link" href="#contact">Faire chiffrer ma boutique →</a></div>
+        <div class="card reveal"><div class="ico">🖥️</div><h3>Infogérance VPS</h3><p class="cat-price">sur devis · audit gratuit</p><p>Serveur installé, sécurisé et surveillé, ou migré depuis un mutualisé sans coupure ni perte de référencement.</p><a class="link" href="infogerance-vps.html">Voir l'infogérance →</a></div>
       </div>
     </div>
   </section>
@@ -1044,12 +1081,16 @@
             <label class="bf-label">Quel type de projet ?</label>
             <div class="bf-options">
               <label><input type="radio" name="type" value="Site vitrine" required><span>Site vitrine</span></label>
+              <label><input type="radio" name="type" value="Site cle en main (abonnement)"><span>Site clé en main (abonnement)</span></label>
+              <label><input type="radio" name="type" value="Boutique en ligne"><span>Boutique en ligne</span></label>
               <label><input type="radio" name="type" value="Application web"><span>Application web</span></label>
               <label><input type="radio" name="type" value="Application mobile"><span>Application mobile</span></label>
               <label><input type="radio" name="type" value="WordPress / WooCommerce"><span>WordPress / WooCommerce</span></label>
               <label><input type="radio" name="type" value="Maintenance mensuelle"><span>Maintenance mensuelle</span></label>
               <label><input type="radio" name="type" value="Agents IA / automatisation"><span>Agents IA / automatisation</span></label>
               <label><input type="radio" name="type" value="SEO / GEO"><span>SEO / GEO</span></label>
+              <label><input type="radio" name="type" value="Simulateur de devis"><span>Simulateur de devis</span></label>
+              <label><input type="radio" name="type" value="Outil metier (CRM, devis, RDV)"><span>Outil métier (CRM, devis, RDV)</span></label>
               <label><input type="radio" name="type" value="Serveur / VPS"><span>Serveur / VPS</span></label>
               <label><input type="radio" name="type" value="Autre"><span>Autre</span></label>
             </div>
@@ -1117,7 +1158,7 @@
         <div class="faq-item"><button class="faq-q">Gérez-vous l'hébergement et le serveur ?<span>+</span></button><div class="faq-a">Oui : déploiement sur Vercel, Railway ou Docker / Coolify, et infogérance de VPS (Hetzner, OVH) derrière Cloudflare, avec sauvegardes, mises à jour et surveillance. Je peux aussi migrer votre site depuis un hébergement mutualisé.</div></div>
         <div class="faq-item"><button class="faq-q">Quels sont vos délais ?<span>+</span></button><div class="faq-a">Comptez 1 à 2 semaines pour un site vitrine, et de quelques semaines à quelques mois pour une application sur mesure selon le périmètre. Je m'engage sur un planning dès le devis.</div></div>
         <div class="faq-item"><button class="faq-q">Comment se passe la collaboration ?<span>+</span></button><div class="faq-a">On cadre le besoin ensemble, je propose un devis et un planning clairs, je développe avec un suivi régulier (Git), puis je mets en ligne. Vous restez informé à chaque étape.</div></div>
-        <div class="faq-item"><button class="faq-q">Assurez-vous la maintenance après la mise en ligne ?<span>+</span></button><div class="faq-a">Oui : maintenance et évolutions en option, et pour WordPress une maintenance mensuelle à partir de 299 €/mois (mises à jour, sauvegardes, sécurité, petites modifications).</div></div>
+        <div class="faq-item"><button class="faq-q">Assurez-vous la maintenance après la mise en ligne ?<span>+</span></button><div class="faq-a">Oui : maintenance et évolutions en option, et pour WordPress une maintenance mensuelle à partir de 99 €/mois (mises à jour, sauvegardes, sécurité, petites modifications).</div></div>
         <div class="faq-item"><button class="faq-q">Travaillez-vous à distance ?<span>+</span></button><div class="faq-a">Oui, à 100 % à distance, avec des clients partout en France. Tout se passe en ligne : brief, échanges, livraison et mise en ligne.</div></div>
       </div>
     </div>
@@ -1138,12 +1179,14 @@
         <p class="gf-h">Services</p>
         <ul>
           <li><a href="/#formules">Sites &amp; applications</a></li>
+          <li><a href="/site-cle-en-main.html">Site clé en main</a></li>
           <li><a href="/#wordpress">WordPress &amp; WooCommerce</a></li>
           <li><a href="/agents-ia.html">Agents IA</a></li>
           <li><a href="/devis-interactif.html">Simulateur de devis</a></li>
           <li><a href="/automatisation-n8n.html">Automatisation n8n</a></li>
           <li><a href="/reprise-wordpress.html">Reprise WordPress</a></li>
           <li><a href="/maintenance-wordpress.html">Maintenance WordPress</a></li>
+          <li><a href="/seo-geo-wordpress.html">Référencement WordPress</a></li>
           <li><a href="/audit-seo-geo.html">Audit SEO &amp; GEO</a></li>
           <li><a href="/infogerance-vps.html">Infogérance VPS</a></li>
         </ul>

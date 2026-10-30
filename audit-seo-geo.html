@@ -20,7 +20,37 @@
     "url": "https://bakabi.fr/audit-seo-geo.html",
     "serviceType": "Audit SEO, audit GEO et visibilité dans les moteurs de réponse IA",
     "areaServed": {"@type":"Country","name":"France"},
-    "provider": {"@id": "https://bakabi.fr/#organization"}
+    "provider": {"@id": "https://bakabi.fr/#organization"},
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Formules d'audit SEO & GEO",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Flash SEO",
+          "description": "Audit ciblé sur la page qui compte, analysé à la main et livré sous 48 h : balises, structure, vitesse, maillage interne et données structurées, puis deux Quick Wins prioritaires classés par impact. Montant déduit d'un audit complet commandé dans les trente jours.",
+          "priceSpecification": {"@type":"PriceSpecification","price":"59","priceCurrency":"EUR"}
+        },
+        {
+          "@type": "Offer",
+          "name": "Flash SEO & IA",
+          "description": "Le Flash SEO, plus un test réel de la visibilité de la marque dans ChatGPT, Gemini et Perplexity : ce que les IA répondent sur le métier concerné et les raisons pour lesquelles elles ne citent pas le site. Livré sous 48 h.",
+          "priceSpecification": {"@type":"PriceSpecification","price":"99","priceCurrency":"EUR"}
+        },
+        {
+          "@type": "Offer",
+          "name": "Audit Express",
+          "description": "Diagnostic de l'ensemble du site : synthèse d'une page, failles bloquantes par ordre de priorité, cinq Quick Wins immédiats et score de visibilité IA estimé.",
+          "priceSpecification": {"@type":"PriceSpecification","minPrice":290,"priceCurrency":"EUR"}
+        },
+        {
+          "@type": "Offer",
+          "name": "Audit Complet SEO & GEO",
+          "description": "Les sept dimensions auditées, test de visibilité IA réel noté sur 100, note stratégique et plan d'implémentation avec extraits prêts à coller, roadmap 7 / 30 / 90 jours et restitution commentée.",
+          "priceSpecification": {"@type":"PriceSpecification","minPrice":490,"priceCurrency":"EUR"}
+        }
+      ]
+    }
   }
   </script>
   <script type="application/ld+json">
@@ -234,12 +264,14 @@
           <button type="button" aria-expanded="false" aria-controls="ghPanel">Services <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           <div class="gh-panel" id="ghPanel">
           <a class="gh-item" href="/#formules"><span class="gh-ic" aria-hidden="true">💻</span><span><strong>Sites &amp; applications</strong><small>Vitrine dès 190&nbsp;€, appli web dès 1&nbsp;500&nbsp;€</small></span></a>
+          <a class="gh-item" href="/site-cle-en-main.html"><span class="gh-ic" aria-hidden="true">🚀</span><span><strong>Site clé en main</strong><small>190 € puis 29 €/mois, tout compris</small></span></a>
           <a class="gh-item" href="/#wordpress"><span class="gh-ic" aria-hidden="true">🧩</span><span><strong>WordPress &amp; WooCommerce</strong><small>Extensions sur mesure, boutiques, pages</small></span></a>
           <a class="gh-item" href="/agents-ia.html"><span class="gh-ic" aria-hidden="true">🤖</span><span><strong>Agents IA</strong><small>Mails, WhatsApp, devis : triés et préparés</small></span></a>
           <a class="gh-item" href="/devis-interactif.html"><span class="gh-ic" aria-hidden="true">🧮</span><span><strong>Simulateur de devis</strong><small>Vos clients estiment leur prix en ligne</small></span></a>
           <a class="gh-item" href="/automatisation-n8n.html"><span class="gh-ic" aria-hidden="true">⚙️</span><span><strong>Automatisation n8n</strong><small>Vos tâches répétitives, enchaînées seules</small></span></a>
           <a class="gh-item" href="/reprise-wordpress.html"><span class="gh-ic" aria-hidden="true">🛠️</span><span><strong>Reprise WordPress</strong><small>Site cassé, lent ou abandonné</small></span></a>
           <a class="gh-item" href="/maintenance-wordpress.html"><span class="gh-ic" aria-hidden="true">♾️</span><span><strong>Maintenance WordPress</strong><small>Mises à jour, sauvegardes, suivi mensuel</small></span></a>
+          <a class="gh-item" href="/seo-geo-wordpress.html"><span class="gh-ic" aria-hidden="true">📈</span><span><strong>Référencement WordPress</strong><small>SEO &amp; GEO exécutés, dès 390 €</small></span></a>
           <a class="gh-item" href="/audit-seo-geo.html"><span class="gh-ic" aria-hidden="true">🔎</span><span><strong>Audit SEO &amp; GEO</strong><small>Visible sur Google et dans les IA</small></span></a>
           <a class="gh-item" href="/infogerance-vps.html"><span class="gh-ic" aria-hidden="true">🖥️</span><span><strong>Infogérance VPS</strong><small>Serveur installé, surveillé, migré</small></span></a>
           </div>
@@ -441,15 +473,34 @@
         <h2>Un audit pour chaque besoin.</h2>
         <p>Tarifs indicatifs de départ — chaque audit fait l'objet d'un devis selon la taille du site et les données disponibles. Réponse sous 24-48 h.</p>
       </div>
+
+      <!-- Entrée de gamme : audits flash à prix fixe, sur une seule page -->
+      <div class="card reveal" style="margin-bottom:28px">
+        <span class="eyebrow" style="margin-bottom:10px">Pour commencer</span>
+        <h3 style="font-size:20px;font-weight:700;margin:0 0 8px">Deux audits flash à prix fixe, livrés en 48 h</h3>
+        <p style="color:var(--muted);font-size:15px;margin:0 0 20px;max-width:780px">Avant d'engager un audit complet, vous pouvez faire regarder votre site <strong style="color:var(--ink)">là où ça compte</strong> — l'accueil, une page de service ou une fiche produit. C'est analysé à la main, pas par un robot, et vous repartez avec les corrections qui changent quelque chose.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
+          <div style="border:1px solid var(--line);border-radius:14px;padding:22px">
+            <strong style="display:block;font-size:16px;margin-bottom:4px">Flash SEO — 59 €</strong>
+            <p style="color:var(--muted);font-size:14px;line-height:1.65;margin:0">Une page passée au crible : balises, structure, vitesse, maillage, données structurées. Deux Quick Wins classés par impact, expliqués en français, et ce qu'ils valent en trafic.</p>
+          </div>
+          <div style="border:1px solid var(--line);border-radius:14px;padding:22px">
+            <strong style="display:block;font-size:16px;margin-bottom:4px">Flash SEO &amp; IA — 99 €</strong>
+            <p style="color:var(--muted);font-size:14px;line-height:1.65;margin:0">Le Flash SEO, plus un test réel de votre visibilité dans ChatGPT, Gemini et Perplexity : ce que les IA répondent quand on cherche votre métier, et pourquoi elles ne vous citent pas.</p>
+          </div>
+        </div>
+        <p style="color:var(--muted);font-size:13px;margin:18px 0 0">Le montant d'un audit flash est déduit si vous passez à l'audit complet dans les trente jours. Pré-diagnostic gratuit avant toute commande.</p>
+      </div>
+
       <div class="price-grid">
         <div class="price reveal">
           <h3>Audit Express</h3>
-          <p class="sub">Diagnostic flash, avant un projet ou pour prospecter.</p>
+          <p class="sub">Le site entier passé en revue, avant un projet ou pour prospecter.</p>
           <div class="amount">290€ <small>/ à partir de</small></div>
           <ul>
             <li>Synthèse d'une page</li>
             <li>Les failles bloquantes en priorité</li>
-            <li>3 Quick Wins immédiats</li>
+            <li>5 Quick Wins immédiats</li>
             <li>Score de visibilité IA estimé</li>
             <li>Livré sous quelques jours</li>
           </ul>
@@ -459,7 +510,7 @@
           <span class="pop">Le plus complet</span>
           <h3>Audit Complet SEO &amp; GEO</h3>
           <p class="sub">Le diagnostic + le plan, de bout en bout.</p>
-          <div class="amount">890€ <small>/ à partir de</small></div>
+          <div class="amount">490€ <small>/ à partir de</small></div>
           <ul>
             <li>Les 7 dimensions auditées</li>
             <li>Test de visibilité IA réel (score / 100)</li>
@@ -528,12 +579,14 @@
         <p class="gf-h">Services</p>
         <ul>
           <li><a href="/#formules">Sites &amp; applications</a></li>
+          <li><a href="/site-cle-en-main.html">Site clé en main</a></li>
           <li><a href="/#wordpress">WordPress &amp; WooCommerce</a></li>
           <li><a href="/agents-ia.html">Agents IA</a></li>
           <li><a href="/devis-interactif.html">Simulateur de devis</a></li>
           <li><a href="/automatisation-n8n.html">Automatisation n8n</a></li>
           <li><a href="/reprise-wordpress.html">Reprise WordPress</a></li>
           <li><a href="/maintenance-wordpress.html">Maintenance WordPress</a></li>
+          <li><a href="/seo-geo-wordpress.html">Référencement WordPress</a></li>
           <li><a href="/audit-seo-geo.html">Audit SEO &amp; GEO</a></li>
           <li><a href="/infogerance-vps.html">Infogérance VPS</a></li>
         </ul>
