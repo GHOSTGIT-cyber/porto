@@ -13,10 +13,10 @@
 <meta property="og:url" content="https://bakabi.fr/devis-interactif.html">
 <meta property="og:image" content="https://bakabi.fr/assets/img/bg/hero.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#1D4ED8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
 {
@@ -346,6 +346,54 @@ html:not(.js) .reveal{opacity:1;transform:none;filter:none}
   .offer-card{padding:23px}
   .faq summary{font-size:14px}
 }
+
+/* ===== Habillage bakabi.fr : mêmes couleurs, polices et boutons que l'accueil ===== */
+:root{--ink:#0E1F3D;--muted:#2E3C57;--blue:#1D4ED8;--accent-2:#38BDF8;--line:rgba(17,42,92,.16);
+  --surface:rgba(216,230,250,.72);--card:rgba(255,255,255,.62);--navy:#0E1F3D}
+body{background:linear-gradient(160deg,#d6e6fb 0%,#9bbef0 48%,#7ea8e6 100%) fixed;color:var(--ink)}
+h1,h2,h3,.panel-title,.price-figure strong,.offer-price,.stat strong{font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:-.025em}
+.hero h1{letter-spacing:-.03em;font-weight:800}
+.eyebrow{color:var(--blue)}
+/* Le mot-clé souligné au surligneur cyan, comme les titres de l'accueil */
+.gradient,.blue{color:var(--ink);-webkit-text-fill-color:currentColor;background:linear-gradient(transparent 60%,rgba(56,189,248,.5) 60%,rgba(56,189,248,.5) 92%,transparent 92%);-webkit-background-clip:border-box;background-clip:border-box;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.offer-panel .blue{color:#fff}
+/* Fonds de section transparents : le dégradé du site passe dessous */
+.hero{background:transparent}.hero::before{border-color:rgba(17,42,92,.08)}
+.section.soft{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.section-head p,.lead,.value-copy>p,.process-column>p,.case-copy p,.industry-body p,.faq details p{color:var(--muted)}
+/* Boutons en pilule : encre pleine ou contour, comme partout sur le site */
+.btn{border-radius:999px;font-weight:600;font-size:15px;padding:0 26px}
+.btn-primary{background:var(--ink);box-shadow:0 12px 26px -12px rgba(14,31,61,.6)}
+.btn-primary:hover{background:var(--blue);box-shadow:0 14px 30px -12px rgba(29,78,216,.6)}
+.btn-light{background:transparent;border:1.5px solid var(--line);color:var(--ink);box-shadow:none}
+.btn-light:hover{background:rgba(255,255,255,.4);border-color:var(--ink)}
+/* Cartes translucides au lieu du blanc pur */
+.bridge-inner,.process-column,.case,.industry-card,.industry-note,.method-item,.frame,.floating{background:var(--card);border-color:var(--line);backdrop-filter:blur(8px)}
+.process-us,.case-stats,.result-side{background:rgba(216,230,250,.55);border-color:var(--line)}
+.demo-card{background:var(--card);border-color:var(--line);backdrop-filter:blur(8px)}
+.demo-top,.demo-bottom{background:transparent;border-color:var(--line)}
+.bridge-item+.bridge-item{border-color:var(--line)}
+.tag{background:var(--card);border-color:var(--line);color:var(--ink)}
+.bridge-icon,.pill.cobalt,.doc>span,.points span,.d-icon,.float-icon,.info,.field-value{background:rgba(29,78,216,.1);color:var(--blue);border-color:transparent;box-shadow:none}
+.tabs{background:rgba(216,230,250,.6);border-color:var(--line)}
+.tab{color:var(--muted)}.tab[aria-selected="true"]{color:var(--ink);border-color:var(--line)}
+.range-progress{background:linear-gradient(90deg,var(--accent-2),var(--blue))}
+.field-range::-webkit-slider-thumb{background:var(--blue)}.field-range::-moz-range-thumb{background:var(--blue)}
+.stepper{color:var(--blue);border-color:var(--line)}
+.seg{border-color:var(--line);color:var(--muted)}
+.seg[aria-pressed="true"]{background:rgba(29,78,216,.08);color:var(--blue);border-color:var(--blue);box-shadow:none}
+.field-check{background:rgba(255,255,255,.5);border-color:var(--line)}
+.output-card,.stat,.mail-card,.offer-card{border-color:var(--line)}
+.price-figure strong,.stat strong,.mail-blue,.case-link,.copy-btn,.industry-button,.industry-note>a,.offer-name{color:var(--blue)}
+.industry-button{background:rgba(216,230,250,.55);border-color:var(--line)}
+.industry-button:hover{background:rgba(29,78,216,.1)}
+.process-bottom{background:var(--card);border-color:var(--line)}
+.offer-panel{background:radial-gradient(ellipse 420px 320px at 95% 0%,rgba(56,189,248,.22),transparent 90%),var(--navy)}
+.offer-panel p{color:#C9D3E6}
+.offer-card .btn-primary{background:var(--blue)}
+.offer-card .btn-primary:hover{background:var(--ink)}
+.faq details{border-color:var(--line)}
+.toast{background:var(--ink)}
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{transition-duration:.01ms!important;animation:none!important}
@@ -365,6 +413,7 @@ html:not(.js) .reveal{opacity:1;transform:none;filter:none}
           <button type="button" aria-expanded="false" aria-controls="ghPanel">Services <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           <div class="gh-panel" id="ghPanel">
           <a class="gh-item" href="/#formules"><span class="gh-ic" aria-hidden="true">💻</span><span><strong>Sites &amp; applications</strong><small>Vitrine dès 190&nbsp;€, appli web dès 1&nbsp;500&nbsp;€</small></span></a>
+          <a class="gh-item" href="/site-cle-en-main.html"><span class="gh-ic" aria-hidden="true">🚀</span><span><strong>Site clé en main</strong><small>190 € puis 29 €/mois, tout compris</small></span></a>
           <a class="gh-item" href="/#wordpress"><span class="gh-ic" aria-hidden="true">🧩</span><span><strong>WordPress &amp; WooCommerce</strong><small>Extensions sur mesure, boutiques, pages</small></span></a>
           <a class="gh-item" href="/agents-ia.html"><span class="gh-ic" aria-hidden="true">🤖</span><span><strong>Agents IA</strong><small>Mails, WhatsApp, devis : triés et préparés</small></span></a>
           <a class="gh-item" href="/devis-interactif.html"><span class="gh-ic" aria-hidden="true">🧮</span><span><strong>Simulateur de devis</strong><small>Vos clients estiment leur prix en ligne</small></span></a>
@@ -653,6 +702,7 @@ html:not(.js) .reveal{opacity:1;transform:none;filter:none}
         <p class="gf-h">Services</p>
         <ul>
           <li><a href="/#formules">Sites &amp; applications</a></li>
+          <li><a href="/site-cle-en-main.html">Site clé en main</a></li>
           <li><a href="/#wordpress">WordPress &amp; WooCommerce</a></li>
           <li><a href="/agents-ia.html">Agents IA</a></li>
           <li><a href="/devis-interactif.html">Simulateur de devis</a></li>
