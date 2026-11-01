@@ -46,7 +46,7 @@
         "name": "Combien coûte un site vitrine ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "À partir de 190 €. Le prix dépend du nombre de pages, des contenus à produire et des fonctionnalités (formulaire, réservation, multilingue). Vous recevez un devis détaillé sous 24-48 h."
+          "text": "À partir de 249 €. Le prix dépend du nombre de pages, des contenus à produire et des fonctionnalités (formulaire, réservation, multilingue). Vous recevez un devis détaillé sous 24-48 h."
         }
       },
       {
@@ -243,6 +243,11 @@
     @media(max-width:1100px) and (min-width:861px){.why-grid{grid-template-columns:repeat(2,1fr)}}
     .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:30px}
     .cat-price{font-weight:800;font-size:15px;color:var(--accent);margin:0 0 10px}
+    .cat-tabs{display:flex;gap:9px;flex-wrap:wrap;justify-content:center;margin:0 0 30px}
+    .cat-tab{border:1px solid var(--line);background:var(--card);border-radius:99px;padding:11px 19px;font-size:13.5px;font-weight:800;color:var(--ink);cursor:pointer;transition:background .2s,border-color .2s,color .2s,box-shadow .2s}
+    .cat-tab:hover{border-color:rgba(29,78,216,.45)}
+    .cat-tab[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 8px 20px rgba(29,78,216,.26)}
+    @media(max-width:680px){.cat-tabs{gap:7px}.cat-tab{padding:9px 14px;font-size:12.5px}}
     .card a.link{margin-top:14px;font-weight:700;font-size:14px;color:var(--ink);display:inline-flex;gap:8px;align-items:center}
     .card a.link:hover{color:var(--accent);gap:12px}
     .card .ico{width:48px;height:48px;border-radius:12px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-size:22px;margin-bottom:18px}
@@ -532,7 +537,7 @@
         <div class="gh-dd">
           <button type="button" aria-expanded="false" aria-controls="ghPanel">Services <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           <div class="gh-panel" id="ghPanel">
-          <a class="gh-item" href="/#formules"><span class="gh-ic" aria-hidden="true">💻</span><span><strong>Sites &amp; applications</strong><small>Vitrine dès 190&nbsp;€, appli web dès 1&nbsp;500&nbsp;€</small></span></a>
+          <a class="gh-item" href="/#formules"><span class="gh-ic" aria-hidden="true">💻</span><span><strong>Sites &amp; applications</strong><small>Vitrine dès 249&nbsp;€, appli web dès 1&nbsp;500&nbsp;€</small></span></a>
           <a class="gh-item" href="/site-cle-en-main.html"><span class="gh-ic" aria-hidden="true">🚀</span><span><strong>Site clé en main</strong><small>190 € puis 29 €/mois, tout compris</small></span></a>
           <a class="gh-item" href="/#wordpress"><span class="gh-ic" aria-hidden="true">🧩</span><span><strong>WordPress &amp; WooCommerce</strong><small>Extensions sur mesure, boutiques, pages</small></span></a>
           <a class="gh-item" href="/agents-ia.html"><span class="gh-ic" aria-hidden="true">🤖</span><span><strong>Agents IA</strong><small>Mails, WhatsApp, devis : triés et préparés</small></span></a>
@@ -962,81 +967,81 @@
       <div class="head reveal" style="text-align:center;margin:0 auto 54px">
         <span class="eyebrow" style="justify-content:center">Formules</span>
         <h2>Un <span class="hl">tarif clair</span> pour chaque besoin.</h2>
-        <p>Tarifs de départ. Chaque projet fait l'objet d'un devis personnalisé. Pour un site WordPress déjà en ligne, il y a aussi la <a href="maintenance-wordpress.html" style="color:var(--accent);text-decoration:underline">maintenance mensuelle</a>, à partir de 99 €/mois, et le <a href="site-cle-en-main.html" style="color:var(--accent);text-decoration:underline">site clé en main</a> à 190 € puis 29 €/mois.</p>
+        <p>Trois entrées qui couvrent la plupart des demandes : comprendre pourquoi votre site ne rapporte rien, le faire corriger, ou en obtenir un neuf sans gros budget de départ. Le reste du catalogue — applications sur mesure, maintenance, automatisation, serveurs — est juste en dessous. Devis écrit sous 24-48 h, avant tout démarrage.</p>
       </div>
       <div class="price-grid">
         <div class="price reveal">
-          <h3>Site vitrine</h3>
-          <p class="sub">Pour présenter votre activité en ligne.</p>
-          <div class="amount">190€ <small>/ à partir de</small></div>
+          <h3>Audit SEO &amp; GEO</h3>
+          <p class="sub">Savoir pourquoi Google et les IA vous ignorent.</p>
+          <div class="amount">59€ <small>/ à partir de</small></div>
           <ul>
-            <li>Site one-page ou vitrine responsive</li>
-            <li>Design sur-mesure</li>
-            <li>Formulaire de contact</li>
-            <li>SEO & GEO de base + mise en ligne</li>
-            <li>Livraison en 1 à 2 semaines</li>
-            <li>Site livré et à vous : hébergement, domaine et suivi restent à votre charge</li>
+            <li>Analysé à la main, livré en 48 h</li>
+            <li>Balises, structure, vitesse, maillage</li>
+            <li>Deux Quick Wins classés par impact</li>
+            <li>Test réel dans ChatGPT, Gemini, Perplexity (99 €)</li>
+            <li>Montant déduit si vous passez à l'audit complet</li>
           </ul>
-          <a class="btn btn-ghost" href="#contact">Discutons-en</a>
+          <a class="btn btn-ghost" href="audit-seo-geo.html">Voir les audits</a>
         </div>
         <div class="price featured reveal">
           <span class="pop">Le plus demandé</span>
-          <h3>Application web</h3>
-          <p class="sub">Une vraie app sur-mesure, en production.</p>
-          <div class="amount">1 500€ <small>/ à partir de</small></div>
+          <h3>Référencement WordPress</h3>
+          <p class="sub">L'audit dit quoi faire. Là, c'est fait.</p>
+          <div class="amount">390€ <small>/ une seule fois</small></div>
           <ul>
-            <li>App full-stack (Next.js / Symfony)</li>
-            <li>Base de données + espace admin</li>
-            <li>Intégration d'API tierces</li>
-            <li>Authentification &amp; RGPD</li>
-            <li>Déploiement Vercel / Docker</li>
+            <li>Balises et structure réécrites page par page</li>
+            <li>Données structurées, Core Web Vitals, sitemap</li>
+            <li>Search Console installée, erreurs traitées</li>
+            <li>Page la plus stratégique retravaillée</li>
+            <li>Avant/après chiffré, vérifiable par vous</li>
           </ul>
-          <a class="btn btn-primary" href="#contact">Discutons-en</a>
+          <a class="btn btn-primary" href="seo-geo-wordpress.html">Voir la mise en œuvre</a>
         </div>
         <div class="price reveal">
-          <h3>Projet complet / mobile</h3>
-          <p class="sub">Écosystème web + mobile + temps réel.</p>
-          <div class="amount">Sur devis</div>
+          <h3>Site clé en main</h3>
+          <p class="sub">En ligne vite, sans gros budget de départ.</p>
+          <div class="amount">190€ <small>/ puis 29 €/mois</small></div>
           <ul>
-            <li>Application mobile React Native</li>
-            <li>Temps réel &amp; notifications push</li>
-            <li>Architecture multi-services</li>
-            <li>Conteneurisation &amp; CI</li>
-            <li>Accompagnement &amp; maintenance</li>
+            <li>Site, nom de domaine, hébergement, SSL</li>
+            <li>Référencement local et fiche Google Business</li>
+            <li>Retouches de contenu illimitées</li>
+            <li>Sans engagement, domaine à votre nom</li>
+            <li>En ligne en 5 à 10 jours ouvrés</li>
           </ul>
-          <a class="btn btn-ghost" href="#contact">Discutons-en</a>
+          <a class="btn btn-ghost" href="site-cle-en-main.html">Voir les formules</a>
         </div>
       </div>
 
-      <!-- Passerelle vers la gamme en abonnement -->
-      <div class="card reveal" style="margin-top:28px;display:flex;gap:26px;align-items:center;flex-wrap:wrap;justify-content:space-between">
-        <div style="flex:1;min-width:290px">
-          <span class="eyebrow" style="margin-bottom:10px">Payer au mois</span>
-          <h3 style="font-size:20px;font-weight:700;margin:0 0 8px">Site clé en main : 190 € puis 29 €/mois</h3>
-          <p style="color:var(--muted);font-size:15px;margin:0">Si vous cherchez surtout à être en ligne vite et proprement, sans gros budget de départ : le site, le nom de domaine, l'hébergement, le référencement local et la maintenance dans un <strong style="color:var(--ink)">abonnement sans engagement</strong>. Le domaine est déposé à votre nom, et vous partez avec le site si vous arrêtez.</p>
-        </div>
-        <a class="btn btn-primary" href="site-cle-en-main.html">Voir la gamme clé en main →</a>
-      </div>
 
       <!-- Tout le catalogue, avec son prix d'entrée -->
       <div class="head reveal" style="text-align:center;margin:72px auto 36px">
         <span class="eyebrow" style="justify-content:center">Toutes les prestations</span>
-        <h2>Le reste du <span class="hl">catalogue</span>.</h2>
-        <p>Chaque prestation a sa page, avec le détail de ce qui est inclus et ce qui ne l'est pas. Les montants ci-dessous sont des points d'entrée ; le devis écrit arrive sous 24-48 h.</p>
+        <h2>Toutes les <span class="hl">prestations</span>.</h2>
+        <p>Quinze prestations, leur prix d'entrée et leur page détaillée. Filtrez par famille si vous savez déjà ce que vous cherchez — sinon, tout est affiché.</p>
       </div>
-      <div class="why-grid">
-        <div class="card reveal"><div class="ico">🚀</div><h3>Site clé en main</h3><p class="cat-price">190 € puis dès 29 €/mois</p><p>Le site, le nom de domaine, l'hébergement, le référencement local et la maintenance dans un abonnement sans engagement. Domaine déposé à votre nom.</p><a class="link" href="site-cle-en-main.html">Voir les formules →</a></div>
-        <div class="card reveal"><div class="ico">♾️</div><h3>Maintenance WordPress</h3><p class="cat-price">dès 99 €/mois</p><p>Mises à jour testées avant production, sauvegardes quotidiennes, surveillance 24/7, sécurité et rapport mensuel. Sans frais d'entrée.</p><a class="link" href="maintenance-wordpress.html">Voir les formules →</a></div>
-        <div class="card reveal"><div class="ico">🛠️</div><h3>Reprise WordPress</h3><p class="cat-price">sur devis · diagnostic gratuit</p><p>Site cassé, lent, piraté ou abandonné : je le remets d'aplomb sans tout refaire, puis je le fais avancer.</p><a class="link" href="reprise-wordpress.html">Faire diagnostiquer mon site →</a></div>
-        <div class="card reveal"><div class="ico">📈</div><h3>Référencement WordPress</h3><p class="cat-price">390 € · suivi sur devis</p><p>L'audit dit ce qui va mal ; ici je le corrige. Technique, données structurées, contenus, pages locales et présence dans les réponses des IA.</p><a class="link" href="seo-geo-wordpress.html">Voir la mise en œuvre →</a></div>
-        <div class="card reveal"><div class="ico">🔎</div><h3>Audit SEO &amp; GEO</h3><p class="cat-price">dès 59 €</p><p>Visible sur Google et cité par les IA. Audit flash livré en 48 h, ou audit complet avec plan d'implémentation et roadmap.</p><a class="link" href="audit-seo-geo.html">Voir les audits →</a></div>
-        <div class="card reveal"><div class="ico">🧮</div><h3>Simulateur de devis</h3><p class="cat-price">dès 499 €</p><p>Votre grille tarifaire transformée en simulateur sur votre site : le visiteur estime, vous recevez une demande déjà chiffrée.</p><a class="link" href="devis-interactif.html">Essayer la démo →</a></div>
-        <div class="card reveal"><div class="ico">📥</div><h3>Outils métier</h3><p class="cat-price">79 €/mois par outil</p><p>Suivi des demandes, devis et factures, prise de rendez-vous, suivi des appels : développés sur mesure, mise en place comprise.</p><a class="link" href="site-cle-en-main.html#outils">Voir les outils →</a></div>
-        <div class="card reveal"><div class="ico">🤖</div><h3>Agents IA</h3><p class="cat-price">sur demande</p><p>Mails, WhatsApp et devis triés, résumés et préparés dans vos outils existants. Une personne valide chaque action sortante.</p><a class="link" href="agents-ia.html">Voir les offres →</a></div>
-        <div class="card reveal"><div class="ico">⚙️</div><h3>Automatisation n8n</h3><p class="cat-price">sur devis</p><p>Vos tâches répétitives enchaînées seules, sur un n8n auto-hébergé : aucune donnée chez un tiers, coût fixe quel que soit le volume.</p><a class="link" href="automatisation-n8n.html">Voir les automatisations →</a></div>
-        <div class="card reveal"><div class="ico">🧩</div><h3>Extension WordPress</h3><p class="cat-price">sur devis</p><p>Quand aucun plugin existant ne fait le travail, je développe l'extension sur mesure : votre besoin exact, maintenue et reprenable par un autre développeur.</p><a class="link" href="#contact">Décrire mon besoin →</a></div>
-        <div class="card reveal"><div class="ico">🛒</div><h3>Boutique WooCommerce</h3><p class="cat-price">sur devis</p><p>Produits, stocks, commandes, tunnel de paiement : conception, reprise ou gestion au quotidien d'une boutique WordPress.</p><a class="link" href="#contact">Faire chiffrer ma boutique →</a></div>
-        <div class="card reveal"><div class="ico">🖥️</div><h3>Infogérance VPS</h3><p class="cat-price">sur devis · audit gratuit</p><p>Serveur installé, sécurisé et surveillé, ou migré depuis un mutualisé sans coupure ni perte de référencement.</p><a class="link" href="infogerance-vps.html">Voir l'infogérance →</a></div>
+      <div class="cat-tabs" id="catTabs" role="tablist" aria-label="Filtrer les prestations">
+        <button type="button" class="cat-tab" role="tab" aria-selected="true" data-fam="all">Tout voir</button>
+        <button type="button" class="cat-tab" role="tab" aria-selected="false" data-fam="sites">Sites, boutiques &amp; applications</button>
+        <button type="button" class="cat-tab" role="tab" aria-selected="false" data-fam="wp">WordPress</button>
+        <button type="button" class="cat-tab" role="tab" aria-selected="false" data-fam="visi">Visibilit&eacute;</button>
+        <button type="button" class="cat-tab" role="tab" aria-selected="false" data-fam="auto">Automatisation &amp; serveur</button>
+      </div>
+      <div class="why-grid" id="catGrid">
+        <div class="card reveal" data-fam="sites"><div class="ico">🖨️</div><h3>Site vitrine</h3><p class="cat-price">dès 249 €</p><p>Design 100 % sur mesure, livré une fois pour toutes et <strong>sans abonnement</strong> : vous hébergez où vous voulez et vous ne dépendez de personne. Hébergement, domaine et suivi à votre charge.</p><a class="link" href="#contact">Discutons-en →</a></div>
+        <div class="card reveal" data-fam="sites"><div class="ico">⚙️</div><h3>Application web</h3><p class="cat-price">dès 1 500 €</p><p>App full-stack Next.js ou Symfony, base de données et espace d'administration, intégration d'API tierces, authentification et RGPD, déploiement.</p><a class="link" href="#contact">Discutons-en →</a></div>
+        <div class="card reveal" data-fam="sites"><div class="ico">📱</div><h3>Projet complet / mobile</h3><p class="cat-price">sur devis</p><p>Écosystème web et mobile : React Native, temps réel et notifications push, architecture multi-services, conteneurisation et CI, accompagnement.</p><a class="link" href="#contact">Discutons-en →</a></div>
+        <div class="card reveal" data-fam="sites"><div class="ico">🚀</div><h3>Site clé en main</h3><p class="cat-price">190 € puis dès 29 €/mois</p><p>Le site, le nom de domaine, l'hébergement, le référencement local et la maintenance dans un abonnement sans engagement. Domaine déposé à votre nom.</p><a class="link" href="site-cle-en-main.html">Voir les formules →</a></div>
+        <div class="card reveal" data-fam="wp"><div class="ico">♾️</div><h3>Maintenance WordPress</h3><p class="cat-price">dès 99 €/mois</p><p>Mises à jour testées avant production, sauvegardes quotidiennes, surveillance 24/7, sécurité et rapport mensuel. Sans frais d'entrée.</p><a class="link" href="maintenance-wordpress.html">Voir les formules →</a></div>
+        <div class="card reveal" data-fam="wp"><div class="ico">🛠️</div><h3>Reprise WordPress</h3><p class="cat-price">sur devis · diagnostic gratuit</p><p>Site cassé, lent, piraté ou abandonné : je le remets d'aplomb sans tout refaire, puis je le fais avancer.</p><a class="link" href="reprise-wordpress.html">Faire diagnostiquer mon site →</a></div>
+        <div class="card reveal" data-fam="visi"><div class="ico">📈</div><h3>Référencement WordPress</h3><p class="cat-price">390 € · suivi sur devis</p><p>L'audit dit ce qui va mal ; ici je le corrige. Technique, données structurées, contenus, pages locales et présence dans les réponses des IA.</p><a class="link" href="seo-geo-wordpress.html">Voir la mise en œuvre →</a></div>
+        <div class="card reveal" data-fam="visi"><div class="ico">🔎</div><h3>Audit SEO &amp; GEO</h3><p class="cat-price">dès 59 €</p><p>Visible sur Google et cité par les IA. Audit flash livré en 48 h, ou audit complet avec plan d'implémentation et roadmap.</p><a class="link" href="audit-seo-geo.html">Voir les audits →</a></div>
+        <div class="card reveal" data-fam="sites"><div class="ico">🧮</div><h3>Simulateur de devis</h3><p class="cat-price">dès 499 €</p><p>Votre grille tarifaire transformée en simulateur sur votre site : le visiteur estime, vous recevez une demande déjà chiffrée.</p><a class="link" href="devis-interactif.html">Essayer la démo →</a></div>
+        <div class="card reveal" data-fam="auto"><div class="ico">📥</div><h3>Outils métier</h3><p class="cat-price">79 €/mois par outil</p><p>Suivi des demandes, devis et factures, prise de rendez-vous, suivi des appels : développés sur mesure, mise en place comprise.</p><a class="link" href="site-cle-en-main.html#outils">Voir les outils →</a></div>
+        <div class="card reveal" data-fam="auto"><div class="ico">🤖</div><h3>Agents IA</h3><p class="cat-price">sur demande</p><p>Mails, WhatsApp et devis triés, résumés et préparés dans vos outils existants. Une personne valide chaque action sortante.</p><a class="link" href="agents-ia.html">Voir les offres →</a></div>
+        <div class="card reveal" data-fam="auto"><div class="ico">⚙️</div><h3>Automatisation n8n</h3><p class="cat-price">sur devis</p><p>Vos tâches répétitives enchaînées seules, sur un n8n auto-hébergé : aucune donnée chez un tiers, coût fixe quel que soit le volume.</p><a class="link" href="automatisation-n8n.html">Voir les automatisations →</a></div>
+        <div class="card reveal" data-fam="wp"><div class="ico">🧩</div><h3>Extension WordPress</h3><p class="cat-price">sur devis</p><p>Quand aucun plugin existant ne fait le travail, je développe l'extension sur mesure : votre besoin exact, maintenue et reprenable par un autre développeur.</p><a class="link" href="#contact">Décrire mon besoin →</a></div>
+        <div class="card reveal" data-fam="sites"><div class="ico">🛒</div><h3>Boutique WooCommerce</h3><p class="cat-price">sur devis</p><p>Produits, stocks, commandes, tunnel de paiement : conception, reprise ou gestion au quotidien d'une boutique WordPress.</p><a class="link" href="#contact">Faire chiffrer ma boutique →</a></div>
+        <div class="card reveal" data-fam="auto"><div class="ico">🖥️</div><h3>Infogérance VPS</h3><p class="cat-price">sur devis · audit gratuit</p><p>Serveur installé, sécurisé et surveillé, ou migré depuis un mutualisé sans coupure ni perte de référencement.</p><a class="link" href="infogerance-vps.html">Voir l'infogérance →</a></div>
       </div>
     </div>
   </section>
@@ -1146,7 +1151,7 @@
       </div>
       <div class="faq">
         <div class="faq-item"><button class="faq-q">Quels types de projets réalisez-vous ?<span>+</span></button><div class="faq-a">Sites vitrines, applications web full-stack (Next.js, Symfony), applications mobiles React Native, sites et boutiques WordPress, agents IA et automatisations. Du site simple au produit complet mis en ligne.</div></div>
-        <div class="faq-item"><button class="faq-q">Combien coûte un site vitrine ?<span>+</span></button><div class="faq-a">À partir de 190 €. Le prix dépend du nombre de pages, des contenus à produire et des fonctionnalités (formulaire, réservation, multilingue). Vous recevez un devis détaillé sous 24-48 h.</div></div>
+        <div class="faq-item"><button class="faq-q">Combien coûte un site vitrine ?<span>+</span></button><div class="faq-a">À partir de 249 €. Le prix dépend du nombre de pages, des contenus à produire et des fonctionnalités (formulaire, réservation, multilingue). Vous recevez un devis détaillé sous 24-48 h.</div></div>
         <div class="faq-item"><button class="faq-q">Et une application web ?<span>+</span></button><div class="faq-a">À partir de 1 500 € pour une application avec base de données, espace d'administration et mise en ligne. Les projets plus larges (mobile, temps réel, plusieurs services) sont chiffrés sur devis.</div></div>
         <div class="faq-item"><button class="faq-q">Intervenez-vous sur un site WordPress existant ?<span>+</span></button><div class="faq-a">Oui, c'est une de mes spécialités. Je reprends, débogue et modernise des sites WordPress cassés ou abandonnés, je gère le multilingue et les boutiques WooCommerce. Je maintiens déjà un réseau de 10+ sites en production.</div></div>
         <div class="faq-item"><button class="faq-q">Développez-vous des extensions WordPress sur mesure ?<span>+</span></button><div class="faq-a">Oui. Quand aucun plugin ne fait exactement ce qu'il faut, ou qu'il en faudrait trois payants, je développe l'extension adaptée à votre besoin : configurateur, calcul de tarif, synchronisation avec un outil externe, champs métier.</div></div>
@@ -1168,6 +1173,25 @@
       </div>
     </section>
 
+
+  <script>
+  (function(){
+    var tabs = document.querySelectorAll('#catTabs .cat-tab');
+    var cards = document.querySelectorAll('#catGrid .card');
+    if (!tabs.length || !cards.length) return;
+    tabs.forEach(function(t){
+      t.addEventListener('click', function(){
+        var fam = t.getAttribute('data-fam');
+        tabs.forEach(function(x){ x.setAttribute('aria-selected', x === t ? 'true' : 'false'); });
+        cards.forEach(function(c){
+          var on = (fam === 'all' || c.getAttribute('data-fam') === fam);
+          c.hidden = !on;
+          if (on) c.classList.add('in');   // pas de reapparition en fondu au changement d'onglet
+        });
+      });
+    });
+  })();
+  </script>
   <footer id="gf">
     <div class="gf-in">
       <div class="gf-brand">

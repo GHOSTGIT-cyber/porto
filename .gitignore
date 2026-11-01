@@ -9,3 +9,6 @@ CLAUDE.md
 
 # Dépendances npm (réinstallées par npm install)
 node_modules/
+
+# Maquettes locales de travail (jamais publiees)
+_maquette-*.html
